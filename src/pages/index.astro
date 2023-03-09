@@ -1,6 +1,7 @@
 ---
 // Component Imports
 import Button from '../components/Button.astro'
+import { Hero } from '../components/Hero'
 import Wrapper from '../components/Wrapper.astro'
 
 // Full Astro Component Syntax:
@@ -22,6 +23,7 @@ import Wrapper from '../components/Wrapper.astro'
             <a href="/markdown-page" class="p-4 underline"
                 >Markdown is also supported...</a
             >
+            <Hero client:load />
             <Button>test</Button>
             <Wrapper>
                 <div slot="test" class="text-black">some test for slot 3</div>
