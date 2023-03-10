@@ -1,5 +1,6 @@
 ---
 // Component Imports
+import About from '../components/About.astro'
 import Button from '../components/Button.astro'
 import { Hero } from '../components/Hero'
 import Wrapper from '../components/Wrapper.astro'
@@ -11,8 +12,20 @@ import Wrapper from '../components/Wrapper.astro'
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta
+            name="description"
+            content="Discover the portfolio of a skilled software engineer and project manager based in Cologne, 
+            with experience in various areas of computer science, including machine learning and web development.  
+            Specialized in React, TypeScript, and Next.js, passionate about learning new technologies 
+            and working in teams.  Get in touch to discuss potential projects or opportunities."
+        />
+        <meta
+            name="keywords"
+            content="HTML, CSS, JavaScript, TypeScript, NodeJS, ReactJS, NextJS, Astro"
+        />
+        <meta name="author" content="Enis Zejnilovic" />
         <meta name="generator" content={Astro.generator} />
         <title>Astro + TailwindCSS</title>
     </head>
@@ -25,6 +38,7 @@ import Wrapper from '../components/Wrapper.astro'
             >
             <Hero client:load />
             <Button>test</Button>
+            <About />
             <Wrapper>
                 <div slot="test" class="text-black">some test for slot 3</div>
                 <div class="text-black">some test for slot</div>
