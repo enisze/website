@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon'
 import Component from './Component.astro'
 ---
 
@@ -17,13 +18,16 @@ import Component from './Component.astro'
                 target="_blank"
                 rel="noopener"
             >
-                <i class="fab fa-linkedin-in">LinkedIn</i>
+                <Icon name="mdi:linkedin" />
             </a>
             <a href="https://github.com/enisze" target="_blank" rel="noopener">
-                <i class="fab fa-github">GitHub</i>
+                <Icon name="mdi:github" />
             </a>
             <a href="mailto:eniszej@gmail.com" target="_blank" rel="noopener">
-                <i class="fas fa-envelope">E-Mail</i>
+                <Icon name="mdi:email" />
+            </a>
+            <a href="todo" target="_blank" rel="noopener">
+                <Icon name="skill-icons:discord" />
             </a>
         </div>
         <p class="footer__text">&copy; 2023 Enis Zejnilovic</p>
