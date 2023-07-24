@@ -13,7 +13,8 @@ export function Hero(props: any) {
 
                 <div>
                     <h1 className={`text-white`}>
-                        Hi, I'm <span className="text-[#915EFF]">Adrian</span>
+                        Hi, I'm{' '}
+                        <span className="text-[#915EFF]">Enis Zejnilovic</span>
                     </h1>
                     <p className="mt-2 text-white-100">
                         I develop 3D visuals, user <br className="block" />

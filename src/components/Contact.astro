@@ -3,36 +3,22 @@ import Component from './Component.astro'
 ---
 
 <Component>
-    <section class="contact" id="contact">
-        <h2 class="section__title">Contact Me</h2>
-        <form
-            class="contact__form"
-            method="post"
-            action="https://formspree.io/f/mnqoljgk"
-        >
-            <label class="contact__label">Name</label>
+    <section>
+        <h2>Contact Me</h2>
+        <form>
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Your name" required />
+            <label>Email</label>
             <input
-                class="contact__input"
-                type="text"
-                name="name"
-                placeholder="Your name"
-                required
-            />
-            <label class="contact__label">Email</label>
-            <input
-                class="contact__input"
                 type="email"
                 name="_replyto"
                 placeholder="Your email"
                 required
             />
-            <label class="contact__label">Message</label>
-            <textarea
-                class="contact__textarea"
-                name="message"
-                placeholder="Your message"
-                required></textarea>
-            <button class="btn btn--primary" type="submit">Send</button>
+            <label>Message</label>
+            <textarea name="message" placeholder="Your message" required
+            ></textarea>
+            <button>Send</button>
         </form>
     </section>
 </Component>
