@@ -10,43 +10,27 @@ import Component from './Component.astro'
 <Component>
     <section>
         <h2>Technical Skills</h2>
-        <div>
-            <li>
-                <Icon name="mdi:react" />
-            </li>
-            <li>
-                <Icon name="simple-icons:typescript" />
-            </li>
-            <li>
-                <Icon name="skill-icons:nextjs-dark" />
-            </li>
-            <li>
-                <Icon name="skill-icons:python-dark" />
-            </li>
-            <li>
-                <Icon name="skill-icons:vim-dark" />
-            </li>
-            <li>
-                <Icon name="skill-icons:css" />
-            </li>
-            <li>
-                <Icon name="skill-icons:graphql-dark" />
-            </li>
-            <li>
-                <Icon name="skill-icons:html" />
-            </li>
-            <li>
-                <Icon name="skill-icons:jest" />
-            </li>
-            <li>
-                <Icon name="skill-icons:materialui-dark" />
-            </li>
-            <li>
-                <Icon name="skill-icons:vscode-dark" />
-            </li>
-            <li>
-                <Icon name="skill-icons:vercel-dark" />
-            </li>
+
+        <div class="flex flex-col items-center gap-y-1">
+            <div class="flex flex-row gap-x-2">
+                <Icon name="mdi:react" className="h-14 w-14" />
+                <Icon name="simple-icons:typescript" className="h-14 w-14" />
+                <Icon name="skill-icons:nextjs-dark" className="h-14 w-14" />
+                <Icon name="skill-icons:python-dark" className="h-14 w-14" />
+                <Icon name="skill-icons:vim-dark" className="h-14 w-14" />
+                <Icon name="skill-icons:css" className="h-14 w-14" />
+            </div>
+            <div class="flex flex-row gap-x-2">
+                <Icon name="skill-icons:graphql-dark" className="h-14 w-14" />
+                <Icon name="skill-icons:html" className="h-14 w-14" />
+                <Icon name="skill-icons:jest" className="h-14 w-14" />
+                <Icon
+                    name="skill-icons:materialui-dark"
+                    className="h-14 w-14"
+                />
+                <Icon name="skill-icons:vscode-dark" className="h-14 w-14" />
+                <Icon name="skill-icons:vercel-dark" className="h-14 w-14" />
+            </div>
         </div>
     </section>
 </Component>

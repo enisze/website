@@ -4,15 +4,8 @@ import Component from './Component.astro'
 ---
 
 <Component>
-    <footer class="footer">
-        <div class="">
-            <li class=""><a href="#about">About</a></li>
-            <li class=""><a href="#skills">Skills</a></li>
-            <li class=""><a href="#experience">Experience</a></li>
-            <li class=""><a href="#education">Education</a></li>
-            <li class=""><a href="#contact">Contact</a></li>
-        </div>
-        <div class="flex">
+    <footer class="space-y-2">
+        <div class="flex justify-center gap-x-1">
             <a
                 href="https://www.linkedin.com/in/enis-zejnilovic-790b91146"
                 target="_blank"
@@ -41,6 +34,7 @@ import Component from './Component.astro'
                 <Icon name="skill-icons:discord" />
             </a>
         </div>
-        <p class="footer__text">&copy; 2023 Enis Zejnilovic</p>
+
+        <p class="flex justify-center">&copy; 2023 Enis Zejnilovic</p>
     </footer>
 </Component>

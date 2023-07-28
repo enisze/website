@@ -37,12 +37,13 @@ import Wrapper from '../components/Wrapper.astro'
     </head>
 
     <body class="bg-slate-800 text-white p-4 flex flex-col">
-        <div class="grid place-items-center content-center">
+        <div class="flex flex-col">
+            <Header />
             <Button>Tailwind Button in Astro!</Button>
             <a href="/markdown-page" class="p-4 underline"
                 >Markdown is also supported...</a
             >
-            <Button>test</Button>
+
             <About />
             <Wrapper>
                 <div slot="test" class="text-black">some test for slot 3</div>
@@ -50,7 +51,6 @@ import Wrapper from '../components/Wrapper.astro'
                 <div class="text-black">some test for slot 2</div>
             </Wrapper>
 
-            <Header />
             <Skills />
             <Projects />
             <Experience />
