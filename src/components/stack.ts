@@ -36,6 +36,7 @@ type StackLabel =
     | 'Playwright'
     | 'VIM'
     | 'Bun'
+    | 'Builder.io'
 
 export type StackItem = {
     label: StackLabel
@@ -143,6 +144,13 @@ export const stacks: Stack[] = [
                 href: 'https://mailtrap.io/',
                 isSmall: true,
                 baseColor: 'white',
+            },
+            {
+                label: 'Builder.io',
+                imgUrl: '/images/stack/builderIO.svg',
+                href: 'https://www.builder.io/',
+                isSmall: true,
+                // baseColor: 'white',
             },
         ],
     },

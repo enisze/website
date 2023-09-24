@@ -1,31 +1,26 @@
 ---
 import Component from './Component.astro'
+import Timeline from './Timeline.astro'
 ---
 
 <Component>
     <section>
         <h2>Education</h2>
-        <ul>
-            <li>
-                <h3>Master of Computer Science</h3>
-                <p>Aachen University</p>
-                <p>2016 - 2018</p>
-                <ul>
-                    <li>RDF Schema Generation</li>
-                    <li>Artificial Intelligence</li>
-                    <li>Data Mining</li>
-                </ul>
-            </li>
-            <li>
-                <h3>Bachelor of Computer Science</h3>
-                <p>Cologne University</p>
-                <p>2012 - 2016</p>
-                <ul>
-                    <li>Generative Development</li>
-                    <li>Machine Learning</li>
-                    <li>Data Science</li>
-                </ul>
-            </li>
-        </ul>
+        <Timeline
+            entries={[
+                {
+                    title: 'Master of Computer Science, RWTH Aachen University',
+                    description:
+                        'RDF Schema Generation, Artificial Intelligence, Data Mining',
+                    time: 'Oct. 2016 - Aug. 2021',
+                },
+                {
+                    title: 'Bachelor of Computer Science, RWTH Aachen University',
+                    description:
+                        'Generative Development, Machine Learning, Data Science',
+                    time: 'Oct. 2013 - Oct. 2016',
+                },
+            ]}
+        />
     </section>
 </Component>

@@ -15,45 +15,41 @@ import { stacks } from './stack'
         <h2>Technical Skills</h2>
 
         <div class="flex flex-col items-center gap-y-1">
-            <div class="flex flex-row gap-x-2">
-                {
-                    stacks.map((stack) => {
-                        return (
-                            <div class="flex flex-col gap-8 bg-white dark:bg-gray-900 p-8 xl:px-12">
-                                <h4 class="text-center text-2xl">
-                                    {stack.title}
-                                </h4>
-                                <div class="flex flex-row flex-wrap justify-center gap-4">
-                                    {stack.items.map((item) => {
-                                        return (
-                                            <a
-                                                class="flex w-24 flex-col items-center gap-1 duration-200 hover:drop-shadow-[0_0px_20px_rgba(0,0,0,0.25)] dark:hover:drop-shadow-[0_0px_20px_rgba(255,255,255,0.25)] sm:w-32"
-                                                href={item.href}
-                                                target="_blank"
-                                            >
-                                                <img
-                                                    src={item.imgUrl}
-                                                    alt={item.label}
-                                                    class:list={[
-                                                        'h-12 w-12',
-                                                        item.baseColor ===
-                                                            'white' &&
-                                                            'invert dark:invert-0',
-                                                        item.baseColor ===
-                                                            'black' &&
-                                                            'invert-0 dark:invert',
-                                                    ]}
-                                                />
-                                                <p>{item.label}</p>
-                                            </a>
-                                        )
-                                    })}
-                                </div>
+            {
+                stacks.map((stack) => {
+                    return (
+                        <div class="flex flex-col items-center w-full rounded-lg gap-4 bg-white dark:bg-gray-900 p-6 xl:px-12">
+                            <h4 class="text-2xl">{stack.title}</h4>
+                            <div class="flex flex-row flex-wrap gap-4">
+                                {stack.items.map((item) => {
+                                    return (
+                                        <a
+                                            class="flex w-24 flex-col items-center gap-1 duration-200 hover:drop-shadow-[0_0px_20px_rgba(0,0,0,0.25)] dark:hover:drop-shadow-[0_0px_20px_rgba(255,255,255,0.25)] sm:w-32"
+                                            href={item.href}
+                                            target="_blank"
+                                        >
+                                            <img
+                                                src={item.imgUrl}
+                                                alt={item.label}
+                                                class:list={[
+                                                    'h-12 w-12',
+                                                    item.baseColor ===
+                                                        'white' &&
+                                                        'invert dark:invert-0',
+                                                    item.baseColor ===
+                                                        'black' &&
+                                                        'invert-0 dark:invert',
+                                                ]}
+                                            />
+                                            <p>{item.label}</p>
+                                        </a>
+                                    )
+                                })}
                             </div>
-                        )
-                    })
-                }
-            </div>
+                        </div>
+                    )
+                })
+            }
         </div>
     </section>
 </Component>
