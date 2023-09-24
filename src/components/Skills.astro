@@ -1,6 +1,6 @@
 ---
-import { Icon } from 'astro-icon'
 import Component from './Component.astro'
+import { stacks } from './stack'
 
 // import Me from './me.jpg'
 // import NextIcon from './nextIcon.svg'
@@ -16,33 +16,43 @@ import Component from './Component.astro'
 
         <div class="flex flex-col items-center gap-y-1">
             <div class="flex flex-row gap-x-2">
-                <!-- <div>
-                    <Fragment set:html={NextIcon} />
-                </div> -->
-
-                <img src="nextIcon.svg" alt="image description" />
-
-                <img src="me.jpg" alt="image description" />
-
-                <div style={`background-image: url(${'me.jpg'});`}></div>
-
-                <Icon name="mdi:react" className="h-14 w-14" />
-                <Icon name="simple-icons:typescript" className="h-14 w-14" />
-                <Icon name="skill-icons:nextjs-dark" className="h-14 w-14" />
-                <Icon name="skill-icons:python-dark" className="h-14 w-14" />
-                <Icon name="skill-icons:vim-dark" className="h-14 w-14" />
-                <Icon name="skill-icons:css" className="h-14 w-14" />
-            </div>
-            <div class="flex flex-row gap-x-2">
-                <Icon name="skill-icons:graphql-dark" className="h-14 w-14" />
-                <Icon name="skill-icons:html" className="h-14 w-14" />
-                <Icon name="skill-icons:jest" className="h-14 w-14" />
-                <Icon
-                    name="skill-icons:materialui-dark"
-                    className="h-14 w-14"
-                />
-                <Icon name="skill-icons:vscode-dark" className="h-14 w-14" />
-                <Icon name="skill-icons:vercel-dark" className="h-14 w-14" />
+                {
+                    stacks.map((stack) => {
+                        return (
+                            <div class="flex flex-col gap-8 bg-white dark:bg-gray-900 p-8 xl:px-12">
+                                <h4 class="text-center text-2xl">
+                                    {stack.title}
+                                </h4>
+                                <div class="flex flex-row flex-wrap justify-center gap-4">
+                                    {stack.items.map((item) => {
+                                        return (
+                                            <a
+                                                class="flex w-24 flex-col items-center gap-1 duration-200 hover:drop-shadow-[0_0px_20px_rgba(0,0,0,0.25)] dark:hover:drop-shadow-[0_0px_20px_rgba(255,255,255,0.25)] sm:w-32"
+                                                href={item.href}
+                                                target="_blank"
+                                            >
+                                                <img
+                                                    src={item.imgUrl}
+                                                    alt={item.label}
+                                                    class:list={[
+                                                        'h-12 w-12',
+                                                        item.baseColor ===
+                                                            'white' &&
+                                                            'invert dark:invert-0',
+                                                        item.baseColor ===
+                                                            'black' &&
+                                                            'invert-0 dark:invert',
+                                                    ]}
+                                                />
+                                                <p>{item.label}</p>
+                                            </a>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                        )
+                    })
+                }
             </div>
         </div>
     </section>

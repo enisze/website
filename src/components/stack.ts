@@ -34,6 +34,8 @@ type StackLabel =
     | 'Discord'
     | 'Teams'
     | 'Playwright'
+    | 'VIM'
+    | 'Bun'
 
 export type StackItem = {
     label: StackLabel
@@ -50,87 +52,94 @@ type Stack = {
 
 export const stacks: Stack[] = [
     {
-        title: 'Dream Stack',
+        title: 'Technologies',
         items: [
             {
                 label: 'Typescript',
-                imgUrl: '/images/jobs/stack/dev-logo-ts.svg',
+                imgUrl: '/images/stack/dev-logo-ts.svg',
                 href: 'https://www.typescriptlang.org/',
                 isSmall: false,
             },
             {
                 label: 'React',
-                imgUrl: '/images/jobs/stack/dev-logo-react.svg',
+                imgUrl: '/images/stack/dev-logo-react.svg',
                 href: 'https://reactjs.org/',
                 isSmall: false,
                 baseColor: 'white',
             },
             {
                 label: 'Next.js',
-                imgUrl: '/images/jobs/stack/next-js-seeklogo.com.svg',
+                imgUrl: '/images/stack/next-js-seeklogo.com.svg',
                 href: 'https://nextjs.org/',
                 isSmall: false,
                 baseColor: 'white',
             },
             {
                 label: 'tRPC',
-                imgUrl: '/images/jobs/stack/trpc.svg',
+                imgUrl: '/images/stack/trpc.svg',
                 href: 'https://trpc.io/',
                 isSmall: false,
             },
             {
                 label: 'GraphQL',
-                imgUrl: '/images/jobs/stack/GraphQL_Logo.svg',
+                imgUrl: '/images/stack/GraphQL_Logo.svg',
                 href: 'https://graphql.org/',
                 isSmall: true,
             },
             {
                 label: 'Yarn',
-                imgUrl: '/images/jobs/stack/yarn.svg',
+                imgUrl: '/images/stack/yarn.svg',
                 href: 'https://yarnpkg.com/',
+                isSmall: true,
+            },
+
+            {
+                label: 'Bun',
+                imgUrl: '/images/stack/bun.svg',
+                href: 'https://bun.sh/',
                 isSmall: true,
             },
         ],
     },
     {
-        title: 'SaaS Stack',
+        title: 'SaaS',
         items: [
             {
                 label: 'Vercel',
-                imgUrl: '/images/jobs/stack/Vercel.svg',
+                imgUrl: '/images/stack/Vercel.svg',
                 href: 'https://vercel.com/',
                 isSmall: false,
                 baseColor: 'white',
             },
             {
                 label: 'AWS',
-                imgUrl: '/images/jobs/stack/Amazon_Web_Services_Logo.svg',
+                imgUrl: '/images/stack/Amazon_Web_Services_Logo.svg',
                 href: 'https://aws.amazon.com/de/?nc2=h_lg',
                 isSmall: false,
             },
             {
                 label: 'Datadog',
-                imgUrl: '/images/jobs/stack/datadog-1.svg',
+                imgUrl: '/images/stack/datadog-1.svg',
                 href: 'https://www.datadoghq.com/',
                 isSmall: false,
                 baseColor: 'white',
             },
             {
                 label: 'Serverless',
-                imgUrl: '/images/jobs/stack/serverless.svg',
+                imgUrl: '/images/stack/serverless.svg',
                 href: 'https://www.serverless.com/',
                 isSmall: false,
             },
             {
                 label: 'LaunchDarkly',
-                imgUrl: '/images/jobs/stack/Launch-Darkly.svg',
+                imgUrl: '/images/stack/Launch-Darkly.svg',
                 href: 'https://launchdarkly.com/',
                 isSmall: true,
                 baseColor: 'white',
             },
             {
                 label: 'Mailtrap',
-                imgUrl: '/images/jobs/stack/mailtrap-new-logo.svg',
+                imgUrl: '/images/stack/mailtrap-new-logo.svg',
                 href: 'https://mailtrap.io/',
                 isSmall: true,
                 baseColor: 'white',
@@ -138,166 +147,173 @@ export const stacks: Stack[] = [
         ],
     },
     {
-        title: 'UI Stack',
+        title: 'UI',
         items: [
             {
                 label: 'Styled Comp.',
-                imgUrl: '/images/jobs/stack/styled-components.svg',
+                imgUrl: '/images/stack/styled-components.svg',
                 href: 'https://styled-components.com/',
                 isSmall: true,
             },
             {
                 label: 'Tailwind',
-                imgUrl: '/images/jobs/stack/tailwind-css-logo-vector.svg',
+                imgUrl: '/images/stack/tailwind-css-logo-vector.svg',
                 href: 'https://tailwindcss.com/',
                 isSmall: false,
             },
             {
                 label: 'Twin-Macro',
-                imgUrl: '/images/jobs/stack/twin.svg',
+                imgUrl: '/images/stack/twin.svg',
                 href: 'https://github.com/ben-rogerson/twin.macro',
                 isSmall: true,
                 baseColor: 'white',
             },
             {
                 label: 'Mjml',
-                imgUrl: '/images/jobs/stack/mjml-by-mailjet.svg',
+                imgUrl: '/images/stack/mjml-by-mailjet.svg',
                 href: 'https://mjml.io/',
                 isSmall: true,
             },
             {
                 label: 'Headless UI',
-                imgUrl: '/images/jobs/stack/headerless-ui.svg',
+                imgUrl: '/images/stack/headerless-ui.svg',
                 href: 'https://headlessui.com/',
                 isSmall: false,
                 baseColor: 'white',
             },
             {
                 label: 'Material UI',
-                imgUrl: '/images/jobs/stack/material-ui.svg',
+                imgUrl: '/images/stack/material-ui.svg',
                 href: 'https://mui.com/',
                 isSmall: true,
             },
         ],
     },
     {
-        title: 'DB Stack',
+        title: 'Database',
         items: [
             {
                 label: 'Prisma',
-                imgUrl: '/images/jobs/stack/prisma.svg',
+                imgUrl: '/images/stack/prisma.svg',
                 href: 'https://www.prisma.io/',
                 isSmall: false,
                 baseColor: 'black',
             },
             {
                 label: 'Redis',
-                imgUrl: '/images/jobs/stack/redis.svg',
+                imgUrl: '/images/stack/redis.svg',
                 href: 'https://redis.io/',
                 isSmall: false,
             },
             {
                 label: 'PlanetScale',
-                imgUrl: '/images/jobs/stack/planetscale.svg',
+                imgUrl: '/images/stack/planetscale.svg',
                 href: 'https://planetscale.com/',
                 isSmall: true,
                 baseColor: 'white',
             },
             {
                 label: 'ElasticSearch',
-                imgUrl: '/images/jobs/stack/elasticsearch.svg',
+                imgUrl: '/images/stack/elasticsearch.svg',
                 href: 'https://www.elastic.co/',
                 isSmall: true,
             },
         ],
     },
     {
-        title: 'Test Stack',
+        title: 'Testing',
         items: [
             {
                 label: 'Jest',
-                imgUrl: '/images/jobs/stack/jest.svg',
+                imgUrl: '/images/stack/jest.svg',
                 href: 'https://jestjs.io/',
                 isSmall: false,
             },
             {
                 label: 'Cypress',
-                imgUrl: '/images/jobs/stack/cypress-io-logo-round-flat.svg',
+                imgUrl: '/images/stack/cypress-io-logo-round-flat.svg',
                 href: 'https://www.cypress.io/',
                 isSmall: false,
             },
             {
                 label: 'Storybook',
-                imgUrl: '/images/jobs/stack/storybook.svg',
+                imgUrl: '/images/stack/storybook.svg',
                 href: 'https://storybook.js.org/',
                 isSmall: false,
             },
             {
                 label: 'ESLint',
-                imgUrl: '/images/jobs/stack/ESLint.svg',
+                imgUrl: '/images/stack/ESLint.svg',
                 href: 'https://eslint.org/',
                 isSmall: true,
                 baseColor: 'white',
             },
             {
                 label: 'Prettier',
-                imgUrl: '/images/jobs/stack/prettier.svg',
+                imgUrl: '/images/stack/prettier.svg',
                 href: 'https://prettier.io/',
                 isSmall: true,
             },
             {
                 label: 'GitHub Actions',
-                imgUrl: '/images/jobs/stack/git-hub-actions.svg',
+                imgUrl: '/images/stack/git-hub-actions.svg',
                 href: 'https://github.com/features/actions',
                 isSmall: false,
             },
             {
                 label: 'Playwright',
-                imgUrl: '/images/jobs/stack/playwright-seeklogo.svg',
+                imgUrl: '/images/stack/playwright-seeklogo.svg',
                 href: 'https://playwright.dev/',
                 isSmall: true,
             },
         ],
     },
     {
-        title: 'Tool Stack',
+        title: 'Tools',
         items: [
             {
                 label: 'Linear',
-                imgUrl: '/images/jobs/stack/linear.svg',
+                imgUrl: '/images/stack/linear.svg',
                 href: 'https://linear.app/',
                 isSmall: false,
                 baseColor: 'white',
             },
             {
+                label: 'VIM',
+                imgUrl: '/images/stack/VIM-Dark.svg',
+                href: 'https://www.vim.org/',
+                isSmall: false,
+                baseColor: 'white',
+            },
+            {
                 label: 'GitHub',
-                imgUrl: '/images/jobs/stack/github.svg',
+                imgUrl: '/images/stack/github.svg',
                 href: 'https://github.com/',
                 isSmall: false,
                 baseColor: 'white',
             },
             {
                 label: 'Notion',
-                imgUrl: '/images/jobs/stack/notion.svg',
+                imgUrl: '/images/stack/notion.svg',
                 href: 'https://www.notion.so/',
                 isSmall: false,
             },
             {
                 label: 'VS Code',
-                imgUrl: '/images/jobs/stack/Visual_Studio_Code_1.35_icon.svg',
+                imgUrl: '/images/stack/Visual_Studio_Code_1.35_icon.svg',
                 href: 'https://code.visualstudio.com/',
                 isSmall: true,
             },
             {
                 label: 'Discord',
-                imgUrl: '/images/jobs/stack/Discord-Logo+Wordmark-White.svg',
+                imgUrl: '/images/stack/Discord-Logo+Wordmark-White.svg',
                 href: 'https://discord.com/',
                 isSmall: false,
                 baseColor: 'white',
             },
             {
                 label: 'Teams',
-                imgUrl: '/images/jobs/stack/ms-logo-t.svg',
+                imgUrl: '/images/stack/ms-logo-t.svg',
                 href: 'https://www.microsoft.com/de-de/microsoft-teams/download-app',
                 isSmall: true,
             },
