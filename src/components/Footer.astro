@@ -1,5 +1,4 @@
 ---
-import { Icon } from 'astro-icon'
 import Component from './Component.astro'
 ---
 
@@ -12,7 +11,11 @@ import Component from './Component.astro'
                 rel="noopener"
                 class="w-8 h-8"
             >
-                <Icon name="mdi:linkedin" />
+                <img
+                    src={'/images/linkedIn.svg'}
+                    alt={'LinkedIn'}
+                    class:list={['h-12 w-12']}
+                />
             </a>
             <a
                 href="https://github.com/enisze"
@@ -20,7 +23,11 @@ import Component from './Component.astro'
                 rel="noopener"
                 class="w-8 h-8"
             >
-                <Icon name="mdi:github" />
+                <img
+                    src={'/images/github.svg'}
+                    alt={'Github'}
+                    class:list={['h-12 w-12', 'invert-0 dark:invert']}
+                />
             </a>
             <a
                 href="mailto:eniszej@gmail.com"
@@ -28,10 +35,11 @@ import Component from './Component.astro'
                 rel="noopener"
                 class="w-8 h-8"
             >
-                <Icon name="mdi:email" />
-            </a>
-            <a href="todo" target="_blank" rel="noopener" class="w-8 h-8">
-                <Icon name="skill-icons:discord" />
+                <img
+                    src={'/images/mail.svg'}
+                    alt={'Email'}
+                    class:list={['h-12 w-12', 'invert-0 dark:invert']}
+                />
             </a>
         </div>
 
