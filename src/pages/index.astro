@@ -1,6 +1,8 @@
 ---
 // Component Imports
 
+import { SEO, type Props as SeoProps } from 'astro-seo'
+import { BASE_URL } from '../../config'
 import About from '../components/About.astro'
 import Button from '../components/Button.astro'
 import Education from '../components/Education.astro'
@@ -11,38 +13,120 @@ import Projects from '../components/Projects.astro'
 import Skills from '../components/Skills.astro'
 import Wrapper from '../components/Wrapper.astro'
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+import { TypeAnimation } from 'react-type-animation'
+
+import './../globals.css'
+
+const DEFAULT_SEO: SeoProps = {
+    titleTemplate: '%s | Enis Zejnilovic',
+    titleDefault: 'Enis Zejnilovic Portfolio',
+    description: `Discover the portfolio of a skilled Full-stack software engineer and project manager based in Cologne, 
+            with experience in various areas of computer science, including machine learning and web development.  
+            Specialized in React, TypeScript, and Next.js, passionate about learning new technologies 
+            and working in teams. Get in touch to discuss potential projects or opportunities.`,
+
+    openGraph: {
+        basic: {
+            title: 'Enis Zejnilovic Portfolio',
+            url: BASE_URL,
+            type: 'website',
+            image: `${BASE_URL}/images/logo/enisLogo.png`,
+        },
+        optional: {
+            description:
+                'Discover the portfolio of a skilled Full-stack software engineer and project manager based in Cologne',
+        },
+        image: {
+            alt: 'EZ Logo',
+            url: `${BASE_URL}/images/logo/enisLogo.png`,
+            height: 1014,
+        },
+    },
+    extend: {
+        link: [
+            {
+                rel: 'icon',
+                type: 'image/svg+xml',
+                href: '/favicon.svg',
+            },
+        ],
+    },
+}
+
+const { seo } = Astro.props
+const finalSeo: SeoProps = {
+    ...DEFAULT_SEO,
+    ...seo,
+    openGraph: DEFAULT_SEO.openGraph
+        ? { ...DEFAULT_SEO.openGraph, ...seo?.openGraph }
+        : undefined,
+    extend: {
+        link: [
+            ...(DEFAULT_SEO.extend?.link ?? []),
+            ...(seo?.extend?.link ?? []),
+        ],
+    },
+}
 ---
 
 <html lang="en">
     <head>
+        <SEO {...finalSeo} />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta
-            name="description"
-            content="Discover the portfolio of a skilled software engineer and project manager based in Cologne, 
-            with experience in various areas of computer science, including machine learning and web development.  
-            Specialized in React, TypeScript, and Next.js, passionate about learning new technologies 
-            and working in teams. Get in touch to discuss potential projects or opportunities."
-        />
-        <meta
             name="keywords"
             content="HTML, CSS, JavaScript, TypeScript, NodeJS, ReactJS, NextJS, Astro"
         />
+
         <meta name="author" content="Enis Zejnilovic" />
         <meta name="generator" content={Astro.generator} />
+
+        <link
+            rel="preload"
+            href="/fonts/Rubik-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+
         <title>Enis Zejnilovic Portfolio</title>
     </head>
 
-    <body class="bg-slate-800 text-white p-4 flex flex-col">
-        <div class="flex flex-col">
+    <body class="bg-slate-800 text-white p-8 flex flex-col">
+        <div class="flex flex-col gap-y-3">
             <Header />
             <Button>Tailwind Button in Astro!</Button>
             <a href="/markdown-page" class="p-4 underline"
                 >Markdown is also supported...</a
             >
+
+            <div class="flex justify-center text-3xl">
+                <span> Hi, I'm Enis Zejnilovic,&nbsp;</span>
+                <div class="text-orange-800">
+                    <TypeAnimation
+                        client:load
+                        sequence={[
+                            'a Frontend developer.',
+                            1000,
+                            'a Backend developer.',
+                            1000,
+                            'a Full-stack developer.',
+                            1000,
+                        ]}
+                        wrapper="span"
+                        speed={50}
+                        repeat={Infinity}
+                    />
+                </div>
+            </div>
+
+            <img
+                class="w-60 h-60 m-auto p-1 rounded-full ring-2 ring-red-800 dark:ring-red-700/80"
+                src="/images/me.jpg"
+                alt="Enis Zejnilovic"
+            />
 
             <About />
             <Wrapper>
