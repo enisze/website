@@ -1,14 +1,27 @@
 ---
 export interface Props {
-    entries: Array<{ title: string; description: string; time: string }>
+    entries: Array<{
+        title: string
+        description: string
+        time: string
+    }>
 }
 
 const { entries } = Astro.props as Props
+
+const adjustedEntries = entries.map((entry, index) => {
+    const splitted = entry.description.split('<br/>')
+
+    return {
+        ...entry,
+        description: splitted,
+    }
+})
 ---
 
 <ol class="relative border-l border-gray-200 dark:border-gray-700">
     {
-        entries.map((entry) => {
+        adjustedEntries.map((entry) => {
             return (
                 <li class="mb-10 ml-4">
                     <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
@@ -19,7 +32,14 @@ const { entries } = Astro.props as Props
                         {entry.title}
                     </h3>
                     <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                        {entry.description}
+                        {entry.description.map((desc) => {
+                            return (
+                                <span>
+                                    {desc}
+                                    <br />
+                                </span>
+                            )
+                        })}
                     </p>
                 </li>
             )
