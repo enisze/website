@@ -1,0 +1,22 @@
+---
+// Click button, get confetti!
+// Styled by Tailwind :)
+---
+
+<img
+    class="w-80 h-80 cursor-pointer m-auto p-1 rounded-full ring-2 ring-red-800 dark:ring-red-700/80"
+    src="/images/me.jpg"
+    alt="Enis Zejnilovic"
+    id="me"
+/>
+
+<script>
+    import confetti from 'canvas-confetti'
+    const img = document.body.querySelector('#me')
+
+    console.log(img)
+
+    if (img) {
+        img.addEventListener('click', () => confetti())
+    }
+</script>

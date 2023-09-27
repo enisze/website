@@ -4,17 +4,16 @@
 import { SEO, type Props as SeoProps } from 'astro-seo'
 import { BASE_URL } from '../../config'
 import About from '../components/About.astro'
-import Button from '../components/Button.astro'
 import Education from '../components/Education.astro'
 import Experience from '../components/Experience.astro'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import Projects from '../components/Projects.astro'
 import Skills from '../components/Skills.astro'
-import Wrapper from '../components/Wrapper.astro'
 
 import { TypeAnimation } from 'react-type-animation'
 
+import Image from '../components/Image.astro'
 import './../globals.css'
 
 const DEFAULT_SEO: SeoProps = {
@@ -94,26 +93,27 @@ const finalSeo: SeoProps = {
         <title>Enis Zejnilovic Portfolio</title>
     </head>
 
-    <body class="bg-slate-800 text-white p-8 flex flex-col">
-        <div class="flex flex-col gap-y-3">
+    <body class="bg-slate-800 text-white flex flex-col">
+        <div class="fixed w-full z-10">
             <Header />
-            <Button>Tailwind Button in Astro!</Button>
-            <a href="/markdown-page" class="p-4 underline"
-                >Markdown is also supported...</a
-            >
-
-            <div class="flex justify-center text-3xl">
+        </div>
+        <div class="flex flex-col gap-y-3 p-8 pt-20">
+            <div class="flex justify-center text-3xl p-14">
                 <span>
-                    Hi, I'm Enis Zejnilovic,&nbsp;
+                    Hi, I'm Enis Zejnilovic,
                     <span class="text-orange-800">
                         <TypeAnimation
                             client:load
                             sequence={[
-                                'a Frontend developer.',
+                                ' an Anime Fan.',
                                 1000,
-                                'a Backend developer.',
+                                ' a Sports Enthusiast.',
                                 1000,
-                                'a Full-stack developer.',
+                                ' a Teamplayer.',
+                                1000,
+                                ' a Project Manager.',
+                                1000,
+                                ' a Full-stack Developer.',
                                 1000,
                             ]}
                             wrapper="span"
@@ -124,23 +124,23 @@ const finalSeo: SeoProps = {
                 </span>
             </div>
 
-            <img
-                class="w-60 h-60 m-auto p-1 rounded-full ring-2 ring-red-800 dark:ring-red-700/80"
-                src="/images/me.jpg"
-                alt="Enis Zejnilovic"
-            />
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="order-last md:order-1">
+                    <About />
+                </div>
 
-            <About />
-            <Wrapper>
-                <div slot="test" class="text-black">some test for slot 3</div>
-                <div class="text-black">some test for slot</div>
-                <div class="text-black">some test for slot 2</div>
-            </Wrapper>
+                <div class="md:order-2">
+                    <Image />
+                </div>
+            </div>
 
             <Skills />
+
             <Projects />
-            <Experience />
-            <Education />
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-5">
+                <Experience />
+                <Education />
+            </div>
             <Footer />
         </div>
     </body>
