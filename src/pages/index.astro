@@ -13,7 +13,9 @@ import Skills from '../components/Skills.astro'
 
 import { TypeAnimation } from 'react-type-animation'
 
+import Contact from '../components/Contact.astro'
 import Image from '../components/Image.astro'
+import Paragraph from '../components/Paragraph.astro'
 import './../globals.css'
 
 const DEFAULT_SEO: SeoProps = {
@@ -98,10 +100,10 @@ const finalSeo: SeoProps = {
             <Header />
         </div>
         <div class="flex flex-col gap-y-3 p-8 pt-20">
-            <div class="flex justify-center text-3xl p-14">
+            <div class="flex justify-center text-3xl lg:p-8">
                 <span>
                     Hi, I'm Enis Zejnilovic,
-                    <span class="text-orange-800">
+                    <Paragraph>
                         <TypeAnimation
                             client:load
                             sequence={[
@@ -120,16 +122,16 @@ const finalSeo: SeoProps = {
                             speed={50}
                             repeat={Infinity}
                         />
-                    </span>
+                    </Paragraph>
                 </span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2">
+            <div class="grid gap-6 grid-cols-1 lg:grid-cols-2">
                 <div class="order-last md:order-1">
                     <About />
                 </div>
 
-                <div class="md:order-2">
+                <div class="self-center px-10 md:px-44 lg:order-2 lg:p-4">
                     <Image />
                 </div>
             </div>
@@ -141,6 +143,7 @@ const finalSeo: SeoProps = {
                 <Experience />
                 <Education />
             </div>
+            <Contact />
             <Footer />
         </div>
     </body>

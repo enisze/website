@@ -155,7 +155,7 @@ export const stacks: Stack[] = [
         ],
     },
     {
-        title: 'UI',
+        title: 'User Interface',
         items: [
             {
                 label: 'Styled Comp.',
