@@ -13,6 +13,8 @@
         "@astrojs/mdx": "^1.1.0",
         "@astrojs/react": "^3.0.2",
         "@astrojs/tailwind": "^5.0.0",
+        "@astrojs/vercel": "^5.0.1",
+        "@getbrevo/brevo": "^1.0.1",
         "@types/canvas-confetti": "^1.6.0",
         "astro": "latest",
         "astro-seo": "^0.8.0",
