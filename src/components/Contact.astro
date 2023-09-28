@@ -13,6 +13,9 @@ if (Astro.request.method === 'POST') {
     const email = data.get('email')
     const message = data.get('message')
 
+    if (!name || !email || !message) {
+        console.log('Missing data', { name, email, message })
+    }
     if (name && email && message) {
         // Configure API key authorization: api-key
         const apiKey = defaultClient.authentications['api-key']
