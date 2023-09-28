@@ -1,14 +1,17 @@
 ---
-import { Image } from 'astro:assets'
+import { Image, getImage } from 'astro:assets'
 ---
 
 <Image
     src="/images/me.webp"
     alt="Enis Zejnilovic"
-    width={200}
-    height={200}
+    width={932}
+    height={910}
     class="flex-grow w-full cursor-pointer m-auto p-1 rounded-full ring-2 ring-blue-800 dark:ring-blue-400/80"
     id="me"
+    decoding="async"
+    format="avif"
+    loading="lazy"
 />
 
 <script>
