@@ -1,20 +1,19 @@
 ---
-// Click button, get confetti!
-// Styled by Tailwind :)
+import { Image } from 'astro:assets'
 ---
 
-<img
-    class="flex-grow cursor-pointer m-auto p-1 rounded-full ring-2 ring-blue-800 dark:ring-blue-400/80"
-    src="/images/me.jpg"
+<Image
+    src="/images/me.webp"
     alt="Enis Zejnilovic"
+    width={200}
+    height={200}
+    class="flex-grow w-full cursor-pointer m-auto p-1 rounded-full ring-2 ring-blue-800 dark:ring-blue-400/80"
     id="me"
 />
 
 <script>
     import confetti from 'canvas-confetti'
     const img = document.body.querySelector('#me')
-
-    console.log(img)
 
     if (img) {
         img.addEventListener('click', () => confetti())
