@@ -1,5 +1,4 @@
 ---
-import Component from '../Component.astro'
 import ContactForm from '../ContactForm.astro'
 import Heading from '../Heading.astro'
 
@@ -38,9 +37,7 @@ if (Astro.request.method === 'POST') {
 }
 ---
 
-<Component>
-    <section class="space-y-4 scroll-m-16" id="contact">
-        <Heading>Contact</Heading>
-        <ContactForm />
-    </section>
-</Component>
+<section class="space-y-4 scroll-m-16" id="contact">
+    <Heading>Contact</Heading>
+    <ContactForm />
+</section>

@@ -1,54 +1,49 @@
 ---
-import Component from '../Component.astro'
 import Heading from '../Heading.astro'
 import { stacks } from '../stack'
 ---
 
-<Component>
-    <section class="scroll-m-16" id="skills">
-        <Heading>Technical Skills</Heading>
+<section class="scroll-m-16" id="skills">
+    <Heading>Technical Skills</Heading>
 
-        <div class="flex flex-col gap-y-1">
-            {
-                stacks.map((stack) => {
-                    return (
-                        <div class="flex flex-col w-full gap-4">
-                            <h2 class="text-2xl font-bold underline decoration-blue-500 underline-offset-8">
-                                {stack.title}
-                            </h2>
-                            <div class="flex flex-row flex-wrap gap-4">
-                                {stack.items.map((item) => {
-                                    return (
-                                        <a
-                                            class="flex p-3 rounded-lg w-28 bg-white border-blue-500 border dark:bg-gray-900
+    <div class="flex flex-col gap-y-1">
+        {
+            stacks.map((stack) => {
+                return (
+                    <div class="flex flex-col w-full gap-4">
+                        <h2 class="text-2xl font-bold underline decoration-blue-500 underline-offset-8">
+                            {stack.title}
+                        </h2>
+                        <div class="flex flex-row flex-wrap gap-4">
+                            {stack.items.map((item) => {
+                                return (
+                                    <a
+                                        class="flex p-3 rounded-lg w-28 bg-white border-blue-500 border dark:bg-gray-900
                                               flex-col items-center gap-1 duration-200 hover:drop-shadow-[0_0px_20px_rgba(0,0,0,0.25)] dark:hover:drop-shadow-[0_0px_20px_rgba(255,255,255,0.25)] sm:w-32"
-                                            href={item.href}
-                                            target="_blank"
-                                        >
-                                            <img
-                                                src={item.imgUrl}
-                                                alt={item.label}
-                                                class:list={[
-                                                    'h-8 w-8',
-                                                    item.baseColor ===
-                                                        'white' &&
-                                                        'invert dark:invert-0',
-                                                    item.baseColor ===
-                                                        'black' &&
-                                                        'invert-0 dark:invert',
-                                                ]}
-                                            />
-                                            <p class="text-xs md:text-sm">
-                                                {item.label}
-                                            </p>
-                                        </a>
-                                    )
-                                })}
-                            </div>
+                                        href={item.href}
+                                        target="_blank"
+                                    >
+                                        <img
+                                            src={item.imgUrl}
+                                            alt={item.label}
+                                            class:list={[
+                                                'h-8 w-8',
+                                                item.baseColor === 'white' &&
+                                                    'invert dark:invert-0',
+                                                item.baseColor === 'black' &&
+                                                    'invert-0 dark:invert',
+                                            ]}
+                                        />
+                                        <p class="text-xs md:text-sm">
+                                            {item.label}
+                                        </p>
+                                    </a>
+                                )
+                            })}
                         </div>
-                    )
-                })
-            }
-        </div>
-    </section>
-</Component>
+                    </div>
+                )
+            })
+        }
+    </div>
+</section>
