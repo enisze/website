@@ -12,7 +12,9 @@ type Props = {
 const { src, alt, description, title, href } = Astro.props
 ---
 
-<div class="w-64 h-full rounded-xl shadow-lg shadow-slate-950">
+<div
+    class="flex flex-col md:flex-row h-full rounded-xl shadow-lg shadow-slate-950"
+>
     {
         src ? (
             <Image
@@ -20,7 +22,9 @@ const { src, alt, description, title, href } = Astro.props
                 alt={alt}
                 width={932}
                 height={910}
-                class="rounded-t-xl"
+                class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full ${
+                    alt.includes('Teampilot') && 'md:max-w-[50vw]'
+                }`}
                 decoding="async"
                 format="avif"
                 loading="lazy"
@@ -30,7 +34,7 @@ const { src, alt, description, title, href } = Astro.props
         )
     }
 
-    <div class="flex flex-col p-2 gap-y-2">
+    <div class="flex self-center flex-col p-4 gap-y-2 w-full">
         <h1 class="text-xl font-bold">
             <a href={href} target="_blank" rel="noopener noreferrer">
                 {title}
