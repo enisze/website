@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets'
+
+type Props = {
+    src: string
+    alt: string
+    href?: string
+    title: string
+    description: string
+}
+
+const { src, alt, description, title, href } = Astro.props
+---
+
+<div class="w-64 h-full rounded-xl shadow-lg shadow-slate-950">
+    {
+        src ? (
+            <Image
+                src={src}
+                alt={alt}
+                width={932}
+                height={910}
+                class="rounded-t-xl"
+                decoding="async"
+                format="avif"
+                loading="lazy"
+            />
+        ) : (
+            <slot />
+        )
+    }
+
+    <div class="flex flex-col p-2 gap-y-2">
+        <h1 class="text-xl font-bold">
+            <a href={href} target="_blank" rel="noopener noreferrer">
+                {title}
+            </a>
+        </h1>
+        <span>
+            {description}
+        </span>
+    </div>
+</div>
