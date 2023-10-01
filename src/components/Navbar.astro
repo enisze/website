@@ -5,27 +5,27 @@ import Item from './Item.astro'
 const menuitems = [
     {
         title: 'About',
-        path: '#about',
+        path: '/#about',
     },
     {
         title: 'Skills',
-        path: '#skills',
+        path: '/skills',
     },
     {
         title: 'Projects',
-        path: '#projects',
+        path: '/projects',
     },
     {
         title: 'Experience',
-        path: '#experience',
+        path: '/experience',
     },
     {
         title: 'Education',
-        path: '#education',
+        path: '/education',
     },
     {
         title: 'Contact',
-        path: '#contact',
+        path: '/contact',
     },
 ]
 ---
@@ -37,7 +37,9 @@ const menuitems = [
         <div
             class="flex p-5 lg:w-auto w-full items-center justify-between bg-white dark:bg-gray-900 fixed z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600"
         >
-            <span> Enis Zejnilovic</span>
+            <span>
+                <a href="/"> Enis Zejnilovic</a>
+            </span>
             <div class="block lg:hidden">
                 <MenuIcon />
             </div>

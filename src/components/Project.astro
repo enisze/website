@@ -4,12 +4,15 @@ import { Image } from 'astro:assets'
 type Props = {
     src: string
     alt: string
-    href?: string
+    githubLink?: string
+    pageLink?: string
+    localLink?: string
     title: string
     description: string
 }
 
-const { src, alt, description, title, href } = Astro.props
+const { src, alt, description, title, githubLink, pageLink, localLink } =
+    Astro.props
 ---
 
 <div
@@ -17,16 +20,18 @@ const { src, alt, description, title, href } = Astro.props
 >
     {
         src ? (
-            <Image
-                src={src}
-                alt={alt}
-                width={932}
-                height={910}
-                class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full`}
-                decoding="async"
-                format="avif"
-                loading="lazy"
-            />
+            <a href={localLink}>
+                <Image
+                    src={src}
+                    alt={alt}
+                    width={932}
+                    height={910}
+                    class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full`}
+                    decoding="async"
+                    format="avif"
+                    loading="lazy"
+                />
+            </a>
         ) : (
             <slot />
         )
@@ -34,7 +39,7 @@ const { src, alt, description, title, href } = Astro.props
 
     <div class="flex self-center flex-col p-4 gap-y-2 w-full">
         <h1 class="text-xl font-bold">
-            <a href={href} target="_blank" rel="noopener noreferrer">
+            <a href={pageLink} target="_blank" rel="noopener noreferrer">
                 {title}
             </a>
         </h1>

@@ -1,0 +1,20 @@
+---
+import Project from '../../components/Project.astro'
+import Layout from '../../layouts/Layout.astro'
+---
+
+<Layout>
+    <div>
+        <div>test</div>
+        <Project
+            src="/images/eventWizard.jpg"
+            alt="Event Wizard"
+            title="Event Wizard"
+            githubLink="https://football-organizer.vercel.app/"
+            description={`A private project for organizing football events with
+                        friends. It allows users to create and manage groups of
+                        users, send email invitations and reminders, and track
+                        payment statuses using the Gmail API and PayPal emails.`}
+        />
+    </div>
+</Layout>

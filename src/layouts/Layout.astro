@@ -1,0 +1,91 @@
+---
+import { SEO, type Props as SeoProps } from 'astro-seo'
+import { ViewTransitions } from 'astro:transitions'
+import { BASE_URL } from '../../config'
+import Footer from '../components/Footer.astro'
+import Navbar from '../components/Navbar.astro'
+
+const DEFAULT_SEO: SeoProps = {
+    titleTemplate: '%s | Enis Zejnilovic',
+    titleDefault: 'Enis Zejnilovic Portfolio',
+    description: `Discover the portfolio of a skilled Full-stack software engineer and project manager based in Cologne, 
+            with experience in various areas of computer science, including machine learning and web development.  
+            Specialized in React, TypeScript, and Next.js, passionate about learning new technologies 
+            and working in teams. Get in touch to discuss potential projects or opportunities.`,
+
+    openGraph: {
+        basic: {
+            title: 'Enis Zejnilovic Portfolio',
+            url: BASE_URL,
+            type: 'website',
+            image: `${BASE_URL}/images/portfolio.png`,
+        },
+        optional: {
+            description:
+                'Discover the portfolio of a skilled Full-stack software engineer and project manager based in Cologne',
+        },
+        image: {
+            alt: 'Enis Zejnilovic Portfolio Screenshot',
+        },
+    },
+    extend: {
+        link: [
+            {
+                rel: 'icon',
+                type: 'image/svg+xml',
+                href: '/favicon.svg',
+            },
+        ],
+    },
+}
+
+const { seo } = Astro.props
+const finalSeo: SeoProps = {
+    ...DEFAULT_SEO,
+    ...seo,
+    openGraph: DEFAULT_SEO.openGraph
+        ? { ...DEFAULT_SEO.openGraph, ...seo?.openGraph }
+        : undefined,
+    extend: {
+        link: [
+            ...(DEFAULT_SEO.extend?.link ?? []),
+            ...(seo?.extend?.link ?? []),
+        ],
+    },
+}
+---
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <SEO {...finalSeo} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta
+            name="keywords"
+            content="HTML, CSS, JavaScript, TypeScript, NodeJS, ReactJS, NextJS, Astro"
+        />
+
+        <meta name="author" content="Enis Zejnilovic" />
+        <meta name="generator" content={Astro.generator} />
+
+        <link
+            rel="preload"
+            href="/fonts/Rubik-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+
+        <title>Enis Zejnilovic Portfolio</title>
+        <ViewTransitions />
+    </head>
+
+    <body class="bg-slate-800 text-white flex flex-col">
+        <div class="fixed w-full z-10">
+            <Navbar />
+        </div>
+        <slot />
+        <Footer />
+    </body>
+</html>
