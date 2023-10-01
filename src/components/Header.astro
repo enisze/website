@@ -1,11 +1,59 @@
 ---
-import Link from './Link.astro'
+import { Astronav, MenuIcon, MenuItems } from 'astro-navbar'
+import Item from './Item.astro'
+
+const menuitems = [
+    {
+        title: 'About',
+        path: '#about',
+    },
+    {
+        title: 'Skills',
+        path: '#skills',
+    },
+    {
+        title: 'Projects',
+        path: '#projects',
+    },
+    {
+        title: 'Experience',
+        path: '#experience',
+    },
+    {
+        title: 'Education',
+        path: '#education',
+    },
+    {
+        title: 'Contact',
+        path: '#contact',
+    },
+]
 ---
 
-<nav class="flex flex-wrap gap-4 w-full p-4 justify-center bg-slate-900">
-    <Link href="#skills">Skills</Link>
-    <Link href="#projects">Projects</Link>
-    <Link href="#experience">Experience</Link>
-    <Link href="#education">Education</Link>
-    <Link href="#contact">Contact</Link>
-</nav>
+<header
+    class="flex flex-col lg:flex-row justify-between items-center my-5 lg:my-0"
+>
+    <Astronav>
+        <div
+            class="flex p-5 lg:w-auto w-full items-center justify-between bg-white dark:bg-gray-900 fixed z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600"
+        >
+            <span> Enis Zejnilovic</span>
+            <div class="block lg:hidden">
+                <MenuIcon />
+            </div>
+        </div>
+        <MenuItems class="hidden w-full lg:flex">
+            <ul
+                class="absolute top-4 lg:top-0 right-0 flex w-fit lg:w-full p-5 lg:rounded-b-none flex-col lg:flex-row lg:gap-3 items-end bg-gray-900 rounded-b-xl lg:border-b border-gray-200 dark:border-gray-600 lg:justify-center"
+            >
+                {
+                    menuitems.map((item, index) => (
+                        <li>
+                            <Item href={item.path}>{item.title}</Item>
+                        </li>
+                    ))
+                }
+            </ul>
+        </MenuItems>
+    </Astronav>
+</header>
