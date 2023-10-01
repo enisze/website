@@ -22,9 +22,7 @@ const { src, alt, description, title, href } = Astro.props
                 alt={alt}
                 width={932}
                 height={910}
-                class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full ${
-                    alt.includes('Teampilot') && 'md:max-w-[50vw]'
-                }`}
+                class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full`}
                 decoding="async"
                 format="avif"
                 loading="lazy"
