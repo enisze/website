@@ -5,19 +5,30 @@ type Props = {
     src: string
     alt: string
     githubLink?: string
-    pageLink?: string
+    projectLink?: string
     localLink?: string
     title: string
     description: string
 }
 
-const { src, alt, description, title, githubLink, pageLink, localLink } =
+const { src, alt, description, title, githubLink, projectLink, localLink } =
     Astro.props
 ---
 
 <div
-    class="flex flex-col md:flex-row h-full rounded-xl shadow-lg shadow-slate-950"
+    class="relative flex flex-col md:flex-row h-full rounded-xl shadow-lg shadow-slate-950"
 >
+    {
+        githubLink && (
+            <a href={githubLink} class="absolute top-1 left-1">
+                <img
+                    src="/images/stack/github.svg"
+                    alt={`Github Link to Project ${githubLink}`}
+                    class:list={['h-8 w-8']}
+                />
+            </a>
+        )
+    }
     {
         src ? (
             <a href={localLink}>
@@ -39,7 +50,7 @@ const { src, alt, description, title, githubLink, pageLink, localLink } =
 
     <div class="flex self-center flex-col p-4 gap-y-2 w-full">
         <h1 class="text-xl font-bold">
-            <a href={pageLink} target="_blank" rel="noopener noreferrer">
+            <a href={projectLink} target="_blank" rel="noopener noreferrer">
                 {title}
             </a>
         </h1>
