@@ -1,20 +1,21 @@
 ---
-import Project from '../../components/Project.astro'
 import Layout from '../../layouts/Layout.astro'
+
+import { Image } from 'astro:assets'
 ---
 
 <Layout>
     <div>
         <div>test</div>
-        <Project
+        <Image
             src="/images/eventWizard.jpg"
-            alt="Event Wizard"
-            title="Event Wizard"
-            githubLink="https://football-organizer.vercel.app/"
-            description={`A private project for organizing football events with
-                        friends. It allows users to create and manage groups of
-                        users, send email invitations and reminders, and track
-                        payment statuses using the Gmail API and PayPal emails.`}
+            alt="Event Wizard User Screenshot"
+            width={932}
+            height={910}
+            class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full`}
+            decoding="async"
+            format="avif"
+            loading="lazy"
         />
     </div>
 </Layout>

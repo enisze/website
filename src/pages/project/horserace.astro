@@ -1,5 +1,21 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+
+import { Image } from 'astro:assets'
 ---
 
-<Layout />
+<Layout>
+    <div>
+        <div>test</div>
+        <Image
+            src="/images/horseRace.jpg"
+            alt="Event Wizard User Screenshot"
+            width={932}
+            height={910}
+            class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full`}
+            decoding="async"
+            format="avif"
+            loading="lazy"
+        />
+    </div>
+</Layout>

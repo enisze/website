@@ -1,9 +1,72 @@
 ---
+import Heading from '../components/Heading.astro'
+import Project from '../components/Project.astro'
 import Layout from '../layouts/Layout.astro'
 
-import ProjectsComp from '../components/Parts/Projects.astro'
+//TODO: Add github links + add icons for which frameworks were used. Add filler image, if image no available. Mark projects as personal, open source, commercial
 ---
 
 <Layout>
-    <ProjectsComp />
+    <section class="space-y-4 scroll-m-16" id="projects">
+        <Heading>Projects</Heading>
+        <div class="flex flex-col gap-8">
+            <Project
+                src="/images/eventWizard.jpg"
+                alt="Event Wizard"
+                title="Event Wizard"
+                projectLink="https://football-organizer.vercel.app/"
+                githubLink="https://github.com/enisze/football-organizer"
+                localLink="/project/eventWizard"
+                description={`A private project for organizing football events with
+                        friends. It allows users to create and manage groups of
+                        users, send email invitations and reminders, and track
+                        payment statuses using the Gmail API and PayPal emails.`}
+            />
+            <Project
+                src="/images/proprate.jpg"
+                alt="Proprate"
+                title="Proprate"
+                projectLink="https://proprate.de/"
+                localLink="/project/proprate"
+                description={`I am currently managing this project. It's a nationwide
+                search project in Germany for properties with a focus on providing clear analyses
+                and transparent evaluations. It involves detailed environmental analysis,
+                access to an interactive dashboard, and PDF reports.`}
+            />
+            <Project
+                src="/images/teampilot.jpg"
+                alt="Teampilot"
+                title="Teampilot"
+                localLink="/project/teampilot"
+                projectLink="https://teampilot.ai/"
+                description={`This project involves launching AI platform "launchpads"
+                with various OpenAI chatbot integrations and functionalities, along
+                with document management capabilities.`}
+            />
+
+            <Project
+                src="/images/horserace.jpg"
+                alt="HorseRace"
+                title="HorseRace"
+                localLink="/project/horseRace"
+                githubLink="https://github.com/enisze/horseRace"
+                description={`Horserace is a private, fun app developed to simulate a horse race using a card
+                game. Players likely engage in a virtual race where the outcome is
+                determined by the cards drawn.`}
+            />
+
+            <Project
+                src="/images/neologism.jpg"
+                alt="Neologism 2.0"
+                title="Neologism 2.0"
+                githubLink="https://github.com/Semantic-Society/Neologism"
+                localLink="/project/neologism"
+                description={`Neologism 2.0 was part of my master's thesis and aimed to generatively
+                develop RDF (Resource Description Framework) models. RDF is commonly
+                used for representing and describing information on the web. This
+                project likely explored automated methods for creating
+                RDF data structures.`}
+            />
+        </div>
+    </section>
 </Layout>
