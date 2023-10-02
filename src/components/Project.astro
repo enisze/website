@@ -20,11 +20,23 @@ const { src, alt, description, title, githubLink, projectLink, localLink } =
 >
     {
         githubLink && (
-            <a href={githubLink} class="absolute top-1 left-1">
+            <a href={githubLink} class="absolute bottom-1 left-1">
                 <img
                     src="/images/stack/github.svg"
                     alt={`Github Link to Project ${githubLink}`}
-                    class:list={['h-8 w-8']}
+                    class:list={['h-9 w-9 invert bg-slate-950 rounded-full']}
+                />
+            </a>
+        )
+    }
+
+    {
+        projectLink && (
+            <a href={githubLink} class="absolute bottom-1 left-1">
+                <img
+                    src="/images/stack/github.svg"
+                    alt={`Link to Project ${projectLink}`}
+                    class:list={['h-9 w-9 invert bg-slate-950 rounded-full']}
                 />
             </a>
         )
