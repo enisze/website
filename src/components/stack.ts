@@ -1,4 +1,4 @@
-type StackLabel =
+export type StackLabel =
     | 'Typescript'
     | 'React'
     | 'Next.js'
@@ -37,6 +37,11 @@ type StackLabel =
     | 'VIM'
     | 'Bun'
     | 'Builder.io'
+    | 'Java'
+    | 'Docker'
+    | 'Angular'
+    | 'Expo'
+    | 'React Native'
 
 export type StackItem = {
     label: StackLabel
@@ -69,6 +74,13 @@ export const stacks: Stack[] = [
                 href: 'https://reactjs.org/',
                 isSmall: false,
                 baseColor: 'white',
+            },
+            {
+                label: 'React Native',
+                imgUrl: '/images/stack/dev-logo-react.svg',
+                href: 'https://reactnative.dev/',
+                isSmall: true,
+                // baseColor: 'white',
             },
             {
                 label: 'Next.js',
@@ -151,6 +163,13 @@ export const stacks: Stack[] = [
                 label: 'Builder.io',
                 imgUrl: '/images/stack/builderIO.svg',
                 href: 'https://www.builder.io/',
+                isSmall: true,
+                // baseColor: 'white',
+            },
+            {
+                label: 'Expo',
+                imgUrl: '/images/stack/expo.svg',
+                href: 'https://expo.dev/',
                 isSmall: true,
                 // baseColor: 'white',
             },
@@ -330,3 +349,11 @@ export const stacks: Stack[] = [
         ],
     },
 ]
+
+export const allItems = stacks.reduce<StackItem[]>((acc, x) => {
+    return [...acc, ...x.items]
+}, [])
+
+export const getItemsByLabels = (labels: StackLabel[]) => {
+    return allItems.filter((x) => labels.includes(x.label))
+}

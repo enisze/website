@@ -1,73 +1,24 @@
 ---
 import Heading from '../../components/Heading.astro'
 import Skill from '../../components/Skill.astro'
-import type { StackItem } from '../../components/stack'
+import { getItemsByLabels, type StackLabel } from '../../components/stack'
 import Layout from '../../layouts/Layout.astro'
 
 import { Image } from 'astro:assets'
 
-const skills: StackItem[] = [
-    {
-        label: 'React',
-        imgUrl: '/images/stack/dev-logo-react.svg',
-        href: 'https://reactjs.org/',
-        isSmall: false,
-        baseColor: 'white',
-    },
-    {
-        label: 'Tailwind',
-        imgUrl: '/images/stack/tailwind-css-logo-vector.svg',
-        href: 'https://tailwindcss.com/',
-        isSmall: false,
-    },
-    {
-        label: 'Next.js',
-        imgUrl: '/images/stack/next-js-seeklogo.com.svg',
-        href: 'https://nextjs.org/',
-        isSmall: false,
-        baseColor: 'white',
-    },
-    {
-        href: 'https://www.typescriptlang.org/',
-        imgUrl: '/images/stack/dev-logo-ts.svg',
-        isSmall: true,
-        label: 'Typescript',
-        baseColor: 'white',
-    },
-    {
-        label: 'tRPC',
-        imgUrl: '/images/stack/trpc.svg',
-        href: 'https://trpc.io/',
-        isSmall: false,
-    },
-    {
-        label: 'Prisma',
-        imgUrl: '/images/stack/prisma.svg',
-        href: 'https://www.prisma.io/',
-        isSmall: false,
-        baseColor: 'black',
-    },
-    {
-        label: 'PlanetScale',
-        imgUrl: '/images/stack/planetscale.svg',
-        href: 'https://planetscale.com/',
-        isSmall: true,
-        baseColor: 'white',
-    },
-    {
-        label: 'Redis',
-        imgUrl: '/images/stack/redis.svg',
-        href: 'https://redis.io/',
-        isSmall: false,
-    },
-    {
-        label: 'Vercel',
-        imgUrl: '/images/stack/Vercel.svg',
-        href: 'https://vercel.com/',
-        isSmall: false,
-        baseColor: 'white',
-    },
+const labels: StackLabel[] = [
+    'React',
+    'Typescript',
+    'Tailwind',
+    'Next.js',
+    'tRPC',
+    'Prisma',
+    'PlanetScale',
+    'Redis',
+    'Vercel',
 ]
+
+const skills = getItemsByLabels(labels)
 ---
 
 <Layout>
@@ -88,5 +39,22 @@ const skills: StackItem[] = [
         <div class="flex gap-3 flex-wrap">
             {skills.map((item) => <Skill item={item} />)}
         </div>
+
+        <span>
+            This web app allows users to organize and schedule events. It is
+            focused on football events, which I organize for my friends and me.
+            The group page displays a calendar view of upcoming events,
+            including the date, time, location, and number of current
+            participants. Members of the group can click on individual events to
+            view more details or sign up. Event organizers are able to create
+            new scheduled events, setting the relevant details. Members can then
+            set their status of the event (yes, maybe, no). The members pay via
+            PayPal and can see their payment status due to the use of a cronjob,
+            which reads my emails checking for paypal mails of the corresponding
+            user. This is due to the circumstance, that PayPal raises fees for
+            every payment. The functionality provides a simple yet effective way
+            for football enthusiasts to find and schedule pick up games through
+            a centralized online system.
+        </span>
     </div>
 </Layout>
