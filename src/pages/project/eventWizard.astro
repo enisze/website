@@ -22,39 +22,42 @@ const skills = getItemsByLabels(labels)
 ---
 
 <Layout>
-    <Heading>Event Wizard</Heading>
-    <div>
-        <Image
-            src="/images/eventWizard.jpg"
-            alt="Event Wizard User Screenshot"
-            width={932}
-            height={910}
-            class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full`}
-            decoding="async"
-            format="avif"
-            loading="lazy"
-        />
+    <div class="flex flex-col gap-y-2">
+        <Heading>Event Wizard</Heading>
+        <div>
+            <Image
+                src="/images/eventWizard.jpg"
+                alt="Event Wizard User Screenshot"
+                width={932}
+                height={910}
+                class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full`}
+                decoding="async"
+                format="avif"
+                loading="lazy"
+            />
 
-        <h2>Main Technologies used</h2>
-        <div class="flex gap-3 flex-wrap">
-            {skills.map((item) => <Skill item={item} />)}
+            <h2>Main Technologies used</h2>
+            <div class="flex gap-3 flex-wrap">
+                {skills.map((item) => <Skill item={item} />)}
+            </div>
+
+            <span>
+                This web app allows users to organize and schedule events. It is
+                focused on football events, which I organize for my friends and
+                me. The group page displays a calendar view of upcoming events,
+                including the date, time, location, and number of current
+                participants. Members of the group can click on individual
+                events to view more details or sign up. Event organizers are
+                able to create new scheduled events, setting the relevant
+                details. Members can then set their status of the event (yes,
+                maybe, no). The members pay via PayPal and can see their payment
+                status due to the use of a cronjob, which reads my emails
+                checking for paypal mails of the corresponding user. This is due
+                to the circumstance, that PayPal raises fees for every payment.
+                The functionality provides a simple yet effective way for
+                football enthusiasts to find and schedule pick up games through
+                a centralized online system.
+            </span>
         </div>
-
-        <span>
-            This web app allows users to organize and schedule events. It is
-            focused on football events, which I organize for my friends and me.
-            The group page displays a calendar view of upcoming events,
-            including the date, time, location, and number of current
-            participants. Members of the group can click on individual events to
-            view more details or sign up. Event organizers are able to create
-            new scheduled events, setting the relevant details. Members can then
-            set their status of the event (yes, maybe, no). The members pay via
-            PayPal and can see their payment status due to the use of a cronjob,
-            which reads my emails checking for paypal mails of the corresponding
-            user. This is due to the circumstance, that PayPal raises fees for
-            every payment. The functionality provides a simple yet effective way
-            for football enthusiasts to find and schedule pick up games through
-            a centralized online system.
-        </span>
     </div>
 </Layout>
