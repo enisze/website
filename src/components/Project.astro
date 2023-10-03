@@ -82,12 +82,18 @@ const {
 
     <div class="flex self-center flex-col p-4 gap-y-2 w-full">
         <h1 class="text-xl font-bold">
-            <a href={projectLink} target="_blank" rel="noopener noreferrer">
+            <a href={localLink}>
                 {title}
             </a>
         </h1>
         <span>
             {description}
         </span>
+        <a
+            href={localLink}
+            class="rounded-xl p-2 bg-slate-900 shadow-lg w-fit self-end"
+        >
+            More Details</a
+        >
     </div>
 </div>
