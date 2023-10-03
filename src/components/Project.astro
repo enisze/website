@@ -9,56 +9,76 @@ type Props = {
     localLink?: string
     title: string
     description: string
+    year: string
 }
 
-const { src, alt, description, title, githubLink, projectLink, localLink } =
-    Astro.props
+const {
+    src,
+    alt,
+    description,
+    title,
+    githubLink,
+    projectLink,
+    localLink,
+    year,
+} = Astro.props
 ---
 
 <div
-    class="relative flex flex-col md:flex-row h-full rounded-xl shadow-lg shadow-slate-950"
+    class="flex flex-col md:flex-row h-full rounded-xl shadow-lg shadow-slate-950"
 >
-    {
-        githubLink && (
-            <a href={githubLink} class="absolute bottom-1 left-1">
-                <img
-                    src="/images/stack/github.svg"
-                    alt={`Github Link to Project ${githubLink}`}
-                    class:list={['h-9 w-9 invert bg-slate-950 rounded-full']}
-                />
-            </a>
-        )
-    }
+    <div class="relative">
+        <div class="absolute bottom-1 left-1 flex items-center">
+            {
+                githubLink && (
+                    <a href={githubLink}>
+                        <img
+                            src="/images/stack/github.svg"
+                            alt={`Github Link to Project ${githubLink}`}
+                            class:list={[
+                                'h-9 w-9 invert bg-slate-950 rounded-full',
+                            ]}
+                        />
+                    </a>
+                )
+            }
 
-    {
-        projectLink && (
-            <a href={githubLink} class="absolute bottom-1 left-1">
-                <img
-                    src="/images/stack/github.svg"
-                    alt={`Link to Project ${projectLink}`}
-                    class:list={['h-9 w-9 invert bg-slate-950 rounded-full']}
-                />
-            </a>
-        )
-    }
-    {
-        src ? (
-            <a href={localLink}>
-                <Image
-                    src={src}
-                    alt={alt}
-                    width={932}
-                    height={910}
-                    class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full`}
-                    decoding="async"
-                    format="avif"
-                    loading="lazy"
-                />
-            </a>
-        ) : (
-            <slot />
-        )
-    }
+            {
+                projectLink && (
+                    <a href={projectLink}>
+                        <img
+                            src="/images/icons/link.svg"
+                            alt={`Link to Project ${projectLink}`}
+                            class:list={[
+                                'h-9 w-9 rounded-full bg-white invert p-1',
+                            ]}
+                        />
+                    </a>
+                )
+            }
+        </div>
+        {
+            src ? (
+                <a href={localLink}>
+                    <Image
+                        src={src}
+                        alt={alt}
+                        width={932}
+                        height={910}
+                        class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full`}
+                        decoding="async"
+                        format="avif"
+                        loading="lazy"
+                    />
+                </a>
+            ) : (
+                <slot />
+            )
+        }
+        <div class="absolute bottom-1 right-1 rounded-xl bg-slate-800 p-1">
+            {year}
+        </div>
+    </div>
 
     <div class="flex self-center flex-col p-4 gap-y-2 w-full">
         <h1 class="text-xl font-bold">
