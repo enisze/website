@@ -1,4 +1,5 @@
 ---
+import Heading from '../../components/Heading.astro'
 import Skill from '../../components/Skill.astro'
 import type { StackItem } from '../../components/stack'
 import Layout from '../../layouts/Layout.astro'
@@ -70,8 +71,8 @@ const skills: StackItem[] = [
 ---
 
 <Layout>
+    <Heading>Event Wizard</Heading>
     <div>
-        <div>test</div>
         <Image
             src="/images/eventWizard.jpg"
             alt="Event Wizard User Screenshot"
@@ -83,6 +84,9 @@ const skills: StackItem[] = [
             loading="lazy"
         />
 
-        {skills.map((item) => <Skill item={item} />)}
+        <h2>Main Technologies used</h2>
+        <div class="flex gap-3 flex-wrap">
+            {skills.map((item) => <Skill item={item} />)}
+        </div>
     </div>
 </Layout>
