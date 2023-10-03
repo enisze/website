@@ -1,7 +1,10 @@
 ---
+import Heading from '../../components/Heading.astro'
 import Skill from '../../components/Skill.astro'
 import type { StackItem } from '../../components/stack'
 import Layout from '../../layouts/Layout.astro'
+
+import { Image } from 'astro:assets'
 //TODO: add java, angular, docker here
 
 const skills: StackItem[] = [
@@ -30,6 +33,19 @@ const skills: StackItem[] = [
 ---
 
 <Layout>
+    <Heading>PropRate</Heading>
+
+    <Image
+        src="/images/neologism.jpg"
+        alt="Nologism Screenshot"
+        width={932}
+        height={910}
+        class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full`}
+        decoding="async"
+        format="avif"
+        loading="lazy"
+    />
+
     <h2>Main Technologies used</h2>
     <div class="flex gap-3 flex-wrap">
         {skills.map((item) => <Skill item={item} />)}

@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import Heading from '../../components/Heading.astro'
 import Skill from '../../components/Skill.astro'
 import { getItemsByLabels, type StackLabel } from '../../components/stack'
@@ -17,6 +18,17 @@ const skills = getItemsByLabels(labels)
 
 <Layout>
     <Heading>PropRate</Heading>
+    <Image
+        src="/images/proprate.jpg"
+        alt="PropRate Screenshot"
+        width={932}
+        height={910}
+        class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full`}
+        decoding="async"
+        format="avif"
+        loading="lazy"
+    />
+
     <h2>Main Technologies used</h2>
     <div class="flex gap-3 flex-wrap">
         {skills.map((item) => <Skill item={item} />)}
