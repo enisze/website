@@ -1,14 +1,26 @@
 ---
+import Skill from '../../components/Skill.astro'
+import type { StackItem } from '../../components/stack'
 import Layout from '../../layouts/Layout.astro'
 
 import { Image } from 'astro:assets'
+
+const skills: StackItem[] = [
+    {
+        href: 'https://www.typescriptlang.org/',
+        imgUrl: '/images/stack/dev-logo-ts.svg',
+        isSmall: true,
+        label: 'Typescript',
+        baseColor: 'white',
+    },
+]
 ---
 
 <Layout>
     <div>
         <div>test</div>
         <Image
-            src="/images/horseRace.jpg"
+            src="/images/horserace.jpg"
             alt="Event Wizard User Screenshot"
             width={932}
             height={910}
@@ -17,5 +29,18 @@ import { Image } from 'astro:assets'
             format="avif"
             loading="lazy"
         />
+
+        <Image
+            src="/images/horseRace2.png"
+            alt="Event Wizard User Screenshot"
+            width={932}
+            height={910}
+            class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full`}
+            decoding="async"
+            format="avif"
+            loading="lazy"
+        />
+
+        {skills.map((item) => <Skill item={item} />)}
     </div>
 </Layout>

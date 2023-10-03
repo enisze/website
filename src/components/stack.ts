@@ -46,6 +46,8 @@ export type StackItem = {
     baseColor?: 'white' | 'black'
 }
 
+//TODO: Add expo, react native, next auth,
+
 type Stack = {
     title: string
     items: StackItem[]

@@ -1,7 +1,72 @@
 ---
+import Skill from '../../components/Skill.astro'
+import type { StackItem } from '../../components/stack'
 import Layout from '../../layouts/Layout.astro'
 
 import { Image } from 'astro:assets'
+
+const skills: StackItem[] = [
+    {
+        label: 'React',
+        imgUrl: '/images/stack/dev-logo-react.svg',
+        href: 'https://reactjs.org/',
+        isSmall: false,
+        baseColor: 'white',
+    },
+    {
+        label: 'Tailwind',
+        imgUrl: '/images/stack/tailwind-css-logo-vector.svg',
+        href: 'https://tailwindcss.com/',
+        isSmall: false,
+    },
+    {
+        label: 'Next.js',
+        imgUrl: '/images/stack/next-js-seeklogo.com.svg',
+        href: 'https://nextjs.org/',
+        isSmall: false,
+        baseColor: 'white',
+    },
+    {
+        href: 'https://www.typescriptlang.org/',
+        imgUrl: '/images/stack/dev-logo-ts.svg',
+        isSmall: true,
+        label: 'Typescript',
+        baseColor: 'white',
+    },
+    {
+        label: 'tRPC',
+        imgUrl: '/images/stack/trpc.svg',
+        href: 'https://trpc.io/',
+        isSmall: false,
+    },
+    {
+        label: 'Prisma',
+        imgUrl: '/images/stack/prisma.svg',
+        href: 'https://www.prisma.io/',
+        isSmall: false,
+        baseColor: 'black',
+    },
+    {
+        label: 'PlanetScale',
+        imgUrl: '/images/stack/planetscale.svg',
+        href: 'https://planetscale.com/',
+        isSmall: true,
+        baseColor: 'white',
+    },
+    {
+        label: 'Redis',
+        imgUrl: '/images/stack/redis.svg',
+        href: 'https://redis.io/',
+        isSmall: false,
+    },
+    {
+        label: 'Vercel',
+        imgUrl: '/images/stack/Vercel.svg',
+        href: 'https://vercel.com/',
+        isSmall: false,
+        baseColor: 'white',
+    },
+]
 ---
 
 <Layout>
@@ -17,5 +82,7 @@ import { Image } from 'astro:assets'
             format="avif"
             loading="lazy"
         />
+
+        {skills.map((item) => <Skill item={item} />)}
     </div>
 </Layout>

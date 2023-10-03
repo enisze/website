@@ -1,0 +1,46 @@
+---
+import Skill from '../../components/Skill.astro'
+import type { StackItem } from '../../components/stack'
+import Layout from '../../layouts/Layout.astro'
+
+const skills: StackItem[] = [
+    {
+        label: 'React',
+        imgUrl: '/images/stack/dev-logo-react.svg',
+        href: 'https://reactjs.org/',
+        isSmall: false,
+        baseColor: 'white',
+    },
+    {
+        label: 'Tailwind',
+        imgUrl: '/images/stack/tailwind-css-logo-vector.svg',
+        href: 'https://tailwindcss.com/',
+        isSmall: false,
+    },
+    {
+        label: 'Next.js',
+        imgUrl: '/images/stack/next-js-seeklogo.com.svg',
+        href: 'https://nextjs.org/',
+        isSmall: false,
+        baseColor: 'white',
+    },
+    {
+        href: 'https://www.typescriptlang.org/',
+        imgUrl: '/images/stack/dev-logo-ts.svg',
+        isSmall: true,
+        label: 'Typescript',
+        baseColor: 'white',
+    },
+    {
+        label: 'Vercel',
+        imgUrl: '/images/stack/Vercel.svg',
+        href: 'https://vercel.com/',
+        isSmall: false,
+        baseColor: 'white',
+    },
+]
+---
+
+<Layout>
+    {skills.map((item) => <Skill item={item} />)}
+</Layout>
