@@ -28,9 +28,7 @@ const adjustedEntries = entries.map((entry, index) => {
                     <time class="mb-1 text-sm font-normal leading-none text-gray-500 dark:text-gray-300">
                         {entry.time}
                     </time>
-                    <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
-                        {entry.title}
-                    </h2>
+                    <h2 class="text-lg font-semibold">{entry.title}</h2>
                     <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
                         {entry.description.map((desc) => {
                             return (
