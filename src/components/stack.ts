@@ -51,8 +51,6 @@ export type StackItem = {
     baseColor?: 'white' | 'black'
 }
 
-//TODO: Add expo, react native, next auth,
-
 type Stack = {
     title: string
     items: StackItem[]
@@ -80,7 +78,7 @@ export const stacks: Stack[] = [
                 imgUrl: '/images/stack/dev-logo-react.svg',
                 href: 'https://reactnative.dev/',
                 isSmall: true,
-                // baseColor: 'white',
+                baseColor: 'white',
             },
             {
                 label: 'Next.js',
@@ -131,6 +129,7 @@ export const stacks: Stack[] = [
                 imgUrl: '/images/stack/Amazon_Web_Services_Logo.svg',
                 href: 'https://aws.amazon.com/de/?nc2=h_lg',
                 isSmall: false,
+                baseColor: 'white',
             },
             {
                 label: 'Datadog',
@@ -312,7 +311,6 @@ export const stacks: Stack[] = [
                 imgUrl: '/images/stack/VIM-Dark.svg',
                 href: 'https://www.vim.org/',
                 isSmall: false,
-                baseColor: 'white',
             },
             {
                 label: 'GitHub',
