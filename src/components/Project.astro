@@ -25,7 +25,7 @@ const {
 ---
 
 <div
-    class="flex flex-col md:flex-row h-full rounded-xl shadow-lg shadow-slate-950"
+    class="flex relative flex-col md:flex-row h-full rounded-xl shadow-lg shadow-slate-950"
 >
     <div class="relative">
         <div class="absolute bottom-1 left-1 flex items-center">
@@ -65,7 +65,7 @@ const {
                         alt={alt}
                         width={932}
                         height={910}
-                        class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full`}
+                        class={`rounded-xl md:rounded-r-none rounded-b-none md:rounded-b-xl md:max-w-[40vw] md:h-full`}
                         decoding="async"
                         format="avif"
                         loading="lazy"
@@ -76,13 +76,15 @@ const {
             )
         }
         <div
-            class="absolute bottom-1 right-1 rounded-xl bg-gray-200 dark:bg-slate-800 p-1"
+            class="absolute bottom-2 right-2 rounded-xl bg-gray-200 dark:bg-slate-800 p-1"
         >
             {year}
         </div>
     </div>
 
-    <div class="flex self-center flex-col p-4 gap-y-2 w-full">
+    <div
+        class="flex sef-center flex-col p-4 pb-16 lg:px-4 lg:py-0 gap-y-2 w-full"
+    >
         <h1 class="text-xl font-bold">
             <a href={localLink}>
                 {title}
@@ -91,11 +93,12 @@ const {
         <span>
             {description}
         </span>
-        <a
-            href={localLink}
-            class="rounded-xl p-2 bg-gray-200 dark:bg-slate-900 shadow-lg w-fit self-end"
-        >
-            More Details</a
-        >
     </div>
+
+    <a
+        href={localLink}
+        class="absolute bottom-3 right-3 rounded-xl p-2 bg-gray-200 dark:bg-slate-900 shadow-lg w-fit whitespace-nowrap self-end"
+    >
+        More Details</a
+    >
 </div>
