@@ -8,20 +8,32 @@ import type { StackItem } from './stack'
 import { Image } from 'astro:assets'
 
 type Props = {
+    title: string
     skills: StackItem[]
     context: string
     maintenance: string
     githubLink?: string
     projectLink?: string
     description: string
+    imageSrcFirst: string
+    imageSrcSecond?: string
 }
 
-const { skills, githubLink, projectLink, context, description, maintenance } =
-    Astro.props
+const {
+    skills,
+    title,
+    githubLink,
+    projectLink,
+    context,
+    description,
+    maintenance,
+    imageSrcFirst,
+    imageSrcSecond,
+} = Astro.props
 ---
 
 <div class="flex flex-col gap-y-2">
-    <Heading>Event Wizard</Heading>
+    <Heading>{title}</Heading>
     <div class="flex flex-col-reverse md:flex-row gap-4 justify-between">
         <div class="flex flex-col gap-4">
             <h2
@@ -49,7 +61,7 @@ const { skills, githubLink, projectLink, context, description, maintenance } =
         </div>
 
         <Image
-            src="/images/eventWizard.jpg"
+            src={imageSrcFirst}
             alt="Event Wizard User Screenshot"
             width={932}
             height={910}
@@ -78,12 +90,26 @@ const { skills, githubLink, projectLink, context, description, maintenance } =
     </div>
     <span
         >{
-            description.split('<br/>').map((entry) => (
-                <span>
-                    {entry}
-                    <br />
-                    <br />
-                </span>
+            description.split('<br/>').map((entry, idx) => (
+                <>
+                    <span>
+                        {entry}
+                        <br />
+                        <br />
+                    </span>
+                    {idx === 2 && imageSrcSecond && (
+                        <Image
+                            src={imageSrcSecond}
+                            alt="Screenshot"
+                            width={932}
+                            height={910}
+                            class={`rounded-xl max-w-[90vw] md:max-w-[70vw]`}
+                            decoding="async"
+                            format="avif"
+                            loading="lazy"
+                        />
+                    )}
+                </>
             ))
         }</span
     >
