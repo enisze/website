@@ -1,5 +1,7 @@
 ---
 import { Image } from 'astro:assets'
+import GithubLink from './GithubLink.astro'
+import ProjectLink from './ProjectLink.astro'
 
 type Props = {
     src: string
@@ -29,33 +31,8 @@ const {
 >
     <div class="relative">
         <div class="absolute bottom-1 left-1 flex items-center">
-            {
-                githubLink && (
-                    <a href={githubLink}>
-                        <img
-                            src="/images/stack/github.svg"
-                            alt={`Github Link to Project ${githubLink}`}
-                            class:list={[
-                                'h-9 w-9 invert bg-slate-950 rounded-full',
-                            ]}
-                        />
-                    </a>
-                )
-            }
-
-            {
-                projectLink && (
-                    <a href={projectLink}>
-                        <img
-                            src="/images/icons/link.svg"
-                            alt={`Link to Project ${projectLink}`}
-                            class:list={[
-                                'h-9 w-9 rounded-full bg-white invert p-1',
-                            ]}
-                        />
-                    </a>
-                )
-            }
+            <GithubLink githubLink={githubLink} />
+            <ProjectLink projectLink={projectLink} />
         </div>
         {
             src ? (
