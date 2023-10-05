@@ -1,7 +1,7 @@
 ---
 import { Astronav, MenuIcon, MenuItems } from 'astro-navbar'
 import Item from './Item.astro'
-import ThemeIcon from './ThemeIcon.astro'
+import { ThemeIcon } from './ThemeIcon'
 
 const menuitems = [
     {
@@ -44,7 +44,7 @@ const menuitems = [
             <div
                 class="lg:hidden bg-inherit flex items-center gap-x-2 bg-white dark:bg-gray-900"
             >
-                <ThemeIcon />
+                <ThemeIcon client:only />
                 <div class="block lg:hidden">
                     <MenuIcon />
                 </div>
@@ -69,7 +69,7 @@ const menuitems = [
         <div
             class="hidden lg:flex z-20 w-fit bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-600 h-20 pr-4"
         >
-            <ThemeIcon />
+            <ThemeIcon client:only />
         </div>
     </Astronav>
 </header>
