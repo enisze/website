@@ -21,7 +21,7 @@ export const ThemeIcon = () => {
     }
 
     return (
-        <button onClick={handleToggleClick}>
+        <button onClick={handleToggleClick} aria-label="ThemeChanger">
             <svg
                 width="30px"
                 xmlns="http://www.w3.org/2000/svg"
