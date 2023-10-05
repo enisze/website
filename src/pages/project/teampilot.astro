@@ -1,7 +1,5 @@
 ---
-import { Image } from 'astro:assets'
-import Heading from '../../components/Heading.astro'
-import Skill from '../../components/Skill.astro'
+import ProjectDetails from '../../components/ProjectDetails.astro'
 import { getItemsByLabels, type StackLabel } from '../../components/stack'
 import Layout from '../../layouts/Layout.astro'
 
@@ -17,24 +15,14 @@ const skills = getItemsByLabels(labels)
 ---
 
 <Layout>
-    <div class="flex flex-col gap-y-2">
-        <Heading>Teampilot</Heading>
-        <Image
-            src="/images/teampilot.jpg"
-            alt="Teampilot Screenshot"
-            width={932}
-            height={910}
-            class={`rounded-xl md:rounded-r-none md:max-w-[40vw] md:h-full`}
-            decoding="async"
-            format="avif"
-            loading="lazy"
-        />
-        <h2>Main Technologies used</h2>
-        <div class="flex gap-3 flex-wrap">
-            {skills.map((item) => <Skill item={item} />)}
-        </div>
-
-        <span>
+    <ProjectDetails
+        title="Teampilot"
+        projectLink="https://teampilot.ai/"
+        context="Employed Project"
+        maintenance="Active"
+        skills={skills}
+        imageSrcFirst="/images/teampilot.jpg"
+        description={`
             Teampilot AI is an AI platform that allows teams to be more
             productive and generate more revenue in several ways: It can
             generate high-quality texts and images tailored to a brand quickly.
@@ -48,7 +36,6 @@ const skills = getItemsByLabels(labels)
             preprocessing of documents for time savings. In summary, Teampilot
             AI uses artificial intelligence to help teams create content,
             automate workflows, and increase productivity through data-driven
-            insights.
-        </span>
-    </div>
+            insights.`}
+    />
 </Layout>
