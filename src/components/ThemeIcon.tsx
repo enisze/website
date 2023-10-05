@@ -1,4 +1,17 @@
+import { useEffect } from 'react'
+
 export const ThemeIcon = () => {
+    useEffect(() => {
+        const theme = localStorage.getItem('theme')
+        const element = document.documentElement
+
+        if (theme === 'dark') {
+            element.classList.add('dark')
+        } else {
+            element.classList.remove('dark')
+        }
+    }, [])
+
     const handleToggleClick = () => {
         const element = document.documentElement
         element.classList.toggle('dark')
