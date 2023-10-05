@@ -1,48 +1,34 @@
 ---
-import Skill from '../../components/Skill.astro'
-import type { StackItem } from '../../components/stack'
+import ProjectDetails from '../../components/ProjectDetails.astro'
+import { getItemsByLabels, type StackLabel } from '../../components/stack'
 import Layout from '../../layouts/Layout.astro'
 
 //TODO: add astro
 
-const skills: StackItem[] = [
-    {
-        label: 'React',
-        imgUrl: '/images/stack/dev-logo-react.svg',
-        href: 'https://reactjs.org/',
-        isSmall: false,
-        baseColor: 'white',
-    },
-    {
-        label: 'Tailwind',
-        imgUrl: '/images/stack/tailwind-css-logo-vector.svg',
-        href: 'https://tailwindcss.com/',
-        isSmall: false,
-    },
-    {
-        label: 'Next.js',
-        imgUrl: '/images/stack/next-js-seeklogo.com.svg',
-        href: 'https://nextjs.org/',
-        isSmall: false,
-        baseColor: 'white',
-    },
-    {
-        href: 'https://www.typescriptlang.org/',
-        imgUrl: '/images/stack/dev-logo-ts.svg',
-        isSmall: true,
-        label: 'Typescript',
-        baseColor: 'white',
-    },
-    {
-        label: 'Vercel',
-        imgUrl: '/images/stack/Vercel.svg',
-        href: 'https://vercel.com/',
-        isSmall: false,
-        baseColor: 'white',
-    },
+const labels: StackLabel[] = [
+    'React',
+    'Typescript',
+    'Astro',
+    'Tailwind',
+    'Vercel',
 ]
+
+const skills = getItemsByLabels(labels)
 ---
 
 <Layout>
-    {skills.map((item) => <Skill item={item} />)}
+    <ProjectDetails
+        title="Portfolio"
+        context="Private Project"
+        maintenance="Active"
+        projectLink="https://website-nine-bice.vercel.app/"
+        githubLink="https://github.com/enisze/website"
+        description={`The portfolio project was created to try out Astro and improve my presence on the web.
+                It bundles information about myself regarding my education, experience and skills and allows 
+                anyone interested to contact me.
+
+    `}
+        imageSrcFirst="/images/portfolio.jpg"
+        skills={skills}
+    />
 </Layout>

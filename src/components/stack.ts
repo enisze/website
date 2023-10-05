@@ -42,6 +42,7 @@ export type StackLabel =
     | 'Angular'
     | 'Expo'
     | 'React Native'
+    | 'Astro'
 
 export type StackItem = {
     label: StackLabel
@@ -84,6 +85,13 @@ export const stacks: Stack[] = [
                 label: 'Next.js',
                 imgUrl: '/images/stack/next-js-seeklogo.com.svg',
                 href: 'https://nextjs.org/',
+                isSmall: false,
+                baseColor: 'white',
+            },
+            {
+                label: 'Astro',
+                imgUrl: '/images/stack/Astro.svg',
+                href: 'https://astro.build/',
                 isSmall: false,
                 baseColor: 'white',
             },
