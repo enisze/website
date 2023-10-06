@@ -38,7 +38,12 @@ if (Astro.request.method === 'POST') {
 }
 ---
 
-<Layout>
+<Layout
+    seo={{
+        description:
+            'Portfolio of Enis Zejnilovic, which is a Full-stack Developer and Project Manager from Germany.',
+    }}
+>
     <section class="space-y-4 scroll-m-16" id="contact">
         <Heading>Contact</Heading>
         <ContactForm />

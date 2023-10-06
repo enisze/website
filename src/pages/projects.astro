@@ -6,7 +6,12 @@ import Layout from '../layouts/Layout.astro'
 //TODO: Add github links + add icons for which frameworks were used. Add filler image, if image no available. Mark projects as personal, open source, commercial
 ---
 
-<Layout>
+<Layout
+    seo={{
+        description:
+            'Portfolio of Enis Zejnilovic, which is a Full-stack Developer and Project Manager from Germany.',
+    }}
+>
     <section class="space-y-4 scroll-m-16" id="projects">
         <Heading>Projects</Heading>
         <div class="flex flex-col gap-8">
