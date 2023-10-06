@@ -1,5 +1,12 @@
 ---
 const props = Astro.props
+
+const currentPath = Astro.url.pathname
+
+const { href } = props
+
+const isActive =
+    href === currentPath || (currentPath === '/' && href === '/#about')
 ---
 
 <a class="relative group" {...props}>
@@ -7,6 +14,7 @@ const props = Astro.props
         <slot />
     </span>
     <span
-        class="absolute -bottom-1 left-0 w-0 h-1 bg-blue-400 transition-all group-hover:w-full"
-    ></span>
+        class={`absolute -bottom-1 left-0 w-0 h-1 duration-500 bg-blue-400 transition-all group-hover:w-full ${
+            isActive && 'w-full'
+        }`}></span>
 </a>
