@@ -29,8 +29,10 @@ const {
 <div
     class="flex relative flex-col md:flex-row h-full rounded-xl shadow-lg shadow-slate-950"
 >
-    <div class="relative">
-        <div class="absolute bottom-1 left-1 flex items-center">
+    <div
+        class="relative md:rounded-r-none rounded-b-none rounded-xl md:rounded-l-xl overflow-hidden"
+    >
+        <div class="absolute bottom-1 left-1 flex gap-2 items-center z-10">
             <GithubLink githubLink={githubLink} />
             <ProjectLink projectLink={projectLink} />
         </div>
@@ -42,7 +44,7 @@ const {
                         alt={alt}
                         width={932}
                         height={910}
-                        class={`rounded-xl md:rounded-r-none rounded-b-none md:rounded-l-xl md:max-w-[40vw] md:h-full`}
+                        class={`ease-in-out duration-500 hover:scale-125 object-cover  md:w-[80vw] md:h-full`}
                         decoding="async"
                         format="avif"
                     />
