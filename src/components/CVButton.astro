@@ -1,0 +1,25 @@
+---
+import Link from './Link.astro'
+---
+
+<div class="flex flex-col gap-2 border p-8 mt-4 dark:border-white rounded-xl">
+    <span
+        >For more details about me you can&nbsp;
+        <Link download="Enis-Zejnilovic-CV.pdf" href="/data/Lebenslauf.pdf">
+            download my CV.
+        </Link>
+    </span>
+
+    <div class="flex">
+        <span>
+            I have a reference letter (in German) from my current CTO which you
+            can&nbsp;
+            <Link
+                download="Enis-Zejnilovic-reference.pdf"
+                href="/data/Referenz.pdf"
+            >
+                download as PDF.
+            </Link>
+        </span>
+    </div>
+</div>
