@@ -7,11 +7,12 @@ import Navbar from '../components/Navbar.astro'
 
 import './../globals.css'
 
+const description = `Portfolio of Enis Zejnilovic, a skilled Full-stack software engineer and project manager based in Cologne, with experience in various areas of computer science, including machine learning and web development. Specialized in React, TypeScript, and Next.js, passionate about learning new technologies and working in teams. Get in touch to discuss potential projects or opportunities.`
+
 const DEFAULT_SEO: SeoProps = {
     titleTemplate: '%s | Enis Zejnilovic',
     titleDefault: 'Enis Zejnilovic Portfolio',
-    description: `Discover the portfolio of a skilled Full-stack software engineer and project manager based in Cologne, with experience in various areas of computer science, including machine learning and web development. Specialized in React, TypeScript, and Next.js, passionate about learning new technologies and working in teams. Get in touch to discuss potential projects or opportunities.`,
-
+    description,
     openGraph: {
         basic: {
             title: 'Enis Zejnilovic Portfolio',
@@ -20,8 +21,7 @@ const DEFAULT_SEO: SeoProps = {
             image: `${BASE_URL}/images/preview.png`,
         },
         optional: {
-            description:
-                'Discover the portfolio of a skilled Full-stack software engineer and project manager based in Cologne',
+            description,
         },
         image: {
             alt: 'Enis Zejnilovic Portfolio Screenshot',
@@ -30,8 +30,7 @@ const DEFAULT_SEO: SeoProps = {
     twitter: {
         creator: 'Enis Zejnilovic',
         title: 'Enis Zejnilovic Portfolio',
-        description:
-            'Discover the portfolio of a skilled Full-stack software engineer and project manager based in Cologne',
+        description,
         card: 'summary_large_image',
         image: `${BASE_URL}/images/preview.png`,
         imageAlt: 'Portfolio Website Screenshot',
@@ -50,6 +49,7 @@ const DEFAULT_SEO: SeoProps = {
 const { seo } = Astro.props
 const finalSeo: SeoProps = {
     ...DEFAULT_SEO,
+    description,
     ...seo,
     openGraph: DEFAULT_SEO.openGraph
         ? { ...DEFAULT_SEO.openGraph, ...seo?.openGraph }
