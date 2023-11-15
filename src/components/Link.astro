@@ -9,7 +9,7 @@ const isActive =
     href === currentPath || (currentPath === '/' && href === '/#about')
 ---
 
-<a class="relative group" {...props}>
+<a class="relative group" rel="follow" {...props}>
     <span>
         <slot />
     </span>
