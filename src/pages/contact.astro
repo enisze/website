@@ -38,7 +38,11 @@ if (Astro.request.method === 'POST') {
 }
 ---
 
-<Layout>
+<Layout
+    seo={{
+        title: 'Contact',
+    }}
+>
     <section class="space-y-4 scroll-m-16" id="contact">
         <Heading>Contact</Heading>
         <ContactForm />
