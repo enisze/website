@@ -5,7 +5,12 @@ import Timeline from '../components/Timeline.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout>
+<Layout
+    seo={{
+        description:
+            "Explore Enis Zejnilovic's educational journey in computer science. Enis holds a Master's degree from RWTH Aachen University, specializing in RDF Schema Generation, Artificial Intelligence, and Data Mining. Additionally, he pursued international experiences with exchanges at the Thai German Graduate School of Engineering in Bangkok and Czech Technical University",
+    }}
+>
     <section class="space-y-4 scroll-m-16" id="education">
         <Heading>Education</Heading>
         <Timeline

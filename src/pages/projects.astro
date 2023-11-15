@@ -6,7 +6,12 @@ import Layout from '../layouts/Layout.astro'
 //TODO: Add github links + add icons for which frameworks were used. Add filler image, if image no available. Mark projects as personal, open source, commercial
 ---
 
-<Layout>
+<Layout
+    seo={{
+        description:
+            "Explore Enis Zejnilovic's portfolio of software development projects. From the interactive portfolio website built with Astro to innovative applications like Event Wizard, Proprate, Teampilot AI, HorseRace game, and Neologism 2.0 - discover a range of projects showcasing technical skills, creativity, and a passion for building meaningful software solutions. Check out the GitHub links for each project and witness the diverse technologies and frameworks utilized.",
+    }}
+>
     <section class="space-y-4 scroll-m-16" id="projects">
         <Heading>Projects</Heading>
         <div class="flex flex-col gap-8">
