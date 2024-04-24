@@ -22,4 +22,22 @@ export default defineConfig({
         robotsTxt(),
     ],
     adapter: cloudflare(),
+    vite: {
+        ssr: {
+            external: [
+                'crypto',
+                'net',
+                'url',
+                'util',
+                'http',
+                'https',
+                'stream',
+                'zlib',
+                'tls',
+                'path',
+                'fs',
+                'assert',
+            ],
+        },
+    },
 })
