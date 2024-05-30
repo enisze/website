@@ -1,4 +1,5 @@
 import DotPattern from '@/components/DotPattern'
+import { ThemeProvider } from '@/components/ThemeProvider'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -64,19 +65,26 @@ export default function RootLayout({
       </head>
 
       <body className='dark:bg-slate-800 text-black dark:text-white flex flex-col'>
-        <div className='fixed w-full z-20'>
-          <Navbar />
-        </div>
-        <div className='py-24 px-8'>
-          <DotPattern
-            className={cn(
-              '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',
-              'absolute h-screen -z-10'
-            )}
-          />
-          {children}
-        </div>
-        <Footer />
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className='fixed w-full z-20'>
+            <Navbar />
+          </div>
+          <div className='py-24 px-8'>
+            <DotPattern
+              className={cn(
+                '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',
+                'absolute h-screen -z-10'
+              )}
+            />
+            {children}
+          </div>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )

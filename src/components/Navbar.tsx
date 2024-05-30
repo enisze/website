@@ -1,6 +1,6 @@
 import { MenuIcon } from 'lucide-react'
 import { Item } from './Item'
-import { ThemeIcon } from './ThemeIcon'
+import { ThemeToggle } from './ThemeToggle'
 
 const menuitems = [
   {
@@ -34,7 +34,7 @@ export const Navbar = () => {
     <header className='flex flex-col md:flex-row items-center justify-between p-1 lg:my-0 fixed top-0 left-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-600'>
       <a href='/'>Enis Zejnilovic</a>
       <div className='lg:hidden bg-inherit flex items-center gap-x-2 bg-white dark:bg-gray-900'>
-        <ThemeIcon />
+        <ThemeToggle />
         <div className='flex lg:hidden'>
           <MenuIcon />
         </div>
@@ -47,7 +47,7 @@ export const Navbar = () => {
         ))}
       </ul>
       <div className='hidden lg:flex'>
-        <ThemeIcon />
+        <ThemeToggle />
       </div>
     </header>
   )
