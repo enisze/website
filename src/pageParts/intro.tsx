@@ -1,34 +1,26 @@
-import { TypeAnimation } from 'react-type-animation'
+import WordRotate from '@/components/WordRotate'
 import { About } from '../components/About'
 import { ImageWithConfetti } from '../components/ImageWithConfetti'
-import { Paragraph } from '../components/Paragraph'
 
 export const Intro = () => (
   <div className='flex flex-col' id='about'>
-    <div className='flex justify-center text-3xl'>
-      <h1 className='whitespace-pre-line md:whitespace-normal'>
-        Hi, I'm Enis Zejnilovic,
-        <Paragraph className='whitespace-pre-line'>
-          <TypeAnimation
-            sequence={[
-              ' an Anime Fan.',
-              1000,
-              ' a Sports Enthusiast.',
-              1000,
-              ' a Teamplayer.',
-              1000,
-              ' a Project Manager.',
-              1000,
-              ' a Full-stack Developer.',
-              1000
-            ]}
-            wrapper='span'
-            speed={50}
-            repeat={Infinity}
-          />
-        </Paragraph>
-      </h1>
-    </div>
+    <h1 className='flex items-center jusify-center text-3xl w-full'>
+      Hi, I'm Enis Zejnilovic,{'  '}
+      {/* <Paragraph className='whitespace-pre-line'> */}
+      <WordRotate
+        words={[
+          ' a Software Developer.',
+          ' an Anime Fan.',
+          ' a Sports Enthusiast.',
+          ' a Teamplayer.',
+          ' a Project Manager.',
+          ' a Full-stack Developer.'
+        ]}
+        className='text-3xl font-bold text-black dark:text-white'
+        // duration={100}
+      />
+      {/* </Paragraph> */}
+    </h1>
 
     <div className='grid gap-6 grid-cols-1 lg:grid-cols-2'>
       <div className='order-last md:order-1'>

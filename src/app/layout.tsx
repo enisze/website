@@ -1,3 +1,5 @@
+import DotPattern from '@/components/DotPattern'
+import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { BASE_URL } from '../../config'
@@ -65,7 +67,15 @@ export default function RootLayout({
         <div className='fixed w-full z-20'>
           <Navbar />
         </div>
-        <div className='py-24 px-8'>{children}</div>
+        <div className='py-24 px-8'>
+          <DotPattern
+            className={cn(
+              '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',
+              'absolute h-screen -z-10'
+            )}
+          />
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
