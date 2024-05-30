@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { BorderBeam } from './BorderBeam'
 import { GithubLink } from './GithubLink'
 import { ProjectLink } from './ProjectLink'
 
@@ -27,6 +28,7 @@ export const Project = (props: Props) => {
 
   return (
     <div className='flex relative flex-col md:flex-row h-full rounded-xl shadow-lg shadow-slate-950'>
+      <BorderBeam />
       <div className='relative md:rounded-r-none rounded-b-none rounded-xl md:rounded-l-xl overflow-hidden'>
         <div className='absolute bottom-1 left-1 flex gap-2 items-center z-10'>
           <GithubLink githubLink={githubLink} />
@@ -39,7 +41,7 @@ export const Project = (props: Props) => {
               alt={alt}
               width={932}
               height={910}
-              className={`ease-in-out duration-500 hover:scale-125 object-cover  md:w-[80vw] md:h-full`}
+              className={`ease-in-out duration-500 hover:scale-125 object-cover md:w-[80vw] md:h-full`}
               decoding='async'
             />
           </a>

@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import { ProjectDetails } from '../../components/ProjectDetails'
-import { getItemsByLabels, type StackLabel } from '../../components/stack'
+import { ProjectDetails } from '../../../components/ProjectDetails'
+import { getItemsByLabels, type StackLabel } from '../../../components/stack'
 
 const labels: StackLabel[] = ['Typescript', 'Expo', 'React Native']
 

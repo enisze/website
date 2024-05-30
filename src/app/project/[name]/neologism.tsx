@@ -1,5 +1,5 @@
-import { ProjectDetails } from '../../components/ProjectDetails'
-import type { StackItem } from '../../components/stack'
+import { ProjectDetails } from '../../../components/ProjectDetails'
+import type { StackItem } from '../../../components/stack'
 
 //TODO: add java, angular, docker here
 
