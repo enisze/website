@@ -7,7 +7,7 @@ type Props = {
 }
 
 export const Item = ({ href, children }: Props) => (
-  <li className='p-2 lg:p-0'>
+  <div className='p-2 lg:p-0'>
     <Link href={href}>{children}</Link>
-  </li>
+  </div>
 )

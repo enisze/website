@@ -31,7 +31,7 @@ const menuitems = [
 
 export const Navbar = () => {
   return (
-    <header className='flex flex-col lg:flex-row items-center lg:my-0 fixed top-0 left-0 w-full'>
+    <header className='flex flex-col md:flex-row items-center lg:my-0 fixed top-0 left-0 w-full'>
       <div
         className={
           'bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-600'

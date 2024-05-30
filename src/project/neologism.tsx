@@ -1,41 +1,40 @@
----
-import ProjectDetails from '../../components/ProjectDetails.astro'
-import type { StackItem } from '../../components/stack'
 import Layout from '../../layouts/Layout.astro'
+import { ProjectDetails } from '../components/ProjectDetails'
+import type { StackItem } from '../components/stack'
 
 //TODO: add java, angular, docker here
 
 const skills: StackItem[] = [
-    {
-        label: 'Angular',
-        imgUrl: '/images/stack/angular.svg',
-        href: 'https://angular.io/',
-        isSmall: false,
-    },
-    {
-        label: 'Docker',
-        imgUrl: '/images/stack/docker.svg',
-        href: 'https://www.docker.com/',
-        isSmall: false,
-    },
-    {
-        label: 'Java',
-        imgUrl: '/images/stack/java.svg',
-        href: 'https://angular.io/',
-        isSmall: false,
-    },
+  {
+    label: 'Angular',
+    imgUrl: '/images/stack/angular.svg',
+    href: 'https://angular.io/',
+    isSmall: false
+  },
+  {
+    label: 'Docker',
+    imgUrl: '/images/stack/docker.svg',
+    href: 'https://www.docker.com/',
+    isSmall: false
+  },
+  {
+    label: 'Java',
+    imgUrl: '/images/stack/java.svg',
+    href: 'https://angular.io/',
+    isSmall: false
+  }
 ]
----
 
-<Layout>
+export const Neologism = () => (
+  <Layout>
     <ProjectDetails
-        title="Neologism"
-        githubLink="https://github.com/Semantic-Society/Neologism"
-        context="Open Source Project"
-        maintenance="2021"
-        skills={skills}
-        imageSrcFirst="/images/neologism.webp"
-        description={`
+      title='Neologism'
+      githubLink='https://github.com/Semantic-Society/Neologism'
+      context='Open Source Project'
+      maintenance='2021'
+      skills={skills}
+      imageSrcFirst='/images/neologism.webp'
+      description={`
         Neologism 2.0 allows users to quickly create vocabularies in a guided
         and collaborative process using its graph editor. Domain experts and
         non-experts can create classes, properties, and relationships between
@@ -50,4 +49,5 @@ const skills: StackItem[] = [
         novices to efficiently create initial vocabulary drafts that can then be
         further developed in other semantic web tools.`}
     />
-</Layout>
+  </Layout>
+)
