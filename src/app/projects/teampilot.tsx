@@ -1,6 +1,5 @@
-import Layout from '../../layouts/Layout.astro'
-import { ProjectDetails } from '../components/ProjectDetails'
-import { getItemsByLabels, type StackLabel } from '../components/stack'
+import { ProjectDetails } from '../../components/ProjectDetails'
+import { getItemsByLabels, type StackLabel } from '../../components/stack'
 
 const labels: StackLabel[] = [
   'React',
@@ -12,15 +11,14 @@ const labels: StackLabel[] = [
 
 const skills = getItemsByLabels(labels)
 export const Teampilot = () => (
-  <Layout>
-    <ProjectDetails
-      title='Teampilot'
-      projectLink='https://teampilot.ai/'
-      context='Employed Project'
-      maintenance='Active'
-      skills={skills}
-      imageSrcFirst='/images/teampilot.webp'
-      description={`
+  <ProjectDetails
+    title='Teampilot'
+    projectLink='https://teampilot.ai/'
+    context='Employed Project'
+    maintenance='Active'
+    skills={skills}
+    imageSrcFirst='/images/teampilot.webp'
+    description={`
             Teampilot AI is an AI platform that allows teams to be more
             productive and generate more revenue in several ways: It can
             generate high-quality texts and images tailored to a brand quickly.
@@ -35,6 +33,5 @@ export const Teampilot = () => (
             AI uses artificial intelligence to help teams create content,
             automate workflows, and increase productivity through data-driven
             insights.`}
-    />
-  </Layout>
+  />
 )

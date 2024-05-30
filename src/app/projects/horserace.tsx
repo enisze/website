@@ -1,15 +1,13 @@
-import Layout from '../../layouts/Layout.astro'
-import { ProjectDetails } from '../components/ProjectDetails'
-import { getItemsByLabels, type StackLabel } from '../components/stack'
-
-import { Image } from 'astro:assets'
+import Image from 'next/image'
+import { ProjectDetails } from '../../components/ProjectDetails'
+import { getItemsByLabels, type StackLabel } from '../../components/stack'
 
 const labels: StackLabel[] = ['Typescript', 'Expo', 'React Native']
 
 const skills = getItemsByLabels(labels)
 
 export const HorseRace = () => (
-  <Layout>
+  <>
     <ProjectDetails
       title='HorseRace'
       context='Private Project'
@@ -33,9 +31,8 @@ export const HorseRace = () => (
         alt='Event Wizard User Screenshot'
         width={932}
         height={910}
-        class={`rounded-xl max-w-[90vw] md:max-w-[40vw]`}
+        className={`rounded-xl max-w-[90vw] md:max-w-[40vw]`}
         decoding='async'
-        format='avif'
         loading='lazy'
       />
 
@@ -44,11 +41,10 @@ export const HorseRace = () => (
         alt='Event Wizard User Screenshot'
         width={932}
         height={910}
-        class={`rounded-xl max-w-[90vw] md:max-w-[40vw]`}
+        className={`rounded-xl max-w-[90vw] md:max-w-[40vw]`}
         decoding='async'
-        format='avif'
         loading='lazy'
       />
     </div>
-  </Layout>
+  </>
 )

@@ -50,7 +50,6 @@ Subtask: Adjusting the web application, desktop application, and database schema
         }
       ]}
     />
-    
     <CVButton />
   </section>
 )

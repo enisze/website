@@ -9,23 +9,23 @@ const menuitems = [
   },
   {
     title: 'Skills',
-    path: '/skills'
+    path: '/#skills'
   },
   {
     title: 'Projects',
-    path: '/projects'
+    path: '/#projects'
   },
   {
     title: 'Experience',
-    path: '/experience'
+    path: '/#experience'
   },
   {
     title: 'Education',
-    path: '/education'
+    path: '/#education'
   },
   {
     title: 'Contact',
-    path: '/contact'
+    path: '/#contact'
   }
 ]
 
@@ -41,12 +41,14 @@ export const Navbar = () => {
       </div>
       <ul className='absolute top-16 rounded-lg lg:relative lg:top-0 right-3 flex p-5 lg:rounded-b-none lg:items-center flex-col lg:flex-row lg:gap-3 items-end bg-white dark:bg-slate-900 border-gray-200 dark:border-none border lg:border-none lg:justify-center'>
         {menuitems.map((item, index) => (
-          <li>
+          <li key={index}>
             <Item href={item.path}>{item.title}</Item>
           </li>
         ))}
       </ul>
-      <ThemeIcon />
+      <div className='hidden lg:flex'>
+        <ThemeIcon />
+      </div>
     </header>
   )
 }

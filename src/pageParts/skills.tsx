@@ -7,15 +7,15 @@ export const Skills = () => (
     <Heading>Technical Skills</Heading>
 
     <div className='flex flex-col gap-4'>
-      {stacks.map((stack) => {
+      {stacks.map((stack, index) => {
         return (
-          <div className='flex flex-col w-full gap-4'>
+          <div className='flex flex-col w-full gap-4' key={index}>
             <h2 className='text-2xl font-bold underline decoration-blue-500 underline-offset-8'>
               {stack.title}
             </h2>
             <div className='flex flex-row flex-wrap gap-4'>
-              {stack.items.map((item) => {
-                return <Skill item={item} />
+              {stack.items.map((item, index) => {
+                return <Skill item={item} key={index} />
               })}
             </div>
           </div>

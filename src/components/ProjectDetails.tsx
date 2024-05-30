@@ -71,8 +71,8 @@ export const ProjectDetails = (props: Props) => {
         </h2>
 
         <div className='flex gap-3 flex-wrap'>
-          {skills.map((item) => (
-            <Skill item={item} />
+          {skills.map((item, index) => (
+            <Skill item={item} key={index} />
           ))}
         </div>
       </div>
