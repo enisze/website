@@ -1,48 +1,22 @@
-import { TypeAnimation } from 'react-type-animation'
-import { About } from '../components/About'
 import { CVButton } from '../components/CVButton'
-import { ImageWithConfetti } from '../components/ImageWithConfetti'
-import { Paragraph } from '../components/Paragraph'
+import { Contact } from '../pageParts/contact'
+import { Education } from '../pageParts/education'
+import { Experience } from '../pageParts/experience'
+import { Intro } from '../pageParts/intro'
+import { Projects } from '../pageParts/projects'
+import { Skills } from '../pageParts/skills'
 
 export default function Home() {
   return (
-    <div className='flex flex-col gap-y-3 scroll-mt-32' id='about'>
-      <div className='flex justify-center text-3xl'>
-        <h1 className='whitespace-pre-line md:whitespace-normal'>
-          Hi, I'm Enis Zejnilovic,
-          <Paragraph className='whitespace-pre-line'>
-            <TypeAnimation
-              sequence={[
-                ' an Anime Fan.',
-                1000,
-                ' a Sports Enthusiast.',
-                1000,
-                ' a Teamplayer.',
-                1000,
-                ' a Project Manager.',
-                1000,
-                ' a Full-stack Developer.',
-                1000
-              ]}
-              wrapper='span'
-              speed={50}
-              repeat={Infinity}
-            />
-          </Paragraph>
-        </h1>
-      </div>
-
-      <div className='grid gap-6 grid-cols-1 lg:grid-cols-2'>
-        <div className='order-last md:order-1'>
-          <About />
-        </div>
-
-        <div className='px-10 md:px-44 md:py-10 lg:order-2 lg:p-4 lg:py-10'>
-          <ImageWithConfetti />
-        </div>
-      </div>
+    <div className='flex flex-col gap-y-3 scroll-mt-32'>
+      <Intro />
 
       <CVButton />
+      <Skills />
+      <Projects />
+      <Experience />
+      <Education />
+      <Contact />
     </div>
   )
 }

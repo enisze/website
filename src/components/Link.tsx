@@ -19,7 +19,7 @@ export const Link = (props: Props) => {
   const isActive = href === pathname || (pathname === '/' && href === '/#about')
 
   return (
-    <a className='relative group' rel='follow' {...rest}>
+    <a className='relative group cursor-pointer' rel='follow' {...rest}>
       <span>{children}</span>
       <span
         className={`absolute -bottom-1 left-0 w-0 h-1 duration-500 bg-blue-400 transition-all group-hover:w-full ${
