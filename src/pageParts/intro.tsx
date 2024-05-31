@@ -1,23 +1,13 @@
 import { FadeText } from '@/components/FadeText'
-import WordRotate from '@/components/WordRotate'
 import { About } from '../components/About'
 import { ImageWithConfetti } from '../components/ImageWithConfetti'
+import { TypingAnimation } from './TypingAnimation'
 
 export const Intro = () => (
   <div className='flex flex-col scroll-m-20' id='about'>
-    <h1 className='flex flex-col md:flex-row items-center jusify-center text-3xl w-full'>
+    <h1 className='flex flex-col md:flex-row items-center jusify-center text-3xl w-full whitespace-pre-line md:whitespace-normal'>
       <FadeText text={`Hi, I'm Enis Zejnilovic, `} direction='up' />
-      <WordRotate
-        words={[
-          ' a Software Developer.',
-          ' an Anime Fan.',
-          ' a Sports Enthusiast.',
-          ' a Teamplayer.',
-          ' a Project Manager.',
-          ' a Full-stack Developer.'
-        ]}
-        className='text-3xl font-bold text-blue-500'
-      />
+      <TypingAnimation />
     </h1>
 
     <div className='grid gap-6 grid-cols-1 lg:grid-cols-2'>
