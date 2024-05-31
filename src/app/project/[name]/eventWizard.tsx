@@ -1,6 +1,8 @@
 import { ProjectDetails } from '../../../components/ProjectDetails'
 import { getItemsByLabels, type StackLabel } from '../../../components/stack'
 
+export const dynamic = 'force-static'
+
 const labels: StackLabel[] = [
   'React',
   'Typescript',

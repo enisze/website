@@ -5,6 +5,15 @@ import { Portfolio } from './portfolio'
 import { Proprate } from './proprate'
 import { Teampilot } from './teampilot'
 
+export const projects = [
+  'eventwizard',
+  'proprate',
+  'portfolio',
+  'horserace',
+  'neologism',
+  'teampilot'
+]
+
 const Page = ({
   params: { name }
 }: {
@@ -18,6 +27,14 @@ const Page = ({
   if (name === 'teampilot') return <Teampilot />
   if (name === 'proprate') return <Proprate />
   if (name === 'horserace') return <HorseRace />
+}
+
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    params: {
+      name: project
+    }
+  }))
 }
 
 export default Page

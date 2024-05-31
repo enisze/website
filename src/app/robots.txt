@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://zejnilovic.de
+
+# Sitemaps
+Sitemap: https://zejnilovic.de/sitemap.xml
