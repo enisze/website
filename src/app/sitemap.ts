@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { projects } from './project/[name]/page'
+import { projects } from './project/[name]/constants'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths: MetadataRoute.Sitemap = projects.map((project) => {

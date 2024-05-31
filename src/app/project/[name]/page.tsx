@@ -1,18 +1,10 @@
+import { projects } from './constants'
 import { EventWizard } from './eventWizard'
 import { HorseRace } from './horserace'
 import { Neologism } from './neologism'
 import { Portfolio } from './portfolio'
 import { Proprate } from './proprate'
 import { Teampilot } from './teampilot'
-
-export const projects = [
-  'eventwizard',
-  'proprate',
-  'portfolio',
-  'horserace',
-  'neologism',
-  'teampilot'
-]
 
 const Page = ({
   params: { name }
