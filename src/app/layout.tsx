@@ -4,11 +4,9 @@ import { Navbar } from '@/components/Navbar'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
-import { Inter } from 'next/font/google'
+import { Toaster } from 'sonner'
 import { BASE_URL } from '../../config'
 import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Enis Zejnilovic Full-stack Software Developer - Portfolio',
@@ -71,6 +69,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Toaster />
           <div className='fixed w-full z-20'>
             <Navbar />
           </div>

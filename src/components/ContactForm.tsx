@@ -1,8 +1,23 @@
-import { BorderBeam } from './BorderBeam'
+import nodemailer from 'nodemailer'
+import SMTPTransport from 'nodemailer/lib/smtp-transport'
+import { toast } from 'sonner'
+import { Input } from './ui/input'
+import { Label } from './ui/label'
+import { Textarea } from './ui/textarea'
+
+const options: SMTPTransport.Options = {
+  host: 'smtp-relay.brevo.com',
+  port: 587,
+  secure: false,
+  auth: {
+    user: 'eniszej@gmail.com',
+    pass: process.env.BREVO_SMTP_PASS
+  }
+}
+const transporter = nodemailer.createTransport(options)
 
 export const ContactForm = () => (
   <section className='bg-white dark:bg-slate-900 relative h-full rounded-lg shadow-lg shadow-slate-950'>
-    <BorderBeam />
     <div className='py-8 lg:py-16 px-4 mx-auto max-w-screen-md'>
       <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white'>
         Get in touch
@@ -11,15 +26,37 @@ export const ContactForm = () => (
         Feel free to contact me regarding projects or if you want to chat about
         anything.
       </p>
-      <form method='POST' className='space-y-8'>
+      <form
+        className='space-y-8'
+        action={async (formData) => {
+          'use server'
+
+          const name = formData.get('name')
+          const email = formData.get('email')
+          const message = formData.get('message')
+
+          if (!name || !email || !message) {
+            toast.error('Please fill out all fields')
+          }
+
+          if (name && email && message) {
+            transporter.sendMail({
+              from: `"${name}" ${email.toString()}`,
+              sender: email.toString(),
+              text: message.toString(),
+              to: 'eniszej@gmail.com'
+            })
+          }
+        }}
+      >
         <div>
-          <label
+          <Label
             htmlFor='name'
             className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300'
           >
             Your name
-          </label>
-          <input
+          </Label>
+          <Input
             type='text'
             id='name'
             name='name'
@@ -29,13 +66,13 @@ export const ContactForm = () => (
           />
         </div>
         <div>
-          <label
+          <Label
             htmlFor='email'
             className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300'
           >
             Your email
-          </label>
-          <input
+          </Label>
+          <Input
             type='email'
             id='email'
             name='email'
@@ -45,19 +82,19 @@ export const ContactForm = () => (
           />
         </div>
         <div className='sm:col-span-2'>
-          <label
+          <Label
             htmlFor='message'
             className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400'
           >
             Your message
-          </label>
-          <textarea
+          </Label>
+          <Textarea
             id='message'
             rows={6}
             name='message'
             className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'
             placeholder='Leave a comment...'
-          ></textarea>
+          />
         </div>
         <button
           type='submit'
