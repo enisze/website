@@ -11,7 +11,7 @@ export const CVButton = () => (
     <ShimmerButton>
       <a download='Enis-Zejnilovic-reference.pdf' href='/data/Referenz.pdf'>
         <span className='hidden md:block'>Download Reference Letter</span>
-        <span className='block md:hidden'>Download Referene</span>
+        <span className='block md:hidden'>Download Reference</span>
       </a>
     </ShimmerButton>
   </div>
