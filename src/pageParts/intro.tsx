@@ -1,3 +1,4 @@
+import { FadeText } from '@/components/FadeText'
 import WordRotate from '@/components/WordRotate'
 import { About } from '../components/About'
 import { ImageWithConfetti } from '../components/ImageWithConfetti'
@@ -5,7 +6,7 @@ import { ImageWithConfetti } from '../components/ImageWithConfetti'
 export const Intro = () => (
   <div className='flex flex-col' id='about'>
     <h1 className='flex items-center jusify-center text-3xl w-full'>
-      Hi, I'm Enis Zejnilovic,{'  '}
+      <FadeText text={`Hi, I'm Enis Zejnilovic, `} direction='up' />
       <WordRotate
         words={[
           ' a Software Developer.',
@@ -15,7 +16,7 @@ export const Intro = () => (
           ' a Project Manager.',
           ' a Full-stack Developer.'
         ]}
-        className='text-3xl font-bold '
+        className='text-3xl font-bold text-blue-500'
       />
     </h1>
 

@@ -1,25 +1,17 @@
-import { Link } from './Link'
+import { ShimmerButton } from './ShimmerButton'
 
 export const CVButton = () => (
-  <div className='flex flex-col gap-2 border p-8 mt-4 dark:border-white rounded-xl'>
-    <span>
-      For more details about me you can&nbsp;
-      <Link download='Enis-Zejnilovic-CV.pdf' href='/data/Lebenslauf.pdf'>
-        download my CV.
-      </Link>
-    </span>
+  <div className='flex gap-2'>
+    <ShimmerButton>
+      <a download='Enis-Zejnilovic-CV.pdf' href='/data/Lebenslauf.pdf'>
+        Download CV
+      </a>
+    </ShimmerButton>
 
-    <div className='flex'>
-      <span>
-        I have a reference letter (in German) from my current CTO which you
-        can&nbsp;
-        <Link
-          download='Enis-Zejnilovic-reference.pdf'
-          href='/data/Referenz.pdf'
-        >
-          download as PDF.
-        </Link>
-      </span>
-    </div>
+    <ShimmerButton>
+      <a download='Enis-Zejnilovic-reference.pdf' href='/data/Referenz.pdf'>
+        Download Reference Letter
+      </a>
+    </ShimmerButton>
   </div>
 )
