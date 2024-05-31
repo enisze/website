@@ -1,5 +1,5 @@
 export const About = () => (
-  <div className='text-xl fade-in-60 animate-in'>
+  <div className='text-xl animate-fade'>
     As a software engineer and project manager, I have developed a broad skill
     set through my education and professional experience.
     <br />

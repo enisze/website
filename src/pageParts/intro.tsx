@@ -1,4 +1,3 @@
-import { FadeText } from '@/components/FadeText'
 import { About } from '../components/About'
 import { ImageWithConfetti } from '../components/ImageWithConfetti'
 import { TypingAnimation } from './TypingAnimation'
@@ -6,7 +5,7 @@ import { TypingAnimation } from './TypingAnimation'
 export const Intro = () => (
   <div className='flex flex-col scroll-m-20' id='about'>
     <h1 className='flex flex-col md:flex-row items-center jusify-center text-3xl w-full whitespace-pre-line md:whitespace-normal'>
-      <FadeText text={`Hi, I'm Enis Zejnilovic, `} direction='up' />
+      <div className='animate-fade'>Hi, I'm Enis Zejnilovic, </div>
       <TypingAnimation />
     </h1>
 

@@ -9,13 +9,18 @@ module.exports = {
 
       animation: {
         'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
-        shimmer: 'shimmer 2s linear infinite'
+        shimmer: 'shimmer 2s linear infinite',
+        fade: 'fadeIn 1s ease-in-out'
       },
       keyframes: {
         'border-beam': {
           '100%': {
             'offset-distance': '100%'
           }
+        },
+        fadeIn: {
+          from: { opacity: 0 },
+          to: { opacity: 1 }
         },
         shimmer: {
           from: {
@@ -28,6 +33,6 @@ module.exports = {
       }
     }
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [],
   extend: {}
 }
