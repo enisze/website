@@ -1,6 +1,8 @@
 'use client'
 import { Dock, DockIcon } from '@/components/Dock'
+import GridPattern from '@/components/GridPattern'
 import IconCloud from '@/components/IconCloud'
+import { cn } from '@/lib/utils'
 import { Globe, Text } from 'lucide-react'
 import { useState } from 'react'
 import { Heading } from '../components/Heading'
@@ -11,8 +13,23 @@ export const Skills = () => {
   const [showGlobe, setShowGlobe] = useState(true)
 
   return (
-    <section className='scroll-m-20 space-y-4 pt-5' id='skills'>
+    <section className='scroll-m-20 relative space-y-4 pt-5' id='skills'>
       <Heading>Technical Skills</Heading>
+
+      <GridPattern
+        squares={[
+          [4, 10],
+          [5, 5],
+          [8, 3],
+          [6, 6],
+          [10, 10],
+          [13, 13]
+        ]}
+        className={cn(
+          '[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]',
+          'inset-x-0 inset-y-[-30%] h-[150%] skew-y-12'
+        )}
+      />
 
       {showGlobe ? (
         <IconCloud
