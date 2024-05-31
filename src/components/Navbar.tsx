@@ -1,5 +1,6 @@
 import { MenuIcon } from 'lucide-react'
 import { Item } from './Item'
+import { NavbarInstane } from './NavbarClient'
 import { ThemeToggle } from './ThemeToggle'
 
 const menuitems = [
@@ -40,11 +41,21 @@ export const Navbar = () => {
         </div>
       </div>
       <ul className='absolute top-16 rounded-lg lg:relative lg:top-0 right-3 flex p-5 lg:rounded-b-none lg:items-center flex-col lg:flex-row lg:gap-3 items-end border-gray-200 dark:border-none border lg:border-none lg:justify-center'>
-        {menuitems.map((item, index) => (
-          <li key={index}>
-            <Item href={item.path}>{item.title}</Item>
-          </li>
-        ))}
+        {menuitems.map((item, index) => {
+          if (item.title === 'Projects') {
+            return (
+              <li key={index}>
+                <NavbarInstane />
+              </li>
+            )
+          }
+
+          return (
+            <li key={index}>
+              <Item href={item.path}>{item.title}</Item>
+            </li>
+          )
+        })}
       </ul>
       <div className='hidden lg:flex'>
         <ThemeToggle />

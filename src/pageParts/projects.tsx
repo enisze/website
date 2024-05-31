@@ -11,7 +11,7 @@ export const Projects = () => (
         src='/images/portfolio.webp'
         alt='Portfolio'
         title='Portfolio'
-        projectLink='https://website-nine-bice.vercel.app/'
+        projectLink='https://zejnilovic.de/'
         githubLink='https://github.com/enisze/website'
         localLink='/project/portfolio'
         description={`The portfolio project was created to try out Astro and improve my presence on the web.

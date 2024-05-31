@@ -1,37 +1,25 @@
-import { FadeText } from './FadeText'
-
 export const About = () => (
-  <div className='text-xl'>
-    <FadeText
-      text='As a software engineer and project manager, I have developed a broad skill set through my education and professional experience.'
-      direction='up'
-    />
+  <div className='text-xl fade-in-60 animate-in'>
+    As a software engineer and project manager, I have developed a broad skill
+    set through my education and professional experience.
     <br />
-    <FadeText
-      text='I studied computer science at RWTH Aachen, focusing on machine learning, AI,
+    <br />
+    I studied computer science at RWTH Aachen, focusing on machine learning, AI,
     and data science with Python. My theses involved generative development and
-    RDF schema generation.'
-      direction='up'
-    />
+    RDF schema generation.
     <br />
-    <FadeText
-      text='Currently, I work in web and mobile app development, specializing in React,
+    <br />
+    Currently, I work in web and mobile app development, specializing in React,
     TypeScript, and Next.js. I enjoy learning new technologies and tackling
-    challenging projects.'
-      direction='up'
-    />
+    challenging projects.
     <br />
-    <FadeText
-      text='I have strong leadership skills and thrive in team environments, believing
+    <br />
+    I have strong leadership skills and thrive in team environments, believing
     that effective communication and adaptability are key to successful project
-    management.'
-      direction='up'
-    />
+    management.
     <br />
-    <FadeText
-      text={`Feel free to contact me to discuss potential projects or opportunities. I'm
-    always open to exciting new ventures`}
-      direction='up'
-    />
+    <br />
+    Feel free to contact me to discuss potential projects or opportunities. I'm
+    always open to exciting new ventures.
   </div>
 )
