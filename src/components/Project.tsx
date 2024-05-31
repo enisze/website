@@ -27,7 +27,7 @@ export const Project = (props: Props) => {
   } = props
 
   return (
-    <div className='flex relative flex-col md:flex-row h-full rounded-xl shadow-lg shadow-slate-950'>
+    <div className='flex relative flex-col md:flex-row h-full rounded-xl shadow-sm shadow-white'>
       <BorderBeam />
       <div className='relative md:rounded-r-none rounded-b-none rounded-xl md:rounded-l-xl overflow-hidden'>
         <div className='absolute bottom-1 left-1 flex gap-2 items-center z-10'>
@@ -62,7 +62,7 @@ export const Project = (props: Props) => {
 
       <a
         href={localLink}
-        className='absolute bottom-3 right-3 rounded-xl p-2 bg-gray-200 dark:bg-slate-900 shadow-lg w-fit whitespace-nowrap self-end'
+        className='absolute bottom-3 right-3 rounded-xl p-2 bg-gray-200 dark:bg-slate-800 shadow-lg w-fit whitespace-nowrap self-end'
       >
         More Details
       </a>

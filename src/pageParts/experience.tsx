@@ -1,4 +1,3 @@
-import { CVButton } from '../components/CVButton'
 import { Heading } from '../components/Heading'
 import { Timeline } from '../components/Timeline'
 
@@ -11,9 +10,9 @@ export const Experience = async () => (
           title: 'Software Engineer / Project Manager Sodefa GmbH',
           description: `
                     Create, coordinate and delegate tasks using Linear (previously Zenhub). <br/>
-                    Developing features in React and Typescript in a Web application.   <br/>
-                    Managing project Structure using: Nextjs, tRPC, Prisma (previously hasura, graphQL).   <br/>
-                    Developing an mobile app for iOS and android using: React Native, expo  <br/>
+                    Developing features in React and Typescript in a Web application.<br/>
+                    Managing project Structure using: Nextjs, tRPC, Prisma (previously hasura, graphQL).<br/>
+                    Developing an mobile app for iOS and android using: React Native, expo<br/>
                     Version control via Github.`,
           time: 'Sep.2021 - today'
         },
@@ -50,6 +49,5 @@ Subtask: Adjusting the web application, desktop application, and database schema
         }
       ]}
     />
-    <CVButton />
   </section>
 )

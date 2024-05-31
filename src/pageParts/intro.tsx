@@ -6,7 +6,6 @@ export const Intro = () => (
   <div className='flex flex-col' id='about'>
     <h1 className='flex items-center jusify-center text-3xl w-full'>
       Hi, I'm Enis Zejnilovic,{'  '}
-      {/* <Paragraph className='whitespace-pre-line'> */}
       <WordRotate
         words={[
           ' a Software Developer.',
@@ -16,10 +15,8 @@ export const Intro = () => (
           ' a Project Manager.',
           ' a Full-stack Developer.'
         ]}
-        className='text-3xl font-bold text-black dark:text-white'
-        // duration={100}
+        className='text-3xl font-bold '
       />
-      {/* </Paragraph> */}
     </h1>
 
     <div className='grid gap-6 grid-cols-1 lg:grid-cols-2'>

@@ -24,7 +24,7 @@ export function ThemeToggle() {
       <DropdownMenuContent
         align='end'
         forceMount
-        className='bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-600'
+        className='bg-white dark:bg-black'
       >
         <DropdownMenuItem onClick={() => setTheme('light')}>
           <SunMedium className='mr-2 h-4 w-4' />

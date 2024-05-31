@@ -1,11 +1,11 @@
 import DotPattern from '@/components/DotPattern'
-import { ThemeProvider } from '@/components/ThemeProvider'
+import { Footer } from '@/components/Footer'
+import { Navbar } from '@/components/Navbar'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
+import { ThemeProvider } from 'next-themes'
 import { Inter } from 'next/font/google'
 import { BASE_URL } from '../../config'
-import { Footer } from '../components/Footer'
-import { Navbar } from '../components/Navbar'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -64,7 +64,7 @@ export default function RootLayout({
         <title>Enis Zejnilovic Portfolio</title>
       </head>
 
-      <body className='dark:bg-slate-800 text-black dark:text-white flex flex-col'>
+      <body className='dark:bg-black text-black dark:text-white flex flex-col'>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'

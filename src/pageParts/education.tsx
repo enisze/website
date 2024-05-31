@@ -1,4 +1,3 @@
-import { CVButton } from '../components/CVButton'
 import { Heading } from '../components/Heading'
 import { Timeline } from '../components/Timeline'
 
@@ -33,7 +32,5 @@ export const Education = async () => (
         }
       ]}
     />
-
-    <CVButton />
   </section>
 )

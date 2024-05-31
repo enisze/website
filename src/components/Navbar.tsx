@@ -31,15 +31,15 @@ const menuitems = [
 
 export const Navbar = () => {
   return (
-    <header className='flex flex-col md:flex-row items-center justify-between p-1 lg:my-0 fixed top-0 left-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-600'>
+    <header className='flex flex-col md:flex-row items-center justify-between p-1 lg:my-0 fixed top-0 left-0 w-full bg-white dark:bg-black border-b border-gray-200 dark:border-gray-600'>
       <a href='/'>Enis Zejnilovic</a>
-      <div className='lg:hidden bg-inherit flex items-center gap-x-2 bg-white dark:bg-gray-900'>
+      <div className='lg:hidden bg-inherit flex items-center gap-x-2 '>
         <ThemeToggle />
         <div className='flex lg:hidden'>
           <MenuIcon />
         </div>
       </div>
-      <ul className='absolute top-16 rounded-lg lg:relative lg:top-0 right-3 flex p-5 lg:rounded-b-none lg:items-center flex-col lg:flex-row lg:gap-3 items-end bg-white dark:bg-slate-900 border-gray-200 dark:border-none border lg:border-none lg:justify-center'>
+      <ul className='absolute top-16 rounded-lg lg:relative lg:top-0 right-3 flex p-5 lg:rounded-b-none lg:items-center flex-col lg:flex-row lg:gap-3 items-end border-gray-200 dark:border-none border lg:border-none lg:justify-center'>
         {menuitems.map((item, index) => (
           <li key={index}>
             <Item href={item.path}>{item.title}</Item>
