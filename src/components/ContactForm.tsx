@@ -1,7 +1,7 @@
 import { BorderBeam } from './BorderBeam'
 
 export const ContactForm = () => (
-  <section className='bg-white dark:bg-slate-900 relative  h-full rounded-lg'>
+  <section className='bg-white dark:bg-slate-900 relative h-full rounded-lg shadow-lg shadow-slate-950'>
     <BorderBeam />
     <div className='py-8 lg:py-16 px-4 mx-auto max-w-screen-md'>
       <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white'>

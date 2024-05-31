@@ -1,5 +1,5 @@
-import DotPattern from '@/components/DotPattern'
 import { Footer } from '@/components/Footer'
+import GridPattern from '@/components/GridPattern'
 import { Navbar } from '@/components/Navbar'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
@@ -75,10 +75,24 @@ export default function RootLayout({
             <Navbar />
           </div>
           <div className='py-24 px-8'>
-            <DotPattern
+            {/* <DotPattern
               className={cn(
                 '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',
-                'absolute h-screen -z-10'
+                'absolute h-screen z-10'
+              )}
+            /> */}
+            <GridPattern
+              squares={[
+                [4, 4],
+                [5, 1],
+                [8, 2],
+                [6, 6],
+                [10, 5],
+                [13, 3]
+              ]}
+              className={cn(
+                '[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]',
+                'inset-x-0 inset-y-[-30%] h-[150%] skew-y-12'
               )}
             />
             {children}

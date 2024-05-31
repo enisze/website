@@ -27,7 +27,7 @@ export const Project = (props: Props) => {
   } = props
 
   return (
-    <div className='flex relative flex-col md:flex-row h-full rounded-xl shadow-sm shadow-white'>
+    <div className='flex relative flex-col md:flex-row h-full rounded-xl dark:shadow-sm dark:shadow-white shadow-lg shadow-slate-950'>
       <BorderBeam />
       <div className='relative md:rounded-r-none rounded-b-none rounded-xl md:rounded-l-xl overflow-hidden'>
         <div className='absolute bottom-1 left-1 flex gap-2 items-center z-10'>
