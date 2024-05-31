@@ -4,7 +4,7 @@ import { Heading } from '../components/Heading'
 import { Project } from '../components/Project'
 
 export const Projects = () => (
-  <section className='space-y-4 scroll-m-16' id='projects'>
+  <section className='space-y-4 scroll-m-20' id='projects'>
     <Heading>Projects</Heading>
     <div className='flex flex-col gap-8'>
       <Project

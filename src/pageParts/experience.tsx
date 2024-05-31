@@ -2,7 +2,7 @@ import { Heading } from '../components/Heading'
 import { Timeline } from '../components/Timeline'
 
 export const Experience = async () => (
-  <section className='space-y-4 scroll-m-16' id='experience'>
+  <section className='space-y-4 scroll-m-20' id='experience'>
     <Heading>Experience</Heading>
     <Timeline
       entries={[

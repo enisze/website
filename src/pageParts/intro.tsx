@@ -4,7 +4,7 @@ import { About } from '../components/About'
 import { ImageWithConfetti } from '../components/ImageWithConfetti'
 
 export const Intro = () => (
-  <div className='flex flex-col' id='about'>
+  <div className='flex flex-col scroll-m-20' id='about'>
     <h1 className='flex flex-col md:flex-row items-center jusify-center text-3xl w-full'>
       <FadeText text={`Hi, I'm Enis Zejnilovic, `} direction='up' />
       <WordRotate

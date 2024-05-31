@@ -32,7 +32,7 @@ export const Contact = async () => {
   //   }
 
   return (
-    <section className='space-y-4 scroll-m-16' id='contact'>
+    <section className='space-y-4 scroll-m-20' id='contact'>
       <Heading>Contact</Heading>
       <ContactForm />
     </section>

@@ -11,7 +11,7 @@ export const Skills = () => {
   const [showGlobe, setShowGlobe] = useState(true)
 
   return (
-    <section className='scroll-m-16 space-y-4' id='skills'>
+    <section className='scroll-m-20 space-y-4' id='skills'>
       <Heading>Technical Skills</Heading>
 
       {showGlobe ? (
