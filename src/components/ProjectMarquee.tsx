@@ -62,7 +62,7 @@ export const ProjectMarquee = (props: Props) => {
 
       <a
         href={localLink}
-        className='rounded-xl m-2 p-2 bg-gray-200 dark:bg-slate-800 shadow-lg w-fit whitespace-nowrap self-end'
+        className='rounded-xl m-2 z-10 p-2 bg-gray-200 dark:bg-slate-800 shadow-lg w-fit whitespace-nowrap self-end'
       >
         More Details
       </a>
