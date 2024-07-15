@@ -2,7 +2,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import type React from 'react'
 import { Item } from './Item'
 
 const transition = {
@@ -28,7 +27,7 @@ export const MenuItem = ({
 	return (
 		<div onMouseEnter={() => setActive(item)} className='relative '>
 			<motion.div
-				transition={{ duration: 10 }}
+				transition={{ duration: 0.3 }}
 				className='cursor-pointer text-black hover:opacity-[0.9] dark:text-white'
 			>
 				<Item href='/#projects'>{item}</Item>
@@ -39,22 +38,22 @@ export const MenuItem = ({
 					animate={{ opacity: 1, scale: 1, y: 0 }}
 					transition={transition}
 				>
-					{/* {active === item && ( */}
-					<div className='absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4'>
-						<motion.div
-							transition={transition}
-							layoutId='active' // layoutId ensures smooth animation
-							className='bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl'
-						>
+					{active === item && (
+						<div className='absolute top-[calc(100%)] left-1/2 transform -translate-x-1/2 pt-4'>
 							<motion.div
-								layout // layout ensures smooth animation
-								className='w-max h-full '
+								transition={transition}
+								layoutId='active' // layoutId ensures smooth animation
+								className='bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl'
 							>
-								{children}
+								<motion.div
+									layout // layout ensures smooth animation
+									className='w-max h-full'
+								>
+									{children}
+								</motion.div>
 							</motion.div>
-						</motion.div>
-					</div>
-					{/* )} */}
+						</div>
+					)}
 				</motion.div>
 			)}
 		</div>
@@ -70,11 +69,8 @@ export const Menu = ({
 }) => {
 	return (
 		<nav
-			onMouseLeave={async () => {
-				await new Promise((resolve) => setTimeout(resolve, 500))
-				setActive(null)
-			}} // resets the state
-			className='relative rounded-full boder border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4'
+			onMouseLeave={() => setActive(null)} // resets the state
+			className='relative rounded-full boder border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center'
 		>
 			{children}
 		</nav>
