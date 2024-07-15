@@ -1,8 +1,16 @@
 //TODO: Add github links + add icons for which frameworks were used. Add filler image, if image no available. Mark projects as personal, open source, commercial
+'use client'
 
-import Marquee from '@/components/Marquee'
+import { Heading } from '@/components/Heading'
 import { ProjectMarquee } from '@/components/ProjectMarquee'
-import { Heading } from '../components/Heading'
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious
+} from '@/components/ui/carousel'
+import Autoplay from 'embla-carousel-autoplay'
 
 const projects = [
 	{
@@ -98,14 +106,45 @@ const projects = [
 	}
 ]
 
-const firstRow = projects.slice(0, projects.length / 2)
-const secondRow = projects.slice(projects.length / 2)
-
 export const Projects = () => (
-	<section className='space-y-4 scroll-m-20' id='projects'>
+	<>
 		<Heading>Projects</Heading>
-		<div className='relative flex flex-col items-center justify-center overflow-hidden rounded-lg bg-background py-5 md:shadow-xl'>
-			<Marquee pauseOnHover className='[--duration:20s]'>
+		<section
+			className='scroll-m-20 flex flex-col gap-2 items-center'
+			id='projects'
+		>
+			{/* <div className='relative flex flex-col items-center justify-center overflow-hidden rounded-lg border bg-background py-5 md:shadow-xl'> */}
+			<Carousel
+				className='w-full max-w-2xl'
+				plugins={[
+					Autoplay({
+						delay: 4000
+					})
+				]}
+			>
+				<CarouselContent>
+					{projects.map((project, index) => (
+						<CarouselItem key={index}>
+							<ProjectMarquee key={project.title} {...project} />
+						</CarouselItem>
+					))}
+					{/* {Array.from({ length: 5 }).map((_, index) => (
+						<CarouselItem key={index}>
+							<div className='p-1'>
+								<Card>
+									<CardContent className='flex aspect-square items-center justify-center p-6'>
+										<span className='text-4xl font-semibold'>{index + 1}</span>
+									</CardContent>
+								</Card>
+							</div>
+						</CarouselItem>
+					))} */}
+				</CarouselContent>
+				<CarouselPrevious />
+				<CarouselNext />
+			</Carousel>
+
+			{/* <Marquee pauseOnHover className='[--duration:20s]'>
 				{firstRow.map((project) => (
 					<ProjectMarquee key={project.title} {...project} />
 				))}
@@ -114,7 +153,8 @@ export const Projects = () => (
 				{secondRow.map((project) => (
 					<ProjectMarquee key={project.title} {...project} />
 				))}
-			</Marquee>
-		</div>
-	</section>
+			</Marquee> */}
+			{/* </div> */}
+		</section>
+	</>
 )

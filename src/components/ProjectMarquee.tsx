@@ -27,9 +27,9 @@ export const ProjectMarquee = (props: Props) => {
 	} = props
 
 	return (
-		<div className='flex relative flex-col h-[600px] w-[450px] rounded-xl dark:shadow-sm dark:shadow-white shadow-lg shadow-slate-950'>
+		<div className='flex relative flex-col rounded-xl border'>
 			<BorderBeam />
-			<div className='relative rounded-b-none rounded-xl overflow-hidden'>
+			<div className='-z-10 relative rounded-b-none rounded-xl overflow-hidden'>
 				<div className='absolute bottom-1 left-1 flex gap-2 items-center z-10'>
 					<GithubLink githubLink={githubLink} />
 					<ProjectLink projectLink={projectLink} />
@@ -40,8 +40,8 @@ export const ProjectMarquee = (props: Props) => {
 							src={src}
 							alt={alt}
 							width={932}
-							height={910}
-							className={`ease-in-out duration-500 hover:scale-125 object-cover md:w-[80vw] md:h-full`}
+							height={210}
+							className='ease-in-out duration-500 hover:scale-125 object-cover md:w-[80vw] md:h-full'
 							decoding='async'
 						/>
 					</a>
@@ -53,7 +53,7 @@ export const ProjectMarquee = (props: Props) => {
 				</div>
 			</div>
 
-			<div className='flex flex-col p-4 pb-16 lg:px-4 lg:py-0 gap-4 w-full h-[300px]'>
+			<div className='flex flex-col p-4 pb-16 lg:px-4 lg:py-0 gap-4 w-full'>
 				<h1 className='text-xl font-bold pt-4'>
 					<a href={localLink}>{title}</a>
 				</h1>
