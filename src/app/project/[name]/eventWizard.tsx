@@ -4,30 +4,30 @@ import { getItemsByLabels, type StackLabel } from '../../../components/stack'
 export const dynamic = 'force-static'
 
 const labels: StackLabel[] = [
-  'React',
-  'Typescript',
-  'Tailwind',
-  'Next.js',
-  'tRPC',
-  'Prisma',
-  'PlanetScale',
-  'Redis',
-  'Vercel'
+	'React',
+	'Typescript',
+	'Tailwind',
+	'Next.js',
+	'tRPC',
+	'Prisma',
+	'PlanetScale',
+	'Redis',
+	'Vercel'
 ]
 
 const skills = getItemsByLabels(labels)
 
 export const EventWizard = () => (
-  <ProjectDetails
-    title='Event Wizard'
-    projectLink='https://football-organizer.vercel.app/'
-    githubLink='https://github.com/enisze/football-organizer'
-    context='Private project'
-    maintenance='Active'
-    skills={skills}
-    imageSrcFirst='/images/eventWizard.webp'
-    imageSrcSecond='/images/eventWizard2.webp'
-    description={`
+	<ProjectDetails
+		title='Event Wizard'
+		projectLink='https://football-organizer.vercel.app/'
+		githubLink='https://github.com/enisze/football-organizer'
+		context='Private project'
+		maintenance='Active'
+		skills={skills}
+		imageSrcFirst='/images/eventWizard.webp'
+		imageSrcSecond='/images/eventWizard2.webp'
+		description={`
         This web app allows users to organize and schedule events, with a
         special focus on football events that are organized for friends. The
         group page provides a user-friendly calendar view, offering a quick
@@ -55,5 +55,5 @@ export const EventWizard = () => (
         games through a centralized online system. With the added convenience of
         email reminders and payment tracking, it ensures that everyone stays connected
         and engaged in the world of football events.`}
-  />
+	/>
 )

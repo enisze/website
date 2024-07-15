@@ -7,26 +7,26 @@ import { Proprate } from './proprate'
 import { Teampilot } from './teampilot'
 
 const Page = ({
-  params: { name }
+	params: { name }
 }: {
-  params: {
-    name: string
-  }
+	params: {
+		name: string
+	}
 }) => {
-  if (name === 'portfolio') return <Portfolio />
-  if (name === 'neologism') return <Neologism />
-  if (name === 'eventWizard') return <EventWizard />
-  if (name === 'teampilot') return <Teampilot />
-  if (name === 'proprate') return <Proprate />
-  if (name === 'horserace') return <HorseRace />
+	if (name === 'portfolio') return <Portfolio />
+	if (name === 'neologism') return <Neologism />
+	if (name === 'eventWizard') return <EventWizard />
+	if (name === 'teampilot') return <Teampilot />
+	if (name === 'proprate') return <Proprate />
+	if (name === 'horserace') return <HorseRace />
 }
 
 export async function generateStaticParams() {
-  return projects.map((project) => ({
-    params: {
-      name: project
-    }
-  }))
+	return projects.map((project) => ({
+		params: {
+			name: project
+		}
+	}))
 }
 
 export default Page

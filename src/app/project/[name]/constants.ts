@@ -1,8 +1,8 @@
 export const projects = [
-  'eventwizard',
-  'proprate',
-  'portfolio',
-  'horserace',
-  'neologism',
-  'teampilot'
+	'eventwizard',
+	'proprate',
+	'portfolio',
+	'horserace',
+	'neologism',
+	'teampilot'
 ]

@@ -9,15 +9,15 @@ import { Projects } from '@/pageParts/projects'
 import { Skills } from '@/pageParts/skills'
 
 export default function Home() {
-  return (
-    <div className='flex flex-col gap-y-3 scroll-mt-32 bg-white dark:bg-black'>
-      <Intro />
-      <CVButton />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Education />
-      <Contact />
-    </div>
-  )
+	return (
+		<div className='flex flex-col gap-y-3 scroll-mt-32 bg-white dark:bg-black'>
+			<Intro />
+			<CVButton />
+			<Skills />
+			<Projects />
+			<Experience />
+			<Education />
+			<Contact />
+		</div>
+	)
 }

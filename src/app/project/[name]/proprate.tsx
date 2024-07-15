@@ -2,24 +2,24 @@ import { ProjectDetails } from '../../../components/ProjectDetails'
 import { getItemsByLabels, type StackLabel } from '../../../components/stack'
 
 const labels: StackLabel[] = [
-  'React',
-  'Typescript',
-  'Tailwind',
-  'Next.js',
-  'Vercel'
+	'React',
+	'Typescript',
+	'Tailwind',
+	'Next.js',
+	'Vercel'
 ]
 
 const skills = getItemsByLabels(labels)
 
 export const Proprate = () => (
-  <ProjectDetails
-    title='PropRate'
-    projectLink='https://proprate.de/'
-    context='Employed Project'
-    maintenance='Active'
-    skills={skills}
-    imageSrcFirst='/images/proprate.webp'
-    description={`
+	<ProjectDetails
+		title='PropRate'
+		projectLink='https://proprate.de/'
+		context='Employed Project'
+		maintenance='Active'
+		skills={skills}
+		imageSrcFirst='/images/proprate.webp'
+		description={`
 The PropRate website acts as a meta search engine for the German
 real estate market. It searches listings from major portals like
 ImmobilienScout24 and eBay Kleinanzeigen and displays all results
@@ -40,5 +40,5 @@ Users can save properties to favorites lists and access market data and analytic
   model finances, and gain knowledge - helping users make well-informed real estate 
   decisions through its free search, rating, and analytical tools.
 `}
-  />
+	/>
 )
