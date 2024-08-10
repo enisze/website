@@ -17,7 +17,7 @@ export const Experience = async () => (
 					time: 'Sep.2021 - today'
 				},
 				{
-					title: 'Working Student Empower GmbH',
+					title: 'Software Engineer Empower GmbH',
 					description: `Working with a cross platform team.  <br/> Main Task: Implementing features in the web application.  <br/> Main technologies used: React, Redux, Node, Swagger, Jira, Confluence.`,
 					time: 'Jun. 2020 - Aug. 2021'
 				},
@@ -31,22 +31,22 @@ Gathering and Preprocessing image data using Python.
 					time: 'Jun. 2019 - Sep. 2019'
 				},
 				{
-					title: 'Research Assistant Fraunhofer IPT',
+					title: 'Software Engineer Fraunhofer IPT',
 					description: `Further development of existing software in C#.<br/>
 Main Task: Developing a filter functionality for sensor data C#.<br/>
 Subtask: Adjusting the web application, desktop application, and database schema (Angular, C#)
                     `,
-					time: 'Apr. 2018 - Dec. 2018'
-				},
-				{
-					title: 'Research Assistant Fraunhofer IPT',
-					description: `
-                    Research in Industry 4.0. <br/>
-                    Developing scripts for process automation. <br/>
-                    Modelling and design of web application for industry project. <br/>
-                    `,
-					time: 'Apr. 2016 - Aug. 2017'
+					time: 'Apr. 2016 - Dec. 2018'
 				}
+				// {
+				// 	title: 'Research Assistant Fraunhofer IPT',
+				// 	description: `
+				//     Research in Industry 4.0. <br/>
+				//     Developing scripts for process automation. <br/>
+				//     Modelling and design of web application for industry project. <br/>
+				//     `,
+				// 	time: 'Apr. 2016 - Aug. 2017'
+				// }
 			]}
 		/>
 	</section>

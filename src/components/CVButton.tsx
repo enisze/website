@@ -2,11 +2,11 @@ import { ShimmerButton } from './ShimmerButton'
 
 export const CVButton = () => (
 	<div className='flex gap-2'>
-		<ShimmerButton>
+		{/* <ShimmerButton>
 			<a download='Enis-Zejnilovic-CV.pdf' href='/data/Lebenslauf.pdf'>
 				Download CV
 			</a>
-		</ShimmerButton>
+		</ShimmerButton> */}
 
 		<ShimmerButton>
 			<a download='Enis-Zejnilovic-reference.pdf' href='/data/Referenz.pdf'>
