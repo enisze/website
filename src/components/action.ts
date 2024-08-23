@@ -24,9 +24,13 @@ export const sendMail = async (formData: FormData) => {
         transporter.sendMail({
             from: `"${name}" ${email.toString()}`,
             sender: email.toString(),
-            text: message.toString(),
+            text: `
+            Name: ${name.toString()}
+            Email: ${email} 
+            Message: \n
+            ${message.toString()}`,
             to: 'eniszej@gmail.com',
-            subject: 'New message from your portfolio'
+            subject: `New message from your portfolio from ${email.toString()}`
         })
     }
 
