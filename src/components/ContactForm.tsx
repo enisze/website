@@ -1,14 +1,24 @@
 'use client'
 import { useSetAtom } from 'jotai'
+import { useState } from 'react'
 import { toast } from 'sonner'
 import { sendMail } from './action'
 import { confettiAtom, ConfettiExplosion } from './ConfettiExplosion'
+import { ShimmerButton } from './ShimmerButton'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
 import { Textarea } from './ui/textarea'
 
 export const ContactForm = () => {
 	const setConfetti = useSetAtom(confettiAtom)
+	const [isDisabled, setIsDisabled] = useState(false)
+
+	const handleClick = () => {
+		setIsDisabled(true)
+		setTimeout(() => {
+			setIsDisabled(false)
+		}, 10000)
+	}
 	return (
 		<section className='bg-white dark:bg-slate-900 relative h-full rounded-lg shadow-lg shadow-slate-950'>
 			<div className='py-8 lg:py-16 px-4 mx-auto max-w-screen-md'>
@@ -79,12 +89,13 @@ export const ContactForm = () => {
 						/>
 					</div>
 
-					<button
+					<ShimmerButton
 						type='submit'
-						className='border py-3 px-5 text-sm font-medium text-center dark:text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800'
+						onClick={handleClick}
+						disabled={isDisabled}
 					>
 						Send message
-					</button>
+					</ShimmerButton>
 
 					<ConfettiExplosion />
 				</form>
