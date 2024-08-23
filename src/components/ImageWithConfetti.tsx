@@ -1,5 +1,12 @@
+'use client'
 import Image from 'next/image'
+
+import { useSetAtom } from 'jotai'
+import { confettiAtom } from './ConfettiExplosion'
+
 export const ImageWithConfetti = () => {
+	const setConfetti = useSetAtom(confettiAtom)
+
 	return (
 		<>
 			<Image
@@ -11,13 +18,8 @@ export const ImageWithConfetti = () => {
 				id='me'
 				decoding='async'
 				loading='lazy'
+				onClick={() => setConfetti(true)}
 			/>
-
-			{/* <script>
-        import confetti from 'canvas-confetti' const img =
-        document.body.querySelector('#me') if (img){' '}
-        {img.addEventListener('click', () => confetti())} */}
-			{/* </script> */}
 		</>
 	)
 }

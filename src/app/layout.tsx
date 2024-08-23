@@ -1,10 +1,11 @@
+import { ConfettiExplosion } from '@/components/ConfettiExplosion'
 import { Footer } from '@/components/Footer'
 import GridPattern from '@/components/GridPattern'
 import { Navbar } from '@/components/Navbar'
+import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
-import { Toaster } from 'sonner'
 import { BASE_URL } from '../../config'
 import './globals.css'
 
@@ -69,6 +70,7 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
+					<ConfettiExplosion />
 					<Toaster />
 					<div className='fixed w-full z-20'>
 						<Navbar />
