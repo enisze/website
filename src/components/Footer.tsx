@@ -1,13 +1,12 @@
-import Link from 'next/link'
 import { cn } from '../lib/utils'
 
 export const Footer = () => (
 	<footer className='space-y-2 pb-4'>
 		<div className='flex justify-center gap-x-1'>
-			<Link
+			<a
 				href='https://www.linkedin.com/in/enis-zejnilovic-790b91146'
 				target='_blank'
-				rel='noreferrer noopener'
+				rel="noreferrer noopener"
 				className='w-8 h-8'
 			>
 				<img
@@ -15,11 +14,11 @@ export const Footer = () => (
 					alt={'LinkedIn'}
 					className={cn(['h-12 w-12'])}
 				/>
-			</Link>
-			<Link
+			</a>
+			<a
 				href='https://github.com/enisze'
 				target='_blank'
-				rel='noreferrer noopener'
+				rel="noreferrer noopener"
 				className='w-8 h-8'
 			>
 				<img
@@ -27,11 +26,11 @@ export const Footer = () => (
 					alt={'Github'}
 					className={cn(['h-12 w-12', 'dark:invert-0 invert'])}
 				/>
-			</Link>
-			<Link
+			</a>
+			<a
 				href='mailto:eniszej@gmail.com'
 				target='_blank'
-				rel='noreferrer noopener'
+				rel="noreferrer noopener"
 				className='w-8 h-8'
 			>
 				<img
@@ -39,7 +38,7 @@ export const Footer = () => (
 					alt={'Email'}
 					className={cn(['h-12 w-12', 'invert-0 dark:invert'])}
 				/>
-			</Link>
+			</a>
 		</div>
 
 		<p className='flex justify-center'>&copy; 2023 Enis Zejnilovic</p>

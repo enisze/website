@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { BorderBeam } from './BorderBeam'
 import { GithubLink } from './GithubLink'
 import { ProjectLink } from './ProjectLink'
@@ -36,7 +35,7 @@ export const ProjectMarquee = (props: Props) => {
 					<ProjectLink projectLink={projectLink} />
 				</div>
 				{src ? (
-					<Link href={localLink ?? ''}>
+					<a href={localLink}>
 						<Image
 							src={src}
 							alt={alt}
@@ -45,7 +44,7 @@ export const ProjectMarquee = (props: Props) => {
 							className='ease-in-out duration-500 hover:scale-125 object-cover md:w-[80vw] md:h-full'
 							decoding='async'
 						/>
-					</Link>
+					</a>
 				) : (
 					<slot />
 				)}
@@ -56,17 +55,17 @@ export const ProjectMarquee = (props: Props) => {
 
 			<div className='flex flex-col p-4 pb-16 lg:px-4 lg:py-0 gap-4 w-full'>
 				<h1 className='text-xl font-bold pt-4'>
-					<Link href={localLink ?? ''}>{title}</Link>
+					<a href={localLink}>{title}</a>
 				</h1>
 				<span className='text-sm'>{description}</span>
 			</div>
 
-			<Link
-				href={localLink ?? ''}
+			<a
+				href={localLink}
 				className='rounded-xl m-2 z-10 p-2 bg-gray-200 dark:bg-slate-800 shadow-lg w-fit whitespace-nowrap self-end'
 			>
 				More Details
-			</Link>
+			</a>
 		</div>
 	)
 }

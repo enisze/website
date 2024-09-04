@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { ShimmerButton } from './ShimmerButton'
 
 export const CVButton = () => (
@@ -9,11 +8,11 @@ export const CVButton = () => (
 			</a>
 		</ShimmerButton> */}
 
-		<ShimmerButton asChild>
-			<Link download='Enis-Zejnilovic-reference.pdf' href='/data/Referenz.pdf'>
+		<ShimmerButton>
+			<a download='Enis-Zejnilovic-reference.pdf' href='/data/Referenz.pdf'>
 				<span className='hidden md:block'>Download Reference Letter</span>
 				<span className='block md:hidden'>Download Reference</span>
-			</Link>
+			</a>
 		</ShimmerButton>
 	</div>
 )
