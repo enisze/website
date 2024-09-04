@@ -1,8 +1,9 @@
 'use client'
+import { sendEmailAction } from '@/lib/action'
 import { useSetAtom } from 'jotai'
-import { useState } from 'react'
+import { type FormEvent, useState } from 'react'
 import { toast } from 'sonner'
-import { sendMail } from './action'
+import { useServerAction } from 'zsa-react'
 import { confettiAtom, ConfettiExplosion } from './ConfettiExplosion'
 import { ShimmerButton } from './ShimmerButton'
 import { Input } from './ui/input'
@@ -13,12 +14,26 @@ export const ContactForm = () => {
 	const setConfetti = useSetAtom(confettiAtom)
 	const [isDisabled, setIsDisabled] = useState(false)
 
-	const handleClick = () => {
-		setIsDisabled(true)
-		setTimeout(() => {
+	const { execute: sendMail } = useServerAction(sendEmailAction, {
+		onSuccess: () => {
+			toast.success('Your message was sent! I will get back to you asap.')
+			setConfetti(true)
 			setIsDisabled(false)
-		}, 10000)
+		},
+		onError: (error) => {
+			toast.error('Something went wrong. Please try again.')
+			setIsDisabled(false)
+		}
+	})
+
+	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+		event.preventDefault()
+		setIsDisabled(true)
+
+		const formData = new FormData(event.currentTarget)
+		sendMail(formData)
 	}
+
 	return (
 		<section className='bg-white dark:bg-slate-900 relative h-full rounded-lg shadow-lg shadow-slate-950'>
 			<div className='py-8 lg:py-16 px-4 mx-auto max-w-screen-md'>
@@ -29,18 +44,7 @@ export const ContactForm = () => {
 					Feel free to contact me regarding projects or if you want to chat
 					about anything.
 				</p>
-				<form
-					className='space-y-8'
-					action={async (formData) => {
-						const result = await sendMail(formData)
-						if (result.success) {
-							toast.success(
-								'Your message was sent! I will get back to you asap.'
-							)
-							setConfetti(true)
-						}
-					}}
-				>
+				<form className='space-y-8' onSubmit={handleSubmit}>
 					<div>
 						<Label
 							htmlFor='name'
@@ -88,12 +92,7 @@ export const ContactForm = () => {
 							placeholder='Leave a comment...'
 						/>
 					</div>
-
-					<ShimmerButton
-						type='submit'
-						onClick={handleClick}
-						disabled={isDisabled}
-					>
+					<ShimmerButton type='submit' disabled={isDisabled}>
 						Send message
 					</ShimmerButton>
 
