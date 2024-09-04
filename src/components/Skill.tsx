@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { cn } from '../lib/utils'
 import type { StackItem } from './stack'
 type Props = {
@@ -6,10 +7,11 @@ type Props = {
 
 export const Skill = ({ item }: Props) => {
 	return (
-		<a
+		<Link
 			className='flex p-2 md:p-3 shadow-lg shadow-slate-950 rounded-lg w-[100px] md:w-32 bg-white border-blue-500 border dark:bg-gray-900 flex-col items-center gap-1 duration-200 hover:drop-shadow-[0_0px_20px_rgba(0,0,0,0.25)] dark:hover:drop-shadow-[0_0px_20px_rgba(255,255,255,0.25)]'
 			href={item.href}
-			target='_blank' rel="noreferrer"
+			target='_blank'
+			rel='noreferrer'
 		>
 			<img
 				src={item.imgUrl}
@@ -21,6 +23,6 @@ export const Skill = ({ item }: Props) => {
 				])}
 			/>
 			<p className='text-xs md:text-sm'>{item.label}</p>
-		</a>
+		</Link>
 	)
 }
