@@ -9,11 +9,11 @@ export const CVButton = () => (
 			</a>
 		</ShimmerButton> */}
 
-		<ShimmerButton asChild>
-			<Link download='Enis-Zejnilovic-reference.pdf' href='/data/Referenz.pdf'>
+		<Link download='Enis-Zejnilovic-reference.pdf' href='/data/Referenz.pdf'>
+			<ShimmerButton asChild>
 				<span className='hidden md:block'>Download Reference Letter</span>
 				<span className='block md:hidden'>Download Reference</span>
-			</Link>
-		</ShimmerButton>
+			</ShimmerButton>
+		</Link>
 	</div>
 )
