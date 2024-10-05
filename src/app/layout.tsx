@@ -77,7 +77,7 @@ export default function RootLayout({
 					<div className='fixed w-full z-20'>
 						<Navbar />
 					</div>
-					<div className='py-24 px-8'>
+					<div className='py-12 lg:py-20 px-8'>
 						{/* <DotPattern
               className={cn(
                 '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',

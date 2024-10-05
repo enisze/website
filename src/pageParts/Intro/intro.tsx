@@ -20,9 +20,8 @@ export const Intro = () => (
 				<MapComponent />
 			</div>
 
-			<div className='absolute -bottom-6 left-[35%] flex gap-1 flex-wrap text-gray-600 z-50'>
-				<span>© OpenMapTiles</span>
-				<span>© OpenStreetMap contributors</span>
+			<div className='absolute -bottom-6 md:left-[35%] flex gap-1 text-gray-600 z-50 truncate'>
+				© OpenMapTiles © OpenStreetMap contributors
 			</div>
 
 			<div className='absolute hover:animate-shake z-50 w-[180px] h-[178px] bottom-0 right-0 overflow-hidden transform rotate-6 -mb-16'>
