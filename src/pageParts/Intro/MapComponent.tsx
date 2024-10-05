@@ -3,7 +3,7 @@
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import type React from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
 
 // Set up Leaflet default icon options
@@ -31,35 +31,27 @@ const AnimatedZoom: React.FC = () => {
 	return null
 }
 
-export const MapComponent: React.FC = () => {
-	const [mapReady, setMapReady] = useState(false)
-
-	useEffect(() => {
-		if (typeof window !== 'undefined') {
-			setMapReady(true)
-		}
-	}, [])
-
+const MapComponent: React.FC = () => {
 	return (
 		<div className='w-full h-full flex items-center justify-center'>
-			{mapReady && (
-				<div className='w-full h-full rounded-lg overflow-hidden shadow-lg'>
-					<MapContainer
-						center={[51.1657, 10.4515]} // Center position in Germany
-						zoom={6}
-						style={{ height: '100%', width: '100%', opacity: 0.85 }}
-						zoomControl={false}
-					>
-						<TileLayer
-							url='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
-							attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>'
-							noWrap
-						/>
-						<Marker position={[50.9375, 6.9603]} />
-						<AnimatedZoom />
-					</MapContainer>
-				</div>
-			)}
+			<div className='w-full h-full rounded-lg overflow-hidden shadow-lg'>
+				<MapContainer
+					center={[51.1657, 10.4515]} // Center position in Germany
+					zoom={6}
+					style={{ height: '100%', width: '100%', opacity: 0.85 }}
+					zoomControl={false}
+				>
+					<TileLayer
+						url='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
+						attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>'
+						noWrap
+					/>
+					<Marker position={[50.9375, 6.9603]} />
+					<AnimatedZoom />
+				</MapContainer>
+			</div>
 		</div>
 	)
 }
+
+export default MapComponent

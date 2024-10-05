@@ -1,8 +1,12 @@
 import { About } from '@/components/Content/About'
+import dynamic from 'next/dynamic'
 import { ImageWithConfetti } from '../../components/ImageWithConfetti'
 import { TypingAnimation } from '../TypingAnimation'
-import { MapComponent } from './MapComponent'
 import { Timer } from './Timer'
+
+const MapComponent = dynamic(async () => import('./MapComponent'), {
+	ssr: false
+})
 
 export const Intro = () => (
 	<>
