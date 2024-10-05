@@ -3,11 +3,11 @@ import { sendEmailAction } from '@/lib/action'
 import { type FormEvent, useState } from 'react'
 import { toast } from 'sonner'
 import { useServerAction } from 'zsa-react'
-import { ConfettiExplosion } from './ConfettiExplosion'
-import { ShimmerButton } from './ShimmerButton'
-import { Input } from './ui/input'
-import { Label } from './ui/label'
-import { Textarea } from './ui/textarea'
+import { ConfettiExplosion } from '../ConfettiExplosion'
+import { ShimmerButton } from '../Layout/ShimmerButton'
+import { Input } from '../ui/input'
+import { Label } from '../ui/label'
+import { Textarea } from '../ui/textarea'
 
 export const ContactForm = () => {
 	const [confetti, setConfetti] = useState(false)

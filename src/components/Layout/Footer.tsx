@@ -1,4 +1,4 @@
-import { cn } from '../lib/utils'
+import { cn } from '@/lib/utils'
 
 export const Footer = () => (
 	<footer className='space-y-2 pb-4'>
@@ -6,7 +6,7 @@ export const Footer = () => (
 			<a
 				href='https://www.linkedin.com/in/enis-zejnilovic-790b91146'
 				target='_blank'
-				rel="noreferrer noopener"
+				rel='noreferrer noopener'
 				className='w-8 h-8'
 			>
 				<img
@@ -18,7 +18,7 @@ export const Footer = () => (
 			<a
 				href='https://github.com/enisze'
 				target='_blank'
-				rel="noreferrer noopener"
+				rel='noreferrer noopener'
 				className='w-8 h-8'
 			>
 				<img
@@ -30,7 +30,7 @@ export const Footer = () => (
 			<a
 				href='mailto:eniszej@gmail.com'
 				target='_blank'
-				rel="noreferrer noopener"
+				rel='noreferrer noopener'
 				className='w-8 h-8'
 			>
 				<img

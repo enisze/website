@@ -1,5 +1,5 @@
-import { ContactForm } from '../components/ContactForm'
-import { Heading } from '../components/Layout/Heading'
+import { ContactForm } from '@/components/Content/ContactForm'
+import { Heading } from '@/components/Layout/Heading'
 
 export const Contact = async () => {
 	return (

@@ -1,8 +1,8 @@
 //TODO: Add github links + add icons for which frameworks were used. Add filler image, if image no available. Mark projects as personal, open source, commercial
 'use client'
 
-import { Heading } from '@/components/Heading'
-import { ProjectMarquee } from '@/components/ProjectMarquee'
+import { Heading } from '@/components/Layout/Heading'
+import { ProjectMarquee } from '@/components/Project/ProjectMarquee'
 import {
 	Carousel,
 	CarouselContent,

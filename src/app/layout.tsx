@@ -1,5 +1,5 @@
 import { ConfettiExplosion } from '@/components/ConfettiExplosion'
-import { Footer } from '@/components/Footer'
+import { Footer } from '@/components/Layout/Footer'
 import GridPattern from '@/components/Layout/GridPattern'
 import { Navbar } from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'

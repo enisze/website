@@ -1,5 +1,5 @@
+import { Link } from '../Layout/Link'
 import { CVButton } from './CVButton'
-import { Link } from './Layout/Link'
 
 export const About = () => (
 	<section className='w-full  shadow-lg'>

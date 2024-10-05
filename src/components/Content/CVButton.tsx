@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ShimmerButton } from './ShimmerButton'
+import { ShimmerButton } from '../Layout/ShimmerButton'
 
 export const CVButton = () => (
 	<div className='flex gap-2'>

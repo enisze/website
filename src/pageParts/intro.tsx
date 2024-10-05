@@ -1,4 +1,4 @@
-import { About } from '../components/About'
+import { About } from '@/components/Content/About'
 import { ImageWithConfetti } from '../components/ImageWithConfetti'
 import { MapComponent } from './AnimatedMap'
 import { TypingAnimation } from './TypingAnimation'
