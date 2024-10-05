@@ -10,7 +10,7 @@ export const CVButton = () => (
 		</ShimmerButton> */}
 
 		<Link download='Enis-Zejnilovic-reference.pdf' href='/data/Referenz.pdf'>
-			<ShimmerButton asChild>
+			<ShimmerButton>
 				<span className='hidden md:block'>Download Reference Letter</span>
 				<span className='block md:hidden'>Download Reference</span>
 			</ShimmerButton>
