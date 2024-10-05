@@ -12,7 +12,7 @@ module.exports = {
 				fade: 'fadeIn 1s ease-in-out',
 				marquee: 'marquee var(--duration) linear infinite',
 				'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
-				shake: 'shake 0.5s ease-in-out'
+				shake: 'shake 0.75s ease-in-out'
 			},
 			keyframes: {
 				'border-beam': {
@@ -22,16 +22,16 @@ module.exports = {
 				},
 				shake: {
 					'0%, 100%': {
-						transform: 'translateX(0)'
+						transform: 'rotate(3deg)'
 					},
 					'25%': {
-						transform: 'translateX(-5px)'
+						transform: 'rotate(-3deg)'
 					},
 					'50%': {
-						transform: 'translateX(5px)'
+						transform: 'rotate(3deg)'
 					},
 					'75%': {
-						transform: 'translateX(-5px)'
+						transform: 'rotate(-3deg)'
 					}
 				},
 				fadeIn: {
