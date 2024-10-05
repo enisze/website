@@ -34,7 +34,7 @@ const AnimatedZoom: React.FC = () => {
 const MapComponent: React.FC = () => {
 	return (
 		<div className='w-full h-full flex items-center justify-center'>
-			<div className='w-full h-full rounded-lg overflow-hidden shadow-lg'>
+			<div className='w-full h-full overflow-hidden shadow-lg'>
 				<MapContainer
 					center={[51.1657, 10.4515]} // Center position in Germany
 					zoom={6}

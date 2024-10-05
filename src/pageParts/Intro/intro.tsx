@@ -10,7 +10,7 @@ const MapComponent = dynamic(async () => import('./MapComponent'), {
 
 export const Intro = () => (
 	<>
-		<div className='relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-[300px] rounded-lg text-white z-0'>
+		<div className='relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-[300px] text-white z-0'>
 			<div className='absolute inset-0 bg-gradient-to-t from-gray-600/20 to-transparent ' />
 			<div className='absolute bottom-0 left-4'>
 				<h1 className='text-2xl font-semibold m-0'>Hi,</h1>
