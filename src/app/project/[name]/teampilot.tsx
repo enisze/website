@@ -1,5 +1,5 @@
-import { ProjectDetails } from '../../../components/ProjectDetails'
-import { getItemsByLabels, type StackLabel } from '../../../components/stack'
+import { ProjectDetails } from '@/components/Project/ProjectDetails'
+import { getItemsByLabels, type StackLabel } from '@/components/stack'
 
 const labels: StackLabel[] = [
 	'React',
