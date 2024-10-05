@@ -30,8 +30,8 @@ export const ProjectMarquee = (props: Props) => {
 	return (
 		<div className='flex relative flex-col rounded-xl border'>
 			<BorderBeam />
-			<div className='-z-10 relative rounded-b-none rounded-xl overflow-hidden'>
-				<div className='absolute bottom-1 left-1 flex gap-2 items-center z-10'>
+			<div className='relative rounded-b-none rounded-xl overflow-hidden'>
+				<div className='absolute bottom-1 left-1 flex gap-2 items-center z-20'>
 					<GithubLink githubLink={githubLink} />
 					<ProjectLink projectLink={projectLink} />
 				</div>
