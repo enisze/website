@@ -11,12 +11,27 @@ module.exports = {
 				shimmer: 'shimmer 2s linear infinite',
 				fade: 'fadeIn 1s ease-in-out',
 				marquee: 'marquee var(--duration) linear infinite',
-				'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
+				'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+				shake: 'shake 0.5s ease-in-out'
 			},
 			keyframes: {
 				'border-beam': {
 					'100%': {
 						'offset-distance': '100%'
+					}
+				},
+				shake: {
+					'0%, 100%': {
+						transform: 'translateX(0)'
+					},
+					'25%': {
+						transform: 'translateX(-5px)'
+					},
+					'50%': {
+						transform: 'translateX(5px)'
+					},
+					'75%': {
+						transform: 'translateX(-5px)'
 					}
 				},
 				fadeIn: {

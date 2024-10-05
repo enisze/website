@@ -1,7 +1,8 @@
 import { About } from '@/components/Content/About'
-import { ImageWithConfetti } from '../components/ImageWithConfetti'
-import { MapComponent } from './Map/MapComponent'
-import { TypingAnimation } from './TypingAnimation'
+import { ImageWithConfetti } from '../../components/ImageWithConfetti'
+import { TypingAnimation } from '../TypingAnimation'
+import { MapComponent } from './MapComponent'
+import { Timer } from './Timer'
 
 export const Intro = () => (
 	<>
@@ -19,8 +20,11 @@ export const Intro = () => (
 				© OpenMapTiles © OpenStreetMap contributors
 			</div>
 
-			<div className='absolute z-50 w-[180px] h-[178px] bottom-0 right-0 overflow-hidden transform rotate-6 -mb-16'>
+			<div className='absolute hover:animate-shake z-50 w-[180px] h-[178px] bottom-0 right-0 overflow-hidden transform rotate-6 -mb-16'>
 				<ImageWithConfetti />
+			</div>
+			<div className='absolute top-4 left-4'>
+				<Timer />
 			</div>
 		</div>
 

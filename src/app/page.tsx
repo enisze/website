@@ -3,7 +3,7 @@
 import { Contact } from '@/pageParts/contact'
 import { Education } from '@/pageParts/education'
 import { Experience } from '@/pageParts/experience'
-import { Intro } from '@/pageParts/intro'
+import { Intro } from '@/pageParts/Intro/intro'
 import { Projects } from '@/pageParts/projects'
 import { Skills } from '@/pageParts/skills'
 
