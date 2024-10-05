@@ -20,7 +20,7 @@ export const Intro = () => (
 				<MapComponent />
 			</div>
 
-			<div className='absolute -bottom-6 md:left-[35%] flex gap-1 text-gray-600 z-50 truncate'>
+			<div className='absolute top-0 right-0 text-gray-500 z-50 truncate'>
 				© OpenMapTiles © OpenStreetMap contributors
 			</div>
 
