@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 import type { ReactNode } from 'react'
-import type { ButtonProps } from './ui/button'
+import type { ButtonProps } from '../ui/button'
 
 export const ShimmerButton = ({
 	children,

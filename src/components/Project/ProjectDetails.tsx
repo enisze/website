@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import { GithubLink } from './GithubLink'
-import { Heading } from './Layout/Heading'
+import { Skill } from '../Content/Skill'
+import { GithubLink } from '../Layout/GithubLink'
+import { Heading } from '../Layout/Heading'
+import type { StackItem } from '../stack'
 import { ProjectLink } from './ProjectLink'
-import { Skill } from './Skill'
-import type { StackItem } from './stack'
 
 type Props = {
 	title: string
@@ -77,7 +77,7 @@ export const ProjectDetails = (props: Props) => {
 				</div>
 			</div>
 
-			<div className='to-blue-500 from-white dark:from-slate-800 dark:to-blue-400 bg-gradient-to-r pt-2 mt-4 rounded-full w-1/2'></div>
+			<div className='to-blue-500 from-white dark:from-slate-800 dark:to-blue-400 bg-gradient-to-r pt-2 mt-4 rounded-full w-1/2' />
 			<span>
 				{description.split('<br/>').map((entry, idx) => (
 					<>
