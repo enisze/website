@@ -1,12 +1,12 @@
 'use client'
 import { Dock, DockIcon } from '@/components/Dock'
-import GridPattern from '@/components/GridPattern'
 import IconCloud from '@/components/IconCloud'
+import GridPattern from '@/components/Layout/GridPattern'
 import { cn } from '@/lib/utils'
 import { Globe, Text } from 'lucide-react'
 import { useState } from 'react'
-import { Heading } from '../components/Heading'
-import { Skill } from '../components/Skill'
+import { Skill } from '../components/Content/Skill'
+import { Heading } from '../components/Layout/Heading'
 import { stacks } from '../components/stack'
 
 export const Skills = () => {

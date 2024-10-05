@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { BorderBeam } from './BorderBeam'
-import { GithubLink } from './GithubLink'
+import { BorderBeam } from '../Layout/BorderBeam'
+import { GithubLink } from '../Layout/GithubLink'
 import { ProjectLink } from './ProjectLink'
 
 type Props = {

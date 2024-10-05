@@ -1,13 +1,13 @@
 'use client'
 import { Laptop, Moon, SunMedium } from 'lucide-react'
 import { useTheme } from 'next-themes'
-import { Button } from './ui/button'
+import { Button } from '../ui/button'
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger
-} from './ui/dropdown-menu'
+} from '../ui/dropdown-menu'
 
 export function ThemeToggle() {
 	const { setTheme } = useTheme()
@@ -24,7 +24,7 @@ export function ThemeToggle() {
 			<DropdownMenuContent
 				align='end'
 				forceMount
-				className='bg-white dark:bg-black'
+				className='bg-white dark:bg-gray-900'
 			>
 				<DropdownMenuItem onClick={() => setTheme('light')}>
 					<SunMedium className='mr-2 h-4 w-4' />

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { GithubLink } from './GithubLink'
-import { Heading } from './Heading'
+import { Heading } from './Layout/Heading'
 import { ProjectLink } from './ProjectLink'
 import { Skill } from './Skill'
 import type { StackItem } from './stack'

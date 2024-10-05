@@ -1,5 +1,5 @@
-import { Heading } from '../components/Heading'
-import { Timeline } from '../components/Timeline'
+import { Heading } from '../components/Layout/Heading'
+import { Timeline } from '../components/Layout/Timeline'
 
 export const Education = async () => (
 	<section className='space-y-4 scroll-m-20' id='education'>

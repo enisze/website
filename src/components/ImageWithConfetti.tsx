@@ -14,7 +14,8 @@ export const ImageWithConfetti = () => {
 				alt='Enis Zejnilovic'
 				width={932}
 				height={910}
-				className='flex-grow shadow-lg shadow-slate-950 w-full cursor-pointer m-auto p-1 rounded-full ring-2 ring-blue-800 dark:ring-blue-400/80'
+				// className='flex-grow shadow-lg shadow-slate-950 w-full cursor-pointer m-auto p-1 rounded-full ring-2 ring-blue-800 dark:ring-blue-400/80'
+				className='z-50 cursor-pointer'
 				id='me'
 				decoding='async'
 				loading='lazy'

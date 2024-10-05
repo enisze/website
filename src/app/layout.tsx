@@ -1,6 +1,6 @@
 import { ConfettiExplosion } from '@/components/ConfettiExplosion'
 import { Footer } from '@/components/Footer'
-import GridPattern from '@/components/GridPattern'
+import GridPattern from '@/components/Layout/GridPattern'
 import { Navbar } from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/lib/utils'
@@ -11,10 +11,11 @@ import './globals.css'
 
 export const metadata: Metadata = {
 	title: 'Enis Zejnilovic Full-stack Software Developer - Portfolio',
-	description: `Portfolio of Enis Zejnilovic, a skilled Full-stack software engineer, with experience in web development. Specialized in React, TypeScript, and Next.js.`,
+	description:
+		'Portfolio of Enis Zejnilovic, a skilled Full-stack software engineer, with experience in web development. Specialized in React, TypeScript, and Next.js.',
 	openGraph: {
 		title: 'Enis Zejnilovic Full-stack Software Developer - Portfolio',
-		url: 'https://enis.dev',
+		url: 'https://zejnilovic.de',
 		type: 'website',
 		images: [
 			{
@@ -26,7 +27,8 @@ export const metadata: Metadata = {
 	twitter: {
 		creator: '@enis_zejnilovic',
 		title: 'Enis Zejnilovic Full-stack Software Developer - Portfolio',
-		description: `Portfolio of Enis Zejnilovic, a skilled Full-stack software engineer, with experience in web development. Specialized in React, TypeScript, and Next.js.`,
+		description:
+			'Portfolio of Enis Zejnilovic, a skilled Full-stack software engineer, with experience in web development. Specialized in React, TypeScript, and Next.js.',
 		card: 'summary_large_image',
 		images: [
 			{
@@ -63,14 +65,14 @@ export default function RootLayout({
 				<title>Enis Zejnilovic Portfolio</title>
 			</head>
 
-			<body className='dark:bg-black text-black dark:text-white flex flex-col'>
+			<body className='dark:bg-gray-900 text-black dark:text-white flex flex-col'>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'
 					enableSystem
 					disableTransitionOnChange
 				>
-					<ConfettiExplosion />
+					<ConfettiExplosion atom />
 					<Toaster />
 					<div className='fixed w-full z-20'>
 						<Navbar />

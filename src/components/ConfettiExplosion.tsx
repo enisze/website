@@ -7,10 +7,19 @@ import { useWindowSize } from 'usehooks-ts'
 
 export const confettiAtom = atom(false)
 
-export const ConfettiExplosion = () => {
+export const ConfettiExplosion = ({
+	confetti,
+	setConfetti,
+	atom
+}: {
+	confetti?: boolean
+	setConfetti?: (value: boolean) => void
+	atom?: boolean
+}) => {
 	const size = useWindowSize()
 
-	const [confetti, setConfetti] = useAtom(confettiAtom)
+	const [showConfettiAtom, setConfettiAtom] = useAtom(confettiAtom)
+
 	const [showConfetti, setShowConfetti] = useState(false)
 
 	useEffect(() => {
@@ -19,9 +28,17 @@ export const ConfettiExplosion = () => {
 			setTimeout(() => {
 				setShowConfetti(false)
 			}, 5000)
-			setConfetti(false)
+			setConfetti?.(false)
 		}
-	}, [confetti, setConfetti])
+
+		if (atom && showConfettiAtom) {
+			setShowConfetti(true)
+			setTimeout(() => {
+				setShowConfetti(false)
+				setConfettiAtom(false)
+			}, 5000)
+		}
+	}, [confetti, setConfetti, showConfettiAtom, setConfettiAtom, atom])
 
 	return (
 		<>

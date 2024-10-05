@@ -1,17 +1,17 @@
 'use client'
 import { sendEmailAction } from '@/lib/action'
-import { useSetAtom } from 'jotai'
 import { type FormEvent, useState } from 'react'
 import { toast } from 'sonner'
 import { useServerAction } from 'zsa-react'
-import { confettiAtom, ConfettiExplosion } from './ConfettiExplosion'
+import { ConfettiExplosion } from './ConfettiExplosion'
 import { ShimmerButton } from './ShimmerButton'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
 import { Textarea } from './ui/textarea'
 
 export const ContactForm = () => {
-	const setConfetti = useSetAtom(confettiAtom)
+	const [confetti, setConfetti] = useState(false)
+
 	const [isDisabled, setIsDisabled] = useState(false)
 
 	const { execute: sendMail } = useServerAction(sendEmailAction, {
@@ -96,7 +96,7 @@ export const ContactForm = () => {
 						Send message
 					</ShimmerButton>
 
-					<ConfettiExplosion />
+					<ConfettiExplosion confetti={confetti} setConfetti={setConfetti} />
 				</form>
 			</div>
 		</section>
