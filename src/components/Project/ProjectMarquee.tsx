@@ -42,7 +42,7 @@ export const ProjectMarquee = (props: Props) => {
 							alt={alt}
 							width={932}
 							height={210}
-							className='ease-in-out duration-500 hover:scale-125 object-cover md:w-[80vw] md:h-full'
+							className='ease-in-out cursor-pointer duration-500 hover:scale-125 object-cover md:w-[80vw] md:h-full'
 							decoding='async'
 						/>
 					</Link>
@@ -54,16 +54,16 @@ export const ProjectMarquee = (props: Props) => {
 				</div>
 			</div>
 
-			<div className='flex flex-col p-4 pb-16 lg:px-4 lg:py-0 gap-4 w-full'>
-				<h1 className='text-xl font-bold pt-4'>
+			<div className='flex flex-col pl-2 py-2 md:p-4 md:pb-16 lg:px-4 lg:py-0 gap-4 w-full'>
+				<h1 className='text-xl font-bold md:pt-4'>
 					<Link href={localLink ?? ''}>{title}</Link>
 				</h1>
-				<span className='text-sm'>{description}</span>
+				<span className='text-sm hidden md:block'>{description}</span>
 			</div>
 
 			<Link
 				href={localLink ?? ''}
-				className='rounded-xl m-2 z-10 p-2 bg-gray-200 dark:bg-slate-800 shadow-lg w-fit whitespace-nowrap self-end'
+				className='hidden md:block rounded-xl m-2 z-10 p-2 bg-gray-200 dark:bg-slate-800 shadow-lg w-fit whitespace-nowrap self-end'
 			>
 				More Details
 			</Link>

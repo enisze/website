@@ -115,7 +115,7 @@ export const Projects = () => (
 		>
 			{/* <div className='relative flex flex-col items-center justify-center overflow-hidden rounded-lg border bg-background py-5 md:shadow-xl'> */}
 			<Carousel
-				className='w-full max-w-2xl'
+				className='w-full max-w-[250px] md:max-w-2xl'
 				plugins={[
 					Autoplay({
 						delay: 4000
