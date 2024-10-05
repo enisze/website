@@ -35,7 +35,9 @@ export const MapComponent: React.FC = () => {
 	const [mapReady, setMapReady] = useState(false)
 
 	useEffect(() => {
-		setMapReady(true)
+		if (typeof window !== 'undefined') {
+			setMapReady(true)
+		}
 	}, [])
 
 	return (
