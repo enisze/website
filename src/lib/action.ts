@@ -40,7 +40,7 @@ export const sendEmailAction = createServerAction()
             Email: ${email} 
             Message: \n
             ${message.toString()}`,
-            to: 'eniszej@gmail.com',
+            to: 'enis@zejnilovic.de',
             subject: `New message from your portfolio from ${email}`
         })
 

@@ -28,7 +28,7 @@ export const Footer = () => (
 				/>
 			</a>
 			<a
-				href='mailto:eniszej@gmail.com'
+				href='mailto:enis@zejnilovic.de'
 				target='_blank'
 				rel='noreferrer noopener'
 				className='w-8 h-8'
