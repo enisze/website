@@ -3,10 +3,17 @@
 import { Heading } from '@/components/Layout/Heading'
 import { Contact } from '@/pageParts/contact'
 import { Experience } from '@/pageParts/experience'
-import Education2 from '@/pageParts/Intro/Education2'
 import { Intro } from '@/pageParts/Intro/intro'
 import { Projects } from '@/pageParts/projects'
 import { Skills } from '@/pageParts/skills'
+import dynamic from 'next/dynamic'
+
+const Education2 = dynamic(
+	async () => import('./../pageParts/Intro/Education2'),
+	{
+		ssr: false
+	}
+)
 
 export default function Home() {
 	return (
