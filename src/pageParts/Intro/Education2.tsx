@@ -87,7 +87,7 @@ L.Icon.Default.mergeOptions({
 })
 
 const PopupContent = ({ city }: { city: City }) => (
-	<div className='w-[300px] min-w-[200px]'>
+	<div className='md:w-[300px] '>
 		<div className='flex gap-1 items-center'>
 			<h3 className='text-lg font-bold'>{city.name}</h3>
 			<div className='text-sm text-gray-600'>{city.country}</div>
@@ -202,11 +202,11 @@ const Education2 = () => {
 								if (ref) {
 									markersRef.current[city.id] = ref
 									ref.bindPopup(() => createPopupContent(city), {
-										minWidth: 300,
-										maxWidth: 300,
+										minWidth: window.innerWidth < 768 ? 150 : 300,
+										maxWidth: window.innerWidth < 768 ? 150 : 300,
 										keepInView: true,
 										autoPan: true,
-										autoPanPadding: [100, 100],
+										autoPanPadding: [50, 50],
 										offset: [0, 10],
 										className: 'custom-popup'
 									})
