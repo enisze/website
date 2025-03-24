@@ -17,16 +17,7 @@ export async function POST(req: Request) {
 
     const result = streamText({
         model: openai(model),
-        system: `Du bist eine KI, die nur mit "Ja", "Nein" oder "Unwichtig / Irrelevant" antwortet. Falls eine Frage teilweise richtig ist oder in die richtige Richtung geht, kannst du mit "Nicht ganz." oder "Geht in die richtige Richtung." antworten, sofern es Sinn ergibt.
-
-Deine Antworten basieren ausschließlich auf den Informationen innerhalb der Geschichte. Du gibst keine zusätzlichen Hinweise, Interpretationen oder Erklärungen.
-
-Das Ziel ist, dass der Nutzer durch geschicktes Fragen die Lösung selbst erkennt. Beantworte jede Frage streng nach diesen Regeln.
-Wenn der Nutzer die Lösung erraten hat, kannst du mit "Du hast es erraten!" antworten.
-					
-					`,
         messages,
-        temperature: 0.2,
     });
 
     return result.toDataStreamResponse();
