@@ -13,46 +13,19 @@ export function Logo({ width = 600, height = 600, className = '' }: LogoProps) {
 			width={width}
 			height={height}
 			className={className}
+			style={{ stroke: 'currentColor' }}
 		>
-			<circle
-				cx='100'
-				cy='95'
-				r='60'
-				stroke='white'
-				stroke-width='4'
-				fill='black'
-			/>
+			<circle cx='100' cy='95' r='60' stroke-width='4' fill='none' />
 
 			{/* E letter */}
-			<line x1='80' y1='50' x2='120' y2='50' stroke='white' stroke-width='4' />
-			<line x1='80' y1='48' x2='80' y2='112' stroke='white' stroke-width='4' />
-			<line
-				x1='80'
-				y1='110'
-				x2='120'
-				y2='110'
-				stroke='white'
-				stroke-width='4'
-			/>
-			<line x1='80' y1='80' x2='122' y2='80' stroke='white' stroke-width='4' />
+			<line x1='80' y1='50' x2='120' y2='50' stroke-width='4' />
+			<line x1='80' y1='48' x2='80' y2='112' stroke-width='4' />
+			<line x1='80' y1='110' x2='120' y2='110' stroke-width='4' />
+			<line x1='80' y1='80' x2='122' y2='80' stroke-width='4' />
 
 			{/* Z letter */}
-			<line
-				x1='120.6'
-				y1='80'
-				x2='81.5'
-				y2='140'
-				stroke='white'
-				stroke-width='4'
-			/>
-			<line
-				x1='80'
-				y1='140'
-				x2='120'
-				y2='140'
-				stroke='white'
-				stroke-width='4'
-			/>
+			<line x1='120.6' y1='80' x2='81.5' y2='140' stroke-width='4' />
+			<line x1='80' y1='140' x2='120' y2='140' stroke-width='4' />
 		</svg>
 	)
 }
