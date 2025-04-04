@@ -67,7 +67,7 @@ export default function RootLayout({
 				<title>Enis Zejnilovic Portfolio</title>
 			</head>
 
-			<body className='dark:bg-gray-900 text-black dark:text-white flex flex-col'>
+			<body className='dark:bg-black text-black dark:text-white flex flex-col'>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'
@@ -80,12 +80,6 @@ export default function RootLayout({
 						<Navbar />
 					</div>
 					<div className='py-12 lg:py-[72px] px-8'>
-						{/* <DotPattern
-              className={cn(
-                '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',
-                'absolute h-screen z-10'
-              )}
-            /> */}
 						<GridPattern
 							squares={[
 								[4, 4],
