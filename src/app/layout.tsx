@@ -1,4 +1,5 @@
 import { ConfettiExplosion } from '@/components/ConfettiExplosion'
+import { ContactDock } from '@/components/Layout/ContactDock'
 import { Footer } from '@/components/Layout/Footer'
 import GridPattern from '@/components/Layout/GridPattern'
 import { Navbar } from '@/components/Navbar'
@@ -13,6 +14,20 @@ export const metadata: Metadata = {
 	title: 'Enis Zejnilovic Full-stack Software Developer - Portfolio',
 	description:
 		'Portfolio of Enis Zejnilovic, a skilled Full-stack software engineer, with experience in web development. Specialized in React, TypeScript, and Next.js.',
+	icons: {
+		icon: [
+			{
+				media: '(prefers-color-scheme: light)',
+				url: '/favicon.svg',
+				href: '/favicon.svg'
+			},
+			{
+				media: '(prefers-color-scheme: dark)',
+				url: '/favicon.svg',
+				href: '/favicon.svg'
+			}
+		]
+	},
 	openGraph: {
 		title: 'Enis Zejnilovic Full-stack Software Developer - Portfolio',
 		url: 'https://zejnilovic.de',
@@ -79,6 +94,7 @@ export default function RootLayout({
 					<div className='fixed w-full z-20'>
 						<Navbar />
 					</div>
+					<ContactDock />
 					<div className='py-12 lg:py-[72px] px-8'>
 						<GridPattern
 							squares={[

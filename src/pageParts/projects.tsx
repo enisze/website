@@ -2,15 +2,6 @@
 'use client'
 
 import { Heading } from '@/components/Layout/Heading'
-import { ProjectMarquee } from '@/components/Project/ProjectMarquee'
-import {
-	Carousel,
-	CarouselContent,
-	CarouselItem,
-	CarouselNext,
-	CarouselPrevious
-} from '@/components/ui/carousel'
-import Autoplay from 'embla-carousel-autoplay'
 
 const projects = [
 	{
@@ -113,48 +104,16 @@ export const Projects = () => (
 			className='scroll-m-20 flex flex-col gap-2 items-center'
 			id='projects'
 		>
-			{/* <div className='relative flex flex-col items-center justify-center overflow-hidden rounded-lg border bg-background py-5 md:shadow-xl'> */}
-			<Carousel
-				className='w-full max-w-[250px] md:max-w-2xl'
-				plugins={[
-					Autoplay({
-						delay: 4000
-					})
-				]}
-			>
-				<CarouselContent>
-					{projects.map((project, index) => (
-						<CarouselItem key={index}>
-							<ProjectMarquee key={project.title} {...project} />
-						</CarouselItem>
-					))}
-					{/* {Array.from({ length: 5 }).map((_, index) => (
-						<CarouselItem key={index}>
-							<div className='p-1'>
-								<Card>
-									<CardContent className='flex aspect-square items-center justify-center p-6'>
-										<span className='text-4xl font-semibold'>{index + 1}</span>
-									</CardContent>
-								</Card>
-							</div>
-						</CarouselItem>
-					))} */}
-				</CarouselContent>
-				<CarouselPrevious />
-				<CarouselNext />
-			</Carousel>
-
-			{/* <Marquee pauseOnHover className='[--duration:20s]'>
-				{firstRow.map((project) => (
-					<ProjectMarquee key={project.title} {...project} />
+			<div>
+				{projects.map((project) => (
+					<div
+						key={project.title}
+						className='flex flex-col md:flex-row gap-6 items-center justify-center'
+					>
+						{project.githubLink}
+					</div>
 				))}
-			</Marquee>
-			<Marquee reverse pauseOnHover className='[--duration:20s]'>
-				{secondRow.map((project) => (
-					<ProjectMarquee key={project.title} {...project} />
-				))}
-			</Marquee> */}
-			{/* </div> */}
+			</div>
 		</section>
 	</>
 )

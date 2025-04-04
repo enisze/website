@@ -1,5 +1,6 @@
 //TODO: some padding between the page parts add twitter handle
 
+import Iridescence from '@/components/Iridescence'
 import { Heading } from '@/components/Layout/Heading'
 import { Intro } from '@/pageParts/Intro/intro'
 import { Projects } from '@/pageParts/projects'
@@ -21,8 +22,19 @@ export default function Home() {
 			<Projects />
 			<div>
 				<Heading>Education</Heading>
-				<div className='h-[500px] w-full pt-4'>
-					<Education2 />
+
+				<div className='relative h-[500px] w-full'>
+					<div className='absolute inset-0 rounded-md overflow-hidden'>
+						<Iridescence
+							color={[0.3, 0.5, 0.8]}
+							mouseReact={false}
+							amplitude={0.1}
+							speed={1.0}
+						/>
+					</div>
+					<div className='absolute inset-0 z-10 p-20 rounded-md overflow-hidden'>
+						<Education2 />
+					</div>
 				</div>
 			</div>
 		</div>

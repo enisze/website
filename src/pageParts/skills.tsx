@@ -78,11 +78,11 @@ export const Skills = () => {
 					]}
 				/>
 			) : (
-				<div className='flex flex-col gap-4'>
+				<div className='flex flex-col md:flex-row gap-4'>
 					{stacks.map((stack, index) => {
 						return (
 							<div className='flex flex-col w-full gap-4' key={index}>
-								<h2 className='text-2xl font-bold underline decoration-blue-500 underline-offset-8'>
+								<h2 className='text-2xl font-bold underline decoration-white underline-offset-8'>
 									{stack.title}
 								</h2>
 								<div className='flex flex-row flex-wrap gap-4'>
