@@ -1,5 +1,6 @@
 import { MenuIcon } from 'lucide-react'
 import Link from 'next/link'
+import { Logo } from '../../components/logo'
 import { Item } from './Layout/Item'
 import { ThemeToggle } from './Layout/ThemeToggle'
 import { NavbarInstane } from './NavbarClient'
@@ -40,7 +41,8 @@ const menuitems = [
 
 export const Navbar = () => {
 	return (
-		<header className='flex flex-row items-center justify-between p-1 lg:my-0 fixed top-0 left-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-600'>
+		<header className='flex flex-row items-center justify-between p-1 lg:my-0 fixed top-0 left-0 w-full bg-white dark:bg-black border-b border-gray-200 dark:border-gray-600'>
+			<Logo className='size-14' />
 			<Link href='/'>Enis Zejnilovic</Link>
 			<div className='lg:hidden bg-inherit flex items-center gap-x-2 '>
 				<ThemeToggle />
