@@ -7,30 +7,52 @@ interface LogoProps {
 export function Logo({ width = 600, height = 600, className = '' }: LogoProps) {
 	return (
 		<svg
+			version='1.1'
 			xmlns='http://www.w3.org/2000/svg'
-			viewBox='0 0 600 600'
+			viewBox='0 0 200 200'
 			width={width}
 			height={height}
 			className={className}
-			aria-label='Logo'
-			role='img'
 		>
-			{/* Black E shape */}
-			<path
-				d='M170 140 L460 140 L460 180 L230 180 L230 270 L390 270 L390 310 L230 310 L230 420 L460 420 L460 460 L170 460 Z'
-				fill='#ffffff'
+			<circle
+				cx='100'
+				cy='95'
+				r='60'
+				stroke='white'
+				stroke-width='4'
+				fill='black'
 			/>
 
-			{/* Single straight diagonal line */}
-			<path
-				d='M445 165 L200 440'
-				stroke='#ffffff'
-				strokeWidth='40'
-				strokeLinecap='butt'
+			{/* E letter */}
+			<line x1='80' y1='50' x2='120' y2='50' stroke='white' stroke-width='4' />
+			<line x1='80' y1='48' x2='80' y2='112' stroke='white' stroke-width='4' />
+			<line
+				x1='80'
+				y1='110'
+				x2='120'
+				y2='110'
+				stroke='white'
+				stroke-width='4'
 			/>
+			<line x1='80' y1='80' x2='122' y2='80' stroke='white' stroke-width='4' />
 
-			{/* White center line of the E */}
-			<rect x='230' y='270' width='220' height='40' fill='#ffffff' />
+			{/* Z letter */}
+			<line
+				x1='120.6'
+				y1='80'
+				x2='81.5'
+				y2='140'
+				stroke='white'
+				stroke-width='4'
+			/>
+			<line
+				x1='80'
+				y1='140'
+				x2='120'
+				y2='140'
+				stroke='white'
+				stroke-width='4'
+			/>
 		</svg>
 	)
 }
