@@ -2,7 +2,7 @@ import { About } from '@/components/Content/About'
 import { Badge } from '@/components/ui/badge'
 import { Code } from 'lucide-react'
 import dynamic from 'next/dynamic'
-import { ImageWithConfetti } from '../../components/ImageWithConfetti'
+import { SparklesImage } from '../../components/ImageWithConfetti'
 import { Timer } from './Timer'
 
 const MapComponent = dynamic(async () => import('./MapComponent'), {
@@ -30,7 +30,8 @@ export const Intro = () => (
 			</div>
 
 			<div className='absolute hover:animate-shake z-50 w-[180px] h-[178px] bottom-0 right-4 overflow-hidden transform rotate-6 -mb-16'>
-				<ImageWithConfetti />
+				{/* <ImageWithConfetti /> */}
+				<SparklesImage />
 			</div>
 			<div className='absolute top-4 left-4'>
 				<Timer />
