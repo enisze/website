@@ -96,20 +96,20 @@ export function ProjectShowcase(project: Project) {
 					</div>
 
 					{/* Right side - Images */}
-					<div className='relative'>
+					<div className='relative h-[400px]'>
 						{/* Main image with hover effect */}
-						<div className='relative rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:translate-y-2 group-hover:translate-x-2'>
+						<div className='absolute inset-0 rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:translate-y-2 group-hover:translate-x-2'>
 							<Image
 								src={project.images[0].src || '/placeholder.svg'}
 								alt={project.images[0].alt}
 								width={600}
 								height={400}
-								className='w-full h-auto object-cover'
+								className='w-full h-full object-cover'
 							/>
 						</div>
 
 						{/* Second image with hover effect */}
-						<div className='absolute -bottom-6 -left-6 w-1/3 rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:-translate-y-2 group-hover:-translate-x-2 border-4 border-white dark:border-zinc-950'>
+						<div className='absolute bottom-[-24px] left-[-24px] w-[180px] rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:-translate-y-2 group-hover:-translate-x-2 border-4 border-white dark:border-zinc-950'>
 							<Image
 								src={project.images[1].src || '/placeholder.svg'}
 								alt={project.images[1].alt}
