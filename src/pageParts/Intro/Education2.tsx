@@ -2,6 +2,7 @@
 
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import { GraduationCap, MapPin } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
@@ -32,14 +33,14 @@ const cities: City[] = [
 				title: 'Master of Computer Science',
 				university: 'RWTH Aachen University',
 				description:
-					'Fokus: RDF Schema Generation, Artificial Intelligence, Data Mining',
+					'Focus: RDF Schema Generation, Artificial Intelligence, Data Mining',
 				time: 'Oct. 2016 - Aug. 2021'
 			},
 			{
 				title: 'Bachelor of Computer Science',
 				university: 'RWTH Aachen University',
 				description:
-					'Fokus: Generative Development, Machine Learning, Data Science',
+					'Focus: Generative Development, Machine Learning, Data Science',
 				time: 'Oct. 2013 - Oct. 2016'
 			}
 		]
@@ -52,9 +53,9 @@ const cities: City[] = [
 		info: [
 			{
 				title: 'Computer Science (Exchange)',
-				university: 'Czech Technical University Prag',
+				university: 'Czech Technical University Prague',
 				description:
-					'Fokus: Advanced Database Systems, Efficient Text Pattern Matching, User Interface Design',
+					'Focus: Advanced Database Systems, Efficient Text Pattern Matching, UI Design',
 				time: 'Sep. 2017 - Feb. 2018'
 			}
 		]
@@ -69,37 +70,61 @@ const cities: City[] = [
 				title: 'System Software Engineering (Exchange)',
 				university: 'Thai German Graduate School of Engineering Bangkok',
 				description:
-					'Fokus: Selected Topics of Machine Learning, Advanced Digital Image Processing',
+					'Focus: Selected Topics of Machine Learning, Advanced Digital Image Processing',
 				time: 'Jan 2019 - Jun 2019'
 			}
 		]
 	}
 ]
 
-// Set up Leaflet default icon options
-L.Icon.Default.mergeOptions({
-	iconRetinaUrl:
-		'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-	iconUrl:
-		'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-	shadowUrl:
-		'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png'
-})
+// Custom marker icon
+const createCustomIcon = () => {
+	return L.divIcon({
+		className: 'custom-div-icon',
+		html: `
+      <div class="relative">
+        <div class="absolute -top-4 -left-4 w-8 h-8 bg-blue-500 rounded-full opacity-25 marker-pulse"></div>
+        <div class="absolute -top-3 -left-3 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+            <path d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z" />
+            <path d="M13.06 15.473a48.45 48.45 0 017.666-3.282c.134 1.414.22 2.843.255 4.285a.75.75 0 01-.46.71 47.878 47.878 0 00-8.105 4.342.75.75 0 01-.832 0 47.877 47.877 0 00-8.104-4.342.75.75 0 01-.461-.71c.035-1.442.121-2.87.255-4.286A48.4 48.4 0 016 13.18v1.27a1.5 1.5 0 00-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.661a6.729 6.729 0 00.551-1.608 1.5 1.5 0 00.14-2.67v-.645a48.549 48.549 0 013.44 1.668 2.25 2.25 0 002.12 0z" />
+            <path d="M4.462 19.462c.42-.419.753-.89 1-1.394.453.213.902.434 1.347.661a6.743 6.743 0 01-1.286 1.794.75.75 0 11-1.06-1.06z" />
+          </svg>
+        </div>
+      </div>
+    `,
+		iconSize: [30, 30],
+		iconAnchor: [15, 15]
+	})
+}
 
 const PopupContent = ({ city }: { city: City }) => (
-	<div className='md:w-[300px] '>
-		<div className='flex gap-1 items-center'>
-			<h3 className='text-lg font-bold'>{city.name}</h3>
-			<div className='text-sm text-gray-600'>{city.country}</div>
-		</div>
-		{city.info.map((info, idx) => (
-			<div key={idx} className='flex flex-col gap-1 mt-2'>
-				<h4 className='text-base font-bold'>{info.title}</h4>
-				<div className='text-sm font-semibold'>{info.university}</div>
-				<div className='text-xs text-gray-600'>{info.time}</div>
-				<div className='text-xs'>{info.description}</div>
+	<div className='w-full max-w-md p-2'>
+		<div className='flex items-center gap-2 mb-4'>
+			<MapPin className='w-5 h-5 text-blue-500' />
+			<div>
+				<h3 className='text-lg font-bold text-gray-900'>{city.name}</h3>
+				<p className='text-sm text-gray-600'>{city.country}</p>
 			</div>
-		))}
+		</div>
+		<div className='space-y-4'>
+			{city.info.map((info, idx) => (
+				<div
+					key={idx}
+					className='p-3 bg-white rounded-lg shadow-sm border border-gray-100'
+				>
+					<div className='flex items-start gap-2'>
+						<GraduationCap className='w-5 h-5 text-blue-500 mt-1' />
+						<div>
+							<h4 className='font-semibold text-gray-900'>{info.title}</h4>
+							<p className='text-sm text-gray-700'>{info.university}</p>
+							<p className='text-xs text-gray-500 mt-1'>{info.time}</p>
+							<p className='text-sm text-gray-600 mt-2'>{info.description}</p>
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
 	</div>
 )
 
@@ -125,14 +150,14 @@ const AnimatedFlyTo = () => {
 
 		const adjustViewForPopup = () => {
 			const target = map.getCenter()
-			const adjustedPoint = [target.lat + 0.2, target.lng] // Move center point up
+			const adjustedPoint = [target.lat + 0.2, target.lng]
 			map.flyTo(adjustedPoint as L.LatLngExpression, 6, {
 				duration: 1
 			})
 		}
 
 		const startAnimation = () => {
-			if (intervalId) return // Prevent multiple intervals
+			if (intervalId) return
 			flyToNextCity()
 			intervalId = setInterval(flyToNextCity, 6000)
 		}
@@ -169,7 +194,7 @@ const AnimatedFlyTo = () => {
 	return null
 }
 
-const Education2 = () => {
+const Education = () => {
 	const mapRef = useRef<L.Map | null>(null)
 	const markersRef = useRef<{ [key: string]: L.Marker }>({})
 
@@ -181,17 +206,16 @@ const Education2 = () => {
 	}
 
 	return (
-		<div
-			className='w-full h-full flex items-center justify-center'
-			id='education'
-		>
-			<div className='w-full h-full overflow-hidden shadow-lg'>
+		<div className='relative w-full h-full' id='education'>
+			<div className='absolute inset-0 map-gradient'></div>
+			<div className='relative w-full h-full overflow-hidden rounded-xl shadow-2xl'>
 				<MapContainer
 					ref={mapRef}
 					center={[30, 0]}
 					zoom={2}
-					style={{ height: '100%', width: '100%', opacity: 0.85 }}
+					style={{ height: '100%', width: '100%' }}
 					zoomControl={false}
+					className='z-10'
 				>
 					<TileLayer
 						url='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
@@ -201,16 +225,13 @@ const Education2 = () => {
 						<Marker
 							key={city.id}
 							position={city.position}
+							icon={createCustomIcon()}
 							ref={(ref) => {
 								if (ref) {
 									markersRef.current[city.id] = ref
 									ref.bindPopup(() => createPopupContent(city), {
-										minWidth: window.innerWidth < 768 ? 150 : 300,
-										maxWidth: window.innerWidth < 768 ? 150 : 300,
-										keepInView: true,
-										autoPan: true,
-										autoPanPadding: [50, 50],
-										offset: [0, 10],
+										minWidth: 280,
+										maxWidth: 320,
 										className: 'custom-popup'
 									})
 								}
@@ -224,4 +245,4 @@ const Education2 = () => {
 	)
 }
 
-export default Education2
+export default Education
