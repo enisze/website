@@ -3,40 +3,16 @@ import { CVButton } from './CVButton'
 
 export const About = () => (
 	<section className='w-full'>
-		<p className='text-xl dark:text-gray-300 mb-6'>
-			Broad skill set developed through education and professional experience
+		<p className='text-xl dark:text-gray-200 leading-relaxed mb-8'>
+			I studied computer science at RWTH Aachen, with a focus on machine
+			learning, AI, and data science using Python. My theses work involved
+			generative development and RDF schema generation. Currently, I specialize
+			in web and mobile app development with expertise in React, TypeScript, and
+			Next.js, and I'm passionate about learning new technologies. I bring
+			strong leadership skills with a focus on effective communication and
+			adaptability in team environments, which I believe are key to successful
+			project management.
 		</p>
-
-		<div className='space-y-6'>
-			<div>
-				<h3 className='text-xl font-semibold mb-2 text-blue-400'>Education</h3>
-				<p className='dark:text-gray-200 leading-relaxed'>
-					Studied computer science at RWTH Aachen, focusing on machine learning,
-					AI, and data science with Python. Theses involved generative
-					development and RDF schema generation.
-				</p>
-			</div>
-
-			<div>
-				<h3 className='text-xl font-semibold mb-2 text-blue-400'>
-					Current Work
-				</h3>
-				<p className='dark:text-gray-200 leading-relaxed'>
-					Specializing in web and mobile app development, with expertise in
-					React, TypeScript, and Next.js. Passionate about learning new
-					technologies and tackling challenging projects.
-				</p>
-			</div>
-
-			<div>
-				<h3 className='text-xl font-semibold mb-2 text-blue-400'>Leadership</h3>
-				<p className='dark:text-gray-200 leading-relaxed'>
-					Strong leadership skills with a focus on effective communication and
-					adaptability in team environments. Believes these are key to
-					successful project management.
-				</p>
-			</div>
-		</div>
 
 		<div className='flex justify-center'>
 			<CVButton />

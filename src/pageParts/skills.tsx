@@ -62,9 +62,7 @@ export const Skills = () => {
 				{stacks.map((stack, index) => {
 					return (
 						<div className='flex flex-col w-full gap-4' key={index}>
-							<h2 className='text-2xl font-bold underline decoration-white underline-offset-8'>
-								{stack.title}
-							</h2>
+							<h2 className='text-2xl'>{stack.title}</h2>
 							<div className='flex flex-row flex-wrap gap-4'>
 								{stack.items.map((item, index) => {
 									return <Skill item={item} key={index} />
