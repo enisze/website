@@ -1,5 +1,4 @@
 import { ConfettiExplosion } from '@/components/ConfettiExplosion'
-import { ContactDock } from '@/components/Layout/ContactDock'
 import { Footer } from '@/components/Layout/Footer'
 import { Navbar } from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
@@ -92,7 +91,6 @@ export default function RootLayout({
 					{/* <div className='fixed w-full z-20 bg-black'> */}
 					<Navbar />
 					{/* </div> */}
-					<ContactDock />
 					<div className='px-8'>
 						{/* <GridPattern
 							squares={[
