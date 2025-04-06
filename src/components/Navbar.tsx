@@ -43,9 +43,10 @@ export const Navbar = () => {
 	return (
 		<ResizableNavbar>
 			<NavBody>
-				<Link href='/'>
-					<Logo className='size-20' />
+				<Link href='/' className='relative z-20 mr-4 flex'>
+					<Logo className='size-14' />
 				</Link>
+
 				<NavItems items={navItems} />
 				<div className='flex items-center gap-4'>
 					<ThemeToggle />
