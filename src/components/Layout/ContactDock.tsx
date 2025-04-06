@@ -39,11 +39,10 @@ export const ContactDock = () => (
 				className='group flex flex-col items-center gap-2 transition-transform duration-300 hover:-translate-y-1'
 			>
 				<div className='relative'>
-					<social.icon className='w-6 h-6 text-gray-300 group-hover:text-white transition-colors duration-300' />
-					<div className='absolute -inset-2 bg-white/5 rounded-full scale-0 group-hover:scale-100 transition-all duration-300 animate-ripple' />
-					<div className='absolute -inset-2 bg-white/10 rounded-full scale-0 group-hover:scale-100 transition-all duration-500 delay-75' />
+					<social.icon className='w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white transition-colors duration-300' />
+					<div className='absolute -inset-2 bg-black/5 dark:bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-all duration-300 animate-ripple' />
 				</div>
-				<span className='text-xs text-gray-400 group-hover:text-white transition-colors'>
+				<span className='text-xs text-gray-600 dark:text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors'>
 					{social.label}
 				</span>
 			</a>
