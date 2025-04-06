@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { Logo } from '../../components/logo'
 import { Item } from './Layout/Item'
 import { ThemeToggle } from './Layout/ThemeToggle'
-import { NavbarInstane } from './NavbarClient'
 import { Button } from './ui/button'
 import {
 	DropdownMenu,
@@ -72,14 +71,6 @@ export const Navbar = () => {
 			</div>
 			<ul className='absolute hidden top-16 rounded-lg lg:relative lg:top-0 right-3 lg:flex p-5 lg:rounded-b-none lg:items-center flex-col lg:flex-row lg:gap-3 items-end border-gray-200 dark:border-none border lg:border-none lg:justify-center'>
 				{menuitems.map((item, index) => {
-					if (item.title === 'Projects') {
-						return (
-							<li key={index}>
-								<NavbarInstane />
-							</li>
-						)
-					}
-
 					return (
 						<li key={index}>
 							<Item href={item.path}>{item.title}</Item>

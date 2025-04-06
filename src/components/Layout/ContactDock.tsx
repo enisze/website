@@ -18,13 +18,13 @@ const socialLinks = [
 		href: 'https://x.com/eniszej',
 		icon: '/images/icons/x-icon.svg',
 		alt: 'X',
-		className: 'h-10 w-10 dark:invert'
+		className: 'h-5 w-5 md:h-10 md:w-10 dark:invert'
 	},
 	{
 		href: 'https://bsky.app/profile/zejnilovic.de',
 		icon: '/images/icons/bluesky.svg',
 		alt: 'Bluesky',
-		className: 'h-10 w-10'
+		className: 'h-5 w-5 md:h-10 md:w-10'
 	},
 	{
 		href: 'mailto:enis@zejnilovic.de',
@@ -41,14 +41,14 @@ const socialLinks = [
 ]
 
 export const ContactDock = () => (
-	<div className='fixed z-50 h-fit rounded-md md:right-4 md:top-1/2 md:-translate-y-1/2 bottom-0 left-0 md:left-auto w-full md:w-auto bg-opacity-95 bg-black p-3 flex md:flex-col justify-center items-center gap-3 backdrop-blur-sm'>
+	<div className='fixed z-50 h-fit rounded-md bottom-4 left-1/2 -translate-x-1/2 bg-opacity-95 bg-black p-2 flex justify-center items-center gap-3 backdrop-blur-sm'>
 		{socialLinks.map((link) => (
 			<a
 				key={link.href}
 				href={link.href}
 				target='_blank'
 				rel='noreferrer noopener'
-				className='w-10 h-10 flex items-center justify-center transition-transform duration-200 hover:scale-125'
+				className='w-5 h-5 md:w-10 md:h-10 flex items-center justify-center transition-transform duration-200 hover:scale-125'
 			>
 				{link.icon === 'calendar' ? (
 					<Calendar className={cn([link.className])} />
