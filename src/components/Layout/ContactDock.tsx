@@ -1,6 +1,6 @@
 import { Calendar, Github, Linkedin, Mail, Twitter } from 'lucide-react'
 
-const socialLinks = [
+export const socialLinks = [
 	{
 		href: 'https://www.linkedin.com/in/enis-zejnilovic-790b91146',
 		icon: Linkedin,
@@ -26,7 +26,7 @@ const socialLinks = [
 		icon: Calendar,
 		label: 'Calendar'
 	}
-]
+] as const
 
 export const ContactDock = () => (
 	<div className='h-fit rounded-md p-2 flex items-center gap-6'>

@@ -8,12 +8,13 @@ import {
 	MobileNavHeader,
 	MobileNavMenu,
 	MobileNavToggle,
-	NavbarButton,
 	NavBody,
 	NavItems,
 	Navbar as ResizableNavbar
 } from '@/components/ui/resizable-navbar'
 import { useState } from 'react'
+import { socialLinks } from './Layout/ContactDock'
+import { buttonVariants } from './ui/button'
 
 const navItems = [
 	{
@@ -50,7 +51,15 @@ export const Navbar = () => {
 				<NavItems items={navItems} />
 				<div className='flex items-center gap-4'>
 					<ThemeToggle />
-					<NavbarButton variant='primary'>Book a call</NavbarButton>
+					<a
+						href={socialLinks[4].href}
+						onClick={() => setIsMobileMenuOpen(false)}
+						className={buttonVariants({
+							variant: 'outline'
+						})}
+					>
+						Book a call
+					</a>
 				</div>
 			</NavBody>
 
@@ -82,13 +91,15 @@ export const Navbar = () => {
 
 					<ThemeToggle />
 					<div className='flex w-full flex-col gap-4'>
-						<NavbarButton
+						<a
+							href={socialLinks[4].href}
 							onClick={() => setIsMobileMenuOpen(false)}
-							variant='primary'
-							className='w-full'
+							className={buttonVariants({
+								variant: 'outline'
+							})}
 						>
 							Book a call
-						</NavbarButton>
+						</a>
 					</div>
 				</MobileNavMenu>
 			</MobileNav>
