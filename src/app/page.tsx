@@ -1,7 +1,7 @@
-//TODO: some padding between the page parts add twitter handle
-
 import Iridescence from '@/components/Iridescence'
 import { Heading } from '@/components/Layout/Heading'
+import { ContactSection } from '@/pageParts/Contact/ContactSection'
+import { QuickContact } from '@/pageParts/Contact/QuickContact'
 import { Intro } from '@/pageParts/Intro/intro'
 import { Projects } from '@/pageParts/projects'
 import { Skills } from '@/pageParts/skills'
@@ -16,8 +16,9 @@ const Education2 = dynamic(
 
 export default function Home() {
 	return (
-		<div className='flex flex-col gap-y-3 bg-white dark:bg-black'>
+		<div className='flex flex-col gap-y-8 bg-white dark:bg-black'>
 			<Intro />
+			<QuickContact />
 			<Skills />
 			<Projects />
 			<div>
@@ -37,6 +38,7 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
+			<ContactSection />
 		</div>
 	)
 }

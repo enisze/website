@@ -1,5 +1,4 @@
 import { Code } from 'lucide-react'
-import Link from 'next/link'
 import { ContactDock } from '../Layout/ContactDock'
 import { Badge } from '../ui/badge'
 import { CVButton } from './CVButton'
@@ -33,14 +32,6 @@ export const About = () => (
 
 		<div className='flex justify-center'>
 			<CVButton />
-		</div>
-
-		<div className='mt-8 pt-6 border-t border-gray-700 text-center'>
-			<p className='dark:text-gray-300'>
-				Feel free to <Link href='#contact'>contact me</Link> to discuss
-				potential projects or opportunities. I'm always open to exciting new
-				ventures.
-			</p>
 		</div>
 	</section>
 )
