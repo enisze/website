@@ -9,10 +9,12 @@ export const About = () => (
 	<section className='w-full pt-20 md:pt-12'>
 		<Badge
 			variant='outline'
-			className='rounded-md flex items-center gap-2 w-fit px-2.5 py-0.5 text-xs font-medium border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900'
+			className='rounded-md flex items-center gap-2 w-fit px-2.5 py-0.5 text-xs font-medium border-zinc-400 dark:border-zinc-800 bg-zinc-300 dark:bg-zinc-900'
 		>
-			<Code className='inline-block text-gray-400 animate-pulse' />
-			<p className='text-gray-400'>Fullstack Software Developer</p>
+			<Code className='inline-block text-gray-500 dark:text-gray-400 animate-pulse' />
+			<p className='text-gray-500 dark;text-gray-400'>
+				Fullstack Software Developer
+			</p>
 		</Badge>
 		<TextGenerateEffect
 			words={`I studied computer science at RWTH Aachen, with a focus on machine

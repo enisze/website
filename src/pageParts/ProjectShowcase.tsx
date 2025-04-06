@@ -77,7 +77,7 @@ export function ProjectShowcase(project: Project) {
 							{project.links.live && (
 								<a
 									href={project.links.live}
-									className='group inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors p-2 px-4 rounded-full hover:bg-zinc-800'
+									className='group inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors p-2 px-4 rounded-full dark:hover:bg-zinc-800 hover:bg-zinc-100'
 								>
 									<span>View Project</span>
 									<ArrowRight className='w-4 h-4 transition-transform group-hover:translate-x-1' />
@@ -86,7 +86,7 @@ export function ProjectShowcase(project: Project) {
 							{project.links.github && (
 								<a
 									href={project.links.github}
-									className='group inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-zinc-800 p-2 px-4 rounded-full transition-colors'
+									className='group inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground dark:hover:bg-zinc-800 hover:bg-zinc-100 p-2 px-4 rounded-full transition-colors'
 								>
 									<Github className='w-4 h-4' />
 									<span>Source Code</span>
