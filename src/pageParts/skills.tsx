@@ -1,14 +1,10 @@
-'use client'
-import { useState } from 'react'
 import { Skill } from '../components/Content/Skill'
 import { Heading } from '../components/Layout/Heading'
 import { stacks } from '../components/stack'
 
 export const Skills = () => {
-	const [showGlobe, setShowGlobe] = useState(true)
-
 	return (
-		<section className='scroll-m-20 relative space-y-4 pt-5' id='skills'>
+		<section className='scroll-m-20 relative space-y-4 pt-5 px-8' id='skills'>
 			<Heading>Technical Skills</Heading>
 
 			{/* {showGlobe ? (

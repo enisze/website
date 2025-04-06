@@ -91,7 +91,7 @@ export default function RootLayout({
 					{/* <div className='fixed w-full z-20 bg-black'> */}
 					<Navbar />
 					{/* </div> */}
-					<div className='px-8'>
+					<div className=''>
 						{/* <GridPattern
 							squares={[
 								[4, 4],

@@ -208,7 +208,6 @@ const Education = () => {
 
 	return (
 		<div className='relative w-full h-full' id='education'>
-			<div className='absolute inset-0 map-gradient'></div>
 			<div className='relative w-full h-full overflow-hidden rounded-xl shadow-2xl'>
 				<MapContainer
 					ref={mapRef}

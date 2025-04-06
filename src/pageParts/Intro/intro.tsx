@@ -32,7 +32,7 @@ export const Intro = () => (
 			</div>
 		</div>
 
-		<div className='flex flex-col scroll-m-20' id='about'>
+		<div className='flex flex-col scroll-m-20 px-8' id='about'>
 			<About />
 		</div>
 	</div>

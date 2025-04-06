@@ -11,8 +11,8 @@ export const ContactSection = () => {
 		<div className='relative w-full h-[600px] overflow-hidden flex items-center justify-center'>
 			<Threads
 				color={[0.2, 0.6, 1]} // Soft blue tones
-				amplitude={4}
-				distance={0.2}
+				amplitude={3}
+				distance={0.6}
 			/>
 			<div className='absolute z-10 max-w-xl text-center px-4'>
 				<h2 className='text-4xl font-bold drop-shadow-lg mb-4'>

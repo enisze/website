@@ -154,7 +154,7 @@ const projects = [
 ]
 
 export const Projects = () => (
-	<>
+	<div className='px-8'>
 		<Heading>Projects</Heading>
 		<section
 			className='scroll-m-20 flex flex-col gap-2 items-center'
@@ -179,5 +179,5 @@ export const Projects = () => (
 				</div>
 			))}
 		</section>
-	</>
+	</div>
 )

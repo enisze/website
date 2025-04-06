@@ -21,7 +21,7 @@ export default function Home() {
 			<QuickContact />
 			<Skills />
 			<Projects />
-			<div>
+			<div className='px-8'>
 				<Heading>Education</Heading>
 
 				<div className='relative h-[500px] w-full'>
