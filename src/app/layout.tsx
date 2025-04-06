@@ -1,10 +1,8 @@
 import { ConfettiExplosion } from '@/components/ConfettiExplosion'
 import { ContactDock } from '@/components/Layout/ContactDock'
 import { Footer } from '@/components/Layout/Footer'
-import GridPattern from '@/components/Layout/GridPattern'
 import { Navbar } from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
-import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { BASE_URL } from '../../config'
@@ -91,12 +89,12 @@ export default function RootLayout({
 				>
 					<ConfettiExplosion atom />
 					<Toaster />
-					<div className='fixed w-full z-20 bg-black'>
-						<Navbar />
-					</div>
+					{/* <div className='fixed w-full z-20 bg-black'> */}
+					<Navbar />
+					{/* </div> */}
 					<ContactDock />
-					<div className='py-12 lg:py-[72px] px-8'>
-						<GridPattern
+					<div className='px-8'>
+						{/* <GridPattern
 							squares={[
 								[4, 4],
 								[5, 1],
@@ -109,7 +107,7 @@ export default function RootLayout({
 								'[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]',
 								'inset-x-0 inset-y-[-30%] h-[150%] skew-y-12'
 							)}
-						/>
+						/> */}
 						{children}
 					</div>
 					<Footer />

@@ -1,4 +1,5 @@
 import { About } from '@/components/Content/About'
+import { Badge } from '@/components/ui/badge'
 import { Code } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import { ImageWithConfetti } from '../../components/ImageWithConfetti'
@@ -9,14 +10,14 @@ const MapComponent = dynamic(async () => import('./MapComponent'), {
 })
 
 export const Intro = () => (
-	<>
+	<div>
 		<div className='relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-[300px] text-white z-0'>
 			<div className='absolute inset-0 bg-gradient-to-t from-gray-600/20 to-transparent ' />
 			<div className='absolute bottom-0 left-4'>
-				<h3 className='flex flex-row items-center gap-2 text-gray-400 text-sm'>
+				<Badge variant='outline' className='flex items-center gap-2'>
 					<Code className='inline-block text-gray-400 animate-pulse' />
-					<p>Fullstack Software Developer</p>
-				</h3>
+					<p className='text-gray-400'>Fullstack Software Developer</p>
+				</Badge>
 				<h1 className='text-2xl font-semibold m-0'>Hi,</h1>
 				<h2 className='text-4xl font-bold m-0'>I'm Enis.</h2>
 			</div>
@@ -39,5 +40,5 @@ export const Intro = () => (
 		<div className='flex flex-col scroll-m-20' id='about'>
 			<About />
 		</div>
-	</>
+	</div>
 )
