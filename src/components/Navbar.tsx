@@ -9,7 +9,6 @@ import {
 	MobileNavMenu,
 	MobileNavToggle,
 	NavbarButton,
-	NavbarLogo,
 	NavBody,
 	NavItems,
 	Navbar as ResizableNavbar
@@ -56,7 +55,9 @@ export const Navbar = () => {
 
 			<MobileNav>
 				<MobileNavHeader>
-					<NavbarLogo />
+					<Link href='/'>
+						<Logo className='size-14' />
+					</Link>
 					<MobileNavToggle
 						isOpen={isMobileMenuOpen}
 						onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -77,14 +78,9 @@ export const Navbar = () => {
 							<span className='block'>{item.name}</span>
 						</a>
 					))}
+
+					<ThemeToggle />
 					<div className='flex w-full flex-col gap-4'>
-						<NavbarButton
-							onClick={() => setIsMobileMenuOpen(false)}
-							variant='primary'
-							className='w-full'
-						>
-							Login
-						</NavbarButton>
 						<NavbarButton
 							onClick={() => setIsMobileMenuOpen(false)}
 							variant='primary'
