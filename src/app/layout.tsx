@@ -91,7 +91,7 @@ export default function RootLayout({
 				>
 					<ConfettiExplosion atom />
 					<Toaster />
-					<div className='fixed w-full z-20'>
+					<div className='fixed w-full z-20 bg-black'>
 						<Navbar />
 					</div>
 					<ContactDock />

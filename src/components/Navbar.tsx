@@ -1,86 +1,100 @@
-import { MenuIcon } from 'lucide-react'
+'use client'
 import Link from 'next/link'
 import { Logo } from '../../components/logo'
-import { Item } from './Layout/Item'
 import { ThemeToggle } from './Layout/ThemeToggle'
-import { Button } from './ui/button'
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger
-} from './ui/dropdown-menu'
 
-const menuitems = [
+import {
+	MobileNav,
+	MobileNavHeader,
+	MobileNavMenu,
+	MobileNavToggle,
+	NavbarButton,
+	NavbarLogo,
+	NavBody,
+	NavItems,
+	Navbar as ResizableNavbar
+} from '@/components/ui/resizable-navbar'
+import { useState } from 'react'
+
+const navItems = [
 	{
-		title: 'About',
-		path: '/#about'
+		name: 'About',
+		link: '/#about'
 	},
 	{
-		title: 'Skills',
-		path: '/#skills'
+		name: 'Skills',
+		link: '/#skills'
 	},
 	{
-		title: 'Projects',
-		path: '/#projects'
+		name: 'Projects',
+		link: '/#projects'
 	},
 	{
-		title: 'Experience',
-		path: '/#experience'
+		name: 'Education',
+		link: '/#education'
 	},
 	{
-		title: 'Education',
-		path: '/#education'
-	},
-	{
-		title: 'Contact',
-		path: '/#contact'
+		name: 'Contact',
+		link: '/#contact'
 	}
 ]
 
 export const Navbar = () => {
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 	return (
-		<header className='flex flex-row items-center justify-between p-1 lg:my-0 fixed top-0 left-0 w-full bg-white dark:bg-black border-b border-gray-200 dark:border-gray-600'>
-			<Link href='/'>
-				<Logo className='size-20' />
-			</Link>
-			<div className='lg:hidden bg-inherit flex items-center gap-x-2 '>
-				<ThemeToggle />
-				<div className='flex lg:hidden'>
-					<DropdownMenu>
-						<DropdownMenuTrigger asChild>
-							<Button variant='ghost' size='sm' aria-label='burger-menu'>
-								<MenuIcon />
-							</Button>
-						</DropdownMenuTrigger>
-						<DropdownMenuContent
-							align='end'
-							forceMount
-							className='bg-white dark:bg-gray-900'
-						>
-							{menuitems.map((item, index) => {
-								return (
-									<DropdownMenuItem key={index}>
-										<Item href={item.path}>{item.title}</Item>
-									</DropdownMenuItem>
-								)
-							})}
-						</DropdownMenuContent>
-					</DropdownMenu>
+		<ResizableNavbar>
+			<NavBody>
+				<Link href='/'>
+					<Logo className='size-20' />
+				</Link>
+				<NavItems items={navItems} />
+				<div className='flex items-center gap-4'>
+					<ThemeToggle />
+					<NavbarButton variant='primary'>Book a call</NavbarButton>
 				</div>
-			</div>
-			<ul className='absolute hidden top-16 rounded-lg lg:relative lg:top-0 right-3 lg:flex p-5 lg:rounded-b-none lg:items-center flex-col lg:flex-row lg:gap-3 items-end border-gray-200 dark:border-none border lg:border-none lg:justify-center'>
-				{menuitems.map((item, index) => {
-					return (
-						<li key={index}>
-							<Item href={item.path}>{item.title}</Item>
-						</li>
-					)
-				})}
-			</ul>
-			<div className='hidden lg:flex'>
-				<ThemeToggle />
-			</div>
-		</header>
+			</NavBody>
+
+			<MobileNav>
+				<MobileNavHeader>
+					<NavbarLogo />
+					<MobileNavToggle
+						isOpen={isMobileMenuOpen}
+						onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+					/>
+				</MobileNavHeader>
+
+				<MobileNavMenu
+					isOpen={isMobileMenuOpen}
+					onClose={() => setIsMobileMenuOpen(false)}
+				>
+					{navItems.map((item, idx) => (
+						<a
+							key={`mobile-link-${idx}`}
+							href={item.link}
+							onClick={() => setIsMobileMenuOpen(false)}
+							className='relative text-neutral-600 dark:text-neutral-300'
+						>
+							<span className='block'>{item.name}</span>
+						</a>
+					))}
+					<div className='flex w-full flex-col gap-4'>
+						<NavbarButton
+							onClick={() => setIsMobileMenuOpen(false)}
+							variant='primary'
+							className='w-full'
+						>
+							Login
+						</NavbarButton>
+						<NavbarButton
+							onClick={() => setIsMobileMenuOpen(false)}
+							variant='primary'
+							className='w-full'
+						>
+							Book a call
+						</NavbarButton>
+					</div>
+				</MobileNavMenu>
+			</MobileNav>
+		</ResizableNavbar>
 	)
 }

@@ -181,7 +181,10 @@ const Education2 = () => {
 	}
 
 	return (
-		<div className='w-full h-full flex items-center justify-center'>
+		<div
+			className='w-full h-full flex items-center justify-center'
+			id='education'
+		>
 			<div className='w-full h-full overflow-hidden shadow-lg'>
 				<MapContainer
 					ref={mapRef}

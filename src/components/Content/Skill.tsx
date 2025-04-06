@@ -7,7 +7,7 @@ type Props = {
 export const Skill = ({ item }: Props) => {
 	return (
 		<a
-			className='flex p-2 md:p-3 shadow-lg shadow-slate-950 rounded-lg w-[100px] md:w-32 bg-white border-blue-500 border dark:bg-gray-900 flex-col items-center gap-1 duration-200 hover:drop-shadow-[0_0px_20px_rgba(0,0,0,0.25)] dark:hover:drop-shadow-[0_0px_20px_rgba(255,255,255,0.25)]'
+			className='flex p-2 md:p-3 shadow-lg shadow-slate-950 rounded-lg w-[100px] md:w-32 bg-white  dark:bg-gray-900 flex-col items-center gap-1 duration-200 hover:drop-shadow-[0_0px_20px_rgba(0,0,0,0.25)] dark:hover:drop-shadow-[0_0px_20px_rgba(255,255,255,0.25)]'
 			href={item.href}
 			target='_blank'
 			rel='noreferrer'

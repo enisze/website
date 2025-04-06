@@ -1,7 +1,7 @@
 import { About } from '@/components/Content/About'
+import { Code } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import { ImageWithConfetti } from '../../components/ImageWithConfetti'
-import { TypingAnimation } from '../TypingAnimation'
 import { Timer } from './Timer'
 
 const MapComponent = dynamic(async () => import('./MapComponent'), {
@@ -13,6 +13,10 @@ export const Intro = () => (
 		<div className='relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-[300px] text-white z-0'>
 			<div className='absolute inset-0 bg-gradient-to-t from-gray-600/20 to-transparent ' />
 			<div className='absolute bottom-0 left-4'>
+				<h3 className='flex flex-row items-center gap-2 text-gray-400 text-sm'>
+					<Code className='inline-block text-gray-400 animate-pulse' />
+					<p>Fullstack Software Developer</p>
+				</h3>
 				<h1 className='text-2xl font-semibold m-0'>Hi,</h1>
 				<h2 className='text-4xl font-bold m-0'>I'm Enis.</h2>
 			</div>
@@ -33,10 +37,6 @@ export const Intro = () => (
 		</div>
 
 		<div className='flex flex-col scroll-m-20' id='about'>
-			<h1 className='flex flex-row items-center jusify-center pb-5 pt-16 md:pt-0 text-3xl w-full whitespace-pre-line md:whitespace-normal'>
-				<TypingAnimation />
-			</h1>
-
 			<About />
 		</div>
 	</>
