@@ -106,7 +106,7 @@ export function ProjectShowcase(project: Project) {
 							</div>
 
 							{/* Second image with hover effect */}
-							<div className='absolute -bottom-8 -left-8 w-1/3 rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:-translate-y-2 group-hover:-translate-x-2 border-4 border-white dark:border-zinc-950'>
+							<div className='absolute -bottom-6 -left-6 w-1/3 rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:-translate-y-2 group-hover:-translate-x-2 border-4 border-white dark:border-zinc-950'>
 								<Image
 									src={project.images[1].src || '/placeholder.svg'}
 									alt={project.images[1].alt}
