@@ -23,20 +23,7 @@ export default function Home() {
 			<Projects />
 			<div className='px-8'>
 				<Heading>Education</Heading>
-
-				<div className='relative h-[500px] w-full'>
-					<div className='absolute inset-0 rounded-md overflow-hidden'>
-						<Iridescence
-							color={[0.3, 0.5, 0.8]}
-							mouseReact={false}
-							amplitude={0.1}
-							speed={1.0}
-						/>
-					</div>
-					<div className='absolute inset-0 z-10 p-20 rounded-md overflow-hidden'>
-						<Education2 />
-					</div>
-				</div>
+				<Education2 />
 			</div>
 			<ContactSection />
 		</div>

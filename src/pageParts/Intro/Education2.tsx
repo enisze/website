@@ -2,7 +2,7 @@
 
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { GraduationCap, MapPin } from 'lucide-react'
+import { GraduationCap, MapPin, Plane, Calendar } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
@@ -142,8 +142,7 @@ const AnimatedFlyTo = () => {
 
 		const flyToNextCity = () => {
 			const city = cities[currentCityIndex]
-			map.flyTo(city.position, 5, {
-				// Changed zoom from 8 to 5
+			map.flyTo(city.position, 8, {
 				duration: 3
 			})
 			currentCityIndex = getNextCityIndex(currentCityIndex)
@@ -151,8 +150,8 @@ const AnimatedFlyTo = () => {
 
 		const adjustViewForPopup = () => {
 			const target = map.getCenter()
-			const adjustedPoint = [target.lat - 0.5, target.lng] // Changed offset to move down instead of up
-			map.flyTo(adjustedPoint as L.LatLngExpression, 5, {
+			const adjustedPoint = [target.lat + 2, target.lng]
+			map.flyTo(adjustedPoint as L.LatLngExpression, 6, {
 				duration: 1
 			})
 		}
@@ -195,6 +194,48 @@ const AnimatedFlyTo = () => {
 	return null
 }
 
+const EducationGridItem = ({
+	info,
+	city,
+	isExchange = false
+}: {
+	info: EducationInfo
+	city: City
+	isExchange?: boolean
+}) => (
+	<div className='flex gap-4'>
+		<div className='flex-none'>
+			<div className='relative w-12 h-12'>
+				<div className='w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center'>
+					<GraduationCap className='w-6 h-6 text-blue-400' />
+				</div>
+				{isExchange && (
+					<div className='absolute -top-1 -right-1 w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center'>
+						<Plane className='w-3 h-3 text-purple-400' />
+					</div>
+				)}
+			</div>
+		</div>
+		<div className='space-y-2'>
+			<h3 className='text-xl font-bold text-white'>{info.university}</h3>
+			<p className='text-blue-300 font-medium'>{info.title}</p>
+			<div className='flex flex-col gap-2 text-slate-300'>
+				<div className='flex items-center gap-1'>
+					<MapPin className='w-4 h-4 flex-none' />
+					<span className='text-sm'>
+						{city.name}, {city.country}
+					</span>
+				</div>
+				<div className='flex items-center gap-1'>
+					<Calendar className='w-4 h-4 flex-none' />
+					<span className='text-sm'>{info.time}</span>
+				</div>
+				<p className='text-sm text-slate-300'>{info.description}</p>
+			</div>
+		</div>
+	</div>
+)
+
 const Education = () => {
 	const mapRef = useRef<L.Map | null>(null)
 	const markersRef = useRef<{ [key: string]: L.Marker }>({})
@@ -207,39 +248,56 @@ const Education = () => {
 	}
 
 	return (
-		<div className='relative w-full h-full' id='education'>
-			<div className='relative w-full h-full overflow-hidden rounded-xl shadow-2xl'>
-				<MapContainer
-					ref={mapRef}
-					center={[30, 0]}
-					zoom={2}
-					style={{ height: '100%', width: '100%' }}
-					zoomControl={false}
-					className='z-10'
-				>
-					<TileLayer
-						url='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
-						attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-					/>
-					{cities.map((city) => (
-						<Marker
-							key={city.id}
-							position={city.position}
-							icon={createCustomIcon()}
-							ref={(ref) => {
-								if (ref) {
-									markersRef.current[city.id] = ref
-									ref.bindPopup(() => createPopupContent(city), {
-										minWidth: 280,
-										maxWidth: 320,
-										className: 'custom-popup'
-									})
-								}
-							}}
+		<div className='bg-slate-800/50 backdrop-blur-sm rounded-xl shadow-xl border border-slate-700 overflow-hidden'>
+			<div className='grid md:grid-cols-2 min-h-[600px]'>
+				<div className='p-6 overflow-y-auto max-h-[600px]'>
+					<div className='space-y-6'>
+						{cities.map((city) =>
+							city.info.map((info, idx) => (
+								<EducationGridItem
+									key={`${city.id}-${idx}`}
+									info={info}
+									city={city}
+									isExchange={city.id !== 'aachen'}
+								/>
+							))
+						)}
+					</div>
+				</div>
+
+				<div className='h-[600px] border-l border-slate-700'>
+					<MapContainer
+						ref={mapRef}
+						center={[30, 0]}
+						zoom={2}
+						style={{ height: '100%', width: '100%' }}
+						zoomControl={false}
+						className='z-10'
+					>
+						<TileLayer
+							url='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
+							attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 						/>
-					))}
-					<AnimatedFlyTo />
-				</MapContainer>
+						{cities.map((city) => (
+							<Marker
+								key={city.id}
+								position={city.position}
+								icon={createCustomIcon()}
+								ref={(ref) => {
+									if (ref) {
+										markersRef.current[city.id] = ref
+										ref.bindPopup(() => createPopupContent(city), {
+											minWidth: 280,
+											maxWidth: 320,
+											className: 'custom-popup'
+										})
+									}
+								}}
+							/>
+						))}
+						<AnimatedFlyTo />
+					</MapContainer>
+				</div>
 			</div>
 		</div>
 	)
