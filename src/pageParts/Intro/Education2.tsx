@@ -2,7 +2,7 @@
 
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { GraduationCap, MapPin, Plane, Calendar } from 'lucide-react'
+import { Calendar, GraduationCap, MapPin, Plane } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
@@ -265,8 +265,8 @@ const Education = () => {
 
 	return (
 		<div className='bg-gray-100 dark:bg-gray-900 backdrop-blur-sm rounded-xl shadow-xl border border-slate-700 overflow-hidden'>
-			<div className='grid md:grid-cols-2 min-h-[600px]'>
-				<div className='p-6 overflow-y-auto max-h-[600px]'>
+			<div className='grid md:grid-cols-2 min-h-[780px]'>
+				<div className='p-6 overflow-y-auto max-h-[780px]'>
 					<div className='space-y-6'>
 						{sortedEducationItems.map((item, idx) => (
 							<EducationGridItem
@@ -279,7 +279,7 @@ const Education = () => {
 					</div>
 				</div>
 
-				<div className='h-[600px]'>
+				<div className='h-[780px]'>
 					<MapContainer
 						ref={mapRef}
 						center={[30, 0]}
@@ -304,7 +304,7 @@ const Education = () => {
 											minWidth: 280,
 											maxWidth: 320,
 											className: 'custom-popup',
-											offset: [-10, -2]
+											offset: [-12, -12]
 										})
 									}
 								}}

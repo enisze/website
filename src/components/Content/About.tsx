@@ -25,7 +25,7 @@ export const About = () => (
 			adaptability in team environments, which I believe are key to successful
 			project management.
 		`}
-			className='text-xl dark:text-gray-200 leading-relaxed mb-8'
+			className='dark:text-gray-200 leading-relaxed mb-8'
 		/>
 
 		<ContactDock />
