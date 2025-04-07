@@ -5,7 +5,7 @@ import { CalendarIcon, MailIcon } from 'lucide-react'
 
 export const QuickContact = () => {
 	return (
-		<section className='w-full py-20 bg-gray-100 dark:bg-zinc-900/90 text-center'>
+		<section className='w-full py-20 bg-gray-100 dark:bg-gray-900 text-center'>
 			<div className='max-w-2xl mx-auto px-6'>
 				<h2 className='text-3xl sm:text-4xl font-bold mb-4 text-zinc-900 dark:text-white'>
 					Let's get in touch

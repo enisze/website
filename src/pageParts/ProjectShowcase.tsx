@@ -29,7 +29,6 @@ export function ProjectShowcase(project: Project) {
 				innerClassName='relative bg-white dark:bg-zinc-950 rounded-[calc(1.5rem-4px)] overflow-hidden p-8 md:p-12'
 				spotlightColor='rgba(99, 102, 241, 0.15)'
 			>
-				<div className='absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl' />
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-12 relative'>
 					{/* Left side - Content */}
 					<div className='flex flex-col justify-between h-full'>

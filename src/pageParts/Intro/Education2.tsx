@@ -101,7 +101,7 @@ const createCustomIcon = () => {
 const PopupContent = ({ city }: { city: City }) => (
 	<div className='w-full max-w-md p-2'>
 		<div className='flex items-center gap-2 mb-4'>
-			<MapPin className='w-5 h-5 text-blue-500' />
+			<MapPin className='w-5 h-5 flex-none text-blue-500' />
 			<div>
 				<h3 className='text-lg font-bold text-gray-900'>{city.name}</h3>
 				<p className='text-sm text-gray-600'>{city.country}</p>
@@ -114,7 +114,7 @@ const PopupContent = ({ city }: { city: City }) => (
 					className='p-3 bg-white rounded-lg shadow-sm border border-gray-100'
 				>
 					<div className='flex items-start gap-2'>
-						<GraduationCap className='w-5 h-5 text-blue-500 mt-1' />
+						<GraduationCap className='w-5 h-5 flex-none text-blue-500 mt-1' />
 						<div>
 							<h4 className='font-semibold text-gray-900'>{info.title}</h4>
 							<p className='text-sm text-gray-700'>{info.university}</p>
@@ -207,19 +207,19 @@ const EducationGridItem = ({
 		<div className='flex-none'>
 			<div className='relative w-12 h-12'>
 				<div className='w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center'>
-					<GraduationCap className='w-6 h-6 text-blue-400' />
+					<GraduationCap className='w-6 h-6 flex-none text-black dark:text-white' />
 				</div>
 				{isExchange && (
-					<div className='absolute -top-1 -right-1 w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center'>
-						<Plane className='w-3 h-3 text-purple-400' />
+					<div className='absolute -top-1 -right-1 w-5 h-5 rounded-full bg-purple-500/30 flex items-center justify-center'>
+						<Plane className='w-3 h-3 text-black dark:text-white' />
 					</div>
 				)}
 			</div>
 		</div>
 		<div className='space-y-2'>
-			<h3 className='text-xl font-bold text-white'>{info.university}</h3>
-			<p className='text-blue-300 font-medium'>{info.title}</p>
-			<div className='flex flex-col gap-2 text-slate-300'>
+			<h3 className='text-xl font-bold '>{info.university}</h3>
+			<p className='font-medium'>{info.title}</p>
+			<div className='flex flex-col gap-2 text-slate-900 dark:text-slate-300'>
 				<div className='flex items-center gap-1'>
 					<MapPin className='w-4 h-4 flex-none' />
 					<span className='text-sm'>
@@ -230,7 +230,9 @@ const EducationGridItem = ({
 					<Calendar className='w-4 h-4 flex-none' />
 					<span className='text-sm'>{info.time}</span>
 				</div>
-				<p className='text-sm text-slate-300'>{info.description}</p>
+				<p className='text-sm text-slate-900 dark:text-slate-300'>
+					{info.description}
+				</p>
 			</div>
 		</div>
 	</div>
@@ -247,25 +249,37 @@ const Education = () => {
 		return content
 	}
 
+	// Create flat list of education items with city info
+	const sortedEducationItems = cities
+		.flatMap((city) =>
+			city.info.map((info) => ({
+				...info,
+				city
+			}))
+		)
+		.sort((a, b) => {
+			const getYear = (time: string) =>
+				Number.parseInt(time.split(' ').pop() || '0')
+			return getYear(b.time) - getYear(a.time)
+		})
+
 	return (
-		<div className='bg-slate-800/50 backdrop-blur-sm rounded-xl shadow-xl border border-slate-700 overflow-hidden'>
+		<div className='bg-gray-100 dark:bg-gray-900 backdrop-blur-sm rounded-xl shadow-xl border border-slate-700 overflow-hidden'>
 			<div className='grid md:grid-cols-2 min-h-[600px]'>
 				<div className='p-6 overflow-y-auto max-h-[600px]'>
 					<div className='space-y-6'>
-						{cities.map((city) =>
-							city.info.map((info, idx) => (
-								<EducationGridItem
-									key={`${city.id}-${idx}`}
-									info={info}
-									city={city}
-									isExchange={city.id !== 'aachen'}
-								/>
-							))
-						)}
+						{sortedEducationItems.map((item, idx) => (
+							<EducationGridItem
+								key={`${item.city.id}-${idx}`}
+								info={item}
+								city={item.city}
+								isExchange={item.city.id !== 'aachen'}
+							/>
+						))}
 					</div>
 				</div>
 
-				<div className='h-[600px] border-l border-slate-700'>
+				<div className='h-[600px]'>
 					<MapContainer
 						ref={mapRef}
 						center={[30, 0]}
@@ -289,7 +303,8 @@ const Education = () => {
 										ref.bindPopup(() => createPopupContent(city), {
 											minWidth: 280,
 											maxWidth: 320,
-											className: 'custom-popup'
+											className: 'custom-popup',
+											offset: [-10, -2]
 										})
 									}
 								}}
