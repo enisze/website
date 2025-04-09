@@ -9,6 +9,75 @@ const projects = [
 	{
 		images: [
 			{
+				src: '/images/placeholder.png', // You'll need to add actual images
+				alt: 'ESG Platform'
+			},
+			{
+				src: '/images/placeholder.png',
+				alt: 'ESG Platform Dashboard'
+			}
+		],
+		title: 'ESG Platform',
+		description: `A comprehensive ESG (Environmental, Social, and Governance) platform for CO2 certificate 
+                generation and sustainability analysis. The platform features sophisticated reporting tools, 
+                dashboards for ESG analytics, and integration with sustainability databases. Built with modern 
+                technologies including Next.js, React Server Components, and Drizzle ORM, the system implements 
+                robust role-based access control and automated testing.`,
+		year: '2023-2024',
+		technologies: [
+			'React',
+			'TypeScript',
+			'Next.js',
+			'Tailwind CSS',
+			'RSC',
+			'Node.js',
+			'PostgreSQL',
+			'Drizzle ORM',
+			'next-auth',
+			'Gitlab',
+			'Docker',
+			'Playwright'
+		],
+		context: 'Commercial Project',
+		maintenance: 'Active'
+	},
+	{
+		images: [
+			{
+				src: '/images/placeholder.png', // You'll need to add actual images
+				alt: 'Financial Services Platform'
+			},
+			{
+				src: '/images/placeholder.png',
+				alt: 'Financial Services Dashboard'
+			}
+		],
+		title: 'Multi-Product Financial Platform',
+		description: `A scalable multi-product platform for financial services, featuring a custom design system 
+                built with shadcn components. The platform integrates various financial APIs and payment services, 
+                with robust authentication and role management through Zitadel. Comprehensive testing suite includes 
+                end-to-end tests with Playwright and unit tests with Jest.`,
+		year: '2024',
+		technologies: [
+			'React',
+			'TypeScript',
+			'Next.js',
+			'shadcn',
+			'Node.js',
+			'PostgreSQL',
+			'Drizzle ORM',
+			'Zitadel',
+			'Gitlab',
+			'Docker',
+			'Playwright',
+			'Jest'
+		],
+		context: 'Commercial Project',
+		maintenance: 'Active'
+	},
+	{
+		images: [
+			{
 				src: '/images/Freightly2.png',
 				alt: 'Freightly 2'
 			},
