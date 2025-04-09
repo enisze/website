@@ -37,57 +37,6 @@ const projects = [
 	},
 	{
 		images: [
-			{ src: '/images/portfolio.webp', alt: 'Portfolio' },
-			{
-				src: '/images/portfolio2.webp',
-				alt: 'Portfolio 2'
-			}
-		],
-		title: 'Portfolio',
-		projectLink: 'https://zejnilovic.de/',
-		githubLink: 'https://github.com/enisze/website',
-		description: `A modern, responsive portfolio website built with Next.js and TypeScript. 
-                This project showcases my professional journey, technical skills, and project work 
-                through an elegant and user-friendly interface. Features include dark/light mode, 
-                responsive design, and optimized performance. The site serves as both a technical 
-                demonstration and a comprehensive overview of my capabilities as a software engineer.`,
-		year: 'Today',
-		technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel']
-	},
-	{
-		images: [
-			{
-				src: '/images/eventWizard.webp',
-				alt: 'Event Wizard'
-			},
-			{
-				src: '/images/eventWizard2.webp',
-				alt: 'Event Wizard Kalender'
-			}
-		],
-		title: 'Event Wizard',
-		projectLink: 'https://football-organizer.vercel.app/',
-		githubLink: 'https://github.com/enisze/football-organizer',
-		description: `A web application designed for organizing football events among friends. 
-                Features include a calendar view for event scheduling, participant management, 
-                automated email reminders, and an integrated payment tracking system with PayPal 
-                integration. The platform streamlines event organization through its user-friendly 
-                interface and automated notification system.`,
-		year: 'Today',
-		technologies: [
-			'Next.js',
-			'TypeScript',
-			'tRPC',
-			'Prisma',
-			'Tailwind CSS',
-			'NextAuth',
-			'Redis',
-			'Neon',
-			'Vercel'
-		]
-	},
-	{
-		images: [
 			{
 				src: '/images/PropRate.png',
 				alt: 'PropRate Search'
@@ -158,6 +107,60 @@ const projects = [
 		],
 		context: 'Employed Project',
 		maintenance: 'Active'
+	}
+]
+
+const sideProjects = [
+	{
+		images: [
+			{ src: '/images/portfolio.webp', alt: 'Portfolio' },
+			{
+				src: '/images/portfolio2.webp',
+				alt: 'Portfolio 2'
+			}
+		],
+		title: 'Portfolio',
+		projectLink: 'https://zejnilovic.de/',
+		githubLink: 'https://github.com/enisze/website',
+		description: `A modern, responsive portfolio website built with Next.js and TypeScript. 
+                This project showcases my professional journey, technical skills, and project work 
+                through an elegant and user-friendly interface. Features include dark/light mode, 
+                responsive design, and optimized performance. The site serves as both a technical 
+                demonstration and a comprehensive overview of my capabilities as a software engineer.`,
+		year: 'Today',
+		technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel']
+	},
+	{
+		images: [
+			{
+				src: '/images/eventWizard.webp',
+				alt: 'Event Wizard'
+			},
+			{
+				src: '/images/eventWizard2.webp',
+				alt: 'Event Wizard Kalender'
+			}
+		],
+		title: 'Event Wizard',
+		projectLink: 'https://football-organizer.vercel.app/',
+		githubLink: 'https://github.com/enisze/football-organizer',
+		description: `A web application designed for organizing football events among friends. 
+                Features include a calendar view for event scheduling, participant management, 
+                automated email reminders, and an integrated payment tracking system with PayPal 
+                integration. The platform streamlines event organization through its user-friendly 
+                interface and automated notification system.`,
+		year: 'Today',
+		technologies: [
+			'Next.js',
+			'TypeScript',
+			'tRPC',
+			'Prisma',
+			'Tailwind CSS',
+			'NextAuth',
+			'Redis',
+			'Neon',
+			'Vercel'
+		]
 	},
 	{
 		images: [
@@ -237,8 +240,7 @@ export const Projects = () => (
 							description={project.description}
 							images={project.images}
 							links={{
-								live: project.projectLink,
-								github: project.githubLink
+								live: project.projectLink
 							}}
 							year={project.year}
 							technologies={project.technologies}
@@ -247,5 +249,31 @@ export const Projects = () => (
 				</FadeIn>
 			))}
 		</section>
+
+		<div className='px-8'>
+			<Heading>Side-Projects</Heading>
+			<section
+				className='scroll-m-20 flex flex-col gap-2 items-center'
+				id='projects'
+			>
+				{sideProjects.map((project) => (
+					<FadeIn key={project.title}>
+						<div className='flex flex-col md:flex-row gap-6 items-center justify-center'>
+							<ProjectShowcase
+								title={project.title}
+								description={project.description}
+								images={project.images}
+								links={{
+									live: project.projectLink,
+									github: project.githubLink
+								}}
+								year={project.year}
+								technologies={project.technologies}
+							/>
+						</div>
+					</FadeIn>
+				))}
+			</section>
+		</div>
 	</div>
 )
