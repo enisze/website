@@ -8,6 +8,35 @@ import { FadeIn } from '@/components/FadeIn'
 const projects = [
 	{
 		images: [
+			{
+				src: '/images/Freightly2.png',
+				alt: 'Freightly 2'
+			},
+			{ src: '/images/Freightly1.png', alt: 'Freightly' }
+		],
+		title: 'Freightly',
+		description: `A cloud-based Transport Management System (TMS) designed to optimize logistics processes. 
+                The platform features a modern UI built with React, TypeScript, and Next.js using the shadcn component library. 
+                Key implementations include complex form handling with dynamic validation using React Hook Form, 
+                enabling efficient processing of transportation and logistics data. The system streamlines 
+                logistics operations through an intuitive and responsive interface.`,
+		year: '2025',
+		technologies: [
+			'Next.js',
+			'TypeScript',
+			'Drizzle.js',
+			'React Hook Form',
+			'Neon',
+			'zsa',
+			'RSC',
+			'react',
+			'react-email',
+			'Tailwind CSS',
+			'Vercel'
+		]
+	},
+	{
+		images: [
 			{ src: '/images/portfolio.webp', alt: 'Portfolio' },
 			{
 				src: '/images/portfolio2.webp',
@@ -17,7 +46,6 @@ const projects = [
 		title: 'Portfolio',
 		projectLink: 'https://zejnilovic.de/',
 		githubLink: 'https://github.com/enisze/website',
-		localLink: '/project/portfolio',
 		description: `A modern, responsive portfolio website built with Next.js and TypeScript. 
                 This project showcases my professional journey, technical skills, and project work 
                 through an elegant and user-friendly interface. Features include dark/light mode, 
@@ -40,7 +68,6 @@ const projects = [
 		title: 'Event Wizard',
 		projectLink: 'https://football-organizer.vercel.app/',
 		githubLink: 'https://github.com/enisze/football-organizer',
-		localLink: '/project/eventWizard',
 		description: `A web application designed for organizing football events among friends. 
                 Features include a calendar view for event scheduling, participant management, 
                 automated email reminders, and an integrated payment tracking system with PayPal 
@@ -62,17 +89,16 @@ const projects = [
 	{
 		images: [
 			{
-				src: '/images/proprate.webp',
-				alt: 'PropRate'
+				src: '/images/PropRate.png',
+				alt: 'PropRate Search'
 			},
 			{
-				src: '/images/proprate-search.webp',
-				alt: 'PropRate Analysis'
+				src: '/images/proprate-landing.png',
+				alt: 'PropRate'
 			}
 		],
 		title: 'Proprate',
 		projectLink: 'https://proprate.de/',
-		localLink: '/project/proprate',
 		description: `PropRate serves as a comprehensive meta search engine for the German real estate market,
                 aggregating listings from major portals like ImmobilienScout24 and eBay Kleinanzeigen.
                 The platform's AI system evaluates properties and assigns PropRatings based on location,
@@ -80,7 +106,7 @@ const projects = [
                 financial calculators, and market analytics to make informed real estate decisions.
                 The platform also provides educational resources through its blog and real estate guides,
                 making it a one-stop solution for property research and analysis.`,
-		year: 'Today',
+		year: '2025',
 		technologies: [
 			'Next.js',
 			'TypeScript',
@@ -101,23 +127,22 @@ const projects = [
 	{
 		images: [
 			{
-				src: '/images/teampilot.webp',
-				alt: 'Teampilot'
+				src: '/images/teampilot-chat.png',
+				alt: 'Teampilot Chat'
 			},
 			{
-				src: '/images/teampilot-chat.webp',
-				alt: 'Teampilot Chat'
+				src: '/images/teampilot.png',
+				alt: 'Teampilot'
 			}
 		],
 		title: 'Teampilot',
-		localLink: '/project/teampilot',
 		projectLink: 'https://teampilot.ai/',
 		description: `Teampilot AI is an advanced AI platform leveraging multiple LLM providers
                  to enhance team productivity through intelligent automation. The platform
                  offers sophisticated content generation, workflow automation, and data
                  analysis capabilities, built with modern technologies like tRPC, Prisma,
                  and various AI integrations.`,
-		year: 'Today',
+		year: '2025',
 		technologies: [
 			'Next.js',
 			'TypeScript',
@@ -146,7 +171,6 @@ const projects = [
 			}
 		],
 		title: 'HorseRace',
-		localLink: '/project/horserace',
 		githubLink: 'https://github.com/enisze/horseRace',
 		projectLink:
 			'https://play.google.com/store/apps/details?id=com.eniszejnilovic.horseRace',
@@ -157,7 +181,7 @@ const projects = [
                  I'm actively enhancing the user experience through regular updates, implementing new features
                  such as random in-game events and player influence on game outcomes to create an even more
                  exciting gaming experience.`,
-		year: 'Today',
+		year: '2024',
 		technologies: [
 			'React Native',
 			'React',
@@ -181,7 +205,6 @@ const projects = [
 		],
 		title: 'Neologism 2.0',
 		githubLink: 'https://github.com/Semantic-Society/Neologism',
-		localLink: '/project/neologism',
 		description: `Neologism 2.0 allows users to quickly create vocabularies in a guided
                 and collaborative process using its graph editor. Domain experts and
                 non-experts can create classes, properties, and relationships between
