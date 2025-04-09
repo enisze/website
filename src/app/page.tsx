@@ -6,6 +6,7 @@ import { Intro } from '@/pageParts/Intro/intro'
 import { Projects } from '@/pageParts/projects'
 import { Skills } from '@/pageParts/skills'
 import dynamic from 'next/dynamic'
+import { FadeIn } from '@/components/FadeIn'
 
 const Education2 = dynamic(
 	async () => import('./../pageParts/Intro/Education2'),
@@ -21,10 +22,12 @@ export default function Home() {
 			<QuickContact />
 			<Skills />
 			<Projects />
-			<div className='px-8'>
-				<Heading>Education</Heading>
-				<Education2 />
-			</div>
+			<FadeIn>
+				<div className='px-8'>
+					<Heading>Education</Heading>
+					<Education2 />
+				</div>
+			</FadeIn>
 			<ContactSection />
 		</div>
 	)

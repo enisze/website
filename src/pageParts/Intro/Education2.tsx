@@ -1,5 +1,6 @@
 'use client'
 
+import { FadeIn } from '@/components/FadeIn'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { Calendar, GraduationCap, MapPin, Plane } from 'lucide-react'
@@ -269,12 +270,13 @@ const Education = () => {
 				<div className='p-6 overflow-y-auto max-h-[780px]'>
 					<div className='space-y-6'>
 						{sortedEducationItems.map((item, idx) => (
-							<EducationGridItem
-								key={`${item.city.id}-${idx}`}
-								info={item}
-								city={item.city}
-								isExchange={item.city.id !== 'aachen'}
-							/>
+							<FadeIn key={`${item.city.id}-${idx}`}>
+								<EducationGridItem
+									info={item}
+									city={item.city}
+									isExchange={item.city.id !== 'aachen'}
+								/>
+							</FadeIn>
 						))}
 					</div>
 				</div>

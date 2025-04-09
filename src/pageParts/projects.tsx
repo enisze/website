@@ -3,6 +3,7 @@
 
 import { Heading } from '@/components/Layout/Heading'
 import { ProjectShowcase } from './ProjectShowcase'
+import { FadeIn } from '@/components/FadeIn'
 
 const projects = [
 	{
@@ -206,22 +207,21 @@ export const Projects = () => (
 			id='projects'
 		>
 			{projects.map((project) => (
-				<div
-					key={project.title}
-					className='flex flex-col md:flex-row gap-6 items-center justify-center'
-				>
-					<ProjectShowcase
-						title={project.title}
-						description={project.description}
-						images={project.images}
-						links={{
-							live: project.projectLink,
-							github: project.githubLink
-						}}
-						year={project.year}
-						technologies={project.technologies}
-					/>
-				</div>
+				<FadeIn key={project.title}>
+					<div className='flex flex-col md:flex-row gap-6 items-center justify-center'>
+						<ProjectShowcase
+							title={project.title}
+							description={project.description}
+							images={project.images}
+							links={{
+								live: project.projectLink,
+								github: project.githubLink
+							}}
+							year={project.year}
+							technologies={project.technologies}
+						/>
+					</div>
+				</FadeIn>
 			))}
 		</section>
 	</div>
