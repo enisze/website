@@ -110,10 +110,10 @@ const config = {
 						'offset-distance': '100%'
 					}
 				},
-				// fadeIn: {
-				// 	from: { opacity: 0 },
-				// 	to: { opacity: 1 }
-				// },
+				fadeIn: {
+					from: { opacity: '0' },
+					to: { opacity: '1' }
+				},
 				marquee: {
 					from: { transform: 'translateX(0)' },
 					to: { transform: 'translateX(calc(-100% - var(--gap)))' }
@@ -125,6 +125,20 @@ const config = {
 				shimmer: {
 					from: { backgroundPosition: '0 0' },
 					to: { backgroundPosition: '-200% 0' }
+				},
+				shake: {
+					'0%, 100%': {
+						transform: 'rotate(3deg)'
+					},
+					'25%': {
+						transform: 'rotate(-3deg)'
+					},
+					'50%': {
+						transform: 'rotate(3deg)'
+					},
+					'75%': {
+						transform: 'rotate(-3deg)'
+					}
 				}
 			},
 			animation: {
