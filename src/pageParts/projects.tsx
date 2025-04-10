@@ -1,20 +1,20 @@
 //TODO: Add github links + add icons for which frameworks were used. Add filler image, if image no available. Mark projects as personal, open source, commercial
 'use client'
 
+import { FadeIn } from '@/components/FadeIn'
 import { Heading } from '@/components/Layout/Heading'
 import { ProjectShowcase } from './ProjectShowcase'
-import { FadeIn } from '@/components/FadeIn'
 
 const projects = [
 	{
 		images: [
 			{
-				src: '/images/placeholder.png', // You'll need to add actual images
+				src: '/images/esg-landing.png',
 				alt: 'ESG Platform'
 			},
 			{
-				src: '/images/placeholder.png',
-				alt: 'ESG Platform Dashboard'
+				src: '/images/esg-form.png',
+				alt: 'ESG Platform Form'
 			}
 		],
 		title: 'ESG Platform',
@@ -44,12 +44,12 @@ const projects = [
 	{
 		images: [
 			{
-				src: '/images/placeholder.png', // You'll need to add actual images
-				alt: 'Financial Services Platform'
+				src: '/images/credit-engine-landing.png', // You'll need to add actual images
+				alt: 'Credit engine landing'
 			},
 			{
-				src: '/images/placeholder.png',
-				alt: 'Financial Services Dashboard'
+				src: '/images/credit-engine-dashboard.png',
+				alt: 'Credit engine dashboard'
 			}
 		],
 		title: 'Multi-Product Financial Platform',
