@@ -103,7 +103,7 @@ export function ProjectShowcase(project: Project) {
 								alt={project.images[0].alt}
 								width={600}
 								height={400}
-								className='w-full h-full object-cover'
+								className='w-full h-full object-contain'
 							/>
 						</div>
 
@@ -114,7 +114,7 @@ export function ProjectShowcase(project: Project) {
 								alt={project.images[1].alt}
 								width={400}
 								height={300}
-								className='w-full h-auto object-cover'
+								className='w-full h-auto object-contain'
 							/>
 						</div>
 

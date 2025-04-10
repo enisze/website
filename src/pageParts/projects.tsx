@@ -181,10 +181,10 @@ const projects = [
 const sideProjects = [
 	{
 		images: [
-			{ src: '/images/portfolio.webp', alt: 'Portfolio' },
+			{ src: '/images/portfolio-tech.png', alt: 'Portfolio Tech' },
 			{
 				src: '/images/portfolio.png',
-				alt: 'Portfolio 2'
+				alt: 'Portfolio'
 			}
 		],
 		title: 'Portfolio',
