@@ -9,12 +9,12 @@ const projects = [
 	{
 		images: [
 			{
-				src: '/images/esg-landing.png',
-				alt: 'ESG Platform'
-			},
-			{
 				src: '/images/esg-form.png',
 				alt: 'ESG Platform Form'
+			},
+			{
+				src: '/images/esg-landing.png',
+				alt: 'ESG Platform'
 			}
 		],
 		title: 'ESG Platform',
@@ -44,12 +44,12 @@ const projects = [
 	{
 		images: [
 			{
-				src: '/images/credit-engine-landing.png', // You'll need to add actual images
-				alt: 'Credit engine landing'
-			},
-			{
 				src: '/images/credit-engine-dashboard.png',
 				alt: 'Credit engine dashboard'
+			},
+			{
+				src: '/images/credit-engine-landing.png',
+				alt: 'Credit engine landing'
 			}
 		],
 		title: 'Multi-Product Financial Platform',
