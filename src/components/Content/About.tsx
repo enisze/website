@@ -1,39 +1,37 @@
-import { Code } from 'lucide-react'
-import { ContactDock } from '../Layout/ContactDock'
-import { Badge } from '../ui/badge'
-import { CVButton } from './CVButton'
-import { TextGenerateEffect } from './text-generate-effect'
-import Aurora from '../Aurora'
+import { FadeIn } from '../FadeIn'
 
 export const About = () => (
-	<section className='w-full pt-20 md:pt-12 relative h-full'>
-		<Badge
-			variant='outline'
-			className='rounded-md flex items-center gap-2 w-fit px-2.5 py-0.5 text-xs font-medium border-zinc-400 dark:border-zinc-800 bg-zinc-300 dark:bg-zinc-900'
-		>
-			<Code className='inline-block text-gray-500 dark:text-gray-400 animate-pulse' />
-			<p className='text-gray-500 dark;text-gray-400'>
-				Fullstack Software Developer
+	<section className='w-full flex flex-col gap-y-5 pt-20 md:pt-12 relative h-full mx-auto max-w-5xl'>
+		<FadeIn>
+			<h2 className='text-4xl font-bold mt-4 mb-2'>About Me</h2>
+			<p className='text-gray-500 dark:text-gray-400 text-lg'>
+				Based in Germany, I am a passionate software developer with a focus on
+				web and mobile app development. I enjoy creating innovative solutions
+				that enhance user experiences.
 			</p>
-		</Badge>
-		<TextGenerateEffect
-			words={`I studied computer science at RWTH Aachen, with a focus on machine
-			learning, AI, and data science using Python. My theses work involved
-			generative development and RDF schema generation. Currently, I specialize
-			in web and mobile app development with expertise in React, TypeScript, and
-			Next.js, and I'm passionate about learning new technologies. I bring
-			strong leadership skills with a focus on effective communication and
-			adaptability in team environments, which I believe are key to successful
-			project management.
-		`}
-			className='dark:text-gray-200 leading-relaxed mb-8'
-		/>
+		</FadeIn>
 
-		{/* <div className='flex justify-center'>
-			<CVButton />
-		</div> */}
-		<div className='absolute bottom-0 left-0'>
-			<ContactDock />
-		</div>
+		<FadeIn>
+			<p className='text-gray-500 dark:text-gray-400 text-lg'>
+				I have a strong foundation in computer science and a keen interest in
+				machine learning, AI, and data science. I am always eager to learn new
+				technologies and improve my skills.
+			</p>
+		</FadeIn>
+
+		<FadeIn>
+			<p className='text-gray-500 dark:text-gray-400 text-lg'>
+				In my free time, I enjoy exploring new technologies, contributing to
+				open-source projects, and expanding my knowledge in the field of
+				software development.
+			</p>
+		</FadeIn>
+
+		<FadeIn>
+			<p className='text-gray-500 dark:text-gray-400 text-lg'>
+				I am excited to connect with like-minded individuals and collaborate on
+				innovative projects that make a difference.
+			</p>
+		</FadeIn>
 	</section>
 )

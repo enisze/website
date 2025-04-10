@@ -295,7 +295,7 @@ const sideProjects = [
 ]
 
 export const Projects = () => (
-	<div className='px-8'>
+	<div className='mx-auto max-w-5xl'>
 		<Heading>Projects</Heading>
 		<section
 			className='scroll-m-20 flex flex-col gap-2 items-center'
@@ -319,30 +319,28 @@ export const Projects = () => (
 			))}
 		</section>
 
-		<div className='px-8'>
-			<Heading>Side-Projects</Heading>
-			<section
-				className='scroll-m-20 flex flex-col gap-2 items-center'
-				id='projects'
-			>
-				{sideProjects.map((project) => (
-					<FadeIn key={project.title}>
-						<div className='flex flex-col md:flex-row gap-6 items-center justify-center'>
-							<ProjectShowcase
-								title={project.title}
-								description={project.description}
-								images={project.images}
-								links={{
-									live: project.projectLink,
-									github: project.githubLink
-								}}
-								year={project.year}
-								technologies={project.technologies}
-							/>
-						</div>
-					</FadeIn>
-				))}
-			</section>
-		</div>
+		<Heading>Side-Projects</Heading>
+		<section
+			className='scroll-m-20 flex flex-col gap-2 items-center'
+			id='projects'
+		>
+			{sideProjects.map((project) => (
+				<FadeIn key={project.title}>
+					<div className='flex flex-col md:flex-row gap-6 items-center justify-center'>
+						<ProjectShowcase
+							title={project.title}
+							description={project.description}
+							images={project.images}
+							links={{
+								live: project.projectLink,
+								github: project.githubLink
+							}}
+							year={project.year}
+							technologies={project.technologies}
+						/>
+					</div>
+				</FadeIn>
+			))}
+		</section>
 	</div>
 )

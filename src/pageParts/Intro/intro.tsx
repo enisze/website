@@ -2,14 +2,19 @@ import { About } from '@/components/Content/About'
 import dynamic from 'next/dynamic'
 import { SparklesImage } from '../../components/ImageWithConfetti'
 import { Timer } from './Timer'
-import FloatingCircles from '@/components/FlotaingCircles'
+import { AnimatedGradient } from '@/components/AnimatedGradient'
+import { FadeIn } from '@/components/FadeIn'
+import { Code } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import { ContactDock } from '@/components/Layout/ContactDock'
+import { CVButton } from '@/components/Content/CVButton'
 
 const MapComponent = dynamic(async () => import('./MapComponent'), {
 	ssr: false
 })
 
 export const Intro = () => (
-	<div className='md:h-[calc(100vh-105px)] relative'>
+	<div className='md:h-[calc(100vh-70px)] relative'>
 		<div className='relative w-screen h-[300px] text-white z-0'>
 			<div className='absolute bottom-0 left-4'>
 				<h1 className='text-2xl font-semibold m-0'>Hi,</h1>
@@ -24,7 +29,6 @@ export const Intro = () => (
 			</div>
 
 			<div className='absolute hover:animate-shake z-50 w-[180px] h-[178px] bottom-0 right-4 overflow-hidden transform rotate-6 -mb-16'>
-				{/* <ImageWithConfetti /> */}
 				<SparklesImage />
 			</div>
 			<div className='absolute top-4 left-4'>
@@ -32,13 +36,44 @@ export const Intro = () => (
 			</div>
 		</div>
 
-		<div className='relative'>
-			<div className='absolute inset-0 w-full'>
-				<FloatingCircles blur={50} size={300} speed={0.6} circleCount={8} />
+		<div className='relative min-h-[500px]'>
+			<div className='absolute inset-0 opacity-30 z-0'>
+				<AnimatedGradient
+					colors={['#3B82F6', '#60A5FA', '#93C5FD']}
+					speed={0.08}
+					blur='heavy'
+					blobSize='small'
+					className='dark:invert dark:hue-rotate-180'
+				/>
 			</div>
 
-			<div className='flex flex-col scroll-m-20 px-8' id='about'>
-				<About />
+			<div className='flex gap-2 flex-col p-8'>
+				<FadeIn>
+					<Badge
+						variant='outline'
+						className='rounded-md flex items-center gap-2 w-fit px-2.5 py-0.5 text-xs font-medium border-zinc-400 dark:border-zinc-800 bg-zinc-300 dark:bg-zinc-900'
+					>
+						<Code className='inline-block text-gray-500 dark:text-gray-400 animate-pulse' />
+						<p className='text-gray-500 dark:text-gray-400'>
+							Fullstack Software Developer
+						</p>
+					</Badge>
+				</FadeIn>
+
+				<FadeIn>
+					<p className='text-gray-500 dark:text-gray-400 text-xl text-center py-14 max-w-5xl mx-auto'>
+						Software developer passionate about clean code, smart solutions and
+						digital innovation. Whether web, mobile or cloud: I combine modern
+						tech stack knowledge with creativity and an eye for what's
+						essential. Besides my work as a developer, I enjoy tinkering with my
+						own projects – always with the goal of making things better, faster
+						and more intuitive.
+					</p>
+				</FadeIn>
+
+				<div className='flex justify-between'>
+					<ContactDock />
+				</div>
 			</div>
 		</div>
 	</div>

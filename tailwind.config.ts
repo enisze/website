@@ -59,6 +59,28 @@ const config = {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			keyframes: {
+				'background-gradient': {
+					'0%, 100%': {
+						transform: 'translate(0, 0)',
+						animationDelay: 'var(--background-gradient-delay, 0s)',
+					},
+					'20%': {
+						transform:
+							'translate(calc(100% * var(--tx-1, 1)), calc(100% * var(--ty-1, 1)))',
+					},
+					'40%': {
+						transform:
+							'translate(calc(100% * var(--tx-2, -1)), calc(100% * var(--ty-2, 1)))',
+					},
+					'60%': {
+						transform:
+							'translate(calc(100% * var(--tx-3, 1)), calc(100% * var(--ty-3, -1)))',
+					},
+					'80%': {
+						transform:
+							'translate(calc(100% * var(--tx-4, -1)), calc(100% * var(--ty-4, -1)))',
+					},
+				},
 				'accordion-down': {
 					from: { height: '0' },
 					to: { height: 'var(--radix-accordion-content-height)' }
@@ -76,7 +98,9 @@ const config = {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				ripple: 'ripple 1s cubic-bezier(0.4, 0, 0.2, 1) infinite'
+				ripple: 'ripple 1s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+				'background-gradient':
+					'background-gradient var(--background-gradient-speed, 15s) cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite',
 			}
 		}
 	},

@@ -266,8 +266,8 @@ const Education = () => {
 
 	return (
 		<div className='bg-gray-100 dark:bg-gray-900 backdrop-blur-sm rounded-xl shadow-xl border border-slate-700 overflow-hidden'>
-			<div className='grid md:grid-cols-2 min-h-[780px]'>
-				<div className='p-6 overflow-y-auto max-h-[780px]'>
+			<div className='grid md:grid-cols-2 min-h-[810px]'>
+				<div className='p-6 overflow-y-auto max-h-[810px]'>
 					<div className='space-y-6'>
 						{sortedEducationItems.map((item, idx) => (
 							<FadeIn key={`${item.city.id}-${idx}`}>
@@ -281,7 +281,7 @@ const Education = () => {
 					</div>
 				</div>
 
-				<div className='h-[780px]'>
+				<div className='h-[810px]'>
 					<MapContainer
 						ref={mapRef}
 						center={[30, 0]}

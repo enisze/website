@@ -5,7 +5,10 @@ import { FadeIn } from '@/components/FadeIn'
 
 export const Skills = () => {
 	return (
-		<section className='scroll-m-20 relative space-y-4 pt-5 px-8' id='skills'>
+		<section
+			className='scroll-m-20 max-w-5xl mx-auto relative space-y-4 pt-5 px-8'
+			id='skills'
+		>
 			<Heading>Technical Skills</Heading>
 			<div className='flex flex-col md:flex-row gap-4'>
 				{stacks.map((stack, index) => (
