@@ -45,12 +45,12 @@ export type StackLabel =
 	| 'Astro'
 	| 'Node.js'
 	| 'Drizzle'
-	| 'Tanstack React Query'
+	| 'Tanstack Query'
 	| 'Tanstack Table'
 	| 'Jotai'
 	| 'React Hook Form'
 	| 'Auth.js'
-	| 'ai-sdk'
+	| 'AI SDK'
 	| 'Zod'
 	| 'PostgreSQL'
 	| 'MongoDB'
@@ -65,6 +65,7 @@ export type StackLabel =
 	| 'Swagger'
 	| 'Customer.io'
 	| 'Airtable'
+	| 'Netlify'
 
 export type StackItem = {
 	label: StackLabel
@@ -207,6 +208,13 @@ export const stacks: Stack[] = [
 				baseColor: 'white'
 			},
 			{
+				label: 'Netlify',
+				imgUrl: '/images/stack/netlify.svg',
+				href: 'https://www.netlify.com/',
+				isSmall: true,
+				baseColor: 'white'
+			},
+			{
 				label: 'Builder.io',
 				imgUrl: '/images/stack/builderIO.svg',
 				href: 'https://www.builder.io/',
@@ -226,7 +234,7 @@ export const stacks: Stack[] = [
 		title: 'Frontend',
 		items: [
 			{
-				label: 'Tanstack React Query',
+				label: 'Tanstack Query',
 				imgUrl: '/images/stack/tanstack-logo.png',
 				href: 'https://tanstack.com/query/latest',
 				isSmall: false
@@ -305,8 +313,8 @@ export const stacks: Stack[] = [
 				isSmall: true
 			},
 			{
-				label: 'ai-sdk',
-				imgUrl: '/images/stack/ai-sdk.svg',
+				label: 'AI SDK',
+				imgUrl: '/images/stack/ai.svg',
 				href: 'https://ai-sdk.com/',
 				isSmall: true
 			},
@@ -356,7 +364,7 @@ export const stacks: Stack[] = [
 			},
 			{
 				label: 'SQL',
-				imgUrl: '/images/stack/sql.svg',
+				imgUrl: '/images/stack/sql.png',
 				href: 'https://en.wikipedia.org/wiki/SQL',
 				isSmall: true
 			},
@@ -471,18 +479,6 @@ export const stacks: Stack[] = [
 				isSmall: false
 			},
 			{
-				label: 'Jira',
-				imgUrl: '/images/stack/jira.svg',
-				href: 'https://www.atlassian.com/software/jira',
-				isSmall: false
-			},
-			{
-				label: 'Confluence',
-				imgUrl: '/images/stack/confluence.svg',
-				href: 'https://www.atlassian.com/software/confluence',
-				isSmall: true
-			},
-			{
 				label: 'Swagger',
 				imgUrl: '/images/stack/swagger.svg',
 				href: 'https://swagger.io/',
@@ -492,6 +488,18 @@ export const stacks: Stack[] = [
 				label: 'Airtable',
 				imgUrl: '/images/stack/airtable.svg',
 				href: 'https://www.airtable.com/',
+				isSmall: true
+			},
+			{
+				label: 'Jira',
+				imgUrl: '/images/stack/jira.svg',
+				href: 'https://www.atlassian.com/software/jira',
+				isSmall: false
+			},
+			{
+				label: 'Confluence',
+				imgUrl: '/images/stack/confluence.svg',
+				href: 'https://www.atlassian.com/software/confluence',
 				isSmall: true
 			}
 		]
