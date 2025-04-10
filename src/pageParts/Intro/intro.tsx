@@ -14,7 +14,7 @@ const MapComponent = dynamic(async () => import('./MapComponent'), {
 })
 
 export const Intro = () => (
-	<div className='md:h-[calc(100vh-70px)] relative'>
+	<div className='md:h-[calc(100vh-80px)] relative'>
 		<div className='relative w-screen h-[300px] text-white z-0'>
 			<div className='absolute bottom-0 left-4'>
 				<h1 className='text-2xl font-semibold m-0'>Hi,</h1>
@@ -61,7 +61,7 @@ export const Intro = () => (
 				</FadeIn>
 
 				<FadeIn>
-					<p className='text-gray-500 dark:text-gray-400 text-xl text-center py-14 max-w-5xl mx-auto'>
+					<p className='text-gray-500 dark:text-gray-400 text-xl text-center py-14 max-w-4xl mx-auto'>
 						Software developer passionate about clean code, smart solutions and
 						digital innovation. Whether web, mobile or cloud: I combine modern
 						tech stack knowledge with creativity and an eye for what's

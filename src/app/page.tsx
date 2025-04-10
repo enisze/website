@@ -24,7 +24,7 @@ export default function Home() {
 				<QuickContact />
 			</div>
 
-			<div className='relative z-10 flex flex-col scroll-m-20 px-8' id='about'>
+			<div className='relative z-10 flex flex-col scroll-m-20' id='about'>
 				<About />
 			</div>
 			<Skills />

@@ -16,7 +16,7 @@ export const ContactSection = () => {
 				amplitude={3}
 				distance={0.6}
 			/>
-			<div className='absolute z-10 text-center px-4 max-w-5xl mx-auto'>
+			<div className='absolute z-10 text-center max-w-5xl mx-auto'>
 				<FadeIn>
 					<h2 className='text-4xl font-bold drop-shadow-lg mb-4'>
 						Let’s build something amazing together
@@ -32,14 +32,14 @@ export const ContactSection = () => {
 					<div className='flex flex-col sm:flex-row gap-4 justify-center'>
 						<a
 							href={socialLinks[3].href}
-							className={cn(buttonVariants({ variant: 'outline' }))}
+							className={cn(buttonVariants({ variant: 'default' }))}
 						>
 							<MailIcon className='mr-2 h-5 w-5' />
 							Send me an Email
 						</a>
 						<a
 							href={socialLinks[4].href}
-							className={cn(buttonVariants({ variant: 'outline' }))}
+							className={cn(buttonVariants({ variant: 'secondary' }))}
 						>
 							<CalendarIcon className='mr-2 h-5 w-5' />
 							Schedule a Meeting
@@ -47,7 +47,9 @@ export const ContactSection = () => {
 					</div>
 				</FadeIn>
 
-				<CVButton />
+				<div className='pt-8 flex justify-center'>
+					<CVButton />
+				</div>
 			</div>
 		</div>
 	)
