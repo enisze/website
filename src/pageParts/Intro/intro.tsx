@@ -2,15 +2,15 @@ import { About } from '@/components/Content/About'
 import dynamic from 'next/dynamic'
 import { SparklesImage } from '../../components/ImageWithConfetti'
 import { Timer } from './Timer'
+import FloatingCircles from '@/components/FlotaingCircles'
 
 const MapComponent = dynamic(async () => import('./MapComponent'), {
 	ssr: false
 })
 
 export const Intro = () => (
-	<div className='h-screen'>
-		<div className='relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-[300px] text-white z-0'>
-			<div className='absolute inset-0 bg-gradient-to-t from-gray-600/20 to-transparent ' />
+	<div className='md:h-[calc(100vh-105px)] relative'>
+		<div className='relative w-screen h-[300px] text-white z-0'>
 			<div className='absolute bottom-0 left-4'>
 				<h1 className='text-2xl font-semibold m-0'>Hi,</h1>
 				<h2 className='text-4xl font-bold m-0'>I'm Enis.</h2>
@@ -32,8 +32,14 @@ export const Intro = () => (
 			</div>
 		</div>
 
-		<div className='flex flex-col scroll-m-20 px-8' id='about'>
-			<About />
+		<div className='relative'>
+			<div className='absolute inset-0 w-full'>
+				<FloatingCircles blur={50} size={300} speed={0.6} circleCount={8} />
+			</div>
+
+			<div className='flex flex-col scroll-m-20 px-8' id='about'>
+				<About />
+			</div>
 		</div>
 	</div>
 )

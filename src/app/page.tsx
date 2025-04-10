@@ -18,8 +18,10 @@ const Education2 = dynamic(
 export default function Home() {
 	return (
 		<div className='flex flex-col gap-y-8 bg-white dark:bg-black'>
-			<Intro />
-			<QuickContact />
+			<div>
+				<Intro />
+				<QuickContact />
+			</div>
 			<Skills />
 			<Projects />
 			<FadeIn>

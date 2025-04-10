@@ -3,9 +3,10 @@ import { ContactDock } from '../Layout/ContactDock'
 import { Badge } from '../ui/badge'
 import { CVButton } from './CVButton'
 import { TextGenerateEffect } from './text-generate-effect'
+import Aurora from '../Aurora'
 
 export const About = () => (
-	<section className='w-full pt-20 md:pt-12'>
+	<section className='w-full pt-20 md:pt-12 relative h-full'>
 		<Badge
 			variant='outline'
 			className='rounded-md flex items-center gap-2 w-fit px-2.5 py-0.5 text-xs font-medium border-zinc-400 dark:border-zinc-800 bg-zinc-300 dark:bg-zinc-900'
@@ -28,10 +29,11 @@ export const About = () => (
 			className='dark:text-gray-200 leading-relaxed mb-8'
 		/>
 
-		<ContactDock />
-
-		<div className='flex justify-center'>
+		{/* <div className='flex justify-center'>
 			<CVButton />
+		</div> */}
+		<div className='absolute bottom-0 left-0'>
+			<ContactDock />
 		</div>
 	</section>
 )

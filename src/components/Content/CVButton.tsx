@@ -15,5 +15,17 @@ export const CVButton = () => (
 				<span className='block md:hidden'>Download Reference</span>
 			</ShimmerButton>
 		</Link>
+
+		<Link
+			download='Enis-Zejnilovic-recommendation.pdf'
+			href='/data/Empfehlung.pdf'
+		>
+			<ShimmerButton>
+				<span className='hidden md:block'>
+					Download Letter of Recommendation
+				</span>
+				<span className='block md:hidden'>Download Recommendation</span>
+			</ShimmerButton>
+		</Link>
 	</div>
 )
