@@ -48,7 +48,7 @@ export const ContactDock = () => (
 					>
 						<div className='relative'>
 							<social.icon className='w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white transition-colors duration-300' />
-							<div className='absolute -inset-2 bg-black/5 dark:bg-white/20 rounded-full scale-0 group-hover:scale-100 transition-all duration-300 animate-ripple' />
+							<div className='absolute -inset-1.5 bg-black/5 dark:bg-white/20 rounded-full opacity-0 scale-100 group-hover:opacity-100 group-hover:animate-ripple-stay transition-opacity duration-300' />
 						</div>
 						<span className='text-xs text-gray-600 dark:text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors'>
 							{social.label}

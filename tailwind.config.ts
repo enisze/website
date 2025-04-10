@@ -101,9 +101,12 @@ const config = {
 					to: { height: '0' }
 				},
 				ripple: {
-					'0%': { transform: 'scale(0)', opacity: '0' },
-					'50%': { transform: 'scale(1.2)', opacity: '0.3' },
-					'100%': { transform: 'scale(1)', opacity: '0' }
+					'0%': { transform: 'scale(0)', opacity: '0.3' },
+					'100%': { transform: 'scale(2)', opacity: '0' }
+				},
+				'ripple-stay': {
+					'0%': { transform: 'scale(1)', opacity: '0.3' },
+					'100%': { transform: 'scale(1.2)', opacity: '0.3' }
 				},
 				'border-beam': {
 					'100%': {
@@ -144,7 +147,8 @@ const config = {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				ripple: 'ripple 1s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+				ripple: 'ripple 0.6s ease-out',
+				'ripple-stay': 'ripple-stay 1s ease-out forwards',
 				'background-gradient':
 					'background-gradient var(--background-gradient-speed, 15s) cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite',
 				'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
