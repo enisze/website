@@ -1,92 +1,108 @@
-import { MenuIcon } from 'lucide-react'
+'use client'
 import Link from 'next/link'
-import { Item } from './Layout/Item'
+import { Logo } from '../../components/logo'
 import { ThemeToggle } from './Layout/ThemeToggle'
-import { NavbarInstane } from './NavbarClient'
-import { Button } from './ui/button'
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger
-} from './ui/dropdown-menu'
 
-const menuitems = [
+import {
+	MobileNav,
+	MobileNavHeader,
+	MobileNavMenu,
+	MobileNavToggle,
+	NavBody,
+	NavItems,
+	Navbar as ResizableNavbar
+} from '@/components/ui/resizable-navbar'
+import { useState } from 'react'
+import { socialLinks } from './Layout/ContactDock'
+import { buttonVariants } from './ui/button'
+
+const navItems = [
 	{
-		title: 'About',
-		path: '/#about'
+		name: 'About',
+		link: '/#about'
 	},
 	{
-		title: 'Skills',
-		path: '/#skills'
+		name: 'Skills',
+		link: '/#skills'
 	},
 	{
-		title: 'Projects',
-		path: '/#projects'
+		name: 'Projects',
+		link: '/#projects'
 	},
 	{
-		title: 'Experience',
-		path: '/#experience'
+		name: 'Education',
+		link: '/#education'
 	},
 	{
-		title: 'Education',
-		path: '/#education'
-	},
-	{
-		title: 'Contact',
-		path: '/#contact'
+		name: 'Contact',
+		link: '/#contact'
 	}
 ]
 
 export const Navbar = () => {
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 	return (
-		<header className='flex flex-row items-center justify-between p-1 lg:my-0 fixed top-0 left-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-600'>
-			<Link href='/'>Enis Zejnilovic</Link>
-			<div className='lg:hidden bg-inherit flex items-center gap-x-2 '>
-				<ThemeToggle />
-				<div className='flex lg:hidden'>
-					<DropdownMenu>
-						<DropdownMenuTrigger asChild>
-							<Button variant='ghost' size='sm' aria-label='burger-menu'>
-								<MenuIcon />
-							</Button>
-						</DropdownMenuTrigger>
-						<DropdownMenuContent
-							align='end'
-							forceMount
-							className='bg-white dark:bg-gray-900'
-						>
-							{menuitems.map((item, index) => {
-								return (
-									<DropdownMenuItem key={index}>
-										<Item href={item.path}>{item.title}</Item>
-									</DropdownMenuItem>
-								)
-							})}
-						</DropdownMenuContent>
-					</DropdownMenu>
-				</div>
-			</div>
-			<ul className='absolute hidden top-16 rounded-lg lg:relative lg:top-0 right-3 lg:flex p-5 lg:rounded-b-none lg:items-center flex-col lg:flex-row lg:gap-3 items-end border-gray-200 dark:border-none border lg:border-none lg:justify-center'>
-				{menuitems.map((item, index) => {
-					if (item.title === 'Projects') {
-						return (
-							<li key={index}>
-								<NavbarInstane />
-							</li>
-						)
-					}
+		<ResizableNavbar>
+			<NavBody>
+				<Link href='/' className='relative z-20 mr-4 flex'>
+					<Logo className='size-14' />
+				</Link>
 
-					return (
-						<li key={index}>
-							<Item href={item.path}>{item.title}</Item>
-						</li>
-					)
-				})}
-			</ul>
-			<div className='hidden lg:flex'>
-				<ThemeToggle />
-			</div>
-		</header>
+				<NavItems items={navItems} />
+				<div className='flex items-center gap-4'>
+					<ThemeToggle />
+					<a
+						href={socialLinks[4].href}
+						onClick={() => setIsMobileMenuOpen(false)}
+						className={buttonVariants({
+							variant: 'outline'
+						})}
+					>
+						Book a call
+					</a>
+				</div>
+			</NavBody>
+
+			<MobileNav>
+				<MobileNavHeader>
+					<Link href='/'>
+						<Logo className='size-14' />
+					</Link>
+					<MobileNavToggle
+						isOpen={isMobileMenuOpen}
+						onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+					/>
+				</MobileNavHeader>
+
+				<MobileNavMenu
+					isOpen={isMobileMenuOpen}
+					onClose={() => setIsMobileMenuOpen(false)}
+				>
+					{navItems.map((item, idx) => (
+						<a
+							key={`mobile-link-${idx}`}
+							href={item.link}
+							onClick={() => setIsMobileMenuOpen(false)}
+							className='relative text-neutral-600 dark:text-neutral-300'
+						>
+							<span className='block'>{item.name}</span>
+						</a>
+					))}
+
+					<ThemeToggle />
+					<div className='flex w-full flex-col gap-4'>
+						<a
+							href={socialLinks[4].href}
+							onClick={() => setIsMobileMenuOpen(false)}
+							className={buttonVariants({
+								variant: 'outline'
+							})}
+						>
+							Book a call
+						</a>
+					</div>
+				</MobileNavMenu>
+			</MobileNav>
+		</ResizableNavbar>
 	)
 }

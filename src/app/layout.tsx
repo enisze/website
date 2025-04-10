@@ -1,9 +1,7 @@
 import { ConfettiExplosion } from '@/components/ConfettiExplosion'
 import { Footer } from '@/components/Layout/Footer'
-import GridPattern from '@/components/Layout/GridPattern'
 import { Navbar } from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
-import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { BASE_URL } from '../../config'
@@ -13,6 +11,20 @@ export const metadata: Metadata = {
 	title: 'Enis Zejnilovic Full-stack Software Developer - Portfolio',
 	description:
 		'Portfolio of Enis Zejnilovic, a skilled Full-stack software engineer, with experience in web development. Specialized in React, TypeScript, and Next.js.',
+	icons: {
+		icon: [
+			{
+				media: '(prefers-color-scheme: light)',
+				url: '/favicon.svg',
+				href: '/favicon.svg'
+			},
+			{
+				media: '(prefers-color-scheme: dark)',
+				url: '/favicon.svg',
+				href: '/favicon.svg'
+			}
+		]
+	},
 	openGraph: {
 		title: 'Enis Zejnilovic Full-stack Software Developer - Portfolio',
 		url: 'https://zejnilovic.de',
@@ -67,7 +79,7 @@ export default function RootLayout({
 				<title>Enis Zejnilovic Portfolio</title>
 			</head>
 
-			<body className='dark:bg-gray-900 text-black dark:text-white flex flex-col'>
+			<body className=' flex flex-col'>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'
@@ -76,17 +88,11 @@ export default function RootLayout({
 				>
 					<ConfettiExplosion atom />
 					<Toaster />
-					<div className='fixed w-full z-20'>
-						<Navbar />
-					</div>
-					<div className='py-12 lg:py-[72px] px-8'>
-						{/* <DotPattern
-              className={cn(
-                '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',
-                'absolute h-screen z-10'
-              )}
-            /> */}
-						<GridPattern
+					{/* <div className='fixed w-full z-20 bg-black'> */}
+					<Navbar />
+					{/* </div> */}
+					<div className=''>
+						{/* <GridPattern
 							squares={[
 								[4, 4],
 								[5, 1],
@@ -99,7 +105,7 @@ export default function RootLayout({
 								'[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]',
 								'inset-x-0 inset-y-[-30%] h-[150%] skew-y-12'
 							)}
-						/>
+						/> */}
 						{children}
 					</div>
 					<Footer />

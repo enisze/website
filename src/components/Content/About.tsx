@@ -1,53 +1,57 @@
-import { Link } from '../Layout/Link'
-import { CVButton } from './CVButton'
+import { FadeIn } from '../FadeIn'
+import { Heading } from '../Layout/Heading'
 
 export const About = () => (
-	<section className='w-full'>
-		<p className='text-xl dark:text-gray-300 mb-6'>
-			Broad skill set developed through education and professional experience
-		</p>
-
-		<div className='space-y-6'>
-			<div>
-				<h3 className='text-xl font-semibold mb-2 text-blue-400'>Education</h3>
-				<p className='dark:text-gray-200 leading-relaxed'>
-					Studied computer science at RWTH Aachen, focusing on machine learning,
-					AI, and data science with Python. Theses involved generative
-					development and RDF schema generation.
-				</p>
-			</div>
-
-			<div>
-				<h3 className='text-xl font-semibold mb-2 text-blue-400'>
-					Current Work
-				</h3>
-				<p className='dark:text-gray-200 leading-relaxed'>
-					Specializing in web and mobile app development, with expertise in
-					React, TypeScript, and Next.js. Passionate about learning new
-					technologies and tackling challenging projects.
-				</p>
-			</div>
-
-			<div>
-				<h3 className='text-xl font-semibold mb-2 text-blue-400'>Leadership</h3>
-				<p className='dark:text-gray-200 leading-relaxed'>
-					Strong leadership skills with a focus on effective communication and
-					adaptability in team environments. Believes these are key to
-					successful project management.
-				</p>
-			</div>
-		</div>
-
-		<div className='flex justify-center'>
-			<CVButton />
-		</div>
-
-		<div className='mt-8 pt-6 border-t border-gray-700 text-center'>
-			<p className='dark:text-gray-300'>
-				Feel free to <Link href='#contact'>contact me</Link> to discuss
-				potential projects or opportunities. I'm always open to exciting new
-				ventures.
+	<section className='w-full flex flex-col gap-y-5 pt-20 md:pt-12 relative h-full lg:mx-auto mx-8 max-w-5xl'>
+		<FadeIn>
+			<Heading>About </Heading>
+			<p className='text-lg'>
+				Based in Germany, I am a passionate
+				<span className='font-bold'>fullstack software developer</span>
+				with a focus on{' '}
+				<span className='font-bold'>web and mobile app development</span>. I
+				enjoy creating innovative solutions that enhance user experiences.
 			</p>
-		</div>
+		</FadeIn>
+
+		<FadeIn>
+			<p className='text-lg'>
+				I specialize in modern web development with the{' '}
+				<span className='font-bold'>
+					Next.Js framework, React and TypeScript
+				</span>
+				, crafting reliable and high-performing applications. My expertise
+				extends to developing cross-platform mobile solutions using{' '}
+				<span className='font-bold'>React Native and Expo</span>, while
+				leveraging AWS for cloud infrastructure. With a strong technical
+				foundation and an eye for design, I build interfaces that are both
+				efficient and visually engaging, always focusing on clean architecture
+				and maintainable solutions. From web to mobile and everything in between
+				–{' '}
+				<span className='font-bold'>
+					I turn complex ideas into simple, elegant solutions.
+				</span>
+			</p>
+		</FadeIn>
+
+		<FadeIn>
+			<p className='text-lg'>
+				I have a strong foundation in computer science and a keen interest in{' '}
+				<span className='font-bold'>
+					machine learning and artificial intelligence.
+				</span>{' '}
+				I am always eager to learn new technologies and improve my skills.
+			</p>
+		</FadeIn>
+
+		<FadeIn>
+			<p className='text-lg'>
+				In my free time, I enjoy{' '}
+				<span className='font-bold'> exploring new technologies</span>, develop
+				private projects, and{' '}
+				<span className='font-bold'>expanding my knowledge</span> in the field
+				of software development.
+			</p>
+		</FadeIn>
 	</section>
 )

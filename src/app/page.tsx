@@ -1,7 +1,8 @@
-//TODO: some padding between the page parts add twitter handle
-
+import { About } from '@/components/Content/About'
+import { FadeIn } from '@/components/FadeIn'
 import { Heading } from '@/components/Layout/Heading'
-import { Contact } from '@/pageParts/contact'
+import { ContactSection } from '@/pageParts/Contact/ContactSection'
+import { QuickContact } from '@/pageParts/Contact/QuickContact'
 import { Intro } from '@/pageParts/Intro/intro'
 import { Projects } from '@/pageParts/projects'
 import { Skills } from '@/pageParts/skills'
@@ -16,17 +17,25 @@ const Education2 = dynamic(
 
 export default function Home() {
 	return (
-		<div className='flex flex-col gap-y-3 scroll-mt-32 bg-white dark:bg-gray-900'>
-			<Intro />
-			<Skills />
-			<Projects />
+		<div className='flex flex-col gap-y-8'>
 			<div>
-				<Heading>Education</Heading>
-				<div className='h-[500px] w-full pt-4'>
+				<Intro />
+				<QuickContact />
+			</div>
+
+			<div className='relative z-10 flex flex-col scroll-m-20' id='about'>
+				<About />
+			</div>
+			<Skills />
+
+			<Projects />
+			<FadeIn>
+				<div className='max-w-5xl lg:mx-auto mx-8 '>
+					<Heading>Education</Heading>
 					<Education2 />
 				</div>
-			</div>
-			<Contact />
+			</FadeIn>
+			<ContactSection />
 		</div>
 	)
 }
