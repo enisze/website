@@ -18,7 +18,7 @@ const Education2 = dynamic(
 
 export default function Home() {
 	return (
-		<div className='flex flex-col gap-y-8 bg-white dark:bg-black'>
+		<div className='flex flex-col gap-y-8'>
 			<div>
 				<Intro />
 				<QuickContact />

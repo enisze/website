@@ -24,20 +24,14 @@ export const QuickContact = () => {
 					<div className='flex flex-col sm:flex-row gap-4 justify-center'>
 						<a
 							href={socialLinks[3].href}
-							className={cn(
-								buttonVariants({ variant: 'outline' }),
-								'px-6 py-3 text-lg border-black bg-white dark:bg-black dark:border-white hover:text-zinc-600 dark:hover:text-zinc-300 transition'
-							)}
+							className={cn(buttonVariants({ variant: 'outline' }))}
 						>
 							<MailIcon className='mr-2 h-5 w-5' />
 							Send me an Email
 						</a>
 						<a
 							href={socialLinks[4].href}
-							className={cn(
-								buttonVariants({ variant: 'outline' }),
-								'px-6 py-3 text-lg border-black bg-white dark:bg-black dark:border-white hover:bg-white hover:text-zinc-600 dark:hover:text-zinc-300 transition'
-							)}
+							className={cn(buttonVariants({ variant: 'outline' }))}
 						>
 							<CalendarIcon className='mr-2 h-5 w-5' />
 							Schedule a Meeting
