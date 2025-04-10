@@ -1,20 +1,20 @@
 //TODO: Add github links + add icons for which frameworks were used. Add filler image, if image no available. Mark projects as personal, open source, commercial
 'use client'
 
+import { FadeIn } from '@/components/FadeIn'
 import { Heading } from '@/components/Layout/Heading'
 import { ProjectShowcase } from './ProjectShowcase'
-import { FadeIn } from '@/components/FadeIn'
 
 const projects = [
 	{
 		images: [
 			{
-				src: '/images/placeholder.png', // You'll need to add actual images
-				alt: 'ESG Platform'
+				src: '/images/esg-form.png',
+				alt: 'ESG Platform Form'
 			},
 			{
-				src: '/images/placeholder.png',
-				alt: 'ESG Platform Dashboard'
+				src: '/images/esg-landing.png',
+				alt: 'ESG Platform'
 			}
 		],
 		title: 'ESG Platform',
@@ -44,12 +44,12 @@ const projects = [
 	{
 		images: [
 			{
-				src: '/images/placeholder.png', // You'll need to add actual images
-				alt: 'Financial Services Platform'
+				src: '/images/credit-engine-dashboard.png',
+				alt: 'Credit engine dashboard'
 			},
 			{
-				src: '/images/placeholder.png',
-				alt: 'Financial Services Dashboard'
+				src: '/images/credit-engine-landing.png',
+				alt: 'Credit engine landing'
 			}
 		],
 		title: 'Multi-Product Financial Platform',
@@ -130,7 +130,6 @@ const projects = [
 			'TypeScript',
 			'Python',
 			'FastAPI',
-			'PostgreSQL',
 			'AWS',
 			'Redis',
 			'ElasticSearch',
@@ -182,10 +181,10 @@ const projects = [
 const sideProjects = [
 	{
 		images: [
-			{ src: '/images/portfolio.webp', alt: 'Portfolio' },
+			{ src: '/images/portfolio-tech.png', alt: 'Portfolio Tech' },
 			{
-				src: '/images/portfolio2.webp',
-				alt: 'Portfolio 2'
+				src: '/images/portfolio.png',
+				alt: 'Portfolio'
 			}
 		],
 		title: 'Portfolio',
@@ -295,7 +294,7 @@ const sideProjects = [
 ]
 
 export const Projects = () => (
-	<div className='mx-auto max-w-5xl'>
+	<div className='lg:mx-auto mx-8 max-w-5xl'>
 		<Heading>Projects</Heading>
 		<section
 			className='scroll-m-20 flex flex-col gap-2 items-center'
@@ -319,7 +318,7 @@ export const Projects = () => (
 			))}
 		</section>
 
-		<Heading>Side-Projects</Heading>
+		<Heading>Side Projects</Heading>
 		<section
 			className='scroll-m-20 flex flex-col gap-2 items-center'
 			id='projects'

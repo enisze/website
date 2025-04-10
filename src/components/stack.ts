@@ -43,6 +43,29 @@ export type StackLabel =
 	| 'Expo'
 	| 'React Native'
 	| 'Astro'
+	| 'Node.js'
+	| 'Drizzle'
+	| 'Tanstack Query'
+	| 'Tanstack Table'
+	| 'Jotai'
+	| 'React Hook Form'
+	| 'Auth.js'
+	| 'AI SDK'
+	| 'Zod'
+	| 'PostgreSQL'
+	| 'MongoDB'
+	| 'SQL'
+	| 'Neon'
+	| 'Azure'
+	| 'Git'
+	| 'Jira'
+	| 'Confluence'
+	| 'YAML'
+	| 'JSON'
+	| 'Swagger'
+	| 'Customer.io'
+	| 'Airtable'
+	| 'Netlify'
 
 export type StackItem = {
 	label: StackLabel
@@ -92,8 +115,8 @@ export const stacks: Stack[] = [
 				label: 'Astro',
 				imgUrl: '/images/stack/Astro.svg',
 				href: 'https://astro.build/',
-				isSmall: false,
-				baseColor: 'white'
+				isSmall: false
+				// baseColor: 'white'
 			},
 			{
 				label: 'tRPC',
@@ -118,6 +141,18 @@ export const stacks: Stack[] = [
 				label: 'Bun',
 				imgUrl: '/images/stack/bun.svg',
 				href: 'https://bun.sh/',
+				isSmall: true
+			},
+			{
+				label: 'YAML',
+				imgUrl: '/images/stack/yaml.svg',
+				href: 'https://yaml.org/',
+				isSmall: true
+			},
+			{
+				label: 'JSON',
+				imgUrl: '/images/stack/json.svg',
+				href: 'https://www.json.org/',
 				isSmall: true
 			}
 		]
@@ -160,9 +195,22 @@ export const stacks: Stack[] = [
 				baseColor: 'white'
 			},
 			{
+				label: 'Customer.io',
+				imgUrl: '/images/stack/customer-io.svg',
+				href: 'https://customer.io/',
+				isSmall: true
+			},
+			{
 				label: 'Mailtrap',
 				imgUrl: '/images/stack/mailtrap-new-logo.svg',
 				href: 'https://mailtrap.io/',
+				isSmall: true,
+				baseColor: 'white'
+			},
+			{
+				label: 'Netlify',
+				imgUrl: '/images/stack/netlify.svg',
+				href: 'https://www.netlify.com/',
 				isSmall: true,
 				baseColor: 'white'
 			},
@@ -183,8 +231,32 @@ export const stacks: Stack[] = [
 		]
 	},
 	{
-		title: 'UI',
+		title: 'Frontend',
 		items: [
+			{
+				label: 'Tanstack Query',
+				imgUrl: '/images/stack/tanstack-logo.png',
+				href: 'https://tanstack.com/query/latest',
+				isSmall: false
+			},
+			{
+				label: 'Tanstack Table',
+				imgUrl: '/images/stack/tanstack-logo.png',
+				href: 'https://tanstack.com/table/latest',
+				isSmall: false
+			},
+			{
+				label: 'Jotai',
+				imgUrl: '/images/stack/jotai.svg',
+				href: 'https://jotai.org/',
+				isSmall: true
+			},
+			{
+				label: 'React Hook Form',
+				imgUrl: '/images/stack/react-hook-form.svg',
+				href: 'https://react-hook-form.com/',
+				isSmall: true
+			},
 			{
 				label: 'Styled Comp.',
 				imgUrl: '/images/stack/styled-components.svg',
@@ -226,8 +298,32 @@ export const stacks: Stack[] = [
 		]
 	},
 	{
-		title: 'Database',
+		title: 'Backend',
 		items: [
+			{
+				label: 'Node.js',
+				imgUrl: '/images/stack/node.svg',
+				href: 'https://nodejs.org/',
+				isSmall: false
+			},
+			{
+				label: 'Auth.js',
+				imgUrl: '/images/stack/auth.svg',
+				href: 'https://authjs.dev/',
+				isSmall: true
+			},
+			{
+				label: 'AI SDK',
+				imgUrl: '/images/stack/ai.svg',
+				href: 'https://ai-sdk.com/',
+				isSmall: true
+			},
+			{
+				label: 'Zod',
+				imgUrl: '/images/stack/zod.svg',
+				href: 'https://zod.dev/',
+				isSmall: true
+			},
 			{
 				label: 'Prisma',
 				imgUrl: '/images/stack/prisma.svg',
@@ -252,6 +348,30 @@ export const stacks: Stack[] = [
 				label: 'ElasticSearch',
 				imgUrl: '/images/stack/elasticsearch.svg',
 				href: 'https://www.elastic.co/',
+				isSmall: true
+			},
+			{
+				label: 'PostgreSQL',
+				imgUrl: '/images/stack/postgresql.svg',
+				href: 'https://www.postgresql.org/',
+				isSmall: false
+			},
+			{
+				label: 'MongoDB',
+				imgUrl: '/images/stack/mongodb.svg',
+				href: 'https://www.mongodb.com/',
+				isSmall: false
+			},
+			{
+				label: 'SQL',
+				imgUrl: '/images/stack/sql.png',
+				href: 'https://en.wikipedia.org/wiki/SQL',
+				isSmall: true
+			},
+			{
+				label: 'Neon',
+				imgUrl: '/images/stack/neon.svg',
+				href: 'https://neon.tech/',
 				isSmall: true
 			}
 		]
@@ -350,6 +470,36 @@ export const stacks: Stack[] = [
 				label: 'Teams',
 				imgUrl: '/images/stack/ms-logo-t.svg',
 				href: 'https://www.microsoft.com/de-de/microsoft-teams/download-app',
+				isSmall: true
+			},
+			{
+				label: 'Git',
+				imgUrl: '/images/stack/git.svg',
+				href: 'https://git-scm.com/',
+				isSmall: false
+			},
+			{
+				label: 'Swagger',
+				imgUrl: '/images/stack/swagger.svg',
+				href: 'https://swagger.io/',
+				isSmall: true
+			},
+			{
+				label: 'Airtable',
+				imgUrl: '/images/stack/airtable.svg',
+				href: 'https://www.airtable.com/',
+				isSmall: true
+			},
+			{
+				label: 'Jira',
+				imgUrl: '/images/stack/jira.svg',
+				href: 'https://www.atlassian.com/software/jira',
+				isSmall: false
+			},
+			{
+				label: 'Confluence',
+				imgUrl: '/images/stack/confluence.svg',
+				href: 'https://www.atlassian.com/software/confluence',
 				isSmall: true
 			}
 		]

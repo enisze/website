@@ -26,7 +26,7 @@ export function ProjectShowcase(project: Project) {
 			<SpotlightCard
 				className='p-1 group'
 				backgroundClassName='bg-gradient-to-br from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-zinc-800'
-				innerClassName='relative bg-white dark:bg-zinc-950 rounded-[calc(1.5rem-4px)] overflow-hidden p-8 md:p-12'
+				innerClassName='relative dark:bg-zinc-950 rounded-[calc(1.5rem-4px)] overflow-hidden p-8 md:p-12'
 				spotlightColor='rgba(99, 102, 241, 0.15)'
 			>
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-12 relative'>
@@ -103,7 +103,7 @@ export function ProjectShowcase(project: Project) {
 								alt={project.images[0].alt}
 								width={600}
 								height={400}
-								className='w-full h-full object-cover'
+								className='w-full h-full object-contain'
 							/>
 						</div>
 
@@ -114,7 +114,7 @@ export function ProjectShowcase(project: Project) {
 								alt={project.images[1].alt}
 								width={400}
 								height={300}
-								className='w-full h-auto object-cover'
+								className='w-full h-auto object-contain'
 							/>
 						</div>
 

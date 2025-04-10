@@ -79,7 +79,7 @@ export default function RootLayout({
 				<title>Enis Zejnilovic Portfolio</title>
 			</head>
 
-			<body className='dark:bg-black text-black dark:text-white flex flex-col'>
+			<body className=' flex flex-col'>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'
