@@ -115,8 +115,8 @@ export const stacks: Stack[] = [
 				label: 'Astro',
 				imgUrl: '/images/stack/Astro.svg',
 				href: 'https://astro.build/',
-				isSmall: false,
-				baseColor: 'white'
+				isSmall: false
+				// baseColor: 'white'
 			},
 			{
 				label: 'tRPC',
