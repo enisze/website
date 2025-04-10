@@ -8,6 +8,8 @@ import { Code } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { ContactDock } from '@/components/Layout/ContactDock'
 import { CVButton } from '@/components/Content/CVButton'
+import { Button } from '@/components/ui/button'
+import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-button'
 
 const MapComponent = dynamic(async () => import('./MapComponent'), {
 	ssr: false
@@ -61,7 +63,7 @@ export const Intro = () => (
 				</FadeIn>
 
 				<FadeIn>
-					<p className='text-gray-500 dark:text-gray-400 text-xl text-center py-14 max-w-4xl mx-auto'>
+					<p className='text-xl text-center py-14 max-w-4xl mx-auto'>
 						Software developer passionate about clean code, smart solutions and
 						digital innovation. Whether web, mobile or cloud: I combine modern
 						tech stack knowledge with creativity and an eye for what's
@@ -71,8 +73,15 @@ export const Intro = () => (
 					</p>
 				</FadeIn>
 
-				<div className='flex justify-between'>
+				<div className='flex items-center justify-between'>
 					<ContactDock />
+					<div className='self-end'>
+						<FadeIn>
+							<InteractiveHoverButton href='mailto:enis@zejnilovic.de'>
+								Contact Me
+							</InteractiveHoverButton>
+						</FadeIn>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -319,7 +319,7 @@ export const Projects = () => (
 			))}
 		</section>
 
-		<Heading>Side-Projects</Heading>
+		<Heading>Side Projects</Heading>
 		<section
 			className='scroll-m-20 flex flex-col gap-2 items-center'
 			id='projects'
