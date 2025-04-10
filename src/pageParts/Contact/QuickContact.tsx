@@ -1,13 +1,13 @@
+import { FadeIn } from '@/components/FadeIn'
 import { socialLinks } from '@/components/Layout/ContactDock'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { CalendarIcon, MailIcon } from 'lucide-react'
-import { FadeIn } from '@/components/FadeIn'
 
 export const QuickContact = () => {
 	return (
 		<section className='w-full py-20 bg-gray-100 dark:bg-gray-900 text-center'>
-			<div className='max-w-5xl mx-auto px-6'>
+			<div className='max-w-5xl lg:mx-auto mx-8'>
 				<FadeIn>
 					<h2 className='text-3xl sm:text-4xl font-bold mb-4 text-zinc-900 dark:text-white'>
 						Let's get in touch

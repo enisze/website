@@ -1,6 +1,6 @@
-import React from 'react'
-import { ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { ArrowRight } from 'lucide-react'
+import React from 'react'
 
 interface InteractiveHoverButtonProps
 	extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
@@ -19,7 +19,7 @@ export const InteractiveHoverButton = React.forwardRef<
 			{...props}
 		>
 			<div className='flex items-center gap-2'>
-				<div className='absolute left-4 h-2 w-2 rounded-full bg-primary transition-all duration-300 group-hover:scale-[100.8]'></div>
+				<div className='absolute left-4 h-2 w-2 rounded-full bg-primary transition-all duration-300 group-hover:scale-[100.8]' />
 				<span className='relative z-10 transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0'>
 					{children}
 				</span>

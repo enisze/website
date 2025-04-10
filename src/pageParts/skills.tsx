@@ -1,12 +1,12 @@
+import { FadeIn } from '@/components/FadeIn'
 import { Skill } from '../components/Content/Skill'
 import { Heading } from '../components/Layout/Heading'
 import { stacks } from '../components/stack'
-import { FadeIn } from '@/components/FadeIn'
 
 export const Skills = () => {
 	return (
 		<section
-			className='scroll-m-20 max-w-5xl mx-auto relative space-y-4 pt-5'
+			className='scroll-m-20 max-w-5xl lg:mx-auto mx-8 relative space-y-4 pt-5'
 			id='skills'
 		>
 			<Heading>Technical Skills</Heading>

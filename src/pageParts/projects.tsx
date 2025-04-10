@@ -130,7 +130,6 @@ const projects = [
 			'TypeScript',
 			'Python',
 			'FastAPI',
-			'PostgreSQL',
 			'AWS',
 			'Redis',
 			'ElasticSearch',
@@ -184,7 +183,7 @@ const sideProjects = [
 		images: [
 			{ src: '/images/portfolio.webp', alt: 'Portfolio' },
 			{
-				src: '/images/portfolio2.webp',
+				src: '/images/portfolio.png',
 				alt: 'Portfolio 2'
 			}
 		],
@@ -295,7 +294,7 @@ const sideProjects = [
 ]
 
 export const Projects = () => (
-	<div className='mx-auto max-w-5xl'>
+	<div className='lg:mx-auto mx-8 max-w-5xl'>
 		<Heading>Projects</Heading>
 		<section
 			className='scroll-m-20 flex flex-col gap-2 items-center'

@@ -31,7 +31,7 @@ export const Timer = () => {
 	}, [])
 
 	return (
-		<div className='text-lg bg-gray-800 bg-opacity-75 rounded p-2 flex gap-2 items-center'>
+		<div className='text-lg bg-gray-800 bg-opacity-75 text-white rounded p-2 flex gap-2 items-center'>
 			{showMoon ? <AnimatedMoon /> : <AnimatedSun />}
 			{time} MESZ
 		</div>

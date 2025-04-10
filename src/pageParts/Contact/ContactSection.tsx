@@ -1,12 +1,12 @@
 'use client'
 
+import { CVButton } from '@/components/Content/CVButton'
+import { FadeIn } from '@/components/FadeIn'
 import { socialLinks } from '@/components/Layout/ContactDock'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { CalendarIcon, MailIcon } from 'lucide-react'
 import Threads from '../Intro/Threads'
-import { FadeIn } from '@/components/FadeIn'
-import { CVButton } from '@/components/Content/CVButton'
 
 export const ContactSection = () => {
 	return (
@@ -16,7 +16,7 @@ export const ContactSection = () => {
 				amplitude={3}
 				distance={0.6}
 			/>
-			<div className='absolute z-10 text-center max-w-5xl mx-auto'>
+			<div className='absolute z-10 text-center max-w-5xl lg:mx-auto mx-8'>
 				<FadeIn>
 					<h2 className='text-4xl font-bold drop-shadow-lg mb-4'>
 						Let’s build something amazing together

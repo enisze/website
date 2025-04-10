@@ -266,7 +266,7 @@ const Education = () => {
 
 	return (
 		<div className='bg-gray-100 dark:bg-gray-900 rounded-xl shadow-xl dark:shadow-gray-900 overflow-hidden'>
-			<div className='grid md:grid-cols-2 min-h-[810px]'>
+			<div className='grid lg:grid-cols-2 min-h-[810px]'>
 				<div className='p-6 overflow-y-auto max-h-[810px]'>
 					<div className='space-y-6'>
 						{sortedEducationItems.map((item, idx) => (

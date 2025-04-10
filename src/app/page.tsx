@@ -1,4 +1,5 @@
-import Iridescence from '@/components/Iridescence'
+import { About } from '@/components/Content/About'
+import { FadeIn } from '@/components/FadeIn'
 import { Heading } from '@/components/Layout/Heading'
 import { ContactSection } from '@/pageParts/Contact/ContactSection'
 import { QuickContact } from '@/pageParts/Contact/QuickContact'
@@ -6,8 +7,6 @@ import { Intro } from '@/pageParts/Intro/intro'
 import { Projects } from '@/pageParts/projects'
 import { Skills } from '@/pageParts/skills'
 import dynamic from 'next/dynamic'
-import { FadeIn } from '@/components/FadeIn'
-import { About } from '@/components/Content/About'
 
 const Education2 = dynamic(
 	async () => import('./../pageParts/Intro/Education2'),
@@ -31,7 +30,7 @@ export default function Home() {
 
 			<Projects />
 			<FadeIn>
-				<div className='max-w-5xl mx-auto'>
+				<div className='max-w-5xl lg:mx-auto mx-8 '>
 					<Heading>Education</Heading>
 					<Education2 />
 				</div>
