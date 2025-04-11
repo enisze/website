@@ -233,7 +233,7 @@ const sideProjects = [
 	{
 		images: [
 			{
-				src: '/images/horserace2.webp',
+				src: '/images/horserace2.jpg',
 				alt: 'HorseRace'
 			},
 			{
