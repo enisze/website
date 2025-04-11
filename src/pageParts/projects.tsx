@@ -144,7 +144,7 @@ const projects = [
 	{
 		images: [
 			{
-				src: '/images/teampilot-chat.png',
+				src: '/images/Teampilot-chat.png',
 				alt: 'Teampilot Chat'
 			},
 			{
