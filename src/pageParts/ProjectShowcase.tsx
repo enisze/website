@@ -95,7 +95,7 @@ export function ProjectShowcase(project: Project) {
 					</div>
 
 					{/* Right side - Images */}
-					<div className='relative h-[400px]'>
+					<div className='relative h-[160px] md:h-[400px]'>
 						{/* Main image with hover effect */}
 						<div className='absolute inset-0 rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:translate-y-2 group-hover:translate-x-2'>
 							<Image
@@ -108,7 +108,7 @@ export function ProjectShowcase(project: Project) {
 						</div>
 
 						{/* Second image with hover effect */}
-						<div className='absolute bottom-[-24px] left-[-24px] w-[180px] rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:-translate-y-2 group-hover:-translate-x-2 border-4 border-white dark:border-zinc-950'>
+						<div className='absolute bottom-[-24px] left-[-24px] w-[120px] md:w-[180px] rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:-translate-y-2 group-hover:-translate-x-2 border-4 border-white dark:border-zinc-950'>
 							<Image
 								src={project.images[1].src || '/placeholder.svg'}
 								alt={project.images[1].alt}
