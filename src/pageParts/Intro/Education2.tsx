@@ -293,21 +293,19 @@ const Education = () => {
 	return (
 		<div className='bg-gray-100 dark:bg-gray-900 rounded-xl shadow-xl dark:shadow-gray-900 overflow-hidden'>
 			<div className='grid lg:grid-cols-2 min-h-[810px]'>
-				<div className='p-6 overflow-y-auto max-h-[810px]'>
-					<div className='space-y-6'>
-						{sortedEducationItems.map((item, idx) => (
-							<FadeIn key={`${item.city.id}-${idx}`}>
-								<EducationGridItem
-									info={item}
-									city={item.city}
-									isExchange={item.city.id !== 'aachen'}
-								/>
-							</FadeIn>
-						))}
-					</div>
+				<div className='flex flex-col gap-6 p-8'>
+					{sortedEducationItems.map((item, idx) => (
+						<FadeIn key={`${item.city.id}-${idx}`}>
+							<EducationGridItem
+								info={item}
+								city={item.city}
+								isExchange={item.city.id !== 'aachen'}
+							/>
+						</FadeIn>
+					))}
 				</div>
 
-				<div className='h-[810px]'>
+				<div className='h-[400px] md:h-full'>
 					<MapContainer
 						ref={mapRef}
 						center={[30, 0]}
