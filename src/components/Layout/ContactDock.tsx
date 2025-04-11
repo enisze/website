@@ -39,7 +39,7 @@ export const ContactDock = () => (
 			</FadeIn>
 		</div>
 
-		<div className='h-fit flex-wrap rounded-md p-2 flex items-center gap-6'>
+		<div className='h-fit flex-wrap justify-center md:justify-normal rounded-md p-2 flex items-center gap-6'>
 			{socialLinks.map((social) => (
 				<FadeIn key={social.href}>
 					<a
