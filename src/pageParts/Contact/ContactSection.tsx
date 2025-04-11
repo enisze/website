@@ -10,7 +10,7 @@ import Threads from '../Intro/Threads'
 
 export const ContactSection = () => {
 	return (
-		<div className='relative w-full h-[600px] overflow-hidden flex items-center justify-center '>
+		<div className='relative w-full h-[800px] md:h-[600px] overflow-hidden flex items-center justify-center '>
 			<Threads
 				color={[0.2, 0.6, 1]} // Soft blue tones
 				amplitude={3}

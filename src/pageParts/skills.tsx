@@ -10,7 +10,7 @@ export const Skills = () => {
 			id='skills'
 		>
 			<Heading>Technical Skills</Heading>
-			<div className='flex flex-col md:flex-row gap-4'>
+			<div className='flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap gap-4'>
 				{stacks.map((stack, index) => (
 					<FadeIn key={index}>
 						<div className='flex flex-col w-full gap-4'>
