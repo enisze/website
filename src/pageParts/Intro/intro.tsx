@@ -70,9 +70,9 @@ export const Intro = () => (
 					</p>
 				</FadeIn>
 
-				<div className='flex items-center justify-between'>
+				<div className='grid grid-cols-2 items-center justify-between w-full'>
 					<ContactDock />
-					<div className='self-end whitespace-nowrap'>
+					<div className='flex justify-end whitespace-nowrap'>
 						<FadeIn>
 							<InteractiveHoverButton href='mailto:enis@zejnilovic.de'>
 								Contact Me

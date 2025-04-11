@@ -1,5 +1,5 @@
-import { Calendar, Github, Linkedin, Mail, Twitter } from 'lucide-react'
 import { FadeIn } from '@/components/FadeIn'
+import { Calendar, Github, Linkedin, Mail, Twitter } from 'lucide-react'
 
 export const socialLinks = [
 	{
@@ -30,12 +30,14 @@ export const socialLinks = [
 ] as const
 
 export const ContactDock = () => (
-	<div className='flex flex-col gap-4'>
-		<FadeIn>
-			<p className='text-gray-500 dark:text-gray-400 text-md pt-14 max-w-[450px]'>
-				Feel free to reach out to me on any of the platforms below.{' '}
-			</p>
-		</FadeIn>
+	<>
+		<div className='col-span-2 pb-4'>
+			<FadeIn>
+				<p className='text-gray-500 dark:text-gray-400 text-md pt-14 w-full'>
+					Feel free to reach out to me on any of the platforms below.{' '}
+				</p>
+			</FadeIn>
+		</div>
 
 		<div className='h-fit flex-wrap rounded-md p-2 flex items-center gap-6'>
 			{socialLinks.map((social) => (
@@ -57,5 +59,5 @@ export const ContactDock = () => (
 				</FadeIn>
 			))}
 		</div>
-	</div>
+	</>
 )
