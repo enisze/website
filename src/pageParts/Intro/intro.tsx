@@ -13,7 +13,7 @@ const MapComponent = dynamic(async () => import('./MapComponent'), {
 })
 
 export const Intro = () => (
-	<div className='md:h-[calc(100vh-40px)] relative'>
+	<div className='md:h-screen relative'>
 		<div className='relative w-screen h-[300px] z-0'>
 			<div className='absolute bottom-0 left-4 text-white'>
 				<h1 className='text-2xl font-semibold m-0'>Hi,</h1>
@@ -35,7 +35,7 @@ export const Intro = () => (
 			</div>
 		</div>
 
-		<div className='relative min-h-[500px]'>
+		<div className='relative min-h-[550px]'>
 			<div className='absolute inset-0 opacity-30 z-0'>
 				<AnimatedGradient
 					colors={['#3B82F6', '#60A5FA', '#93C5FD']}
