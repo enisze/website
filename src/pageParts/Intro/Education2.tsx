@@ -195,6 +195,32 @@ const AnimatedFlyTo = () => {
 	return null
 }
 
+const MapInteractionController = () => {
+	const map = useMap()
+
+	useEffect(() => {
+		const enableInteractions = () => {
+			map.scrollWheelZoom.enable()
+			map.dragging.enable()
+		}
+
+		const disableInteractions = () => {
+			map.scrollWheelZoom.disable()
+			map.dragging.disable()
+		}
+
+		map.on('click', enableInteractions)
+		map.on('mouseleave', disableInteractions)
+
+		return () => {
+			map.off('click', enableInteractions)
+			map.off('mouseleave', disableInteractions)
+		}
+	}, [map])
+
+	return null
+}
+
 const EducationGridItem = ({
 	info,
 	city,
@@ -289,6 +315,8 @@ const Education = () => {
 						style={{ height: '100%', width: '100%' }}
 						zoomControl={false}
 						className='z-10'
+						scrollWheelZoom={false}
+						dragging={false}
 					>
 						<TileLayer
 							url='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
@@ -313,6 +341,7 @@ const Education = () => {
 							/>
 						))}
 						<AnimatedFlyTo />
+						<MapInteractionController />
 					</MapContainer>
 				</div>
 			</div>
