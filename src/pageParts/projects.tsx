@@ -294,12 +294,9 @@ const sideProjects = [
 ]
 
 export const Projects = () => (
-	<div className='lg:mx-auto mx-8 max-w-5xl'>
+	<div className='lg:mx-auto mx-8 max-w-5xl scroll-mt-10' id='projects'>
 		<Heading>Projects</Heading>
-		<section
-			className='scroll-m-20 flex flex-col gap-2 items-center'
-			id='projects'
-		>
+		<section className='scroll-m-20 flex flex-col gap-2 items-center'>
 			{projects.map((project) => (
 				<FadeIn key={project.title}>
 					<div className='flex flex-col md:flex-row gap-6 items-center justify-center'>

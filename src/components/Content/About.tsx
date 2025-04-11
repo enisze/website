@@ -2,7 +2,10 @@ import { FadeIn } from '../FadeIn'
 import { Heading } from '../Layout/Heading'
 
 export const About = () => (
-	<section className='w-full flex flex-col gap-y-5 pt-20 md:pt-12 relative h-full lg:mx-auto mx-8 max-w-5xl'>
+	<section
+		className='flex flex-col gap-y-5 pt-20 md:pt-12 relative h-full lg:mx-auto mx-8 max-w-5xl'
+		id='about'
+	>
 		<FadeIn>
 			<Heading>About </Heading>
 			<p className='text-lg'>

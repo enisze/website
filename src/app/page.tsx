@@ -23,14 +23,12 @@ export default function Home() {
 				<QuickContact />
 			</div>
 
-			<div className='relative z-10 flex flex-col scroll-m-20' id='about'>
-				<About />
-			</div>
+			<About />
 			<Skills />
 
 			<Projects />
 			<FadeIn>
-				<div className='max-w-5xl lg:mx-auto mx-8 '>
+				<div className='max-w-5xl lg:mx-auto mx-8 scroll-mt-10' id='education'>
 					<Heading>Education</Heading>
 					<Education2 />
 				</div>
