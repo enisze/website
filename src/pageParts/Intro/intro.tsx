@@ -13,7 +13,7 @@ const MapComponent = dynamic(async () => import('./MapComponent'), {
 })
 
 export const Intro = () => (
-	<div className='md:h-screen relative'>
+	<div className='relative'>
 		<div className='relative w-screen h-[300px] z-0'>
 			<div className='absolute bottom-0 left-4 text-white'>
 				<h1 className='text-2xl font-semibold m-0'>Hi,</h1>
