@@ -1,8 +1,9 @@
 'use client'
 
+import { Github } from '@/components/Layout/ContactDock'
 import SpotlightCard from '@/components/SpotlightCard'
 import { Badge } from '@/components/ui/badge'
-import { ArrowRight, Github } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 

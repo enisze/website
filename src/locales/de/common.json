@@ -167,7 +167,8 @@
 		"meeting": "Meeting vereinbaren",
 		"submit": "Nachricht senden",
 		"success": "Nachricht erfolgreich gesendet!",
-		"error": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+		"error": "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
+		"platformsBelow": "Du kannst mich auf einer der folgenden Plattformen erreichen."
 	},
 	"cv": {
 		"referenceTitle": "Referenzschreiben",

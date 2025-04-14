@@ -73,7 +73,7 @@ export const Intro = async ({
 					</FadeIn>
 
 					<div className='flex flex-col md:grid md:items-center md:justify-between w-full'>
-						<ContactDock />
+						<ContactDock locale={locale} />
 						<div className='flex justify-center md:justify-end whitespace-nowrap mt-4 md:mt-0'>
 							<FadeIn>
 								<InteractiveHoverButton href='mailto:enis@zejnilovic.de'>
