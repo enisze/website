@@ -1,11 +1,11 @@
 import { CVButton } from '@/components/Content/CVButton'
 import { FadeIn } from '@/components/FadeIn'
+import { getT } from '@/components/i18n/getT'
 import { socialLinks } from '@/components/Layout/ContactDock'
+import { ResponsiveBackground } from '@/components/ResponsiveBackground'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { CalendarIcon, MailIcon } from 'lucide-react'
-import { getT } from '@/components/i18n/getT'
-import Threads from '../Intro/Threads'
 
 export const ContactSection = async ({
 	locale
@@ -19,11 +19,8 @@ export const ContactSection = async ({
 			className='relative w-full h-[800px] md:h-[600px] scroll-mt-10 overflow-hidden flex items-center justify-center'
 			id='contact'
 		>
-			<Threads
-				color={[0.2, 0.6, 1]} // Soft blue tones
-				amplitude={3}
-				distance={0.6}
-			/>
+			<ResponsiveBackground />
+
 			<div className='absolute z-10 text-center max-w-5xl lg:mx-auto mx-8'>
 				<FadeIn>
 					<h2 className='text-4xl font-bold drop-shadow-lg mb-4'>
