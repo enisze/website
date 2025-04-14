@@ -21,7 +21,7 @@ export default async function Home({
 }: {
 	params: { locale: string }
 }) {
-	await initTranslations(locale, ['common'])
+	await initTranslations({ locale })
 
 	return (
 		<div className='flex flex-col gap-y-8'>

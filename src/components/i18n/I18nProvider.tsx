@@ -1,32 +1,22 @@
 'use client'
+import initTranslations from '@/i18n'
+import { createInstance, type Resource } from 'i18next'
+
+import type { PropsWithChildren } from 'react'
 
 import { I18nextProvider } from 'react-i18next'
-import initTranslations from '@/i18n'
-import { createInstance } from 'i18next'
-import { useEffect, useState } from 'react'
 
-export default function I18nProvider({
+export const TranslationProvider = ({
 	children,
 	locale,
-	namespaces,
 	resources
-}: {
-	children: React.ReactNode
+}: PropsWithChildren<{
 	locale: string
-	namespaces: string[]
-	resources: any
-}) {
-	const [instance, setInstance] = useState(createInstance())
+	resources: Resource
+}>) => {
+	const i18n = createInstance()
 
-	useEffect(() => {
-		const init = async () => {
-			if (!instance) return
+	initTranslations({ locale, i18nInstance: i18n, resources })
 
-			await initTranslations(locale, namespaces, instance, resources)
-		}
-
-		init()
-	}, [locale, namespaces, instance, resources])
-
-	return <I18nextProvider i18n={instance}>{children}</I18nextProvider>
+	return <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
 }
