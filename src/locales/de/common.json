@@ -154,10 +154,16 @@
 		"sourceCode": "Quellcode"
 	},
 	"contact": {
-		"title": "Kontaktiere mich",
+		"title": "Lass uns in Kontakt bleiben",
+		"buildTogether": "Lass uns gemeinsam etwas Großartiges erschaffen",
+		"reachOut": "Ob du eine Idee, ein Projekt hast oder einfach über Technologie sprechen möchtest — melde dich.",
+		"getInTouch": "Kontaktiere mich",
+		"collaborateText": "Möchtest du zusammenarbeiten oder hast ein Projekt im Sinn? Ich freue mich, von dir zu hören. Kontaktiere mich gerne, um potenzielle Projekte oder Möglichkeiten zu besprechen. Ich bin immer offen für spannende neue Vorhaben.",
+		"email": "E-Mail senden",
+		"meeting": "Meeting vereinbaren",
 		"submit": "Nachricht senden",
 		"success": "Nachricht erfolgreich gesendet!",
-		"error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+		"error": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
 	},
 	"meta": {
 		"description": "Portfolio von Enis Zejnilovic, einem erfahrenen Full-Stack Softwareentwickler mit Expertise in Webentwicklung. Spezialisiert auf React, TypeScript und Next.js."

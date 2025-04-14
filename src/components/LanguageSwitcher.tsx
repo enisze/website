@@ -1,3 +1,5 @@
+'use client'
+
 import { useRouter, usePathname } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
@@ -22,7 +24,10 @@ export const LanguageSwitcher = () => {
 		) {
 			router.push(`/${newLocale}${currentPathname}`)
 		} else {
-			router.push(currentPathname.replace(`/${currentLocale}`, `/${newLocale}`))
+			if (currentPathname)
+				router.push(
+					currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
+				)
 		}
 	}
 

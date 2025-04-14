@@ -103,6 +103,12 @@
 	},
 	"contact": {
 		"title": "Get in touch",
+		"buildTogether": "Let's build something amazing together",
+		"reachOut": "Whether you've got an idea, a project, or just want to talk tech — reach out.",
+		"getInTouch": "Get in touch",
+		"collaborateText": "Want to collaborate or have a project in mind? I'd love to hear from you. Feel free to contact me to discuss potential projects or opportunities. I'm always open to exciting new ventures.",
+		"email": "Send me an Email",
+		"meeting": "Schedule a Meeting",
 		"submit": "Send message",
 		"success": "Message sent successfully!",
 		"error": "Something went wrong. Please try again."

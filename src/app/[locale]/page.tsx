@@ -22,7 +22,7 @@ export default async function Home({
 		<div className='flex flex-col gap-y-8'>
 			<div>
 				<Intro />
-				<QuickContact />
+				<QuickContact locale={locale} />
 			</div>
 
 			<About />
@@ -35,7 +35,7 @@ export default async function Home({
 					<ClientEducation />
 				</div>
 			</FadeIn>
-			<ContactSection />
+			<ContactSection locale={locale} />
 		</div>
 	)
 }
