@@ -1,13 +1,13 @@
+import { AnimatedGradientClient } from '@/components/AnimatedGradienClient'
 import { FadeIn } from '@/components/FadeIn'
 import { ContactDock } from '@/components/Layout/ContactDock'
-import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-button'
-import { Badge } from '@/components/ui/badge'
-import { Code } from 'lucide-react'
-import { SparklesImage } from '../../components/ImageWithConfetti'
-import { Timer } from './Timer'
-import { AnimatedGradientClient } from '@/components/AnimatedGradienClient'
 import { MapComponentClient } from '@/components/MapComponentClient'
 import { getT } from '@/components/i18n/getT'
+import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-button'
+import { Badge } from '@/components/ui/badge'
+import { Code, MapPin } from 'lucide-react'
+import { SparklesImage } from '../../components/ImageWithConfetti'
+import { Timer } from './Timer'
 
 export const Intro = async ({
 	locale
@@ -58,9 +58,18 @@ export const Intro = async ({
 					</FadeIn>
 
 					<FadeIn>
-						<p className='text-xl text-center py-14 max-w-4xl mx-auto'>
+						<p className='text-xl pt-14 max-w-4xl mx-auto'>
 							{t('intro.description')}
 						</p>
+					</FadeIn>
+
+					<FadeIn>
+						<div className='flex items-center max-w-4xl mx-auto gap-2 text-gray-500 dark:text-gray-400 mt-4 mb-4'>
+							<MapPin className='w-4 h-4' />
+							<span>
+								{t('intro.location.city')}, {t('intro.location.country')}
+							</span>
+						</div>
 					</FadeIn>
 
 					<div className='flex flex-col md:grid md:items-center md:justify-between w-full'>

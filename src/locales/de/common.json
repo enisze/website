@@ -13,7 +13,11 @@
 		"name": "ich bin Enis.",
 		"role": "Full Stack Entwickler",
 		"description": "Softwareentwickler mit Leidenschaft für sauberen Code, smarte Lösungen und digitale Innovation. Ob Web, Mobile oder Cloud: Ich verbinde modernes Tech-Stack-Wissen mit Kreativität und einem Blick für das Wesentliche. Neben meiner Arbeit als Entwickler experimentiere ich gerne mit eigenen Projekten – stets mit dem Ziel, Dinge besser, schneller und intuitiver zu gestalten.",
-		"contactMe": "Kontaktiere mich"
+		"contactMe": "Kontaktiere mich",
+		"location": {
+			"city": "Köln",
+			"country": "Deutschland"
+		}
 	},
 	"education": {
 		"title": "Bildung",

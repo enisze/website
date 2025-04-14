@@ -13,7 +13,11 @@
 		"name": "I'm Enis.",
 		"role": "Fullstack Software Developer",
 		"description": "Software developer passionate about clean code, smart solutions and digital innovation. Whether web, mobile or cloud: I combine modern tech stack knowledge with creativity and an eye for what's essential. Besides my work as a developer, I enjoy tinkering with my own projects – always with the goal of making things better, faster and more intuitive.",
-		"contactMe": "Contact Me"
+		"contactMe": "Contact Me",
+		"location": {
+			"city": "Cologne",
+			"country": "Germany"
+		}
 	},
 	"education": {
 		"title": "Education",
