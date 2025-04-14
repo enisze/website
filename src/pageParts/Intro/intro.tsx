@@ -1,5 +1,4 @@
 'use client'
-import { AnimatedGradient } from '@/components/AnimatedGradient'
 import { FadeIn } from '@/components/FadeIn'
 import { ContactDock } from '@/components/Layout/ContactDock'
 import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-button'
@@ -13,6 +12,17 @@ import { useTranslation } from 'react-i18next'
 const MapComponent = dynamic(async () => import('./MapComponent'), {
 	ssr: false
 })
+
+const AnimatedGradient = dynamic(
+	async () =>
+		import('../../components/AnimatedGradient').then(
+			(mod) => mod.AnimatedGradient
+		),
+	{
+		ssr: false,
+		loading: () => <div className='w-full h-full bg-gray-900' />
+	}
+)
 
 export const Intro = () => {
 	const { t } = useTranslation('common')
