@@ -3,7 +3,6 @@
 import { useRouter, usePathname } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
-import i18nConfig from '../../i18nConfig'
 import { cn } from '@/lib/utils'
 
 export const LanguageSwitcher = () => {
@@ -13,23 +12,20 @@ export const LanguageSwitcher = () => {
 	const currentPathname = usePathname()
 
 	const handleLanguageChange = (newLocale: string) => {
+		// Set cookie for language preference
 		const days = 30
 		const date = new Date()
 		date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000)
 		const expires = date.toUTCString()
 		document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`
 
-		if (
-			currentLocale === i18nConfig.defaultLocale &&
-			!i18nConfig.prefixDefault
-		) {
-			router.push(`/${newLocale}${currentPathname}`)
-		} else {
-			if (currentPathname)
-				router.push(
-					currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
-				)
-		}
+		// Get the path segments and remove the locale if it exists
+		const segments = currentPathname.split('/')
+		const pathWithoutLocale =
+			segments.length > 2 ? `/${segments.slice(2).join('/')}` : '/'
+
+		// Navigate to the new locale path
+		router.push(`/${newLocale}${pathWithoutLocale}`)
 	}
 
 	return (
