@@ -8,6 +8,7 @@ import { Projects } from '@/pageParts/projects'
 import { Skills } from '@/pageParts/skills'
 import initTranslations from '@/i18n'
 import { ClientEducation } from '@/components/ClientEducation'
+import { getT } from '@/components/i18n/getT'
 
 export default async function Home({
 	params
@@ -15,6 +16,7 @@ export default async function Home({
 	params: Promise<{ locale: string }>
 }) {
 	const { locale } = await params
+	const t = await getT({ locale })
 
 	await initTranslations({ locale })
 
@@ -26,12 +28,12 @@ export default async function Home({
 			</div>
 
 			<About locale={locale} />
-			<Skills />
+			<Skills locale={locale} />
 
 			<Projects locale={locale} />
 			<FadeIn>
 				<div className='max-w-5xl lg:mx-auto mx-8 scroll-mt-10' id='education'>
-					<Heading>Education</Heading>
+					<Heading>{t('education.title')}</Heading>
 					<ClientEducation />
 				</div>
 			</FadeIn>

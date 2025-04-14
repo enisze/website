@@ -53,7 +53,7 @@ export const ContactSection = async ({
 				</FadeIn>
 
 				<div className='pt-8 flex justify-center'>
-					<CVButton />
+					<CVButton locale={locale} />
 				</div>
 			</div>
 		</div>

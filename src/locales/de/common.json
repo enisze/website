@@ -165,6 +165,15 @@
 		"success": "Nachricht erfolgreich gesendet!",
 		"error": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
 	},
+	"cv": {
+		"referenceTitle": "Referenzschreiben",
+		"referenceDescription": "Mein Referenzschreiben herunterladen",
+		"recommendationTitle": "Empfehlungsschreiben",
+		"recommendationDescription": "Mein Empfehlungsschreiben herunterladen"
+	},
+	"skills": {
+		"title": "Technische Fähigkeiten"
+	},
 	"meta": {
 		"description": "Portfolio von Enis Zejnilovic, einem erfahrenen Full-Stack Softwareentwickler mit Expertise in Webentwicklung. Spezialisiert auf React, TypeScript und Next.js."
 	}

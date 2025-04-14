@@ -165,6 +165,15 @@
 		"viewProject": "View Project",
 		"sourceCode": "Source Code"
 	},
+	"cv": {
+		"referenceTitle": "Reference Letter",
+		"referenceDescription": "Download my reference letter",
+		"recommendationTitle": "Recommendation",
+		"recommendationDescription": "Download my recommendation letter"
+	},
+	"skills": {
+		"title": "Technical Skills"
+	},
 	"meta": {
 		"description": "Portfolio of Enis Zejnilovic, a skilled Full-stack software engineer, with experience in web development. Specialized in React, TypeScript, and Next.js."
 	}
