@@ -1,10 +1,10 @@
 {
 	"navigation": {
 		"about": "Über mich",
-		"education": "Ausbildung",
+		"education": "Bildung",
 		"experience": "Erfahrung",
 		"projects": "Projekte",
-		"skills": "Fähigkeiten",
+		"skills": "Skills",
 		"contact": "Kontakt",
 		"bookCall": "Termin buchen"
 	},
@@ -16,7 +16,7 @@
 		"contactMe": "Kontaktiere mich"
 	},
 	"education": {
-		"title": "Ausbildung",
+		"title": "Bildung",
 		"cities": {
 			"aachen": {
 				"name": "Aachen",

@@ -4,6 +4,7 @@ import { useRouter, usePathname } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
 import i18nConfig from '../../i18nConfig'
+import { cn } from '@/lib/utils'
 
 export const LanguageSwitcher = () => {
 	const { i18n } = useTranslation()
@@ -35,7 +36,10 @@ export const LanguageSwitcher = () => {
 		<div className='flex gap-2 items-center'>
 			<button
 				onClick={() => handleLanguageChange('en')}
-				className={`w-6 h-6 relative ${currentLocale === 'en' ? 'opacity-100' : 'opacity-50 hover:opacity-75'}`}
+				className={cn(
+					'w-6 h-6 relative',
+					currentLocale === 'en' ? 'opacity-100' : 'opacity-50 hover:opacity-75'
+				)}
 				aria-label='Switch to English'
 			>
 				<Image
@@ -47,7 +51,10 @@ export const LanguageSwitcher = () => {
 			</button>
 			<button
 				onClick={() => handleLanguageChange('de')}
-				className={`w-6 h-6 relative ${currentLocale === 'de' ? 'opacity-100' : 'opacity-50 hover:opacity-75'}`}
+				className={cn(
+					'w-6 h-6 relative',
+					currentLocale === 'de' ? 'opacity-100' : 'opacity-50 hover:opacity-75'
+				)}
 				aria-label='Switch to German'
 			>
 				<Image
