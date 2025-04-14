@@ -1,31 +1,20 @@
-'use client'
 import { FadeIn } from '@/components/FadeIn'
 import { ContactDock } from '@/components/Layout/ContactDock'
 import { InteractiveHoverButton } from '@/components/magicui/interactive-hover-button'
 import { Badge } from '@/components/ui/badge'
 import { Code } from 'lucide-react'
-import dynamic from 'next/dynamic'
 import { SparklesImage } from '../../components/ImageWithConfetti'
 import { Timer } from './Timer'
-import { useTranslation } from 'react-i18next'
+import { AnimatedGradientClient } from '@/components/AnimatedGradienClient'
+import { MapComponentClient } from '@/components/MapComponentClient'
+import { getT } from '@/components/i18n/getT'
 
-const MapComponent = dynamic(async () => import('./MapComponent'), {
-	ssr: false
-})
-
-const AnimatedGradient = dynamic(
-	async () =>
-		import('../../components/AnimatedGradient').then(
-			(mod) => mod.AnimatedGradient
-		),
-	{
-		ssr: false,
-		loading: () => <div className='w-full h-full bg-gray-900' />
-	}
-)
-
-export const Intro = () => {
-	const { t } = useTranslation('common')
+export const Intro = async ({
+	locale
+}: {
+	locale: string
+}) => {
+	const t = await getT({ locale })
 
 	return (
 		<div className='relative'>
@@ -35,7 +24,7 @@ export const Intro = () => {
 					<h2 className='text-4xl font-bold m-0'>{t('intro.name')}</h2>
 				</div>
 				<div className='absolute inset-0 flex items-center justify-center -z-10'>
-					<MapComponent />
+					<MapComponentClient />
 				</div>
 
 				<div className='absolute top-0 right-0 text-gray-500 text-xs z-50 truncate'>
@@ -52,13 +41,7 @@ export const Intro = () => {
 
 			<div className='relative min-h-[550px]'>
 				<div className='absolute inset-0 opacity-30 z-0'>
-					<AnimatedGradient
-						colors={['#3B82F6', '#60A5FA', '#93C5FD']}
-						speed={0.08}
-						blur='heavy'
-						blobSize='small'
-						className='dark:invert dark:hue-rotate-180'
-					/>
+					<AnimatedGradientClient colors={['#3B82F6', '#60A5FA', '#93C5FD']} />
 				</div>
 
 				<div className='flex gap-2 flex-col p-8 pt-20 md:pt-8'>

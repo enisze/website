@@ -1,10 +1,14 @@
-'use client'
 import { useTranslation } from 'react-i18next'
 import { FadeIn } from '../FadeIn'
 import { Heading } from '../Layout/Heading'
+import { getT } from '../i18n/getT'
 
-export const About = () => {
-	const { t } = useTranslation('common')
+export const About = async ({
+	locale
+}: {
+	locale: string
+}) => {
+	const t = await getT({ locale })
 
 	return (
 		<section

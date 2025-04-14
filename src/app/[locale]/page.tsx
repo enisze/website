@@ -21,11 +21,11 @@ export default async function Home({
 	return (
 		<div className='flex flex-col gap-y-8'>
 			<div>
-				<Intro />
+				<Intro locale={locale} />
 				<QuickContact locale={locale} />
 			</div>
 
-			<About />
+			<About locale={locale} />
 			<Skills />
 
 			<Projects />
