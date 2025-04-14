@@ -19,6 +19,9 @@ export const LanguageSwitcher = () => {
 		const expires = date.toUTCString()
 		document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`
 
+		// Update i18n instance language
+		i18n.changeLanguage(newLocale)
+
 		// Get the path segments and remove the locale if it exists
 		const segments = currentPathname.split('/')
 		const pathWithoutLocale =
