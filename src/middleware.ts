@@ -1,9 +1,12 @@
 import { i18nRouter } from 'next-i18n-router';
-import i18nConfig from '../../i18nConfig';
+import i18nConfig from '../i18nConfig';
 import { type NextRequest, NextResponse } from 'next/server';
 
 export function middleware(req: NextRequest) {
+
     const { pathname } = req.nextUrl
+
+
     if (pathname.startsWith('/sitemap.xml')) {
         const newUrl = new URL(req.nextUrl)
         newUrl.pathname = '/sitemap-index'
