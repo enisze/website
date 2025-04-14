@@ -140,12 +140,12 @@
 		},
 		"horserace": {
 			"title": "HorseRace",
-			"description": "Die HorseRace-App ist ein eigenständig entwickeltes Spiel, das in meiner Freizeit als unterhaltsame Möglichkeit entstanden ist, React Native und Expo zu erkunden. Das Kernkonzept des Spiels ist einfach, aber fesselnd: Spieler wählen ihr bevorzugtes Kartensymbol und beginnen mit einer bestimmten Anzahl von Schlücken. Wenn ihre gewählte Karte das Rennen gewinnt, können sie die doppelte Anzahl an Schlücken unter ihren Freunden verteilen. Ich verbessere das Spielerlebnis kontinuierlich durch regelmäßige Updates und implementiere neue Features wie zufällige Spielereignisse und Spielereinfluss auf den Spielverlauf, um ein noch spannenderes Spielerlebnis zu schaffen.",
+			"description": "Ein in React Native und Expo entwickeltes Kartenspiel, bei dem Spieler Kartensymbole wählen und mit Freunden interagieren können. Das Spiel bietet zufällige Ereignisse und Spielereinfluss auf den Spielverlauf für ein spannendes Spielerlebnis.",
 			"year": "2024"
 		},
 		"neologism": {
 			"title": "Neologism 2.0",
-			"description": "Neologism 2.0 ermöglicht Benutzern die schnelle Erstellung von Vokabularen in einem geführten und kollaborativen Prozess mithilfe eines Grapheneditors. Domänenexperten und Nicht-Experten können Klassen, Eigenschaften und Beziehungen zwischen ihnen visuell erstellen. Es generiert automatisch URIs zur Vereinfachung. Benutzer können ihre Vokabular-Entwürfe als RDF exportieren, um sie in Tools wie Protege für die weitere Verfeinerung durch Experten zu importieren. Dies optimiert den Vokabular-Erstellungsprozess und reduziert den Zeit- und Arbeitsaufwand im Vergleich zu traditionellen Methoden. Die geführte Benutzeroberfläche und kollaborativen Aspekte machen es auch für Nicht-Experten zugänglich. Der RDF-Export ermöglicht zudem die Verbindung der Vokabular-Entwürfe mit anderen Semantic-Web-Anwendungen.",
+			"description": "Ein kollaborativer Grapheneditor zur effizienten Erstellung von Vokabularen. Benutzer können Klassen, Eigenschaften und Beziehungen visuell definieren und die Ergebnisse als RDF für die weitere Verarbeitung exportieren. Das Tool macht die Vokabular-Erstellung auch für Nicht-Experten zugänglich.",
 			"year": "2021"
 		},
 		"featuredProject": "Ausgewähltes Projekt",

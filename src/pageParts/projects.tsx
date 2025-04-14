@@ -1,12 +1,14 @@
-'use client'
-
 import { FadeIn } from '@/components/FadeIn'
 import { Heading } from '@/components/Layout/Heading'
 import { ProjectShowcase } from './ProjectShowcase'
-import { useTranslation } from 'react-i18next'
+import { getT } from '@/components/i18n/getT'
 
-export const Projects = () => {
-	const { t } = useTranslation('common')
+export const Projects = async ({
+	locale
+}: {
+	locale: string
+}) => {
+	const t = await getT({ locale })
 
 	return (
 		<div className='lg:mx-auto mx-8 max-w-5xl scroll-mt-10' id='projects'>

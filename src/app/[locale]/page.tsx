@@ -28,7 +28,7 @@ export default async function Home({
 			<About locale={locale} />
 			<Skills />
 
-			<Projects />
+			<Projects locale={locale} />
 			<FadeIn>
 				<div className='max-w-5xl lg:mx-auto mx-8 scroll-mt-10' id='education'>
 					<Heading>Education</Heading>
