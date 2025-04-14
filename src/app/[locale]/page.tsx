@@ -6,34 +6,38 @@ import { QuickContact } from '@/pageParts/Contact/QuickContact'
 import { Intro } from '@/pageParts/Intro/intro'
 import { Projects } from '@/pageParts/projects'
 import { Skills } from '@/pageParts/skills'
-import dynamic from 'next/dynamic'
+import initTranslations from '@/i18n'
+import { ClientEducation } from '@/components/ClientEducation'
+import { getT } from '@/components/i18n/getT'
 
-const Education2 = dynamic(
-	async () => import('./../pageParts/Intro/Education2'),
-	{
-		ssr: false
-	}
-)
+export default async function Home({
+	params
+}: {
+	params: Promise<{ locale: string }>
+}) {
+	const { locale } = await params
+	const t = await getT({ locale })
 
-export default function Home() {
+	await initTranslations({ locale })
+
 	return (
 		<div className='flex flex-col gap-y-8'>
 			<div>
-				<Intro />
-				<QuickContact />
+				<Intro locale={locale} />
+				<QuickContact locale={locale} />
 			</div>
 
-			<About />
-			<Skills />
+			<About locale={locale} />
+			<Skills locale={locale} />
 
-			<Projects />
+			<Projects locale={locale} />
 			<FadeIn>
 				<div className='max-w-5xl lg:mx-auto mx-8 scroll-mt-10' id='education'>
-					<Heading>Education</Heading>
-					<Education2 />
+					<Heading>{t('education.title')}</Heading>
+					<ClientEducation />
 				</div>
 			</FadeIn>
-			<ContactSection />
+			<ContactSection locale={locale} />
 		</div>
 	)
 }

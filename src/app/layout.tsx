@@ -2,113 +2,115 @@ import { ConfettiExplosion } from '@/components/ConfettiExplosion'
 import { Footer } from '@/components/Layout/Footer'
 import { Navbar } from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
-import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { BASE_URL } from '../../config'
 import './globals.css'
+import initTranslations from '@/i18n'
+import i18nConfig from '../../i18nConfig'
+import { TranslationProvider } from '@/components/i18n/I18nProvider'
 
-export const metadata: Metadata = {
-	title: 'Enis Zejnilovic Full-stack Software Developer - Portfolio',
-	description:
-		'Portfolio of Enis Zejnilovic, a skilled Full-stack software engineer, with experience in web development. Specialized in React, TypeScript, and Next.js.',
-	icons: {
-		icon: [
-			{
-				media: '(prefers-color-scheme: light)',
-				url: '/favicon.svg',
-				href: '/favicon.svg'
-			},
-			{
-				media: '(prefers-color-scheme: dark)',
-				url: '/favicon.svg',
-				href: '/favicon.svg'
-			}
-		]
-	},
-	openGraph: {
-		title: 'Enis Zejnilovic Full-stack Software Developer - Portfolio',
-		url: 'https://zejnilovic.de',
-		type: 'website',
-		images: [
-			{
-				url: `${BASE_URL}/images/preview.png`,
-				alt: 'Enis Zejnilovic Portfolio Screenshot'
-			}
-		]
-	},
-	twitter: {
-		creator: '@enis_zejnilovic',
-		title: 'Enis Zejnilovic Full-stack Software Developer - Portfolio',
-		description:
-			'Portfolio of Enis Zejnilovic, a skilled Full-stack software engineer, with experience in web development. Specialized in React, TypeScript, and Next.js.',
-		card: 'summary_large_image',
-		images: [
-			{
-				alt: 'Portfolio Website Screenshot',
-				url: `${BASE_URL}/images/preview.png`
-			}
-		]
-	},
-	keywords: [
-		'Portfolio',
-		'enis zejnilovic',
-		'software engineer',
-		'project manager',
-		'skills',
-		'development',
-		'focused',
-		'enis',
-		'zejnilovic',
-		'react',
-		'developer',
-		'TypeScript',
-		'NodeJS',
-		'ReactJS',
-		'NextJS'
-	]
+export async function generateStaticParams() {
+	return i18nConfig.locales.map((locale) => ({ locale }))
 }
 
-export default function RootLayout({
-	children
+export async function generateMetadata({
+	params
+}: { params: Promise<{ locale: string }> }) {
+	const { locale } = await params
+
+	const { t } = await initTranslations({ locale })
+
+	return {
+		title: 'Enis Zejnilovic Full-stack Software Developer - Portfolio',
+		description: t('meta.description'),
+		icons: {
+			icon: [
+				{
+					media: '(prefers-color-scheme: light)',
+					url: '/favicon.svg',
+					href: '/favicon.svg'
+				},
+				{
+					media: '(prefers-color-scheme: dark)',
+					url: '/favicon.svg',
+					href: '/favicon.svg'
+				}
+			]
+		},
+		openGraph: {
+			title: 'Enis Zejnilovic Full-stack Software Developer - Portfolio',
+			url: 'https://zejnilovic.de',
+			type: 'website',
+			images: [
+				{
+					url: `${BASE_URL}/images/preview.png`,
+					alt: 'Enis Zejnilovic Portfolio Screenshot'
+				}
+			]
+		},
+		twitter: {
+			creator: '@enis_zejnilovic',
+			title: 'Enis Zejnilovic Full-stack Software Developer - Portfolio',
+			description: t('meta.description'),
+			card: 'summary_large_image',
+			images: [
+				{
+					alt: 'Portfolio Website Screenshot',
+					url: `${BASE_URL}/images/preview.png`
+				}
+			]
+		},
+		keywords: [
+			'Portfolio',
+			'enis zejnilovic',
+			'software engineer',
+			'project manager',
+			'skills',
+			'development',
+			'focused',
+			'enis',
+			'zejnilovic',
+			'react',
+			'developer',
+			'TypeScript',
+			'NodeJS',
+			'ReactJS',
+			'NextJS'
+		]
+	}
+}
+
+export default async function RootLayout({
+	children,
+	params
 }: Readonly<{
 	children: React.ReactNode
+	params: Promise<{ locale: string }>
 }>) {
+	const { locale } = await params
+
+	const { resources } = await initTranslations({ locale })
+
 	return (
-		<html lang='en'>
+		<html lang={locale}>
 			<head>
 				<title>Enis Zejnilovic Portfolio</title>
 			</head>
 
-			<body className=' flex flex-col'>
+			<body className='flex flex-col'>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'
 					enableSystem
 					disableTransitionOnChange
 				>
-					<ConfettiExplosion atom />
-					<Toaster />
-					{/* <div className='fixed w-full z-20 bg-black'> */}
-					<Navbar />
-					{/* </div> */}
-					<div className=''>
-						{/* <GridPattern
-							squares={[
-								[4, 4],
-								[5, 1],
-								[8, 2],
-								[6, 6],
-								[10, 5],
-								[13, 3]
-							]}
-							className={cn(
-								'[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]',
-								'inset-x-0 inset-y-[-30%] h-[150%] skew-y-12'
-							)}
-						/> */}
-						{children}
-					</div>
-					<Footer />
+					<TranslationProvider locale={locale} resources={resources}>
+						<ConfettiExplosion atom />
+						<Toaster />
+						<Navbar />
+						<div className=''>{children}</div>
+						<Footer />
+					</TranslationProvider>
 				</ThemeProvider>
 			</body>
 		</html>

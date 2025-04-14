@@ -7,8 +7,10 @@ import { Calendar, GraduationCap, MapPin, Plane } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
+import { useTranslation } from 'react-i18next'
 
 interface EducationInfo {
+	id: string
 	title: string
 	university: string
 	description: string
@@ -23,62 +25,6 @@ interface City {
 	info: EducationInfo[]
 }
 
-const cities: City[] = [
-	{
-		id: 'aachen',
-		name: 'Aachen',
-		country: 'Germany',
-		position: [50.7753, 6.0839],
-		info: [
-			{
-				title: 'Master of Computer Science',
-				university: 'RWTH Aachen University',
-				description:
-					'Focus: RDF Schema Generation, Artificial Intelligence, Data Mining',
-				time: 'Oct. 2016 - Aug. 2021'
-			},
-			{
-				title: 'Bachelor of Computer Science',
-				university: 'RWTH Aachen University',
-				description:
-					'Focus: Generative Development, Machine Learning, Data Science',
-				time: 'Oct. 2013 - Oct. 2016'
-			}
-		]
-	},
-	{
-		id: 'prague',
-		name: 'Prague',
-		country: 'Czech Republic',
-		position: [50.0755, 14.4378],
-		info: [
-			{
-				title: 'Computer Science (Exchange)',
-				university: 'Czech Technical University Prague',
-				description:
-					'Focus: Advanced Database Systems, Efficient Text Pattern Matching, UI Design',
-				time: 'Sep. 2017 - Feb. 2018'
-			}
-		]
-	},
-	{
-		id: 'bangkok',
-		name: 'Bangkok',
-		country: 'Thailand',
-		position: [13.7563, 100.5018],
-		info: [
-			{
-				title: 'System Software Engineering (Exchange)',
-				university: 'Thai German Graduate School of Engineering Bangkok',
-				description:
-					'Focus: Selected Topics of Machine Learning, Advanced Digital Image Processing',
-				time: 'Jan 2019 - Jun 2019'
-			}
-		]
-	}
-]
-
-// Custom marker icon
 const createCustomIcon = () => {
 	return L.divIcon({
 		className: 'custom-div-icon',
@@ -99,35 +45,51 @@ const createCustomIcon = () => {
 	})
 }
 
-const PopupContent = ({ city }: { city: City }) => (
-	<div className='w-full max-w-md p-2'>
-		<div className='flex items-center gap-2 mb-4'>
-			<MapPin className='w-5 h-5 flex-none text-blue-500' />
-			<div>
-				<h3 className='text-lg font-bold text-gray-900'>{city.name}</h3>
-				<p className='text-sm text-gray-600'>{city.country}</p>
+const PopupContent = ({ city }: { city: City }) => {
+	const { t } = useTranslation('common')
+
+	return (
+		<div className='w-full max-w-md p-2'>
+			<div className='flex items-center gap-2 mb-4'>
+				<MapPin className='w-5 h-5 flex-none text-blue-500' />
+				<div>
+					<h3 className='text-lg font-bold text-gray-900'>
+						{t(`education.cities.${city.id}.name`)}
+					</h3>
+					<p className='text-sm text-gray-600'>
+						{t(`education.cities.${city.id}.country`)}
+					</p>
+				</div>
 			</div>
-		</div>
-		<div className='space-y-4'>
-			{city.info.map((info, idx) => (
-				<div
-					key={idx}
-					className='p-3 bg-white rounded-lg shadow-sm border border-gray-100'
-				>
-					<div className='flex items-start gap-2'>
-						<GraduationCap className='w-5 h-5 flex-none text-blue-500 mt-1' />
-						<div>
-							<h4 className='font-semibold text-gray-900'>{info.title}</h4>
-							<p className='text-sm text-gray-700'>{info.university}</p>
-							<p className='text-xs text-gray-500 mt-1'>{info.time}</p>
-							<p className='text-sm text-gray-600 mt-2'>{info.description}</p>
+			<div className='space-y-4'>
+				{city.info.map((info, idx) => (
+					<div
+						key={idx}
+						className='p-3 bg-white rounded-lg shadow-sm border border-gray-100'
+					>
+						<div className='flex items-start gap-2'>
+							<GraduationCap className='w-5 h-5 flex-none text-blue-500 mt-1' />
+							<div>
+								<h4 className='font-semibold text-gray-900'>
+									{t(`education.degrees.${info.id}.title`)}
+								</h4>
+								<p className='text-sm text-gray-700'>
+									{t(`education.degrees.${info.id}.university`)}
+								</p>
+								<p className='text-xs text-gray-500 mt-1'>
+									{t(`education.degrees.${info.id}.time`)}
+								</p>
+								<p className='text-sm text-gray-600 mt-2'>
+									{t(`education.degrees.${info.id}.description`)}
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-			))}
+				))}
+			</div>
 		</div>
-	</div>
-)
+	)
+}
 
 const AnimatedFlyTo = () => {
 	const map = useMap()
@@ -229,43 +191,112 @@ const EducationGridItem = ({
 	info: EducationInfo
 	city: City
 	isExchange?: boolean
-}) => (
-	<div className='flex gap-4'>
-		<div className='flex-none'>
-			<div className='relative w-12 h-12'>
-				<div className='w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center'>
-					<GraduationCap className='w-6 h-6 flex-none text-black dark:text-white' />
-				</div>
-				{isExchange && (
-					<div className='absolute -top-1 -right-1 w-5 h-5 rounded-full bg-purple-500/30 flex items-center justify-center'>
-						<Plane className='w-3 h-3 text-black dark:text-white' />
+}) => {
+	const { t } = useTranslation('common')
+
+	return (
+		<div className='flex gap-4'>
+			<div className='flex-none'>
+				<div className='relative w-12 h-12'>
+					<div className='w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center'>
+						<GraduationCap className='w-6 h-6 flex-none text-black dark:text-white' />
 					</div>
-				)}
+					{isExchange && (
+						<div className='absolute -top-1 -right-1 w-5 h-5 rounded-full bg-purple-500/30 flex items-center justify-center'>
+							<Plane className='w-3 h-3 text-black dark:text-white' />
+						</div>
+					)}
+				</div>
+			</div>
+			<div className='space-y-2'>
+				<h3 className='text-xl font-bold '>
+					{t(`education.degrees.${info.id}.university`)}
+				</h3>
+				<p className='font-medium'>{t(`education.degrees.${info.id}.title`)}</p>
+				<div className='flex flex-col gap-2 text-slate-900 dark:text-slate-300'>
+					<div className='flex items-center gap-1'>
+						<MapPin className='w-4 h-4 flex-none' />
+						<span className='text-sm'>
+							{t(`education.cities.${city.id}.name`)},{' '}
+							{t(`education.cities.${city.id}.country`)}
+						</span>
+					</div>
+					<div className='flex items-center gap-1'>
+						<Calendar className='w-4 h-4 flex-none' />
+						<span className='text-sm'>
+							{t(`education.degrees.${info.id}.time`)}
+						</span>
+					</div>
+					<p className='text-sm text-slate-900 dark:text-slate-300'>
+						{t(`education.degrees.${info.id}.description`)}
+					</p>
+				</div>
 			</div>
 		</div>
-		<div className='space-y-2'>
-			<h3 className='text-xl font-bold '>{info.university}</h3>
-			<p className='font-medium'>{info.title}</p>
-			<div className='flex flex-col gap-2 text-slate-900 dark:text-slate-300'>
-				<div className='flex items-center gap-1'>
-					<MapPin className='w-4 h-4 flex-none' />
-					<span className='text-sm'>
-						{city.name}, {city.country}
-					</span>
-				</div>
-				<div className='flex items-center gap-1'>
-					<Calendar className='w-4 h-4 flex-none' />
-					<span className='text-sm'>{info.time}</span>
-				</div>
-				<p className='text-sm text-slate-900 dark:text-slate-300'>
-					{info.description}
-				</p>
-			</div>
-		</div>
-	</div>
-)
+	)
+}
+
+const cities: City[] = [
+	{
+		id: 'aachen',
+		name: 'Aachen',
+		country: 'Germany',
+		position: [50.7753, 6.0839],
+		info: [
+			{
+				id: 'aachen_master',
+				title: 'Master of Computer Science',
+				university: 'RWTH Aachen University',
+				description:
+					'Focus: RDF Schema Generation, Artificial Intelligence, Data Mining',
+				time: 'Oct. 2016 - Aug. 2021'
+			},
+			{
+				id: 'aachen_bachelor',
+				title: 'Bachelor of Computer Science',
+				university: 'RWTH Aachen University',
+				description:
+					'Focus: Generative Development, Machine Learning, Data Science',
+				time: 'Oct. 2013 - Oct. 2016'
+			}
+		]
+	},
+	{
+		id: 'prague',
+		name: 'Prague',
+		country: 'Czech Republic',
+		position: [50.0755, 14.4378],
+		info: [
+			{
+				id: 'prague_exchange',
+				title: 'Computer Science (Exchange)',
+				university: 'Czech Technical University Prague',
+				description:
+					'Focus: Advanced Database Systems, Efficient Text Pattern Matching, UI Design',
+				time: 'Sep. 2017 - Feb. 2018'
+			}
+		]
+	},
+	{
+		id: 'bangkok',
+		name: 'Bangkok',
+		country: 'Thailand',
+		position: [13.7563, 100.5018],
+		info: [
+			{
+				id: 'bangkok_exchange',
+				title: 'System Software Engineering (Exchange)',
+				university: 'Thai German Graduate School of Engineering Bangkok',
+				description:
+					'Focus: Selected Topics of Machine Learning, Advanced Digital Image Processing',
+				time: 'Jan 2019 - Jun 2019'
+			}
+		]
+	}
+]
 
 const Education = () => {
+	const { t } = useTranslation('common')
 	const mapRef = useRef<L.Map | null>(null)
 	const markersRef = useRef<{ [key: string]: L.Marker }>({})
 

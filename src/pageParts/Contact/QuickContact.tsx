@@ -3,21 +3,26 @@ import { socialLinks } from '@/components/Layout/ContactDock'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { CalendarIcon, MailIcon } from 'lucide-react'
+import { getT } from '@/components/i18n/getT'
 
-export const QuickContact = () => {
+export const QuickContact = async ({
+	locale
+}: {
+	locale: string
+}) => {
+	const t = await getT({ locale })
+
 	return (
 		<section className='w-full py-20 bg-gray-100 dark:bg-gray-900 text-center'>
 			<div className='max-w-5xl lg:mx-auto mx-8'>
 				<FadeIn>
 					<h2 className='text-3xl sm:text-4xl font-bold mb-4 text-zinc-900 dark:text-white'>
-						Let's get in touch
+						{t('contact.getInTouch')}
 					</h2>
 				</FadeIn>
 				<FadeIn>
 					<p className='text-zinc-600 dark:text-zinc-300 mb-8 text-lg'>
-						Want to collaborate or have a project in mind? I’d love to hear from
-						you. Feel free to contact me to discuss potential projects or
-						opportunities. I'm always open to exciting new ventures.
+						{t('contact.collaborateText')}
 					</p>
 				</FadeIn>
 				<FadeIn>
@@ -27,14 +32,14 @@ export const QuickContact = () => {
 							className={cn(buttonVariants({ variant: 'default' }))}
 						>
 							<MailIcon className='mr-2 h-5 w-5' />
-							Send me an Email
+							{t('contact.email')}
 						</a>
 						<a
 							href={socialLinks[4].href}
 							className={cn(buttonVariants({ variant: 'secondary' }))}
 						>
 							<CalendarIcon className='mr-2 h-5 w-5' />
-							Schedule a Meeting
+							{t('contact.meeting')}
 						</a>
 					</div>
 				</FadeIn>
