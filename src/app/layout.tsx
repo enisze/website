@@ -105,11 +105,11 @@ export default async function RootLayout({
 					disableTransitionOnChange
 				>
 					<TranslationProvider locale={locale} resources={resources}>
-						{/* <ConfettiExplosion atom />
+						<ConfettiExplosion atom />
 						<Toaster />
-						<Navbar /> */}
+						<Navbar />
 						<div className=''>{children}</div>
-						{/* <Footer /> */}
+						<Footer />
 					</TranslationProvider>
 				</ThemeProvider>
 			</body>
