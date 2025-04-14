@@ -1,39 +1,17 @@
-import { About } from '@/components/Content/About'
-import { FadeIn } from '@/components/FadeIn'
-import { Heading } from '@/components/Layout/Heading'
-import { ContactSection } from '@/pageParts/Contact/ContactSection'
-import { QuickContact } from '@/pageParts/Contact/QuickContact'
-import { Intro } from '@/pageParts/Intro/intro'
-import { Projects } from '@/pageParts/projects'
-import { Skills } from '@/pageParts/skills'
-import dynamic from 'next/dynamic'
-
-const Education2 = dynamic(
-	async () => import('./../pageParts/Intro/Education2'),
-	{
-		ssr: false
-	}
-)
+import { redirect } from 'next/navigation'
+import { headers } from 'next/headers'
+import i18nConfig from '@/i18nConfig'
 
 export default function Home() {
-	return (
-		<div className='flex flex-col gap-y-8'>
-			<div>
-				<Intro />
-				<QuickContact />
-			</div>
+	const headersList = headers()
+	const acceptLanguage = headersList.get('accept-language') || ''
 
-			<About />
-			<Skills />
+	// Check if German is preferred
+	const isGermanPreferred = acceptLanguage.includes('de')
 
-			<Projects />
-			<FadeIn>
-				<div className='max-w-5xl lg:mx-auto mx-8 scroll-mt-10' id='education'>
-					<Heading>Education</Heading>
-					<Education2 />
-				</div>
-			</FadeIn>
-			<ContactSection />
-		</div>
+	// Redirect to German if preferred, otherwise English
+	const locale = isGermanPreferred ? 'de' : i18nConfig.defaultLocale
+	redirect(
+		`/${locale === i18nConfig.defaultLocale && !i18nConfig.prefixDefault ? '' : locale}`
 	)
 }

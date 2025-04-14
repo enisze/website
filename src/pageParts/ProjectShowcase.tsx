@@ -4,6 +4,7 @@ import SpotlightCard from '@/components/SpotlightCard'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight, Github } from 'lucide-react'
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 
 type Project = {
 	title: string
@@ -21,6 +22,8 @@ type Project = {
 }
 
 export function ProjectShowcase(project: Project) {
+	const { t } = useTranslation('common')
+
 	return (
 		<div className='w-full max-w-7xl mx-auto'>
 			<SpotlightCard
@@ -41,7 +44,7 @@ export function ProjectShowcase(project: Project) {
 									</span>
 									<span className='text-muted-foreground'>•</span>
 									<span className='text-sm text-muted-foreground'>
-										Featured Project
+										{t('projects.featuredProject')}
 									</span>
 								</div>
 								<h2 className='text-4xl font-bold tracking-tight'>
@@ -56,7 +59,9 @@ export function ProjectShowcase(project: Project) {
 
 							{/* Tech stack */}
 							<div>
-								<h3 className='text-sm font-medium mb-3'>Technologies</h3>
+								<h3 className='text-sm font-medium mb-3'>
+									{t('projects.technologies')}
+								</h3>
 								<div className='flex flex-wrap gap-2'>
 									{project.technologies.map((tech) => (
 										<Badge
@@ -78,7 +83,7 @@ export function ProjectShowcase(project: Project) {
 									href={project.links.live}
 									className='group inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors p-2 px-4 rounded-full dark:hover:bg-zinc-800 hover:bg-zinc-100'
 								>
-									<span>View Project</span>
+									<span>{t('projects.viewProject')}</span>
 									<ArrowRight className='w-4 h-4 transition-transform group-hover:translate-x-1' />
 								</a>
 							)}
@@ -88,7 +93,7 @@ export function ProjectShowcase(project: Project) {
 									className='group inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground dark:hover:bg-zinc-800 hover:bg-zinc-100 p-2 px-4 rounded-full transition-colors'
 								>
 									<Github className='w-4 h-4' />
-									<span>Source Code</span>
+									<span>{t('projects.sourceCode')}</span>
 								</a>
 							)}
 						</div>

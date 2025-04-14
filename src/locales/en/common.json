@@ -1,0 +1,165 @@
+{
+	"navigation": {
+		"about": "About",
+		"education": "Education",
+		"experience": "Experience",
+		"projects": "Projects",
+		"skills": "Skills",
+		"contact": "Contact",
+		"bookCall": "Book a call"
+	},
+	"intro": {
+		"hi": "Hi,",
+		"name": "I'm Enis.",
+		"role": "Fullstack Software Developer",
+		"description": "Software developer passionate about clean code, smart solutions and digital innovation. Whether web, mobile or cloud: I combine modern tech stack knowledge with creativity and an eye for what's essential. Besides my work as a developer, I enjoy tinkering with my own projects – always with the goal of making things better, faster and more intuitive.",
+		"contactMe": "Contact Me"
+	},
+	"education": {
+		"title": "Education",
+		"cities": {
+			"aachen": {
+				"name": "Aachen",
+				"country": "Germany"
+			},
+			"prague": {
+				"name": "Prague",
+				"country": "Czech Republic"
+			},
+			"bangkok": {
+				"name": "Bangkok",
+				"country": "Thailand"
+			}
+		},
+		"degrees": {
+			"aachen_master": {
+				"title": "Master of Computer Science",
+				"university": "RWTH Aachen University",
+				"description": "Focus: RDF Schema Generation, Artificial Intelligence, Data Mining",
+				"time": "Oct. 2016 - Aug. 2021"
+			},
+			"aachen_bachelor": {
+				"title": "Bachelor of Computer Science",
+				"university": "RWTH Aachen University",
+				"description": "Focus: Generative Development, Machine Learning, Data Science",
+				"time": "Oct. 2013 - Oct. 2016"
+			},
+			"prague_exchange": {
+				"title": "Computer Science (Exchange)",
+				"university": "Czech Technical University Prague",
+				"description": "Focus: Advanced Database Systems, Efficient Text Pattern Matching, UI Design",
+				"time": "Sep. 2017 - Feb. 2018"
+			},
+			"bangkok_exchange": {
+				"title": "System Software Engineering (Exchange)",
+				"university": "Thai German Graduate School of Engineering Bangkok",
+				"description": "Focus: Selected Topics of Machine Learning, Advanced Digital Image Processing",
+				"time": "Jan 2019 - Jun 2019"
+			}
+		}
+	},
+	"experience": {
+		"sodefa": {
+			"title": "Software Engineer / Project Manager at Sodefa GmbH",
+			"description": "Create, coordinate and delegate tasks using Linear (previously Zenhub). <br/> Developing features in React and Typescript in a Web application.<br/> Managing project Structure using: Nextjs, tRPC, Prisma (previously hasura, graphQL).<br/> Developing a mobile app for iOS and android using: React Native, expo<br/> Version control via Github.",
+			"time": "Sep. 2021 - today"
+		},
+		"empower": {
+			"title": "Software Engineer at Empower GmbH",
+			"description": "Working with a cross platform team. <br/> Main Task: Implementing features in the web application. <br/> Main technologies used: React, Redux, Node, Swagger, Jira, Confluence.",
+			"time": "Jun. 2020 - Aug. 2021"
+		},
+		"western_digital": {
+			"title": "Internship at Western Digital",
+			"description": "Leading the Project: Defect Detection on Images based on Deep Learning. <br/> Organized the project and distributed the tasks to other interns.<br/> Gathering and Preprocessing image data using Python.",
+			"time": "Jun. 2019 - Sep. 2019"
+		},
+		"fraunhofer": {
+			"title": "Software Engineer at Fraunhofer IPT",
+			"description": "Further development of existing software in C#.<br/> Main Task: Developing a filter functionality for sensor data C#.<br/> Subtask: Adjusting the web application, desktop application, and database schema (Angular, C#)",
+			"time": "Apr. 2016 - Dec. 2018"
+		}
+	},
+	"about": {
+		"title": "About",
+		"based": "Based in Germany, I am a passionate ",
+		"fullstack": "fullstack software developer",
+		"focus": " with a focus on ",
+		"webAndMobile": "web and mobile app development",
+		"enjoyCreating": "I enjoy creating innovative solutions that enhance user experiences.",
+		"specialize": "I specialize in modern web development with the",
+		"technologies": "Next.js framework, React and TypeScript",
+		"crafting": ", crafting reliable and high-performing applications. My expertise extends to developing cross-platform mobile solutions using",
+		"mobileExpertise": "React Native and Expo",
+		"leveraging": "while leveraging AWS for cloud infrastructure. With a strong technical foundation and an eye for design, I build interfaces that are both efficient and visually engaging, always focusing on clean architecture and maintainable solutions.",
+		"foundation": "I have a strong foundation in computer science and a keen interest in",
+		"aiInterest": "machine learning and artificial intelligence.",
+		"eager": "I am always eager to learn new technologies and improve my skills.",
+		"freeTime": "In my free time, I enjoy",
+		"exploring": "exploring new technologies",
+		"develop": "develop private projects, and",
+		"expanding": "expanding my knowledge",
+		"field": "in the field of software development."
+	},
+	"contact": {
+		"title": "Get in touch",
+		"submit": "Send message",
+		"success": "Message sent successfully!",
+		"error": "Something went wrong. Please try again."
+	},
+	"projects": {
+		"sideProjectsTitle": "Side Projects",
+		"esg_platform": {
+			"title": "ESG Platform",
+			"description": "A comprehensive ESG (Environmental, Social, and Governance) platform for CO2 certificate generation and sustainability analysis. The platform features sophisticated reporting tools, dashboards for ESG analytics, and integration with sustainability databases. Built with modern technologies including Next.js, React Server Components, and Drizzle ORM, the system implements robust role-based access control and automated testing.",
+			"year": "2023-2024"
+		},
+		"financial_platform": {
+			"title": "Multi-Product Financial Platform",
+			"description": "A scalable multi-product platform for financial services, featuring a custom design system built with shadcn components. The platform integrates various financial APIs and payment services, with robust authentication and role management through Zitadel. Comprehensive testing suite includes end-to-end tests with Playwright and unit tests with Jest.",
+			"year": "2024"
+		},
+		"freightly": {
+			"title": "Freightly",
+			"description": "A cloud-based Transport Management System (TMS) designed to optimize logistics processes. The platform features a modern UI built with React, TypeScript, and Next.js using the shadcn component library. Key implementations include complex form handling with dynamic validation using React Hook Form, enabling efficient processing of transportation and logistics data. The system streamlines logistics operations through an intuitive and responsive interface.",
+			"year": "2025"
+		},
+		"proprate": {
+			"title": "Proprate",
+			"description": "PropRate serves as a comprehensive meta search engine for the German real estate market, aggregating listings from major portals like ImmobilienScout24 and eBay Kleinanzeigen. The platform's AI system evaluates properties and assigns PropRatings based on location, value potential, and price appropriateness. Users can access property valuation tools, financial calculators, and market analytics to make informed real estate decisions. The platform also provides educational resources through its blog and real estate guides, making it a one-stop solution for property research and analysis.",
+			"year": "2025"
+		},
+		"teampilot": {
+			"title": "Teampilot",
+			"description": "Teampilot AI is an advanced AI platform leveraging multiple LLM providers to enhance team productivity through intelligent automation. The platform offers sophisticated content generation, workflow automation, and data analysis capabilities, built with modern technologies like tRPC, Prisma, and various AI integrations.",
+			"year": "2025"
+		},
+		"portfolio": {
+			"title": "Portfolio",
+			"description": "A modern, responsive portfolio website built with Next.js and TypeScript. This project showcases my professional journey, technical skills, and project work through an elegant and user-friendly interface. Features include dark/light mode, responsive design, and optimized performance. The site serves as both a technical demonstration and a comprehensive overview of my capabilities as a software engineer.",
+			"year": "Today"
+		},
+		"event_wizard": {
+			"title": "Event Wizard",
+			"description": "A web application designed for organizing football events among friends. Features include a calendar view for event scheduling, participant management, automated email reminders, and an integrated payment tracking system with PayPal integration. The platform streamlines event organization through its user-friendly interface and automated notification system.",
+			"year": "Today"
+		},
+		"horserace": {
+			"title": "HorseRace",
+			"description": "The HorseRace app is an independently developed game created during my free time as a fun way to explore React Native and Expo. The game's core concept is simple yet engaging: players select their preferred card symbol and start with a set number of sips. If their chosen card wins the race, they can distribute double the sips among their friends as a reward. I'm actively enhancing the user experience through regular updates, implementing new features such as random in-game events and player influence on game outcomes to create an even more exciting gaming experience.",
+			"year": "2024"
+		},
+		"neologism": {
+			"title": "Neologism 2.0",
+			"description": "Neologism 2.0 allows users to quickly create vocabularies in a guided and collaborative process using its graph editor. Domain experts and non-experts can create classes, properties, and relationships between them visually. It automatically generates URIs for simplicity. Users can export their draft vocabularies as RDF to import into tools like Protege for further refinement by experts. This streamlines the vocabulary creation process and reduces the time and effort needed compared to traditional methods. The guided interface and collaborative aspects make it accessible even to non-experts. The RDF export also allows connecting the draft vocabularies to other semantic web applications.",
+			"year": "2021"
+		},
+		"featuredProject": "Featured Project",
+		"technologies": "Technologies",
+		"viewProject": "View Project",
+		"sourceCode": "Source Code"
+	},
+	"meta": {
+		"description": "Portfolio of Enis Zejnilovic, a skilled Full-stack software engineer, with experience in web development. Specialized in React, TypeScript, and Next.js."
+	}
+}

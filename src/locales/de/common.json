@@ -1,0 +1,165 @@
+{
+	"navigation": {
+		"about": "Über mich",
+		"education": "Ausbildung",
+		"experience": "Erfahrung",
+		"projects": "Projekte",
+		"skills": "Fähigkeiten",
+		"contact": "Kontakt",
+		"bookCall": "Termin buchen"
+	},
+	"intro": {
+		"hi": "Hallo,",
+		"name": "ich bin Enis.",
+		"role": "Full Stack Entwickler",
+		"description": "Softwareentwickler mit Leidenschaft für sauberen Code, smarte Lösungen und digitale Innovation. Ob Web, Mobile oder Cloud: Ich verbinde modernes Tech-Stack-Wissen mit Kreativität und einem Blick für das Wesentliche. Neben meiner Arbeit als Entwickler experimentiere ich gerne mit eigenen Projekten – stets mit dem Ziel, Dinge besser, schneller und intuitiver zu gestalten.",
+		"contactMe": "Kontaktiere mich"
+	},
+	"education": {
+		"title": "Ausbildung",
+		"cities": {
+			"aachen": {
+				"name": "Aachen",
+				"country": "Deutschland"
+			},
+			"prague": {
+				"name": "Prag",
+				"country": "Tschechische Republik"
+			},
+			"bangkok": {
+				"name": "Bangkok",
+				"country": "Thailand"
+			}
+		},
+		"degrees": {
+			"aachen_master": {
+				"title": "Master of Computer Science",
+				"university": "RWTH Aachen",
+				"description": "Schwerpunkt: RDF Schema Generation, Künstliche Intelligenz, Data Mining",
+				"time": "Okt. 2016 - Aug. 2021"
+			},
+			"aachen_bachelor": {
+				"title": "Bachelor of Computer Science",
+				"university": "RWTH Aachen",
+				"description": "Schwerpunkt: Generative Entwicklung, Maschinelles Lernen, Data Science",
+				"time": "Okt. 2013 - Okt. 2016"
+			},
+			"prague_exchange": {
+				"title": "Informatik (Austausch)",
+				"university": "Technische Universität Prag",
+				"description": "Schwerpunkt: Advanced Database Systems, Efficient Text Pattern Matching, UI Design",
+				"time": "Sep. 2017 - Feb. 2018"
+			},
+			"bangkok_exchange": {
+				"title": "System Software Engineering (Austausch)",
+				"university": "Thai German Graduate School of Engineering Bangkok",
+				"description": "Schwerpunkt: Ausgewählte Themen des Maschinellen Lernens, Fortgeschrittene Digitale Bildverarbeitung",
+				"time": "Jan. 2019 - Jun. 2019"
+			}
+		}
+	},
+	"experience": {
+		"sodefa": {
+			"title": "Software Engineer / Projektmanager bei Sodefa GmbH",
+			"description": "Erstellung, Koordination und Delegation von Aufgaben mit Linear (früher Zenhub). <br/> Entwicklung von Features in React und TypeScript in einer Webanwendung.<br/> Verwaltung der Projektstruktur mit: Next.js, tRPC, Prisma (früher hasura, graphQL).<br/> Entwicklung einer mobilen App für iOS und Android mit: React Native, Expo<br/> Versionskontrolle über Github.",
+			"time": "Sep. 2021 - heute"
+		},
+		"empower": {
+			"title": "Software Engineer bei Empower GmbH",
+			"description": "Arbeit in einem plattformübergreifenden Team. <br/> Hauptaufgabe: Implementierung von Features in der Webanwendung. <br/> Hauptsächlich verwendete Technologien: React, Redux, Node, Swagger, Jira, Confluence.",
+			"time": "Jun. 2020 - Aug. 2021"
+		},
+		"western_digital": {
+			"title": "Praktikum bei Western Digital",
+			"description": "Leitung des Projekts: Fehlererkennung auf Bildern basierend auf Deep Learning. <br/> Organisation des Projekts und Verteilung der Aufgaben an andere Praktikanten.<br/> Sammlung und Vorverarbeitung von Bilddaten mit Python.",
+			"time": "Jun. 2019 - Sep. 2019"
+		},
+		"fraunhofer": {
+			"title": "Software Engineer beim Fraunhofer IPT",
+			"description": "Weiterentwicklung bestehender Software in C#.<br/> Hauptaufgabe: Entwicklung einer Filterfunktionalität für Sensordaten in C#.<br/> Zusatzaufgabe: Anpassung der Webanwendung, Desktop-Anwendung und des Datenbankschemas (Angular, C#)",
+			"time": "Apr. 2016 - Dez. 2018"
+		}
+	},
+	"about": {
+		"title": "Über mich",
+		"based": "Als in Deutschland ansässiger, leidenschaftlicher ",
+		"fullstack": "Full-Stack Softwareentwickler",
+		"focus": " konzentriere ich mich auf ",
+		"webAndMobile": "Web- und Mobile-App-Entwicklung",
+		"enjoyCreating": "Ich entwickle gerne innovative Lösungen, die das Benutzererlebnis verbessern.",
+		"specialize": "Ich bin spezialisiert auf moderne Webentwicklung mit dem",
+		"technologies": "Next.js Framework, React und TypeScript",
+		"crafting": " und entwickle zuverlässige und leistungsstarke Anwendungen. Meine Expertise erstreckt sich auch auf die Entwicklung plattformübergreifender mobiler Lösungen mit",
+		"mobileExpertise": "React Native und Expo",
+		"leveraging": ", wobei ich AWS für die Cloud-Infrastruktur nutze. Mit einem starken technischen Fundament und Blick fürs Design entwickle ich Benutzeroberflächen, die sowohl effizient als auch visuell ansprechend sind, immer mit Fokus auf saubere Architektur und wartbare Lösungen.",
+		"foundation": "Ich verfüge über eine fundierte Informatikausbildung und habe ein besonderes Interesse an",
+		"aiInterest": "maschinellem Lernen und künstlicher Intelligenz",
+		"eager": "Ich bin stets bestrebt, neue Technologien zu erlernen und meine Fähigkeiten zu verbessern.",
+		"freeTime": "In meiner Freizeit",
+		"exploring": "erforsche ich neue Technologien",
+		"develop": "entwickle private Projekte und",
+		"expanding": "erweitere mein Wissen",
+		"field": "im Bereich der Softwareentwicklung."
+	},
+	"projects": {
+		"sideProjectsTitle": "Eigene Projekte",
+		"esg_platform": {
+			"title": "ESG-Plattform",
+			"description": "Eine umfassende ESG-Plattform (Environmental, Social, and Governance) für die CO2-Zertifikatgenerierung und Nachhaltigkeitsanalyse. Die Plattform bietet fortschrittliche Berichtswerkzeuge, Dashboards für ESG-Analysen und Integration mit Nachhaltigkeitsdatenbanken. Entwickelt mit modernen Technologien wie Next.js, React Server Components und Drizzle ORM, implementiert das System eine robuste rollenbasierte Zugriffskontrolle und automatisierte Tests.",
+			"year": "2023-2024"
+		},
+		"financial_platform": {
+			"title": "Multi-Produkt Finanzplattform",
+			"description": "Eine skalierbare Multi-Produkt-Plattform für Finanzdienstleistungen mit einem individuellen Design-System, aufgebaut mit shadcn-Komponenten. Die Plattform integriert verschiedene Finanz-APIs und Zahlungsdienste mit robuster Authentifizierung und Rollenverwaltung durch Zitadel. Die umfassende Testsuite umfasst End-to-End-Tests mit Playwright und Unit-Tests mit Jest.",
+			"year": "2024"
+		},
+		"freightly": {
+			"title": "Freightly",
+			"description": "Ein cloudbasiertes Transport Management System (TMS) zur Optimierung von Logistikprozessen. Die Plattform verfügt über eine moderne Benutzeroberfläche, entwickelt mit React, TypeScript und Next.js unter Verwendung der shadcn-Komponentenbibliothek. Zu den wichtigsten Implementierungen gehören komplexe Formularverarbeitung mit dynamischer Validierung mittels React Hook Form, die eine effiziente Verarbeitung von Transport- und Logistikdaten ermöglicht. Das System optimiert Logistikabläufe durch eine intuitive und responsive Benutzeroberfläche.",
+			"year": "2025"
+		},
+		"proprate": {
+			"title": "Proprate",
+			"description": "PropRate fungiert als umfassende Metasuchmaschine für den deutschen Immobilienmarkt und aggregiert Angebote von großen Portalen wie ImmobilienScout24 und eBay Kleinanzeigen. Das KI-System der Plattform bewertet Immobilien und vergibt PropRatings basierend auf Lage, Wertpotenzial und Preisangemessenheit. Nutzer haben Zugang zu Immobilienbewertungstools, Finanzrechnern und Marktanalysen, um fundierte Immobilienentscheidungen zu treffen. Die Plattform bietet außerdem Bildungsressourcen durch ihren Blog und Immobilienratgeber und ist damit eine All-in-One-Lösung für Immobilienrecherche und -analyse.",
+			"year": "2025"
+		},
+		"teampilot": {
+			"title": "Teampilot",
+			"description": "Teampilot AI ist eine fortschrittliche KI-Plattform, die mehrere LLM-Provider nutzt, um die Teamproduktivität durch intelligente Automatisierung zu steigern. Die Plattform bietet ausgereifte Funktionen für Content-Generierung, Workflow-Automatisierung und Datenanalyse, aufgebaut mit modernen Technologien wie tRPC, Prisma und verschiedenen KI-Integrationen.",
+			"year": "2025"
+		},
+		"portfolio": {
+			"title": "Portfolio",
+			"description": "Eine moderne, responsive Portfolio-Website, entwickelt mit Next.js und TypeScript. Dieses Projekt präsentiert meinen beruflichen Werdegang, technische Fähigkeiten und Projektarbeiten durch eine elegante und benutzerfreundliche Oberfläche. Zu den Features gehören Dark/Light Mode, responsives Design und optimierte Performance. Die Website dient sowohl als technische Demonstration als auch als umfassender Überblick über meine Fähigkeiten als Softwareentwickler.",
+			"year": "Heute"
+		},
+		"event_wizard": {
+			"title": "Event Wizard",
+			"description": "Eine Webanwendung zur Organisation von Fußballevents unter Freunden. Zu den Funktionen gehören eine Kalenderansicht für die Eventplanung, Teilnehmerverwaltung, automatisierte E-Mail-Erinnerungen und ein integriertes Zahlungsverfolgungssystem mit PayPal-Integration. Die Plattform vereinfacht die Eventorganisation durch ihre benutzerfreundliche Oberfläche und ein automatisiertes Benachrichtigungssystem.",
+			"year": "Heute"
+		},
+		"horserace": {
+			"title": "HorseRace",
+			"description": "Die HorseRace-App ist ein eigenständig entwickeltes Spiel, das in meiner Freizeit als unterhaltsame Möglichkeit entstanden ist, React Native und Expo zu erkunden. Das Kernkonzept des Spiels ist einfach, aber fesselnd: Spieler wählen ihr bevorzugtes Kartensymbol und beginnen mit einer bestimmten Anzahl von Schlücken. Wenn ihre gewählte Karte das Rennen gewinnt, können sie die doppelte Anzahl an Schlücken unter ihren Freunden verteilen. Ich verbessere das Spielerlebnis kontinuierlich durch regelmäßige Updates und implementiere neue Features wie zufällige Spielereignisse und Spielereinfluss auf den Spielverlauf, um ein noch spannenderes Spielerlebnis zu schaffen.",
+			"year": "2024"
+		},
+		"neologism": {
+			"title": "Neologism 2.0",
+			"description": "Neologism 2.0 ermöglicht Benutzern die schnelle Erstellung von Vokabularen in einem geführten und kollaborativen Prozess mithilfe eines Grapheneditors. Domänenexperten und Nicht-Experten können Klassen, Eigenschaften und Beziehungen zwischen ihnen visuell erstellen. Es generiert automatisch URIs zur Vereinfachung. Benutzer können ihre Vokabular-Entwürfe als RDF exportieren, um sie in Tools wie Protege für die weitere Verfeinerung durch Experten zu importieren. Dies optimiert den Vokabular-Erstellungsprozess und reduziert den Zeit- und Arbeitsaufwand im Vergleich zu traditionellen Methoden. Die geführte Benutzeroberfläche und kollaborativen Aspekte machen es auch für Nicht-Experten zugänglich. Der RDF-Export ermöglicht zudem die Verbindung der Vokabular-Entwürfe mit anderen Semantic-Web-Anwendungen.",
+			"year": "2021"
+		},
+		"featuredProject": "Ausgewähltes Projekt",
+		"technologies": "Technologien",
+		"viewProject": "Projekt ansehen",
+		"sourceCode": "Quellcode"
+	},
+	"contact": {
+		"title": "Kontaktiere mich",
+		"submit": "Nachricht senden",
+		"success": "Nachricht erfolgreich gesendet!",
+		"error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+	},
+	"meta": {
+		"description": "Portfolio von Enis Zejnilovic, einem erfahrenen Full-Stack Softwareentwickler mit Expertise in Webentwicklung. Spezialisiert auf React, TypeScript und Next.js."
+	}
+}

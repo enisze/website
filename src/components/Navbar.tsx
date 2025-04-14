@@ -2,6 +2,8 @@
 import Link from 'next/link'
 import { Logo } from '../../components/logo'
 import { ThemeToggle } from './Layout/ThemeToggle'
+import { LanguageSwitcher } from './LanguageSwitcher'
+import { useTranslation } from 'react-i18next'
 
 import {
 	MobileNav,
@@ -16,31 +18,33 @@ import { useState } from 'react'
 import { socialLinks } from './Layout/ContactDock'
 import { buttonVariants } from './ui/button'
 
-const navItems = [
-	{
-		name: 'About',
-		link: '/#about'
-	},
-	{
-		name: 'Skills',
-		link: '/#skills'
-	},
-	{
-		name: 'Projects',
-		link: '/#projects'
-	},
-	{
-		name: 'Education',
-		link: '/#education'
-	},
-	{
-		name: 'Contact',
-		link: '/#contact'
-	}
-]
-
 export const Navbar = () => {
+	const { t } = useTranslation('common')
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+	const navItems = [
+		{
+			name: t('navigation.about'),
+			link: '/#about'
+		},
+		{
+			name: t('navigation.skills'),
+			link: '/#skills'
+		},
+		{
+			name: t('navigation.projects'),
+			link: '/#projects'
+		},
+		{
+			name: t('navigation.education'),
+			link: '/#education'
+		},
+		{
+			name: t('navigation.contact'),
+			link: '/#contact'
+		}
+	]
+
 	return (
 		<ResizableNavbar>
 			<NavBody>
@@ -51,6 +55,7 @@ export const Navbar = () => {
 				<NavItems items={navItems} />
 				<div className='flex items-center gap-4'>
 					<ThemeToggle />
+					<LanguageSwitcher />
 					<a
 						href={socialLinks[4].href}
 						onClick={() => setIsMobileMenuOpen(false)}
@@ -58,7 +63,7 @@ export const Navbar = () => {
 							variant: 'outline'
 						})}
 					>
-						Book a call
+						{t('navigation.bookCall')}
 					</a>
 				</div>
 			</NavBody>
@@ -89,7 +94,10 @@ export const Navbar = () => {
 						</a>
 					))}
 
-					<ThemeToggle />
+					<div className='flex items-center gap-4'>
+						<ThemeToggle />
+						<LanguageSwitcher />
+					</div>
 					<div className='flex w-full flex-col gap-4'>
 						<a
 							href={socialLinks[4].href}
@@ -98,7 +106,7 @@ export const Navbar = () => {
 								variant: 'outline'
 							})}
 						>
-							Book a call
+							{t('navigation.bookCall')}
 						</a>
 					</div>
 				</MobileNavMenu>
