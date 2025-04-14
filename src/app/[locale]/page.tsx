@@ -17,10 +17,12 @@ const Education2 = dynamic(
 )
 
 export default async function Home({
-	params: { locale }
+	params
 }: {
-	params: { locale: string }
+	params: Promise<{ locale: string }>
 }) {
+	const { locale } = await params
+
 	await initTranslations({ locale })
 
 	return (

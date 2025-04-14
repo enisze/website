@@ -14,8 +14,10 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({
-	params: { locale }
-}: { params: { locale: string } }) {
+	params
+}: { params: Promise<{ locale: string }> }) {
+	const { locale } = await params
+
 	const { t } = await initTranslations({ locale })
 
 	return {
@@ -80,11 +82,13 @@ export async function generateMetadata({
 
 export default async function RootLayout({
 	children,
-	params: { locale }
+	params
 }: Readonly<{
 	children: React.ReactNode
-	params: { locale: string }
+	params: Promise<{ locale: string }>
 }>) {
+	const { locale } = await params
+
 	const { resources } = await initTranslations({ locale })
 
 	return (
@@ -101,11 +105,11 @@ export default async function RootLayout({
 					disableTransitionOnChange
 				>
 					<TranslationProvider locale={locale} resources={resources}>
-						<ConfettiExplosion atom />
+						{/* <ConfettiExplosion atom />
 						<Toaster />
-						<Navbar />
+						<Navbar /> */}
 						<div className=''>{children}</div>
-						<Footer />
+						{/* <Footer /> */}
 					</TranslationProvider>
 				</ThemeProvider>
 			</body>
