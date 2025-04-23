@@ -6,41 +6,41 @@ import i18nConfig from '../i18nConfig'
 const namespaces = ['common']
 
 export default async function initTranslations({
-    locale,
-    i18nInstance: instance,
-    resources,
+	locale,
+	i18nInstance: instance,
+	resources
 }: {
-    locale: string
-    i18nInstance?: i18n
-    resources?: Resource
+	locale: string
+	i18nInstance?: i18n
+	resources?: Resource
 }) {
-    const i18nInstance = instance || createInstance()
+	const i18nInstance = instance || createInstance()
 
-    i18nInstance.use(initReactI18next)
+	i18nInstance.use(initReactI18next)
 
-    if (!resources) {
-        i18nInstance.use(
-            resourcesToBackend(
-                (language: string, namespace: string) =>
-                    import(`@/locales/${language}/${namespace}.json`)
-            )
-        )
-    }
+	if (!resources) {
+		i18nInstance.use(
+			resourcesToBackend(
+				(language: string, namespace: string) =>
+					import(`@/locales/${language}/${namespace}.json`)
+			)
+		)
+	}
 
-    await i18nInstance.init({
-        lng: locale,
-        resources,
-        fallbackLng: i18nConfig.defaultLocale,
-        supportedLngs: i18nConfig.locales,
-        defaultNS: namespaces[0],
-        fallbackNS: namespaces[0],
-        ns: namespaces,
-        preload: resources ? [] : i18nConfig.locales
-    })
+	await i18nInstance.init({
+		lng: locale,
+		resources,
+		fallbackLng: i18nConfig.defaultLocale,
+		supportedLngs: i18nConfig.locales,
+		defaultNS: namespaces[0],
+		fallbackNS: namespaces[0],
+		ns: namespaces,
+		preload: resources ? [] : i18nConfig.locales
+	})
 
-    return {
-        i18n: i18nInstance,
-        resources: i18nInstance.services.resourceStore.data,
-        t: i18nInstance.t,
-    }
+	return {
+		i18n: i18nInstance,
+		resources: i18nInstance.services.resourceStore.data,
+		t: i18nInstance.t
+	}
 }
