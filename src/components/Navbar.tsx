@@ -1,9 +1,8 @@
 'use client'
 import Link from 'next/link'
 import { Logo } from '../../components/logo'
-import { ThemeToggle } from './Layout/ThemeToggle'
 import { LanguageSwitcher } from './LanguageSwitcher'
-import { useTranslation } from 'react-i18next'
+import { ThemeToggle } from './Layout/ThemeToggle'
 
 import {
 	MobileNav,
@@ -14,12 +13,13 @@ import {
 	NavItems,
 	Navbar as ResizableNavbar
 } from '@/components/ui/resizable-navbar'
+import { useTranslation } from '@/hooks/useTranslation'
 import { useState } from 'react'
 import { socialLinks } from './Layout/ContactDock'
 import { buttonVariants } from './ui/button'
 
 export const Navbar = () => {
-	const { t } = useTranslation('common')
+	const t = useTranslation()
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
 	const navItems = [

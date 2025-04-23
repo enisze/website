@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next'
 import { FadeIn } from '../FadeIn'
 import { Heading } from '../Layout/Heading'
 import { getT } from '../i18n/getT'

@@ -1,11 +1,11 @@
 'use client'
 
+import { getT } from '@/components/i18n/getT'
 import { Github } from '@/components/Layout/ContactDock'
 import SpotlightCard from '@/components/SpotlightCard'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
-import { useTranslation } from 'react-i18next'
 
 type Project = {
 	title: string
@@ -22,8 +22,14 @@ type Project = {
 	}
 }
 
-export function ProjectShowcase(project: Project) {
-	const { t } = useTranslation('common')
+export async function ProjectShowcase({
+	project,
+	locale
+}: {
+	project: Project
+	locale: string
+}) {
+	const t = await getT({ locale })
 
 	return (
 		<div className='w-full max-w-7xl mx-auto'>

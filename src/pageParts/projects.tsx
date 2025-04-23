@@ -1,7 +1,7 @@
 import { FadeIn } from '@/components/FadeIn'
+import { getT } from '@/components/i18n/getT'
 import { Heading } from '@/components/Layout/Heading'
 import { ProjectShowcase } from './ProjectShowcase'
-import { getT } from '@/components/i18n/getT'
 
 export const Projects = async ({
 	locale
@@ -18,14 +18,17 @@ export const Projects = async ({
 					<FadeIn key={project.id}>
 						<div className='flex flex-col md:flex-row gap-6 items-center justify-center'>
 							<ProjectShowcase
-								title={t(`projects.${project.id}.title`)}
-								description={t(`projects.${project.id}.description`)}
-								images={project.images}
-								links={{
-									live: project.projectLink
+								project={{
+									title: t(`projects.${project.id}.title`),
+									description: t(`projects.${project.id}.description`),
+									images: project.images,
+									links: {
+										live: project.projectLink
+									},
+									year: t(`projects.${project.id}.year`),
+									technologies: project.technologies
 								}}
-								year={t(`projects.${project.id}.year`)}
-								technologies={project.technologies}
+								locale={locale}
 							/>
 						</div>
 					</FadeIn>
@@ -41,15 +44,18 @@ export const Projects = async ({
 					<FadeIn key={project.id}>
 						<div className='flex flex-col md:flex-row gap-6 items-center justify-center'>
 							<ProjectShowcase
-								title={t(`projects.${project.id}.title`)}
-								description={t(`projects.${project.id}.description`)}
-								images={project.images}
-								links={{
-									live: project.projectLink,
-									github: project.githubLink
+								project={{
+									title: t(`projects.${project.id}.title`),
+									description: t(`projects.${project.id}.description`),
+									images: project.images,
+									links: {
+										live: project.projectLink,
+										github: project.githubLink
+									},
+									year: t(`projects.${project.id}.year`),
+									technologies: project.technologies
 								}}
-								year={t(`projects.${project.id}.year`)}
-								technologies={project.technologies}
+								locale={locale}
 							/>
 						</div>
 					</FadeIn>
