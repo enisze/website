@@ -1,8 +1,8 @@
-import Link from 'next/link'
 import { DownloadIcon } from 'lucide-react'
-import { Card, CardHeader, CardTitle, CardDescription } from '../ui/card'
+import Link from 'next/link'
 import { FadeIn } from '../FadeIn'
 import { getT } from '../i18n/getT'
+import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card'
 
 export const CVButton = async ({ locale }: { locale: string }) => {
 	const t = await getT({ locale })
@@ -22,7 +22,9 @@ export const CVButton = async ({ locale }: { locale: string }) => {
 									{t('cv.referenceTitle')}
 								</CardTitle>
 							</div>
-							<CardDescription>{t('cv.referenceDescription')}</CardDescription>
+							<CardDescription className='self-start'>
+								{t('cv.referenceDescription')}
+							</CardDescription>
 						</CardHeader>
 					</Card>
 				</Link>
@@ -41,7 +43,7 @@ export const CVButton = async ({ locale }: { locale: string }) => {
 									{t('cv.recommendationTitle')}
 								</CardTitle>
 							</div>
-							<CardDescription>
+							<CardDescription className='self-start'>
 								{t('cv.recommendationDescription')}
 							</CardDescription>
 						</CardHeader>
