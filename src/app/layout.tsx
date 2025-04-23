@@ -4,7 +4,6 @@ import { Footer } from '@/components/Layout/Footer'
 import { Navbar } from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
 import initTranslations from '@/i18n'
-import { OpenPanelComponent } from '@openpanel/nextjs'
 import { ThemeProvider } from 'next-themes'
 import { BASE_URL } from '../../config'
 import i18nConfig from '../../i18nConfig'
@@ -99,12 +98,12 @@ export default async function RootLayout({
 			</head>
 
 			<body className='flex flex-col'>
-				<OpenPanelComponent
-					clientId='0d9273f4-0c17-42f4-a83b-b0c6dedfb5e3'
-					trackScreenViews={true}
-					trackAttributes={true}
-					trackOutgoingLinks={true}
+				<script
+					defer
+					src='https://cloud.umami.is/script.js'
+					data-website-id='94a78e6e-3c15-4526-9d9d-111cc97b7d73'
 				/>
+
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'
