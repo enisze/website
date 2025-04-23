@@ -1,13 +1,14 @@
 import { ConfettiExplosion } from '@/components/ConfettiExplosion'
+import { TranslationProvider } from '@/components/i18n/I18nProvider'
 import { Footer } from '@/components/Layout/Footer'
 import { Navbar } from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
+import initTranslations from '@/i18n'
+import { OpenPanelComponent } from '@openpanel/nextjs'
 import { ThemeProvider } from 'next-themes'
 import { BASE_URL } from '../../config'
-import './globals.css'
-import initTranslations from '@/i18n'
 import i18nConfig from '../../i18nConfig'
-import { TranslationProvider } from '@/components/i18n/I18nProvider'
+import './globals.css'
 
 export async function generateStaticParams() {
 	return i18nConfig.locales.map((locale) => ({ locale }))
@@ -98,6 +99,12 @@ export default async function RootLayout({
 			</head>
 
 			<body className='flex flex-col'>
+				<OpenPanelComponent
+					clientId='0d9273f4-0c17-42f4-a83b-b0c6dedfb5e3'
+					trackScreenViews={true}
+					trackAttributes={true}
+					trackOutgoingLinks={true}
+				/>
 				<ThemeProvider
 					attribute='class'
 					defaultTheme='system'
