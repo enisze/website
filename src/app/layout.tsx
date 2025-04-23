@@ -5,6 +5,7 @@ import { Navbar } from '@/components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
 import initTranslations from '@/i18n'
 import { ThemeProvider } from 'next-themes'
+import Script from 'next/script'
 import { BASE_URL } from '../../config'
 import i18nConfig from '../../i18nConfig'
 import './globals.css'
@@ -98,7 +99,7 @@ export default async function RootLayout({
 			</head>
 
 			<body className='flex flex-col'>
-				<script
+				<Script
 					defer
 					src='https://cloud.umami.is/script.js'
 					data-website-id='94a78e6e-3c15-4526-9d9d-111cc97b7d73'
