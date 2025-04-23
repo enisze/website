@@ -1,14 +1,14 @@
+import { ClientEducation } from '@/components/ClientEducation'
 import { About } from '@/components/Content/About'
 import { FadeIn } from '@/components/FadeIn'
+import { getT } from '@/components/i18n/getT'
 import { Heading } from '@/components/Layout/Heading'
+import initTranslations from '@/i18n'
 import { ContactSection } from '@/pageParts/Contact/ContactSection'
 import { QuickContact } from '@/pageParts/Contact/QuickContact'
 import { Intro } from '@/pageParts/Intro/intro'
 import { Projects } from '@/pageParts/projects'
 import { Skills } from '@/pageParts/skills'
-import initTranslations from '@/i18n'
-import { ClientEducation } from '@/components/ClientEducation'
-import { getT } from '@/components/i18n/getT'
 
 export default async function Home({
 	params

@@ -6,9 +6,9 @@ import { Toaster } from '@/components/ui/sonner'
 import initTranslations from '@/i18n'
 import { ThemeProvider } from 'next-themes'
 import Script from 'next/script'
-import { BASE_URL } from '../../config'
-import i18nConfig from '../../i18nConfig'
-import './globals.css'
+import { BASE_URL } from '../../../config'
+import i18nConfig from '../../../i18nConfig'
+import '../globals.css'
 
 export async function generateStaticParams() {
 	return i18nConfig.locales.map((locale) => ({ locale }))

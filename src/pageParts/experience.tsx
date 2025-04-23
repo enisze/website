@@ -5,7 +5,7 @@ import { Heading } from '../components/Layout/Heading'
 import { Timeline } from '../components/Layout/Timeline'
 
 export const Experience = () => {
-	const { t } = useTranslation('common')
+	const { t } = useTranslation()
 
 	return (
 		<section className='space-y-4 scroll-m-20' id='experience'>

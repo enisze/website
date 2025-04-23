@@ -1,5 +1,3 @@
-'use client'
-
 import { getT } from '@/components/i18n/getT'
 import { Github } from '@/components/Layout/ContactDock'
 import SpotlightCard from '@/components/SpotlightCard'

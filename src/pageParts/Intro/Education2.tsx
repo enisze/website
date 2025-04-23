@@ -1,12 +1,12 @@
 'use client'
 
 import { FadeIn } from '@/components/FadeIn'
-import { useTranslation } from '@/hooks/useTranslation'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { Calendar, GraduationCap, MapPin, Plane } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
+import { useTranslation } from 'react-i18next'
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
 
 interface EducationInfo {
@@ -46,7 +46,7 @@ const createCustomIcon = () => {
 }
 
 const PopupContent = ({ city }: { city: City }) => {
-	const t = useTranslation()
+	const { t } = useTranslation()
 
 	return (
 		<div className='w-full max-w-md p-2'>
@@ -192,7 +192,7 @@ const EducationGridItem = ({
 	city: City
 	isExchange?: boolean
 }) => {
-	const t = useTranslation()
+	const { t } = useTranslation()
 
 	return (
 		<div className='flex gap-4'>
