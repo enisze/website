@@ -20,8 +20,8 @@ export const Intro = async ({
 		<div className='relative'>
 			<div className='relative w-screen h-[300px] z-0'>
 				<div className='absolute bottom-0 left-4 text-white'>
-					<h1 className='text-2xl font-semibold m-0'>{t('intro.hi')}</h1>
-					<h2 className='text-4xl font-bold m-0'>{t('intro.name')}</h2>
+					<h1 className='text-md md:text-2xl font-semibold m-0'>{t('intro.hi')}</h1>
+					<h2 className='text-2xl md:text-4xl font-bold m-0'>{t('intro.name')}</h2>
 				</div>
 				<div className='absolute inset-0 flex items-center justify-center -z-10'>
 					<MapComponentClient />
