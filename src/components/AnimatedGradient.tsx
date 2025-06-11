@@ -3,8 +3,8 @@
 import type React from 'react'
 import { useMemo, useRef } from 'react'
 
-import { cn } from '@/lib/utils'
 import { useDimensions } from '@/hooks/useDimensions'
+import { cn } from '@/lib/utils'
 
 interface AnimatedGradientProps {
 	colors: string[]
@@ -26,7 +26,7 @@ export const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
 	className
 }) => {
 	const containerRef = useRef<HTMLDivElement>(null)
-	const dimensions = useDimensions(containerRef)
+	const dimensions = useDimensions(containerRef as React.RefObject<HTMLElement>)
 
 	const blurClass =
 		blur === 'light'
