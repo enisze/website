@@ -95,6 +95,7 @@ export default async function RootLayout({
 	return (
 		<html lang={locale}>
 			<head>
+				<link rel='preconnect' href='https://tile.openstreetmap.org' />
 				<title>Enis Zejnilovic Portfolio</title>
 			</head>
 

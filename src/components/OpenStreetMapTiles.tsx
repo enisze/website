@@ -20,9 +20,9 @@ export function OpenStreetMapTiles({
 			}
 			maxZoom={19}
 			noWrap={noWrap}
-			updateWhenIdle
-			updateWhenZooming={false}
-			keepBuffer={1}
+			updateWhenIdle={false}
+			updateWhenZooming
+			keepBuffer={2}
 		/>
 	)
 }

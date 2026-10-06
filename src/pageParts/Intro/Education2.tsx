@@ -5,7 +5,7 @@ import { OpenStreetMapTiles } from '@/components/OpenStreetMapTiles'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { Calendar, GraduationCap, MapPin, Plane } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { createRoot } from 'react-dom/client'
 import { useTranslation } from 'react-i18next'
 import { MapContainer, Marker, useMap } from 'react-leaflet'
@@ -94,66 +94,126 @@ const PopupContent = ({ city }: { city: City }) => {
 
 const AnimatedFlyTo = () => {
 	const map = useMap()
-	const [isPopupOpen, setIsPopupOpen] = useState(false)
 
 	useEffect(() => {
-		let currentCityIndex = 0
-		let intervalId: NodeJS.Timeout | null = null
+		let nextCityIndex = 1
+		let timer: ReturnType<typeof setTimeout> | undefined
+		let isVisible = false
+		let isMoving = false
+		let isPopupOpen = false
+		const tileLayers: L.TileLayer[] = []
+		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 
-		const getNextCityIndex = (current: number) => {
-			return (current + 1) % cities.length
+		const clearTimer = () => {
+			clearTimeout(timer)
+			timer = undefined
 		}
 
-		const flyToNextCity = () => {
-			const city = cities[currentCityIndex]
-			map.flyTo(city.position, 8, {
-				duration: 3
-			})
-			currentCityIndex = getNextCityIndex(currentCityIndex)
+		const scheduleNextCity = () => {
+			clearTimer()
+			if (
+				!isVisible ||
+				document.hidden ||
+				reducedMotion.matches ||
+				isPopupOpen ||
+				isMoving ||
+				tileLayers.some((layer) => layer.isLoading())
+			) {
+				return
+			}
+
+			// Give each fully loaded view time to settle before continuing the tour.
+			timer = setTimeout(() => {
+				map.flyTo(cities[nextCityIndex].position, 8, { duration: 4 })
+				nextCityIndex = (nextCityIndex + 1) % cities.length
+			}, 4000)
 		}
 
-		const adjustViewForPopup = () => {
-			const target = map.getCenter()
-			const adjustedPoint = [target.lat + 2, target.lng]
-			map.flyTo(adjustedPoint as L.LatLngExpression, 6, {
-				duration: 1
-			})
+		const onMoveStart = () => {
+			isMoving = true
+			clearTimer()
 		}
 
-		const startAnimation = () => {
-			if (intervalId) return
-			flyToNextCity()
-			intervalId = setInterval(flyToNextCity, 6000)
+		const onMoveEnd = () => {
+			isMoving = false
+			scheduleNextCity()
 		}
 
-		const stopAnimation = () => {
-			if (intervalId) {
-				clearInterval(intervalId)
-				intervalId = null
+		const stopMovement = () => {
+			clearTimer()
+			map.stop()
+			isMoving = false
+		}
+
+		const onPreClick = () => {
+			// Stop the tour before Leaflet positions a clicked university's popup.
+			stopMovement()
+			scheduleNextCity()
+		}
+
+		const onPopupOpen = (event: L.PopupEvent) => {
+			isPopupOpen = true
+			if (isMoving) {
+				stopMovement()
+				const position = event.popup.getLatLng()
+				if (position) event.popup.setLatLng(position)
+			} else {
+				clearTimer()
 			}
 		}
 
-		map.on('popupopen', () => {
-			setIsPopupOpen(true)
-			stopAnimation()
-			adjustViewForPopup()
-		})
-
-		map.on('popupclose', () => {
-			setIsPopupOpen(false)
-			startAnimation()
-		})
-
-		if (!isPopupOpen) {
-			startAnimation()
+		const onPopupClose = () => {
+			isPopupOpen = false
+			scheduleNextCity()
 		}
+
+		const onVisibilityChange = () => {
+			if (document.hidden || reducedMotion.matches) stopMovement()
+			scheduleNextCity()
+		}
+
+		map.eachLayer((layer) => {
+			if (layer instanceof L.TileLayer) {
+				tileLayers.push(layer)
+				layer.on('loading', clearTimer)
+				layer.on('load', scheduleNextCity)
+			}
+		})
+
+		map.on('movestart', onMoveStart)
+		map.on('moveend', onMoveEnd)
+		map.on('preclick', onPreClick)
+		map.on('popupopen', onPopupOpen)
+		map.on('popupclose', onPopupClose)
+		document.addEventListener('visibilitychange', onVisibilityChange)
+		reducedMotion.addEventListener('change', onVisibilityChange)
+
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				isVisible = entry.isIntersecting && entry.intersectionRatio >= 0.1
+				if (!isVisible) stopMovement()
+				scheduleNextCity()
+			},
+			{ threshold: 0.1 }
+		)
+		observer.observe(map.getContainer())
 
 		return () => {
-			stopAnimation()
-			map.off('popupopen')
-			map.off('popupclose')
+			observer.disconnect()
+			document.removeEventListener('visibilitychange', onVisibilityChange)
+			reducedMotion.removeEventListener('change', onVisibilityChange)
+			map.off('movestart', onMoveStart)
+			map.off('moveend', onMoveEnd)
+			map.off('preclick', onPreClick)
+			map.off('popupopen', onPopupOpen)
+			map.off('popupclose', onPopupClose)
+			for (const layer of tileLayers) {
+				layer.off('loading', clearTimer)
+				layer.off('load', scheduleNextCity)
+			}
+			clearTimer()
 		}
-	}, [map, isPopupOpen])
+	}, [map])
 
 	return null
 }
@@ -339,9 +399,9 @@ const Education = () => {
 				<div className='h-[400px] md:h-full'>
 					<MapContainer
 						ref={mapRef}
-						center={[30, 0]}
-						zoom={2}
-						style={{ height: '100%', width: '100%' }}
+						center={cities[0].position}
+						zoom={8}
+						style={{ height: '100%', width: '100%', background: 'transparent' }}
 						zoomControl={false}
 						className='z-10'
 						scrollWheelZoom={false}
@@ -359,6 +419,7 @@ const Education = () => {
 										ref.bindPopup(() => createPopupContent(city), {
 											minWidth: 280,
 											maxWidth: 320,
+											maxHeight: 280,
 											className: 'custom-popup',
 											offset: [-12, -12]
 										})
