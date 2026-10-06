@@ -361,7 +361,17 @@ const Education = () => {
 	const mapRef = useRef<L.Map | null>(null)
 	const markersRef = useRef<{ [key: string]: L.Marker }>({})
 
-	const createPopupContent = (city: City) => {
+	const createPopupContent = (city: City, marker: L.Marker) => {
+		const popup = marker.getPopup()
+		if (popup) {
+			const availableWidth = Math.max(
+				160,
+				(mapRef.current?.getSize().x ?? 380) - 60
+			)
+			popup.options.minWidth = Math.min(280, availableWidth)
+			popup.options.maxWidth = Math.min(320, availableWidth)
+		}
+
 		const content = document.createElement('div')
 		const root = createRoot(content)
 		// Leaflet measures the content immediately to size and position the popup.
@@ -418,7 +428,7 @@ const Education = () => {
 								ref={(ref) => {
 									if (ref) {
 										markersRef.current[city.id] = ref
-										ref.bindPopup(() => createPopupContent(city), {
+										ref.bindPopup(() => createPopupContent(city, ref), {
 											minWidth: 280,
 											maxWidth: 320,
 											maxHeight: 280,
