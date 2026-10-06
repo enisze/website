@@ -48,7 +48,11 @@ export const Navbar = () => {
 	return (
 		<ResizableNavbar>
 			<NavBody>
-				<Link href='/' className='relative z-20 mr-4 flex'>
+				<Link
+					href='/'
+					aria-label='Enis Zejnilovic — Home'
+					className='relative z-20 mr-4 flex rounded-full transition-opacity hover:opacity-75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
+				>
 					<Logo className='size-14' />
 				</Link>
 
@@ -70,7 +74,11 @@ export const Navbar = () => {
 
 			<MobileNav>
 				<MobileNavHeader>
-					<Link href='/'>
+					<Link
+						href='/'
+						aria-label='Enis Zejnilovic — Home'
+						className='rounded-full transition-opacity hover:opacity-75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background'
+					>
 						<Logo className='size-14' />
 					</Link>
 					<MobileNavToggle

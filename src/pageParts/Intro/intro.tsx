@@ -27,10 +27,6 @@ export const Intro = async ({
 					<MapComponentClient />
 				</div>
 
-				<div className='absolute top-0 right-0 text-gray-500 text-xs z-50 truncate'>
-					© OpenMapTiles © OpenStreetMap contributors
-				</div>
-
 				<div className='absolute hover:animate-shake z-50 w-[180px] h-[178px] bottom-0 right-4 overflow-hidden transform rotate-6 -mb-16'>
 					<SparklesImage />
 				</div>
