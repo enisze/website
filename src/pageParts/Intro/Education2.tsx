@@ -1,13 +1,14 @@
 'use client'
 
 import { FadeIn } from '@/components/FadeIn'
+import { OpenStreetMapTiles } from '@/components/OpenStreetMapTiles'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { Calendar, GraduationCap, MapPin, Plane } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { useTranslation } from 'react-i18next'
-import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
+import { MapContainer, Marker, useMap } from 'react-leaflet'
 
 interface EducationInfo {
 	id: string
@@ -346,10 +347,7 @@ const Education = () => {
 						scrollWheelZoom={false}
 						dragging={false}
 					>
-						<TileLayer
-							url='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
-							attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-						/>
+						<OpenStreetMapTiles />
 						{cities.map((city) => (
 							<Marker
 								key={city.id}

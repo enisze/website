@@ -1,10 +1,11 @@
 'use client'
 
+import { OpenStreetMapTiles } from '@/components/OpenStreetMapTiles'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import type React from 'react'
 import { useEffect } from 'react'
-import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet'
+import { AttributionControl, MapContainer, Marker, useMap } from 'react-leaflet'
 
 // Set up Leaflet default icon options
 L.Icon.Default.mergeOptions({
@@ -41,11 +42,13 @@ const AnimatedZoom: React.FC = () => {
 
 	useEffect(() => {
 		// Smooth zoom effect
-		setTimeout(() => {
+		const timeout = setTimeout(() => {
 			map.flyTo([50.9375, 6.9603], 12, {
 				duration: 3
 			})
 		}, 1000)
+
+		return () => clearTimeout(timeout)
 	}, [map])
 
 	return null
@@ -58,14 +61,12 @@ const MapComponent: React.FC = () => {
 				<MapContainer
 					center={[51.1657, 10.4515]} // Center position in Germany
 					zoom={6}
-					style={{ height: '100%', width: '100%', opacity: 0.85 }}
+					style={{ height: '100%', width: '100%', background: '#111827' }}
 					zoomControl={false}
+					attributionControl={false}
 				>
-					<TileLayer
-						url='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
-						attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>'
-						noWrap
-					/>
+					<OpenStreetMapTiles appearance='dark' noWrap />
+					<AttributionControl position='topright' />
 					<Marker position={[50.9375, 6.9603]} icon={createHouseIcon()} />
 					<AnimatedZoom />
 				</MapContainer>
