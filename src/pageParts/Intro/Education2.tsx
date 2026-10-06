@@ -6,6 +6,7 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { Calendar, GraduationCap, MapPin, Plane } from 'lucide-react'
 import { useEffect, useRef } from 'react'
+import { flushSync } from 'react-dom'
 import { createRoot } from 'react-dom/client'
 import { useTranslation } from 'react-i18next'
 import { MapContainer, Marker, useMap } from 'react-leaflet'
@@ -363,7 +364,8 @@ const Education = () => {
 	const createPopupContent = (city: City) => {
 		const content = document.createElement('div')
 		const root = createRoot(content)
-		root.render(<PopupContent city={city} />)
+		// Leaflet measures the content immediately to size and position the popup.
+		flushSync(() => root.render(<PopupContent city={city} />))
 		return content
 	}
 
